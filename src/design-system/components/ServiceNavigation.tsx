@@ -49,7 +49,7 @@ export const ServiceNavigation: React.FC<ServiceNavigationProps> = ({
                 <span>{item.label}</span>
                 {typeof item.count === 'number' && (
                   <span
-                    className={`text-[10px] px-1.5 py-0.5 rounded-[2px] font-medium ${
+                    className={`text-[10px] px-1.5 py-0.5 rounded-full font-medium ${
                       isActive
                         ? 'bg-[#173C62]/10 text-[#173C62]'
                         : 'bg-slate-100 text-slate-500'

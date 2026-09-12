@@ -97,7 +97,7 @@ export const ContactPanel: React.FC<ContactPanelProps> = ({
           </div>
 
           {/* Right: Technical Tender Submission Form */}
-          <div className="lg:col-span-7 bg-white p-8 sm:p-10 rounded-[24px] border border-[#E5E7EB] shadow-none">
+          <div className="lg:col-span-7 bg-white p-8 sm:p-10 rounded-[16px] border border-[#E5E7EB] shadow-none">
             {isSuccess ? (
               <div className="text-center py-12 space-y-4">
                 <div className="w-12 h-12 rounded-full bg-[#ECFDF3] text-[#079455] flex items-center justify-center mx-auto text-xl font-bold">

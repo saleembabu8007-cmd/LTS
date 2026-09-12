@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
 import { X, ChevronDown, ArrowRight, Phone, Mail } from 'lucide-react';
 import { BrandLogo } from '../../design-system/atoms/BrandLogo';
@@ -17,12 +17,14 @@ interface MobileNavDrawerProps {
  * - Full-screen expandable menu on mobile (w-full max-w-full sm:max-w-md)
  * - 44px minimum touch targets across all interactive elements
  * - No horizontal overflow or nested scrolling traps
- * - Semantic <a> navigation links with visible keyboard focus states
+ * - Multi-signal active states (left accent bar, font-semibold, background tint, aria-current)
+ * - Body scroll lock on open
  * - Clear expandable division hierarchy:
- *   - Engineering & Construction
- *   - Facilities Management
- *   - Trading
- *   - Direct corporate items: Projects, About Us, Industries, Clients, News Center, Contact
+ *   - 01 Engineering & Construction
+ *   - 02 Facilities Management
+ *   - 03 Trading
+ * - Direct corporate items: Projects, About Us, Industries, Clients, News Center
+ * - Primary Contact CTA (Contact / Enquire)
  */
 export const MobileNavDrawer: React.FC<MobileNavDrawerProps> = ({
   isOpen,
@@ -32,6 +34,30 @@ export const MobileNavDrawer: React.FC<MobileNavDrawerProps> = ({
 }) => {
   const shouldReduceMotion = useReducedMotion();
   const [expandedSection, setExpandedSection] = useState<string | null>('engineering-construction');
+
+  // Lock body scrolling when drawer is open
+  useEffect(() => {
+    if (isOpen) {
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = originalOverflow;
+      };
+    }
+  }, [isOpen]);
+
+  // Keyboard accessibility: Escape closes drawer
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+    if (isOpen) {
+      window.addEventListener('keydown', handleKeyDown);
+      return () => window.removeEventListener('keydown', handleKeyDown);
+    }
+  }, [isOpen, onClose]);
 
   const handleSelect = (e: React.MouseEvent<HTMLAnchorElement>, slug: string) => {
     e.preventDefault();
@@ -71,7 +97,7 @@ export const MobileNavDrawer: React.FC<MobileNavDrawerProps> = ({
     {
       id: 'trading',
       numeral: '03',
-      title: 'Trading & Components',
+      title: 'Trading & Component Supply',
       slug: '/trading',
       subItems: [
         { label: 'Division Overview', slug: '/trading' },
@@ -84,13 +110,12 @@ export const MobileNavDrawer: React.FC<MobileNavDrawerProps> = ({
     },
   ];
 
-  const directLinks = [
+  const corporateLinks = [
     { label: 'Projects', slug: '/projects' },
     { label: 'About Us', slug: '/about-us' },
     { label: 'Industries', slug: '/industries' },
     { label: 'Clients', slug: '/clients' },
     { label: 'News Center', slug: '/news' },
-    { label: 'Contact & RFP Desk', slug: '/contact' },
   ];
 
   return (
@@ -104,11 +129,11 @@ export const MobileNavDrawer: React.FC<MobileNavDrawerProps> = ({
             exit={{ opacity: 0 }}
             transition={{ duration: 0.18, ease: 'easeOut' }}
             onClick={onClose}
-            className="fixed inset-0 bg-[#0B1C2F]/50"
+            className="fixed inset-0 bg-[#0B1C2F]/50 backdrop-blur-[2px]"
             aria-hidden="true"
           />
 
-          {/* Full-Screen Mobile Drawer Panel */}
+          {/* Full-Height Mobile Drawer Panel */}
           <motion.div
             initial={shouldReduceMotion ? { opacity: 0 } : { x: '100%' }}
             animate={shouldReduceMotion ? { opacity: 1 } : { x: 0 }}
@@ -144,9 +169,9 @@ export const MobileNavDrawer: React.FC<MobileNavDrawerProps> = ({
             {/* Scrollable Navigation Body */}
             <div className="flex-1 overflow-y-auto px-6 py-6 space-y-6 text-left overscroll-contain">
               {/* Expandable Core Divisions */}
-              <div className="space-y-3 pb-6 border-b border-[#E5E7EB]">
-                <span className="text-[11px] font-mono text-[#64748B] uppercase tracking-[0.16em] block mb-2">
-                  Operating Divisions
+              <div className="space-y-2 pb-6 border-b border-[#E5E7EB]">
+                <span className="text-[11px] font-mono text-[#64748B] uppercase tracking-[0.16em] block mb-2 font-semibold">
+                  Business Divisions
                 </span>
 
                 {divisions.map((div) => {
@@ -154,19 +179,19 @@ export const MobileNavDrawer: React.FC<MobileNavDrawerProps> = ({
                   const isActive = currentPath.startsWith(div.slug);
 
                   return (
-                    <div key={div.id} className="border-b border-[#F1F5F9] pb-3 last:border-b-0">
+                    <div key={div.id} className="border-b border-[#F1F5F9] pb-2 last:border-b-0">
                       <button
                         type="button"
                         onClick={() => toggleSection(div.id)}
-                        className="w-full flex items-center justify-between py-2 text-left cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] rounded-[4px] min-h-[48px]"
+                        className="w-full flex items-center justify-between py-2.5 text-left cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] rounded-[6px] min-h-[48px]"
                         aria-expanded={isExpanded}
                       >
                         <div className="flex items-baseline gap-3">
                           <span className="font-mono text-[11px] text-[#173C62] font-semibold">
                             {div.numeral}
                           </span>
-                          <span className={`text-[17px] font-medium transition-colors ${
-                            isActive ? 'text-[#173C62]' : 'text-[#0B1320]'
+                          <span className={`text-[16.5px] transition-colors ${
+                            isActive ? 'text-[#173C62] font-semibold' : 'text-[#0B1320] font-medium'
                           }`}>
                             {div.title}
                           </span>
@@ -179,21 +204,31 @@ export const MobileNavDrawer: React.FC<MobileNavDrawerProps> = ({
                       </button>
 
                       {isExpanded && (
-                        <div className="mt-1 pl-6 space-y-1 pb-2 border-l border-[#E5E7EB]">
-                          {div.subItems.map((sub) => (
-                            <a
-                              key={sub.label}
-                              href={sub.slug}
-                              onClick={(e) => handleSelect(e, sub.slug)}
-                              className={`w-full text-left py-2.5 px-3 text-[14px] transition-colors rounded-[8px] min-h-[44px] flex items-center focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:outline-none ${
-                                currentPath === sub.slug
-                                  ? 'text-[#173C62] font-semibold bg-[#F8FAFC]'
-                                  : 'text-[#4A5568] hover:text-[#173C62] hover:bg-[#F8FAFC]'
-                              }`}
-                            >
-                              <span>{sub.label}</span>
-                            </a>
-                          ))}
+                        <div className="mt-1 pl-4 space-y-1 pb-2 border-l-2 border-[#E5E7EB]">
+                          {div.subItems.map((sub) => {
+                            const isSubActive = currentPath === sub.slug;
+                            return (
+                              <a
+                                key={sub.label}
+                                href={sub.slug}
+                                onClick={(e) => handleSelect(e, sub.slug)}
+                                aria-current={isSubActive ? 'page' : undefined}
+                                className={`w-full text-left py-2.5 px-3 text-[14px] transition-colors rounded-[8px] min-h-[44px] flex items-center justify-between focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:outline-none ${
+                                  isSubActive
+                                    ? 'text-[#173C62] font-semibold bg-[#F8FAFC]'
+                                    : 'text-[#4A5568] hover:text-[#173C62] hover:bg-[#F8FAFC]'
+                                }`}
+                              >
+                                <span className="flex items-center gap-2">
+                                  {isSubActive && (
+                                    <span className="w-1.5 h-1.5 rounded-full bg-[#173C62] shrink-0" aria-hidden="true" />
+                                  )}
+                                  <span>{sub.label}</span>
+                                </span>
+                                <ArrowRight className="w-3.5 h-3.5 text-[#94A3B8] opacity-60" />
+                              </a>
+                            );
+                          })}
                         </div>
                       )}
                     </div>
@@ -201,58 +236,64 @@ export const MobileNavDrawer: React.FC<MobileNavDrawerProps> = ({
                 })}
               </div>
 
-              {/* Direct Navigation Links */}
+              {/* Direct Corporate Links */}
               <div className="space-y-1 pb-6 border-b border-[#E5E7EB]">
-                <span className="text-[11px] font-mono text-[#64748B] uppercase tracking-[0.16em] block mb-2">
-                  Corporate &amp; Portfolio
+                <span className="text-[11px] font-mono text-[#64748B] uppercase tracking-[0.16em] block mb-2 font-semibold">
+                  Corporate
                 </span>
 
-                {directLinks.map((link) => {
+                {corporateLinks.map((link) => {
                   const isActive = currentPath === link.slug || (link.slug !== '/' && currentPath.startsWith(link.slug));
                   return (
                     <a
                       key={link.label}
                       href={link.slug}
                       onClick={(e) => handleSelect(e, link.slug)}
-                      className={`w-full flex items-center justify-between py-3 px-1 text-left text-[16px] transition-colors min-h-[48px] focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:outline-none rounded-[4px] ${
+                      aria-current={isActive ? 'page' : undefined}
+                      className={`w-full flex items-center justify-between py-2.5 px-2 text-left text-[15.5px] transition-colors min-h-[48px] rounded-[6px] focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:outline-none ${
                         isActive
-                          ? 'text-[#173C62] font-semibold'
-                          : 'text-[#0B1320] hover:text-[#173C62]'
+                          ? 'text-[#173C62] font-semibold bg-[#F8FAFC]'
+                          : 'text-[#0B1320] font-medium hover:text-[#173C62] hover:bg-[#F8FAFC]'
                       }`}
                     >
-                      <span>{link.label}</span>
+                      <span className="flex items-center gap-2">
+                        {isActive && (
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#173C62] shrink-0" aria-hidden="true" />
+                        )}
+                        <span>{link.label}</span>
+                      </span>
                       <ArrowRight className="w-4 h-4 text-[#94A3B8]" />
                     </a>
                   );
                 })}
               </div>
 
-              {/* Contact Information & Dispatch */}
-              <div className="space-y-3 pt-2">
+              {/* Conversion Action & Direct Contact */}
+              <div className="space-y-4 pt-2">
                 <a
                   href="/contact"
                   onClick={(e) => handleSelect(e, '/contact')}
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-[#173C62] hover:bg-[#102B47] text-white text-xs font-semibold uppercase tracking-wider rounded-[12px] min-h-[48px] transition-colors focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:outline-none text-center"
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-[#173C62] hover:bg-[#102B47] text-white text-[12.5px] font-semibold uppercase tracking-wider rounded-[12px] min-h-[48px] transition-colors focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:outline-none text-center shadow-none"
                 >
-                  <span>Initiate Consultation / RFP</span>
+                  <span>Contact / Enquire</span>
                   <ArrowRight className="w-4 h-4" />
                 </a>
 
-                <div className="pt-3 text-[12px] text-[#64748B] space-y-2 font-mono">
+                <div className="pt-2 text-[12.5px] text-[#64748B] space-y-2.5 font-mono">
                   <div className="flex items-center gap-2.5 min-h-[44px]">
-                    <Phone className="w-4 h-4 text-[#173C62] shrink-0" />
+                    <Phone className="w-4 h-4 text-[#173C62] shrink-0" aria-hidden="true" />
                     <a
                       href={`tel:${CORPORATE_INFO.contact.telephone.replace(/\s+/g, '')}`}
-                      className="text-[#0B1320] hover:underline"
+                      className="text-[#0B1320] hover:underline font-medium"
                     >
                       {CORPORATE_INFO.contact.telephone}
                     </a>
                   </div>
                   <div className="flex items-center gap-2.5 min-h-[44px]">
-                    <Mail className="w-4 h-4 text-[#173C62] shrink-0" />
+                    <Mail className="w-4 h-4 text-[#173C62] shrink-0" aria-hidden="true" />
                     <a
                       href={`mailto:${CORPORATE_INFO.contact.emailGeneral}`}
-                      className="text-[#0B1320] hover:underline"
+                      className="text-[#0B1320] hover:underline font-medium"
                     >
                       {CORPORATE_INFO.contact.emailGeneral}
                     </a>

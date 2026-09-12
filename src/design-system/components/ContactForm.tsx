@@ -81,8 +81,8 @@ export const ContactForm: React.FC<ContactFormProps> = ({
 
   if (isSubmitted) {
     return (
-      <div className={`bg-white border border-[#E5E7EB] rounded-[2px] p-8 sm:p-12 text-center space-y-4 ${className}`}>
-        <div className="w-12 h-12 bg-emerald-50 border border-emerald-200 text-emerald-600 rounded-[2px] mx-auto flex items-center justify-center">
+      <div className={`bg-white border border-[#E5E7EB] rounded-[16px] p-8 sm:p-12 text-center space-y-4 ${className}`}>
+        <div className="w-12 h-12 bg-emerald-50 border border-emerald-200 text-emerald-600 rounded-full mx-auto flex items-center justify-center">
           <CheckCircle2 className="w-6 h-6" />
         </div>
         <h3 className="typography-h3 text-[#0B1320]">
@@ -121,7 +121,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
   return (
     <form
       onSubmit={handleSubmit}
-      className={`bg-white border border-[#E5E7EB] rounded-[2px] p-6 sm:p-8 lg:p-10 space-y-8 ${className}`}
+      className={`bg-white border border-[#E5E7EB] rounded-[16px] p-6 sm:p-8 lg:p-10 space-y-8 ${className}`}
       noValidate
     >
       {/* Header Block */}
@@ -150,7 +150,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
 
       {/* Error Alert */}
       {errorMessage && (
-        <div className="p-4 bg-red-50 border border-red-200 text-red-800 rounded-[2px] flex items-center gap-3 typography-body-sm">
+        <div className="p-4 bg-red-50 border border-red-200 text-red-800 rounded-[8px] flex items-center gap-3 typography-body-sm">
           <AlertCircle className="w-4 h-4 text-red-600 shrink-0" />
           <span>{errorMessage}</span>
         </div>
@@ -225,7 +225,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
         />
 
         {/* Row 5: BOQ / Tender File Upload Trigger */}
-        <div className="border border-dashed border-[#E5E7EB] rounded-[2px] p-4 sm:p-5 text-center bg-slate-50/50 hover:bg-slate-50 transition-colors">
+        <div className="border border-dashed border-[#E5E7EB] rounded-[12px] p-4 sm:p-5 text-center bg-slate-50/50 hover:bg-slate-50 transition-colors">
           <div className="flex flex-col items-center justify-center space-y-2">
             <Upload className="w-5 h-5 text-[#173C62]" />
             <div className="typography-body-sm text-[#0B1320] font-medium">

@@ -50,7 +50,7 @@ export const ImageBlock: React.FC<ImageBlockProps> = ({
     >
       {/* Authentic Engineering Frame with 2px Universal Radius */}
       <div
-        className={`relative w-full overflow-hidden rounded-[2px] border ${
+        className={`relative w-full overflow-hidden rounded-[18px] border ${
           dark
             ? 'border-white/10 bg-[#0B1C2F]'
             : 'border-[#E5E7EB] bg-slate-100'

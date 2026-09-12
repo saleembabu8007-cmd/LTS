@@ -62,7 +62,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
           setDragActive(false);
           handleFiles(e.dataTransfer.files);
         }}
-        className={`border border-dashed transition-colors p-4 sm:p-5 text-center cursor-pointer rounded-[2px] shadow-none ${
+        className={`border border-dashed transition-colors p-4 sm:p-5 text-center cursor-pointer rounded-[12px] shadow-none ${
           dragActive
             ? 'border-[#173C62] bg-[#EDF3F9]'
             : 'border-[#E5E7EB] bg-[#F8FAFC] hover:border-[#173C62] hover:bg-slate-50'
@@ -78,9 +78,9 @@ export const FileUpload: React.FC<FileUploadProps> = ({
         />
 
         {selectedFile ? (
-          <div className="flex items-center justify-between bg-white border border-[#E5E7EB] p-3 rounded-[2px]">
+          <div className="flex items-center justify-between bg-white border border-[#E5E7EB] p-3 rounded-[12px]">
             <div className="flex items-center gap-3 truncate text-left">
-              <div className="w-8 h-8 rounded-[2px] bg-[#EDF3F9] text-[#173C62] flex items-center justify-center shrink-0">
+              <div className="w-8 h-8 rounded-[8px] bg-[#EDF3F9] text-[#173C62] flex items-center justify-center shrink-0">
                 <FileText className="w-4 h-4" />
               </div>
               <div className="truncate">
@@ -93,7 +93,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
             <button
               type="button"
               onClick={handleRemove}
-              className="p-1 hover:bg-slate-100 rounded-[2px] text-[#64748B] hover:text-[#0B1320]"
+              className="p-1 hover:bg-slate-100 rounded-[6px] text-[#64748B] hover:text-[#0B1320]"
               aria-label="Remove uploaded file"
             >
               <X className="w-4 h-4" />
@@ -101,7 +101,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
           </div>
         ) : (
           <div className="space-y-2">
-            <div className="w-9 h-9 rounded-[2px] bg-white border border-[#E5E7EB] text-[#173C62] mx-auto flex items-center justify-center">
+            <div className="w-9 h-9 rounded-[8px] bg-white border border-[#E5E7EB] text-[#173C62] mx-auto flex items-center justify-center">
               <Upload className="w-4 h-4" />
             </div>
             <div>

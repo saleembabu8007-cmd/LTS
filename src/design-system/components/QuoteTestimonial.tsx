@@ -105,7 +105,7 @@ export const QuoteTestimonial: React.FC<QuoteTestimonialProps> = ({
   // Card Variant
   return (
     <div
-      className={`p-6 sm:p-8 rounded-[2px] border ${
+      className={`p-6 sm:p-8 rounded-[16px] border ${
         isDark
           ? 'bg-[#0B1C2F] text-white border-white/10'
           : 'bg-white text-[#0B1320] border-[#E5E7EB]'

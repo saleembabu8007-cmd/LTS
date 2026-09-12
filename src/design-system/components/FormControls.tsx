@@ -41,7 +41,7 @@ export const Input: React.FC<InputProps> = ({
         <input
           id={inputId}
           disabled={disabled}
-          className={`w-full typography-body-sm rounded-[2px] border transition-colors py-2.5 px-3 bg-white text-[#0B1320] placeholder:text-[#999999] focus:outline-none ${
+          className={`w-full typography-body-sm rounded-[11px] border transition-colors py-2.5 px-3 bg-white text-[#0B1320] placeholder:text-[#999999] focus:outline-none ${
             iconLeading ? 'pl-9' : ''
           } ${
             error
@@ -98,7 +98,7 @@ export const Select: React.FC<SelectProps> = ({
       <select
         id={selectId}
         disabled={disabled}
-        className={`w-full typography-body-sm rounded-[2px] border transition-colors py-2.5 px-3 bg-white text-[#0B1320] focus:outline-none ${
+        className={`w-full typography-body-sm rounded-[11px] border transition-colors py-2.5 px-3 bg-white text-[#0B1320] focus:outline-none ${
           error
             ? 'border-red-400 focus:border-red-600'
             : 'border-[#E5E7EB] hover:border-slate-400 focus:border-[#173C62]'
@@ -158,7 +158,7 @@ export const Textarea: React.FC<TextareaProps> = ({
         id={textareaId}
         rows={rows}
         disabled={disabled}
-        className={`w-full typography-body-sm rounded-[2px] border transition-colors p-3 bg-white text-[#0B1320] placeholder:text-[#999999] focus:outline-none ${
+        className={`w-full typography-body-sm rounded-[11px] border transition-colors p-3 bg-white text-[#0B1320] placeholder:text-[#999999] focus:outline-none ${
           error
             ? 'border-red-400 focus:border-red-600'
             : 'border-[#E5E7EB] hover:border-slate-400 focus:border-[#173C62]'
@@ -196,7 +196,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
       <input
         type="checkbox"
         id={checkboxId}
-        className={`mt-0.5 h-4 w-4 rounded-[2px] border-[#E5E7EB] text-[#173C62] focus:ring-0 transition-colors ${className}`}
+        className={`mt-0.5 h-4 w-4 rounded-[4px] border-[#E5E7EB] text-[#173C62] focus:ring-0 transition-colors ${className}`}
         {...props}
       />
       <label htmlFor={checkboxId} className="select-none cursor-pointer">

@@ -1,4 +1,5 @@
 import { PrimaryNavItem } from '../types/navigation';
+export type { PrimaryNavItem };
 
 export interface MegaMenuCategory {
   title: string;
@@ -39,7 +40,7 @@ export interface EditorialMegaMenuData {
  * - Clients (Direct Navigation)
  * - News Center (Direct Navigation)
  */
-export const PRIMARY_NAVIGATION: PrimaryNavItem[] = [
+export const BUSINESS_NAV_ITEMS: PrimaryNavItem[] = [
   {
     id: 'engineering-construction',
     label: 'Engineering & Construction',
@@ -61,6 +62,9 @@ export const PRIMARY_NAVIGATION: PrimaryNavItem[] = [
     hasMegaMenu: true,
     megaMenuId: 'trading',
   },
+];
+
+export const CORPORATE_NAV_ITEMS: PrimaryNavItem[] = [
   {
     id: 'projects',
     label: 'Projects',
@@ -92,6 +96,12 @@ export const PRIMARY_NAVIGATION: PrimaryNavItem[] = [
     hasMegaMenu: false,
   },
 ];
+
+export const PRIMARY_NAVIGATION: PrimaryNavItem[] = [
+  ...BUSINESS_NAV_ITEMS,
+  ...CORPORATE_NAV_ITEMS,
+];
+
 
 /**
  * Editorial Mega Menu Data Structure

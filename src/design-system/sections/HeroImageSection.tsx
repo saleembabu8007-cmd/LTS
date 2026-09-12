@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from '../atoms/Button';
 
 export interface HeroDatum {
   label: string;
@@ -94,25 +95,28 @@ export const HeroImageSection: React.FC<HeroImageSectionProps> = ({
 
             <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col items-start lg:items-end justify-end gap-4">
               {primaryCta && (
-                <a
-                  href={primaryCta.href}
+                <Button
+                  variant="white"
+                  size="md"
+                  shape="rounded"
+                  light
+                  iconTrailing="→"
                   onClick={handleLink(primaryCta.href)}
-                  className="group inline-flex items-center justify-center min-h-[46px] px-6 rounded-[12px] bg-white text-[#173C62] hover:bg-[#F8FAFC] font-semibold text-[12px] uppercase tracking-[0.08em] transition-colors duration-180"
                 >
-                  <span>{primaryCta.label}</span>
-                  <span className="ml-2 transition-transform duration-180 ease-out group-hover:translate-x-[3px]">
-                    →
-                  </span>
-                </a>
+                  {primaryCta.label}
+                </Button>
               )}
               {secondaryCta && (
-                <a
-                  href={secondaryCta.href}
+                <Button
+                  variant="secondary"
+                  size="md"
+                  shape="rounded"
+                  light
+                  className="border-white/40 text-white hover:bg-white/10 hover:border-white"
                   onClick={handleLink(secondaryCta.href)}
-                  className="group inline-flex items-center justify-center min-h-[46px] px-6 rounded-[12px] border border-white/40 text-white hover:bg-white/10 font-semibold text-[12px] uppercase tracking-[0.08em] transition-colors duration-180"
                 >
-                  <span>{secondaryCta.label}</span>
-                </a>
+                  {secondaryCta.label}
+                </Button>
               )}
             </div>
           </div>
@@ -134,25 +138,28 @@ export const HeroImageSection: React.FC<HeroImageSectionProps> = ({
             {(primaryCta || secondaryCta) && (
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 {primaryCta && (
-                  <a
-                    href={primaryCta.href}
+                  <Button
+                    variant="white"
+                    size="md"
+                    shape="rounded"
+                    light
+                    iconTrailing="→"
                     onClick={handleLink(primaryCta.href)}
-                    className="group inline-flex items-center min-h-[46px] px-6 rounded-[12px] bg-white text-[#173C62] hover:bg-[#F8FAFC] font-semibold text-[12px] uppercase tracking-[0.08em]"
                   >
-                    <span>{primaryCta.label}</span>
-                    <span className="ml-2 group-hover:translate-x-[3px] transition-transform duration-180">
-                      →
-                    </span>
-                  </a>
+                    {primaryCta.label}
+                  </Button>
                 )}
                 {secondaryCta && (
-                  <a
-                    href={secondaryCta.href}
+                  <Button
+                    variant="secondary"
+                    size="md"
+                    shape="rounded"
+                    light
+                    className="border-white/40 text-white hover:bg-white/10 hover:border-white"
                     onClick={handleLink(secondaryCta.href)}
-                    className="inline-flex items-center min-h-[46px] px-6 rounded-[12px] border border-white/40 text-white hover:bg-white/10 font-semibold text-[12px] uppercase tracking-[0.08em]"
                   >
-                    <span>{secondaryCta.label}</span>
-                  </a>
+                    {secondaryCta.label}
+                  </Button>
                 )}
               </div>
             )}

@@ -8,7 +8,7 @@ export { TextLink } from './TextLink';
 export type { TextLinkProps } from './TextLink';
 
 export { IconButton } from './IconButton';
-export type { IconButtonProps } from './IconButton';
+export type { IconButtonProps, IconButtonVariant, IconButtonSize, IconButtonShape } from './IconButton';
 
 export { Eyebrow } from './Eyebrow';
 export type { EyebrowProps } from './Eyebrow';

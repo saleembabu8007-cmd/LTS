@@ -142,7 +142,7 @@ export const PageHero: React.FC<PageHeroProps> = ({
               {technicalBadges.map((badge) => (
                 <span
                   key={badge}
-                  className="px-2.5 py-1 text-[10.5px] font-mono font-medium uppercase tracking-wider bg-white/10 text-white rounded-[2px] border border-white/20 backdrop-blur-xs"
+                  className="px-2.5 py-1 text-[10.5px] font-mono font-medium uppercase tracking-wider bg-white/10 text-white rounded-[8px] border border-white/20 backdrop-blur-xs"
                 >
                   {badge}
                 </span>

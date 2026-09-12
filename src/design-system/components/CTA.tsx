@@ -96,10 +96,10 @@ export const CTA: React.FC<CTAProps> = ({
             {!secondaryActionLabel && directPhone && (
               <a
                 href={`tel:${directPhone.replace(/\s+/g, '')}`}
-                className={`inline-flex items-center gap-2 typography-btn rounded-[2px] text-xs sm:text-[13px] px-6 py-3.5 tracking-[0.14em] transition-colors border ${
+                className={`inline-flex items-center gap-2 typography-btn rounded-[12px] min-h-[44px] text-xs sm:text-[13px] px-6 py-2.5 tracking-[0.14em] transition-colors border ${
                   isDark
                     ? 'border-white/20 text-white hover:bg-white/10'
-                    : 'border-[#E5E7EB] text-[#173C62] hover:bg-slate-100'
+                    : 'border-[#CBD5E1] text-[#173C62] hover:bg-slate-100 hover:border-[#173C62]'
                 }`}
               >
                 <Phone className="w-3.5 h-3.5 text-[#999999]" />

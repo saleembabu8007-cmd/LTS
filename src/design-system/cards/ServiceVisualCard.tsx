@@ -1,30 +1,38 @@
 import React from 'react';
+import { ArrowUpRight } from 'lucide-react';
 
-export interface ServiceVisualCardProps {
+export interface ServiceCardProps {
   id: string;
   title: string;
   subtitle?: string;
   description: string;
   href: string;
   imageUrl?: string;
+  imageAlt?: string;
   subservices?: string[];
   numeral?: string;
   onNavigate?: (slug: string) => void;
   className?: string;
 }
 
+export type ServiceVisualCardProps = ServiceCardProps;
+
 /**
- * ServiceVisualCard
- * Conforms strictly to Rule 07 & 13: Unboxed discipline module.
- * No generic borders, no boxed card container. Editorial typography + optional architectural image thumbnail + verified scope.
+ * ServiceImageCard / ServiceVisualCard
+ * Purpose-built for operational service disciplines across Engineering, FM, and Trading.
+ * Conforms to LTSGROUP Image Card rules:
+ * - Clean 16–18px image header with zero artificial overlays.
+ * - Numeral / Division eyebrow, title, concise scope description, verified subservice tags.
+ * - Subtle hover scale (1.025) and 3px arrow translate.
  */
-export const ServiceVisualCard: React.FC<ServiceVisualCardProps> = ({
+export const ServiceImageCard: React.FC<ServiceCardProps> = ({
   id,
   title,
   subtitle,
   description,
   href,
   imageUrl,
+  imageAlt = '',
   subservices = [],
   numeral,
   onNavigate,
@@ -41,21 +49,26 @@ export const ServiceVisualCard: React.FC<ServiceVisualCardProps> = ({
     <a
       href={href}
       onClick={handleClick}
-      className={`group block text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:ring-offset-4 rounded-[16px] ${className}`}
+      className={`group block select-none text-left rounded-[18px] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:ring-offset-4 ${className}`}
       aria-label={`Explore service: ${title}`}
     >
-      {/* Optional Editorial Image Header (16-18px) */}
+      {/* Editorial Image Header (16–18px radius, NO dark overlay) */}
       {imageUrl && (
         <div className="relative aspect-[16/10] overflow-hidden rounded-[16px] bg-[#0B1C2F] mb-4">
           <img
             src={imageUrl}
-            alt={title}
+            alt={imageAlt || title}
             loading="lazy"
-            className="w-full h-full object-cover object-center transition-transform duration-[400ms] cubic-bezier(0.16, 1, 0.3, 1) group-hover:scale-[1.025]"
+            className="w-full h-full object-cover object-center transition-transform duration-[450ms] cubic-bezier(0.16, 1, 0.3, 1) group-hover:scale-[1.025]"
+            onError={(e) => {
+              (e.currentTarget as HTMLImageElement).src =
+                'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80';
+            }}
           />
         </div>
       )}
 
+      {/* Metadata Line */}
       <div className="flex items-baseline justify-between gap-4">
         {numeral && (
           <span className="font-mono text-[11px] text-[#64748B] tracking-wider uppercase">
@@ -63,32 +76,32 @@ export const ServiceVisualCard: React.FC<ServiceVisualCardProps> = ({
           </span>
         )}
         {subtitle && (
-          <span className="text-[11px] font-mono text-[#173C62] uppercase tracking-[0.14em]">
+          <span className="text-[11px] font-mono text-[#173C62] uppercase tracking-[0.14em] font-semibold">
             {subtitle}
           </span>
         )}
       </div>
 
+      {/* Title & Arrow */}
       <h3 className="mt-2 text-[19px] font-medium text-[#0B1320] leading-snug group-hover:text-[#173C62] transition-colors duration-180 flex items-center justify-between gap-3">
         <span>{title}</span>
-        <span className="shrink-0 text-[#173C62] transition-transform duration-180 ease-out group-hover:translate-x-[3px]" aria-hidden="true">
-          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.75">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-          </svg>
+        <span className="shrink-0 text-[#173C62] transition-transform duration-180 ease-out group-hover:translate-x-[3px] group-hover:-translate-y-[2px]" aria-hidden="true">
+          <ArrowUpRight className="w-4 h-4" />
         </span>
       </h3>
 
-      <p className="mt-2 text-[14px] text-[#4A5568] leading-relaxed line-clamp-2">
+      {/* Description */}
+      <p className="mt-2 text-[14px] text-[#4A5568] leading-relaxed line-clamp-2 font-normal">
         {description}
       </p>
 
-      {/* Verified Subservices List (Quiet Monospace Tags / Unboxed Bullet Items) */}
+      {/* Subservices List */}
       {subservices.length > 0 && (
-        <ul className="mt-4 flex flex-wrap gap-2">
+        <ul className="mt-3.5 flex flex-wrap gap-1.5">
           {subservices.slice(0, 4).map((item, idx) => (
             <li
               key={idx}
-              className="text-[12px] text-[#64748B] bg-[#F8FAFC] px-2.5 py-1 rounded-[8px] font-normal"
+              className="text-[11px] font-mono text-[#64748B] bg-[#F8FAFC] border border-[#E5E7EB] px-2.5 py-1 rounded-[6px] font-normal"
             >
               {item}
             </li>
@@ -98,3 +111,6 @@ export const ServiceVisualCard: React.FC<ServiceVisualCardProps> = ({
     </a>
   );
 };
+
+// Backwards-compatible alias
+export const ServiceVisualCard = ServiceImageCard;

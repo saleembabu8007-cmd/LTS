@@ -73,10 +73,10 @@ export const ClientLogoBlock: React.FC<ClientLogoBlockProps> = ({
           {items.map((item, index) => (
             <div
               key={index}
-              className={`w-full py-5 px-5 text-center flex flex-col items-center justify-center transition-all duration-200 border rounded-[2px] min-h-[90px] ${
+              className={`w-full py-5 px-5 text-center flex flex-col items-center justify-center transition-all duration-200 border rounded-[12px] min-h-[90px] ${
                 isDark
                   ? 'border-white/10 bg-white/[0.02] hover:border-white/20'
-                  : 'border-[#E5E7EB] bg-white hover:border-[#173C62]/40 shadow-2xs'
+                  : 'border-[#E5E7EB] bg-white hover:border-[#173C62]/40 shadow-none'
               }`}
             >
               {item.logoSrc ? (

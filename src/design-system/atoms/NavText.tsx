@@ -31,7 +31,7 @@ export const NavText = React.forwardRef<HTMLAnchorElement, NavTextProps>(
     return (
       <a
         ref={ref}
-        className={`inline-flex items-center gap-1.5 text-xs sm:text-[13px] font-sans tracking-[0.02em] transition-colors cursor-pointer select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] rounded-[4px] py-1 px-1.5 ${baseColor} ${className}`}
+        className={`typography-navigation inline-flex items-center gap-1.5 font-sans tracking-[0.02em] transition-colors cursor-pointer select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] rounded-[4px] py-1 px-1.5 ${baseColor} ${className}`}
         aria-current={active ? 'page' : undefined}
         {...props}
       >

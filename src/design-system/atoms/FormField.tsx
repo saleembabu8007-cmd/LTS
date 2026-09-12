@@ -23,7 +23,7 @@ export const FormField = React.forwardRef<HTMLInputElement, FormFieldProps>(
           id={id}
           required={required}
           disabled={disabled}
-          className={`w-full typography-body-sm rounded-[2px] border transition-colors py-2.5 px-3 bg-white text-[#0B1320] placeholder:text-[#999999] shadow-none focus:outline-none disabled:bg-slate-50 disabled:cursor-not-allowed ${
+          className={`w-full typography-body-sm rounded-[11px] border transition-colors py-2.5 px-3 bg-white text-[#0B1320] placeholder:text-[#999999] shadow-none focus:outline-none disabled:bg-slate-50 disabled:cursor-not-allowed ${
             error
               ? 'border-red-600 focus:border-red-600 focus:ring-1 focus:ring-red-600'
               : 'border-[#E5E7EB] hover:border-[#CBD5E1] focus:border-[#173C62] focus:ring-1 focus:ring-[#173C62]'

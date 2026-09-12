@@ -1,12 +1,17 @@
 /**
  * LTSGROUP Master Architectural Design System Tokens
- * Conforms strictly to the LTSGROUP Complete Visual Design Reset Constitution:
- * - Intentionally Rounded Radiuses: 24–32px (large images), 28–36px (feature media), 20–28px (content surfaces)
- * - Capsule (rounded-full) or 12–16px radius for buttons
- * - Pill (9999px) for filter chips, tags, status badges
+ * Conforms strictly to the LTSGROUP Permanent Design Rules:
+ * - Established Soft-Radius System: 8–20px scale
+ *   - 8px: Meta badges, chips, tags
+ *   - 10–12px: Forms, controls, buttons
+ *   - 16px: Content surfaces, standard cards
+ *   - 18px: Standard architectural photography containers
+ *   - 20px: Feature media, panoramic modules, hero banners
+ *   - 9999px: Capsule buttons and pills
+ * - Zero random or extreme radius values
  * - Universal box-shadow: none (Depth created via contrast, tone, overlap, whitespace, hairlines)
- * - Restrained Palette: White/near-white canvas, LTS Blue (#173C62) brand accent, selective midnight (#0B1C2F)
- * - 1360px Max Content Grid with 48–72px desktop padding and disciplined 13-step spacing scale
+ * - Restrained Palette: White/near-white canvas, LTS Blue (#173C62) brand accent, midnight navy (#0B1C2F)
+ * - 1360px Max Content Grid with disciplined responsive padding and spacing scale
  */
 
 export const COLOR_TOKENS = {
@@ -42,7 +47,7 @@ export const COLOR_TOKENS = {
   borderDark: 'rgba(255, 255, 255, 0.12)', // Hairline on Dark Backgrounds
   borderDarkStrong: 'rgba(255, 255, 255, 0.24)',
 
-  // Status Indicators (Pills / Compact Metadata Only)
+  // Semantic Status Indicators Only (Success, Warning, Error)
   status: {
     success: '#079455',
     successBg: '#ECFDF3',
@@ -50,7 +55,7 @@ export const COLOR_TOKENS = {
     warningBg: '#FEF0C7',
     error: '#D92D20',
     errorBg: '#FEF3F2',
-    info: '#173C62',
+    info: '#173C62',          // Brand Info fallback
     infoBg: '#EDF3F9',
   },
 } as const;

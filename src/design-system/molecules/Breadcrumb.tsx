@@ -50,7 +50,7 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({
           <a
             href="/"
             onClick={(e) => handleLinkClick(e, '/')}
-            className={`transition-colors py-0.5 focus-visible:ring-2 focus-visible:outline-none rounded-[2px] ${linkColor}`}
+            className={`transition-colors py-0.5 focus-visible:ring-2 focus-visible:outline-none rounded-[4px] ${linkColor}`}
           >
             Home
           </a>
@@ -75,7 +75,7 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({
                 <a
                   href={item.slug}
                   onClick={(e) => handleLinkClick(e, item.slug)}
-                  className={`transition-colors py-0.5 truncate max-w-[200px] sm:max-w-xs focus-visible:ring-2 focus-visible:outline-none rounded-[2px] ${linkColor}`}
+                  className={`transition-colors py-0.5 truncate max-w-[200px] sm:max-w-xs focus-visible:ring-2 focus-visible:outline-none rounded-[4px] ${linkColor}`}
                 >
                   {item.label}
                 </a>

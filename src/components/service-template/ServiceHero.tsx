@@ -1,7 +1,6 @@
 import React from 'react';
 import { ServicePageData } from '../../types/serviceTemplate';
 import { Button } from '../../design-system/atoms/Button';
-import { Breadcrumb } from '../../design-system/molecules/Breadcrumb';
 
 interface ServiceHeroProps {
   data: ServicePageData;
@@ -67,14 +66,7 @@ export const ServiceHero: React.FC<ServiceHeroProps> = ({ data, onNavigate }) =>
       {/* Quiet Lower-Left Content Anchor */}
       <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 pb-14 sm:pb-18 lg:pb-20 pt-28 text-left">
         <div className="max-w-2xl">
-          {/* Subtle Integrated Breadcrumb (on image hero) */}
-          {data.breadcrumb && data.breadcrumb.length > 0 && (
-            <div className="mb-4">
-              <Breadcrumb items={data.breadcrumb} onNavigate={onNavigate} variant="overlay" />
-            </div>
-          )}
-
-          {/* Service Category */}
+          {/* Service Category / Eyebrow */}
           <div className="inline-flex items-center gap-2 mb-3">
             <span className="h-px w-6 bg-[#CBD5E1]" />
             <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-slate-200 font-semibold">

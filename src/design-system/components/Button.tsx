@@ -38,10 +38,10 @@ export const Button: React.FC<ButtonProps> = ({
 }) => {
   const isTextLink = variant === 'textLink';
 
-  // Strict architectural 2px radius standard, never pill
+  // Standard soft-radius 12px, never sharp 2px
   const baseClasses = isTextLink
-    ? 'inline-flex items-center gap-1.5 font-medium typography-btn text-[#173C62] hover:text-[#102B47] transition-colors select-none group focus:outline-none'
-    : 'inline-flex items-center justify-center font-semibold typography-btn rounded-[2px] transition-all duration-150 select-none cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:ring-offset-1';
+    ? 'inline-flex items-center gap-1.5 font-semibold typography-btn text-[#173C62] hover:text-[#102B47] transition-colors select-none group focus:outline-none'
+    : 'inline-flex items-center justify-center font-semibold typography-btn rounded-[12px] transition-colors duration-[180ms] ease-out select-none cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:ring-offset-2 shadow-none';
 
   const sizeClasses: Record<ButtonSize, string> = isTextLink
     ? {
@@ -50,9 +50,9 @@ export const Button: React.FC<ButtonProps> = ({
         lg: 'text-xs tracking-[0.1em]',
       }
     : {
-        sm: 'text-[11px] px-3.5 py-2 gap-2 tracking-[0.08em] min-h-[36px]',
-        md: 'text-xs px-5 py-2.5 gap-2.5 tracking-[0.08em] min-h-[42px]',
-        lg: 'text-xs px-6 py-3.5 gap-3 tracking-[0.1em] min-h-[48px]',
+        sm: 'text-[11px] px-4 py-1.5 gap-2 tracking-[0.08em] min-h-[38px]',
+        md: 'text-xs px-5 py-2 gap-2.5 tracking-[0.08em] min-h-[44px]',
+        lg: 'text-xs px-6 py-2.5 gap-3 tracking-[0.1em] min-h-[48px]',
       };
 
   const variantClasses: Record<ButtonVariant, string> = {

@@ -87,16 +87,16 @@ export const Filter: React.FC<FilterProps> = ({
             role="tab"
             aria-selected={isActive}
             onClick={() => onChange(option.id)}
-            className={`typography-btn text-xs px-3.5 py-2 rounded-[2px] transition-all duration-150 select-none cursor-pointer flex items-center gap-2 border focus:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] ${
+            className={`typography-btn text-xs px-3.5 py-2 rounded-full transition-all duration-150 select-none cursor-pointer flex items-center gap-2 border focus:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] ${
               isActive
-                ? 'bg-[#173C62] text-white border-[#173C62] shadow-xs'
+                ? 'bg-[#173C62] text-white border-[#173C62] shadow-none'
                 : 'bg-white text-[#4A5568] border-[#E5E7EB] hover:border-[#173C62]/40 hover:text-[#173C62]'
             }`}
           >
             <span>{option.label}</span>
             {option.count !== undefined && (
               <span
-                className={`text-[10px] font-mono px-1 py-0.2 rounded-[1px] ${
+                className={`text-[10px] font-mono px-1.5 py-0.5 rounded-full ${
                   isActive ? 'bg-white/20 text-white' : 'bg-slate-100 text-[#64748B]'
                 }`}
               >

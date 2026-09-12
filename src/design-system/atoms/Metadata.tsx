@@ -17,7 +17,7 @@ export const Metadata: React.FC<MetadataProps> = ({
   const colorClass = light ? 'text-slate-400' : 'text-[#64748B]';
 
   return (
-    <span className={`text-[11.5px] tracking-[0.04em] uppercase ${fontClass} ${colorClass} ${className}`}>
+    <span className={`typography-metadata text-[11.5px] tracking-[0.04em] uppercase ${fontClass} ${colorClass} ${className}`}>
       {children}
     </span>
   );

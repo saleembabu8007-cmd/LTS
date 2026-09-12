@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from '../atoms/Button';
 
 export interface StoryPoint {
   title: string;
@@ -99,16 +100,15 @@ export const ImageTextStory: React.FC<ImageTextStoryProps> = ({
 
             {cta && (
               <div className="mt-8">
-                <a
-                  href={cta.href}
+                <Button
+                  variant="primary"
+                  size="md"
+                  shape="rounded"
+                  iconTrailing="→"
                   onClick={handleCta(cta.href)}
-                  className="group inline-flex items-center min-h-[44px] px-6 rounded-[12px] bg-[#173C62] text-white hover:bg-[#102B47] text-[12px] font-semibold uppercase tracking-[0.08em] transition-colors"
                 >
-                  <span>{cta.label}</span>
-                  <span className="ml-2 group-hover:translate-x-[3px] transition-transform duration-180">
-                    →
-                  </span>
-                </a>
+                  {cta.label}
+                </Button>
               </div>
             )}
           </div>

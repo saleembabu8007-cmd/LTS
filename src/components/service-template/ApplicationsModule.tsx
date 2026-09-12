@@ -68,7 +68,7 @@ export const ApplicationsModule: React.FC<ApplicationsModuleProps> = ({ data }) 
                   </p>
                   {item.useCase && (
                     <span className="text-xs font-mono text-[#173C62] block">
-                      Specification: {item.useCase}
+                      Scope: {item.useCase}
                     </span>
                   )}
                 </div>

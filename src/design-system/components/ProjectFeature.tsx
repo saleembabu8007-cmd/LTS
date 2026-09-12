@@ -51,14 +51,14 @@ export const ProjectFeature: React.FC<ProjectFeatureProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           {/* Architectural Imagery (7 cols) */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="relative aspect-[16/10] overflow-hidden bg-[#0B1C2F] border border-[#E5E7EB] rounded-[2px]">
+            <div className="relative aspect-[16/10] overflow-hidden bg-[#0B1C2F] border border-[#E5E7EB] rounded-[18px]">
               <img
                 src={imageSrc}
                 alt={imageAlt || title}
                 className="w-full h-full object-cover object-center"
                 loading="lazy"
               />
-              <div className="absolute top-4 left-4 bg-[#0B1C2F]/90 backdrop-blur-xs px-3 py-1 text-xs uppercase tracking-[0.14em] text-white font-medium">
+              <div className="absolute top-4 left-4 bg-[#0B1C2F]/90 backdrop-blur-xs px-3 py-1 text-xs uppercase tracking-[0.14em] text-white font-medium rounded-[6px]">
                 {category}
               </div>
             </div>
@@ -69,7 +69,7 @@ export const ProjectFeature: React.FC<ProjectFeatureProps> = ({
                 {approvals.map((app, idx) => (
                   <span
                     key={idx}
-                    className="typography-caption text-[#4A5568] bg-white border border-[#E5E7EB] px-3 py-1.5 rounded-[2px] font-medium flex items-center gap-1.5"
+                    className="typography-caption text-[#4A5568] bg-white border border-[#E5E7EB] px-3 py-1.5 rounded-[8px] font-medium flex items-center gap-1.5"
                   >
                     <ShieldCheck className="w-3.5 h-3.5 text-[#173C62]" />
                     <span>{app}</span>

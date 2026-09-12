@@ -55,7 +55,7 @@ export const SectionSubNav: React.FC<SectionSubNavProps> = ({
                   type="button"
                   onClick={() => onTabChange(tab.id)}
                   aria-current={isActive ? 'true' : undefined}
-                  className={`py-3.5 text-xs transition-colors whitespace-nowrap cursor-pointer border-b-2 focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:outline-none rounded-[2px] ${
+                  className={`py-3.5 text-xs transition-colors whitespace-nowrap cursor-pointer border-b-2 focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:outline-none rounded-[4px] ${
                     isActive
                       ? 'border-[#173C62] text-[#0B1320] font-semibold'
                       : 'border-transparent text-slate-500 hover:text-[#0B1320] hover:border-slate-300 font-normal'
@@ -74,7 +74,7 @@ export const SectionSubNav: React.FC<SectionSubNavProps> = ({
             <button
               type="button"
               onClick={onActionClick}
-              className="text-xs font-medium text-[#173C62] hover:text-[#0B1320] transition-colors flex items-center gap-1.5 focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:outline-none rounded-[2px] cursor-pointer"
+              className="text-xs font-medium text-[#173C62] hover:text-[#0B1320] transition-colors flex items-center gap-1.5 focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:outline-none rounded-[4px] cursor-pointer"
             >
               <span>{actionLabel}</span>
               <span aria-hidden="true">&rarr;</span>

@@ -38,10 +38,10 @@ export const MediaFeature: React.FC<MediaFeatureProps> = ({
 
   const radiusClasses: Record<ImageRadius, string> = {
     none: 'rounded-none',
-    surface: 'rounded-[24px]',
-    image: 'rounded-[28px]',
-    imageLarge: 'rounded-[32px]',
-    feature: 'rounded-[32px] lg:rounded-[36px]',
+    surface: 'rounded-[16px]',
+    image: 'rounded-[18px]',
+    imageLarge: 'rounded-[20px]',
+    feature: 'rounded-[20px]',
     pill: 'rounded-full',
   };
 
@@ -53,7 +53,7 @@ export const MediaFeature: React.FC<MediaFeatureProps> = ({
         <img
           src={imageSrc}
           alt={imageAlt}
-          className={`w-full h-full object-cover object-center ${currentRadius} transition-transform duration-700 hover:scale-[1.01]`}
+          className={`w-full h-full object-cover object-center ${currentRadius} transition-transform duration-[400ms] ease-out hover:scale-[1.025]`}
         />
         {overlay && (
           <div className="absolute inset-0 flex items-end p-6 sm:p-10">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft, ArrowRight, ArrowUpRight, Check, ShieldCheck } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ArrowUpRight, Check, ShieldCheck, Phone, Mail } from 'lucide-react';
 import { getProjectBySlug, PROJECTS_DATA, ProjectDetailData } from '../../data/projectsData';
 
 interface ProjectDetailPageProps {
@@ -468,8 +468,8 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ slug, onNa
       </section>
 
       {/* =========================================================================
-          08 — TENDER INQUIRY DESK
-          Minimal closing consultation bridge
+          09 — TENDER INQUIRY DESK / CTA
+          Closing consultation bridge with direct telephone and email
       ========================================================================= */}
       <section className="py-16 sm:py-24 bg-[#F8FAFC]">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
@@ -504,6 +504,21 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ slug, onNa
               >
                 Return to Projects Archive
               </a>
+            </div>
+
+            <div className="mt-8 pt-6 border-t border-[#E5E7EB] flex flex-wrap gap-6 text-xs font-mono text-[#64748B]">
+              <div className="flex items-center gap-2">
+                <Phone className="w-3.5 h-3.5 text-[#173C62]" />
+                <a href="tel:+97143471234" className="hover:text-[#0B1320]">
+                  +971 4 347 1234
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <Mail className="w-3.5 h-3.5 text-[#173C62]" />
+                <a href="mailto:tenders@ltsgroup.ae" className="hover:text-[#0B1320]">
+                  tenders@ltsgroup.ae
+                </a>
+              </div>
             </div>
           </div>
         </div>

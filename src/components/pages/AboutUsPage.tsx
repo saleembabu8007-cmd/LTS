@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, RefreshCw, Cpu, Layers } from 'lucide-react';
 
 interface AboutUsPageProps {
   onNavigate: (slug: string) => void;
@@ -12,8 +12,8 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onNavigate }) => {
           01 — HERO
           Full-screen architectural / engineering image.
           H1: About LTSGROUP
-          Short statement.
-          No two-column hero.
+          Short supporting statement.
+          No generic two-column hero.
       ========================================================================= */}
       <section className="relative w-full h-[85vh] min-h-[580px] max-h-[920px] bg-[#0B1C2F] overflow-hidden">
         {/* Full-bleed photography */}
@@ -52,7 +52,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onNavigate }) => {
       </section>
 
       {/* =========================================================================
-          02 — WHO WE ARE
+          02 — SHORT COMPANY INTRODUCTION
           Large editorial text.
           Only verified company information.
           Zero fabricated facts (no fake founding year, employee counts, fake leadership, or unverified awards).
@@ -124,7 +124,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onNavigate }) => {
 
       {/* =========================================================================
           03 — BUSINESS STRUCTURE
-          Visual relationship diagram:
+          Visual relationship layout:
           LTSGROUP -> Engineering & Construction / Facilities Management / Trading -> Capabilities.
           Do NOT use a bordered org chart.
           Use typography + connecting visual relationships.
@@ -145,7 +145,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onNavigate }) => {
               </p>
             </div>
 
-            {/* Visual Relationship Diagram (Typography + Fluid Visual Connectors, No Org Chart Boxes) */}
+            {/* Visual Relationship Diagram */}
             <div className="space-y-10">
               {/* Central Apex Node */}
               <div className="flex items-center gap-4">
@@ -304,17 +304,16 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onNavigate }) => {
       </section>
 
       {/* =========================================================================
-          04 — CAPABILITY STORY
-          Large engineering image.
-          Short editorial statement.
-          Then supporting image.
+          04 — CAPABILITIES
+          Real-world execution capabilities across the UAE.
+          Large engineering image + short editorial statement + field specifics.
       ========================================================================= */}
       <section className="py-16 sm:py-24 md:py-32 border-b border-[#E5E7EB]">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 space-y-14 sm:space-y-20">
           {/* Section Marker */}
           <div className="max-w-3xl space-y-3">
             <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
-              03 &bull; Execution Capability
+              03 &bull; Execution Capabilities
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#0B1320] tracking-tight">
               Capability in the Field
@@ -348,12 +347,148 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onNavigate }) => {
             </p>
           </div>
 
-          {/* Supporting Field Installation Image */}
+          {/* 3 Core Capability Columns */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-4">
+            <div className="space-y-3 p-6 sm:p-7 rounded-[20px] bg-[#F8FAFC]">
+              <span className="font-mono text-xs text-[#173C62] font-semibold block uppercase tracking-wider">
+                Precision Design &amp; EPC
+              </span>
+              <h3 className="text-xl font-medium text-[#0B1320]">
+                Capital Turnkey Delivery
+              </h3>
+              <p className="text-sm text-[#4A5568] leading-relaxed">
+                Comprehensive MEP coordination, DEWA 11kV substation approvals, Dubai Civil Defense life-safety submittals, and Shams Dubai solar synchronizations.
+              </p>
+            </div>
+
+            <div className="space-y-3 p-6 sm:p-7 rounded-[20px] bg-[#F8FAFC]">
+              <span className="font-mono text-xs text-[#173C62] font-semibold block uppercase tracking-wider">
+                Thermal &amp; Hydronic Care
+              </span>
+              <h3 className="text-xl font-medium text-[#0B1320]">
+                Central Plant Optimization
+              </h3>
+              <p className="text-sm text-[#4A5568] leading-relaxed">
+                Dynamic balancing under AHRI standards, vibration diagnostics on centrifugal chillers, zero-downtime phased changeovers, and Legionella-safe aquatic filtration.
+              </p>
+            </div>
+
+            <div className="space-y-3 p-6 sm:p-7 rounded-[20px] bg-[#F8FAFC]">
+              <span className="font-mono text-xs text-[#173C62] font-semibold block uppercase tracking-wider">
+                Supply Chain Speed
+              </span>
+              <h3 className="text-xl font-medium text-[#0B1320]">
+                Direct Component Logistics
+              </h3>
+              <p className="text-sm text-[#4A5568] leading-relaxed">
+                Immediate warehouse availability for OEM HVAC compressor parts, BACnet variable frequency drives, Class-2 ultrasonic BTU meters, and DC charging systems.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================================
+          05 — HOW THE DIVISIONS CONNECT
+          Explicit, editorial presentation of the 3-phase asset lifecycle synergy:
+          Capital Engineering -> Facilities Operations -> Component Continuity.
+      ========================================================================= */}
+      <section className="py-16 sm:py-24 md:py-32 bg-[#F8FAFC] border-b border-[#E5E7EB]">
+        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 space-y-12 sm:space-y-16">
+          <div className="max-w-3xl space-y-3">
+            <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
+              04 &bull; Synergy &amp; Continuity
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#0B1320] tracking-tight">
+              How the Divisions Connect
+            </h2>
+            <p className="text-base sm:text-lg text-[#4A5568] leading-relaxed">
+              Eliminating the costly disconnect between capital construction, day-to-day operations, and critical equipment supply.
+            </p>
+          </div>
+
+          {/* Tripartite Connection Architecture */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Step 1: E&C */}
+            <div className="bg-white p-7 sm:p-8 rounded-[20px] border border-[#E5E7EB] space-y-4 relative flex flex-col justify-between">
+              <div className="space-y-3">
+                <div className="w-10 h-10 rounded-full bg-[#173C62]/10 text-[#173C62] flex items-center justify-center">
+                  <Layers className="w-5 h-5" />
+                </div>
+                <span className="font-mono text-xs text-[#173C62] font-semibold block uppercase tracking-wider">
+                  Phase 1 &bull; Capital Delivery
+                </span>
+                <h3 className="text-xl font-medium text-[#0B1320]">
+                  Engineering &amp; Construction Builds
+                </h3>
+                <p className="text-sm text-[#4A5568] leading-relaxed">
+                  Our contracting team designs, fabricates, and commissions the physical building systems to strict DEWA, DCD, and municipal codes—establishing baseline documentation and operational FAT dossiers.
+                </p>
+              </div>
+
+              <div className="pt-4 border-t border-[#F1F5F9] font-mono text-xs text-[#64748B]">
+                &rarr; Hands over verified schematics to FM
+              </div>
+            </div>
+
+            {/* Step 2: FM */}
+            <div className="bg-white p-7 sm:p-8 rounded-[20px] border border-[#E5E7EB] space-y-4 relative flex flex-col justify-between">
+              <div className="space-y-3">
+                <div className="w-10 h-10 rounded-full bg-[#173C62]/10 text-[#173C62] flex items-center justify-center">
+                  <RefreshCw className="w-5 h-5" />
+                </div>
+                <span className="font-mono text-xs text-[#173C62] font-semibold block uppercase tracking-wider">
+                  Phase 2 &bull; Operational Care
+                </span>
+                <h3 className="text-xl font-medium text-[#0B1320]">
+                  Facilities Management Sustains
+                </h3>
+                <p className="text-sm text-[#4A5568] leading-relaxed">
+                  With zero handover friction, our hard services engineers take immediate stewardship of central plants, power distribution, and automated controls—preventing degradation through proactive PPM regimes.
+                </p>
+              </div>
+
+              <div className="pt-4 border-t border-[#F1F5F9] font-mono text-xs text-[#64748B]">
+                &rarr; Identifies component requirements for Trading
+              </div>
+            </div>
+
+            {/* Step 3: Trading */}
+            <div className="bg-white p-7 sm:p-8 rounded-[20px] border border-[#E5E7EB] space-y-4 relative flex flex-col justify-between">
+              <div className="space-y-3">
+                <div className="w-10 h-10 rounded-full bg-[#173C62]/10 text-[#173C62] flex items-center justify-center">
+                  <Cpu className="w-5 h-5" />
+                </div>
+                <span className="font-mono text-xs text-[#173C62] font-semibold block uppercase tracking-wider">
+                  Phase 3 &bull; Supply Continuity
+                </span>
+                <h3 className="text-xl font-medium text-[#0B1320]">
+                  Trading Powers Both
+                </h3>
+                <p className="text-sm text-[#4A5568] leading-relaxed">
+                  Our trading division maintains local inventories of genuine OEM spare parts, VFD drives, and ultrasonic BTU meters, delivering factory-direct equipment to both construction sites and ongoing facility contracts without intermediary delays.
+                </p>
+              </div>
+
+              <div className="pt-4 border-t border-[#F1F5F9] font-mono text-xs text-[#64748B]">
+                &rarr; Guarantees immediate parts dispatch
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================================
+          06 — SUPPORTING VISUAL
+          Asymmetric engineering composition.
+      ========================================================================= */}
+      <section className="py-16 sm:py-24 md:py-28 border-b border-[#E5E7EB]">
+        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             <div className="md:col-span-8 relative overflow-hidden rounded-[20px] sm:rounded-[24px] bg-[#0B1C2F] aspect-[16/10]">
               <img
                 src="/assets/images/project-solar.jpg"
-                alt="LTSGROUP Solar PV Installation under DEWA Shams Dubai"
+                alt="LTSGROUP Solar PV and Technical Built Works"
                 loading="lazy"
                 className="w-full h-full object-cover filter brightness-[0.92] hover:scale-[1.015] transition-transform duration-700 ease-out"
                 onError={(e) => {
@@ -362,19 +497,19 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onNavigate }) => {
                 }}
               />
               <div className="absolute bottom-4 left-4 font-mono text-xs text-white/90 bg-[#0B1320]/75 backdrop-blur-xs px-3.5 py-1.5 rounded-full border border-white/10">
-                Supporting Plate &bull; Clean Energy Infrastructure
+                Supporting Plate &bull; Sustainable Infrastructure
               </div>
             </div>
 
             <div className="md:col-span-4 space-y-4 pl-0 md:pl-4">
               <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
-                Rigorous Methodology
+                Statutory Governance
               </span>
               <h3 className="text-2xl sm:text-3xl font-light text-[#0B1320] tracking-tight leading-snug">
-                Engineered for High-Ambient Resilience
+                Built for High-Ambient Resilience
               </h3>
               <p className="text-sm text-[#4A5568] leading-relaxed">
-                Operating in the UAE demands specialized thermal derating calculations, non-penetrative mounting architectures, and zero-drift calibration. Every LTSGROUP deployment is designed for peak summer environmental tolerances.
+                Operating in the UAE demands specialized thermal derating calculations, non-penetrative mounting architectures, and zero-drift calibration. Every LTSGROUP deployment is designed for peak summer environmental tolerances under DEWA, DCD, and Municipal oversight.
               </p>
             </div>
           </div>
@@ -382,52 +517,10 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onNavigate }) => {
       </section>
 
       {/* =========================================================================
-          05 — PEOPLE & TECHNICAL GOVERNANCE
-          Strict rule: Never invent names or portraits.
-          Only verified company facts.
-          Features authentic governance standards without fabricated personnel.
-      ========================================================================= */}
-      <section className="py-16 sm:py-24 bg-[#F8FAFC] border-b border-[#E5E7EB]">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
-          <div className="max-w-3xl space-y-5">
-            <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
-              04 &bull; Technical Governance
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-light text-[#0B1320] tracking-tight">
-              Operational Governance &amp; Standards
-            </h2>
-            <p className="text-base sm:text-lg text-[#4A5568] leading-relaxed">
-              Every project and term maintenance contract is managed under established quality, environmental, and occupational safety frameworks conforming strictly to UAE statutory regulations.
-            </p>
-
-            <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="bg-white p-5 rounded-[16px] border border-[#E5E7EB] space-y-1">
-                <span className="font-mono text-xs text-[#173C62] font-semibold block">
-                  Statutory Alignment
-                </span>
-                <p className="text-sm text-[#0B1320] font-normal leading-relaxed">
-                  Direct adherence to Dubai Electricity &amp; Water Authority (DEWA), Dubai Civil Defense (DCD), and Dubai Municipality standards.
-                </p>
-              </div>
-
-              <div className="bg-white p-5 rounded-[16px] border border-[#E5E7EB] space-y-1">
-                <span className="font-mono text-xs text-[#173C62] font-semibold block">
-                  Safety &amp; Reliability
-                </span>
-                <p className="text-sm text-[#0B1320] font-normal leading-relaxed">
-                  Standardized method statements, continuous hazard auditing, and certified testing and commissioning protocols on all active sites.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================================================
-          06 — CLOSING
+          07 — CTA
           Large image background.
           Short corporate statement.
-          CTA.
+          Action links.
       ========================================================================= */}
       <section className="relative w-full py-24 sm:py-32 md:py-40 bg-[#0B1C2F] overflow-hidden">
         {/* Full-bleed background image */}

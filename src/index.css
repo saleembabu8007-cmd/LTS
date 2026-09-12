@@ -30,6 +30,14 @@
   --color-border-strong: #CBD5E1;
   --color-border-dark: rgba(255, 255, 255, 0.12);
 
+  /* Semantic Status Indicators */
+  --color-status-success: #079455;
+  --color-status-success-bg: #ECFDF3;
+  --color-status-warning: #DC6803;
+  --color-status-warning-bg: #FEF0C7;
+  --color-status-error: #D92D20;
+  --color-status-error-bg: #FEF3F2;
+
   /* Deliberate Soft-Radius Scale (Section 2) */
   --radius-sm: 8px;
   --radius-md: 12px;
@@ -159,6 +167,27 @@
 .section-rhythm-spacious {
   padding-top: clamp(6.5rem, 9vw, 10rem);
   padding-bottom: clamp(6.5rem, 9vw, 10rem);
+}
+
+/* Standardized Element & Component Gaps */
+.gap-component {
+  gap: 1.5rem; /* 24px */
+}
+
+.gap-card {
+  gap: 1.25rem; /* 20px */
+}
+
+.gap-heading {
+  gap: 0.875rem; /* 14px */
+}
+
+.gap-paragraph {
+  gap: 1rem; /* 16px */
+}
+
+.gap-button {
+  gap: 0.75rem; /* 12px */
 }
 
 /* Readable prose limit: never create huge paragraphs spanning the entire viewport */
@@ -366,6 +395,22 @@
   color: var(--color-muted);
 }
 
+.typography-metadata {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.typography-navigation {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
 /* =========================================================================
    3. SPACING SCALE & ARCHITECTURAL CADENCE
 ========================================================================= */
@@ -478,11 +523,11 @@
   );
 }
 
-/* Editorial media transitions: 150–300ms, ease-out, scale 1.02–1.04 */
+/* Editorial media transitions: 300–500ms (standard 400ms), ease-out, scale 1.02–1.04 */
 .editorial-image-frame img,
 .editorial-image-frame-lg img,
 .editorial-feature-media img {
-  transition: transform 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .editorial-image-frame:hover img,
@@ -510,7 +555,7 @@
 }
 
 .motion-media {
-  transition: transform 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Hide scrollbar for horizontal strips */

@@ -32,7 +32,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
 }) => {
   return (
     <article
-      className={`group flex flex-col justify-between bg-white border border-[#E5E7EB] rounded-[2px] overflow-hidden transition-all duration-300 hover:border-[#173C62] hover:shadow-xs ${className}`}
+      className={`group flex flex-col justify-between bg-white border border-[#E5E7EB] rounded-[16px] overflow-hidden transition-all duration-300 hover:border-[#173C62] hover:shadow-xs ${className}`}
     >
       <div>
         {/* Optional Authentic Engineering Thumbnail */}

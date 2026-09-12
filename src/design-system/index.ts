@@ -30,6 +30,9 @@ export * from './cards';
 // 7. First-Principles Layout Archetypes (Section 8: 13 Layout Archetypes)
 export * from './layouts';
 
+// 8. Editorial Section Compositions (Compositions A through J)
+export * from './compositions';
+
 // 8. First-Principles Section Compositions (Section 14: 13 Section Compositions)
 export { HeroImageSection, type HeroImageSectionProps, type HeroDatum } from './sections/HeroImageSection';
 export { EditorialIntro, type EditorialIntroProps } from './sections/EditorialIntro';
@@ -73,8 +76,8 @@ export { Media } from './components/Media';
 export type { MediaProps, MediaVariant, MediaAspectRatio, MediaRadius } from './components/Media';
 
 // Canonical Cards & Modules
-export { Card, MetricBlock } from './components/Card';
-export type { CardProps, CardVariant, MetricBlockProps } from './components/Card';
+export { Card, MetricBlock, ImageCard } from './components/Card';
+export type { CardProps, CardVariant, MetricBlockProps, ImageCardProps, ImageCardVariant } from './components/Card';
 export { Accordion } from './components/Accordion';
 export type { AccordionProps, AccordionItem } from './components/Accordion';
 

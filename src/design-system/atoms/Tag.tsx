@@ -16,7 +16,7 @@ export const Tag: React.FC<TagProps> = ({
   shape = 'pill',
   className = '',
 }) => {
-  const shapeClass = shape === 'pill' ? 'rounded-full' : 'rounded-[2px]';
+  const shapeClass = shape === 'pill' ? 'rounded-full' : 'rounded-[8px]';
 
   const variantClasses: Record<TagVariant, string> = {
     neutral: 'bg-[#F8FAFC] text-[#4A5568] border border-[#E5E7EB]',

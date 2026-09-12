@@ -2,11 +2,19 @@ import React from 'react';
 import {
   ArrowRight,
   ArrowUpRight,
-  Wrench,
-  Droplets,
-  RotateCcw,
   Phone,
   Mail,
+  CheckCircle2,
+  ShieldCheck,
+  Zap,
+  Wrench,
+  Layers,
+  Cpu,
+  Sun,
+  Activity,
+  Droplets,
+  RotateCcw,
+  Sparkles,
 } from 'lucide-react';
 import { Button } from '../../design-system/atoms/Button';
 import { PROJECTS_DATA } from '../../data/projectsData';
@@ -18,44 +26,47 @@ interface HomePageProps {
 }
 
 /**
- * LTSGROUP Homepage — Art-Directed Rebuild
- * Conforms strictly to LTSGROUP Permanent Design Rules:
- * - 01 Hero: Full-bleed image hero (~85vh), no 2-column, quiet lower-left anchor.
- * - 02 Business Areas: Image-led index (1 dominant + 2 supporting), 18px soft radius, no borders.
- * - 03 Engineering Capability: Editorial 65/35 split, typographic sub-links.
- * - 04 Featured Project: Dominant project photography, integrated minimal info, no metadata rows.
- * - 05 Facilities Management: Immersive image, concise text, horizontal typographic service index.
- * - 06 Trading: Asymmetric product composition with 1 featured visual + 4 supporting items.
- * - 07 Project Portfolio: Editorial rail with 1 dominant + 2 supporting real projects.
- * - 08 Industries: Visual industry index with subtle hover states and project ties.
- * - 09 Trust / Corporate: High-gravity typographic doctrine, zero invented stats.
- * - 10 News: 1 large featured briefing + 2 smaller previews, image-led.
- * - 11 Contact: Visual closing section with architectural image & direct channels.
+ * LTSGROUP Homepage
+ * Conforms strictly to the 10-Stage Editorial Narrative:
+ * 01 HERO
+ * 02 WHO LTSGROUP IS
+ * 03 BUSINESS AREAS
+ * 04 CAPABILITIES / SERVICES
+ * 05 FEATURED PROJECTS
+ * 06 INDUSTRIES
+ * 07 WHY LTSGROUP / APPROACH
+ * 08 CLIENTS / GOVERNANCE
+ * 09 NEWS / INSIGHTS
+ * 10 FINAL CTA
  */
 export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
-  // Verified real project records
-  const featuredHighRise = PROJECTS_DATA[0]; // Commercial High-Rise MEP Installation
-  const solarProject = PROJECTS_DATA[1]; // Logistics Facility Rooftop Solar PV
-  const fmProject = PROJECTS_DATA[2]; // Critical Healthcare Facility Hard Services Care
-  const switchgearProject = PROJECTS_DATA[3] || PROJECTS_DATA[0]; // Industrial MCC & Switchgear
+  // Verified project monographs
+  const featuredProject = PROJECTS_DATA[0]; // Commercial High-Rise MEP Installation
+  const supportingProject1 = PROJECTS_DATA[1]; // Logistics Facility Rooftop Solar PV
+  const supportingProject2 = PROJECTS_DATA[2]; // Healthcare Facility Hard Services
 
-  // Verified news briefings
+  // Verified technical briefings
   const featuredArticle = NEWS_DATA[0];
   const supportingArticle1 = NEWS_DATA[1];
   const supportingArticle2 = NEWS_DATA[2];
 
+  const handleLink = (e: React.MouseEvent<HTMLAnchorElement>, slug: string) => {
+    e.preventDefault();
+    onNavigate(slug);
+  };
+
   return (
     <main className="bg-white text-[#0B1320] selection:bg-[#173C62] selection:text-white">
       {/* =====================================================================
-          SECTION 01 — FULL-BLEED ARCHITECTURAL HERO
-          - Full-bleed image occupying ~85vh
-          - Subtle and purposeful directional dark overlay
-          - Content anchored in lower-left
-          - No two-column layout, no white text panel, no floating cards
+          01 HERO
+          - Full-bleed engineering imagery (~85vh)
+          - Directional gradient scrim
+          - Lower-left quiet content anchor
+          - Eyebrow, large headline, short supporting statement, primary & secondary CTA
       ===================================================================== */}
       <section
         aria-label="LTSGROUP Hero"
-        className="relative min-h-[82vh] lg:min-h-[88vh] flex items-end overflow-hidden bg-[#0B1C2F]"
+        className="relative min-h-[84vh] lg:min-h-[88vh] flex items-end overflow-hidden bg-[#0B1C2F]"
       >
         {/* Full-Bleed Background Photography */}
         <div className="absolute inset-0 z-0">
@@ -65,54 +76,51 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             className="w-full h-full object-cover object-center"
             loading="eager"
           />
-          {/* Refined directional scrim: strong in lower-left, gentle across image */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0B1C2F] via-[#0B1C2F]/55 to-[#0B1C2F]/20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B1C2F]/80 via-[#0B1C2F]/30 to-transparent" />
+          {/* Refined directional scrims: rich in lower-left, gentle across image */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0B1C2F] via-[#0B1C2F]/60 to-[#0B1C2F]/20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0B1C2F]/85 via-[#0B1C2F]/35 to-transparent" />
         </div>
 
         {/* Lower-Left Quiet Content Anchor */}
         <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 pb-14 sm:pb-18 lg:pb-22 pt-32">
           <div className="max-w-2xl text-left">
-            {/* Small Eyebrow */}
+            {/* Eyebrow */}
             <div className="inline-flex items-center gap-2 mb-4">
               <span className="h-px w-6 bg-[#CBD5E1]" />
               <span className="text-[11px] font-mono uppercase tracking-[0.24em] text-slate-200 font-semibold">
-                LTSGROUP
+                LTSGROUP &bull; BUILT ENVIRONMENT ENGINEERING
               </span>
             </div>
 
-            {/* H1 Heading */}
+            {/* Headline */}
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light text-white tracking-tight leading-[1.12]">
               Engineering environments built to perform.
             </h1>
 
-            {/* Supporting Statement (1-2 lines maximum) */}
+            {/* Supporting Statement (1-2 sentences maximum) */}
             <p className="mt-4 sm:mt-5 text-sm sm:text-base text-slate-300 font-normal leading-relaxed max-w-xl">
               Turnkey electromechanical contracting, life-cycle facility operations, and specialized technical supply across the United Arab Emirates.
             </p>
 
             {/* Action Group */}
-            <div className="mt-8 flex flex-wrap items-center gap-5">
+            <div className="mt-8 flex flex-wrap items-center gap-4 sm:gap-6">
               <Button
                 variant="white"
                 size="md"
                 shape="capsule"
                 onClick={() => onNavigate('/engineering-construction')}
-                className="text-[12px] tracking-[0.06em]"
+                className="text-[12px] tracking-[0.06em] px-5 sm:px-6 min-h-[44px]"
               >
-                Explore our capabilities →
+                Explore capabilities →
               </Button>
 
               <a
                 href="/projects"
-                onClick={(e) => {
-                  e.preventDefault();
-                  onNavigate('/projects');
-                }}
-                className="group inline-flex items-center gap-2 text-[13px] text-white hover:text-slate-200 font-medium transition-colors py-2 px-1 min-h-[44px] focus:outline-none focus-visible:underline"
+                onClick={(e) => handleLink(e, '/projects')}
+                className="group inline-flex items-center gap-2 text-[13px] text-white hover:text-slate-200 font-medium transition-colors py-2 px-1 min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-[4px]"
               >
                 <span>View projects</span>
-                <span className="transition-transform duration-200 group-hover:translate-x-1">
+                <span className="transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">
                   →
                 </span>
               </a>
@@ -122,50 +130,104 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       </section>
 
       {/* =====================================================================
-          SECTION 02 — IMAGE-LED BUSINESS AREAS INDEX
-          - No 3 bordered cards
-          - 3 large image panels with different dimensions
-          - One dominant panel (Engineering & Construction)
-          - Two supporting panels (Facilities Management, Trading)
-          - Soft 18px radius, subtle 1.025x zoom on hover
+          02 WHO LTSGROUP IS
+          - Open editorial section (no giant card)
+          - Small eyebrow, strong heading, 2-3 sentence maximum, text link CTA
+          - Asymmetric 7/5 split with supporting technical photography
+      ===================================================================== */}
+      <section
+        aria-label="About LTSGROUP"
+        className="py-20 lg:py-28 bg-white"
+      >
+        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            {/* Left: Editorial Statement (7 cols) */}
+            <div className="lg:col-span-7 text-left space-y-5">
+              <div className="inline-flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#173C62]" />
+                <span className="text-[11px] font-mono text-[#173C62] uppercase tracking-[0.2em] font-semibold">
+                  01 / WHO WE ARE
+                </span>
+              </div>
+
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#0B1320] tracking-tight leading-snug">
+                Single-source electromechanical accountability across the complete building lifecycle.
+              </h2>
+
+              <p className="text-sm sm:text-base text-[#4A5568] leading-relaxed font-normal pt-1">
+                LTSGROUP unifies turnkey electromechanical contracting, continuous facilities management, and authorized OEM equipment supply under strict statutory governance in Dubai. By eliminating contractor fragmentation between initial installation and multi-decade maintenance, we ensure built assets perform with unbroken thermodynamic and electrical reliability.
+              </p>
+
+              <div className="pt-3">
+                <a
+                  href="/about-us"
+                  onClick={(e) => handleLink(e, '/about-us')}
+                  className="group inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#173C62] hover:text-[#0B1320] py-2 min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] rounded-[4px]"
+                >
+                  <span>About LTSGROUP &amp; Governance</span>
+                  <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
+                </a>
+              </div>
+            </div>
+
+            {/* Right: Focused Technical Visual (5 cols, 16px soft radius) */}
+            <div className="lg:col-span-5">
+              <div className="relative aspect-[4/3] rounded-[16px] overflow-hidden bg-[#0B1C2F] shadow-[0_12px_32px_-12px_rgba(11,28,47,0.12)]">
+                <img
+                  src="/assets/images/engineering-intro.jpg"
+                  alt="Precision electromechanical installations by LTSGROUP"
+                  className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-[1.02]"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1C2F]/60 via-transparent to-transparent" />
+                <div className="absolute bottom-0 inset-x-0 p-4 text-white">
+                  <p className="text-[11px] font-mono uppercase tracking-wider text-slate-200">
+                    Electromechanical Infrastructure &bull; Dubai, UAE
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================================
+          03 BUSINESS AREAS
+          - 3 clear business pillars: Engineering & Construction, FM, Trading
+          - Asymmetric 1 dominant + 2 supporting structure
+          - Different image crops, consistent component structure, 18px soft radius
       ===================================================================== */}
       <section
         aria-label="Core Business Divisions"
         className="py-20 lg:py-28 bg-[#F8FAFC]"
       >
         <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Subtle Section Intro */}
+          {/* Section Header */}
           <div className="max-w-xl text-left mb-10 lg:mb-12">
             <span className="text-[11px] font-mono text-[#173C62] uppercase tracking-[0.2em] font-semibold block mb-2">
-              OPERATING DIVISIONS
+              02 / OPERATING DIVISIONS
             </span>
             <h2 className="text-2xl sm:text-3xl font-light text-[#0B1320] tracking-tight">
               Three pillars of built-environment infrastructure.
             </h2>
           </div>
 
-          {/* Asymmetric 1 Dominant + 2 Supporting Composition */}
+          {/* Asymmetric Composition */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
-            {/* DOMINANT PANEL: Engineering & Construction (7 Columns) */}
+            {/* DOMINANT PILLAR: Engineering & Construction (7 Columns) */}
             <a
               href="/engineering-construction"
-              onClick={(e) => {
-                e.preventDefault();
-                onNavigate('/engineering-construction');
-              }}
-              className="lg:col-span-7 group relative rounded-[18px] overflow-hidden cursor-pointer min-h-[360px] sm:min-h-[460px] lg:min-h-[540px] bg-[#0B1C2F] flex flex-col justify-end p-7 sm:p-10 transition-transform duration-300 focus-visible:ring-2 focus-visible:ring-[#93C5FD] focus-visible:outline-none"
+              onClick={(e) => handleLink(e, '/engineering-construction')}
+              className="lg:col-span-7 group relative rounded-[18px] overflow-hidden cursor-pointer min-h-[360px] sm:min-h-[460px] lg:min-h-[520px] bg-[#0B1C2F] flex flex-col justify-end p-7 sm:p-10 transition-transform duration-300 focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:outline-none"
             >
-              {/* Image with subtle hover zoom */}
               <img
                 src="/assets/images/mep-construction.jpg"
                 alt="Engineering & Construction Division"
                 className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.025]"
                 loading="lazy"
               />
-              {/* Scrim Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B1C2F]/95 via-[#0B1C2F]/40 to-transparent" />
 
-              {/* Panel Content */}
               <div className="relative z-10 text-left text-white max-w-lg">
                 <span className="text-[10.5px] font-mono uppercase tracking-[0.2em] text-[#CBD5E1] block mb-1">
                   DIVISION 01
@@ -174,7 +236,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   Engineering &amp; Construction
                 </h3>
                 <p className="mt-2.5 text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
-                  Turnkey electromechanical contracting, utility rooftop solar PV under DEWA Shams Dubai, and type-tested low-voltage control switchgear assembly.
+                  Turnkey MEP contracting, commercial rooftop solar PV EPC under DEWA Shams Dubai, and type-tested low-voltage control switchgear assembly.
                 </p>
                 <div className="mt-5 inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-white group-hover:text-slate-200">
                   <span>Explore division</span>
@@ -183,16 +245,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               </div>
             </a>
 
-            {/* TWO SUPPORTING PANELS (5 Columns Stacked) */}
+            {/* TWO SUPPORTING PILLARS (5 Columns Stacked) */}
             <div className="lg:col-span-5 flex flex-col gap-6 lg:gap-8">
-              {/* SUPPORTING PANEL 1: Facilities Management */}
+              {/* SUPPORTING PILLAR 1: Facilities Management */}
               <a
                 href="/facilities-management"
-                onClick={(e) => {
-                  e.preventDefault();
-                  onNavigate('/facilities-management');
-                }}
-                className="group relative rounded-[18px] overflow-hidden cursor-pointer min-h-[250px] sm:min-h-[260px] flex-1 bg-[#0B1C2F] flex flex-col justify-end p-6 sm:p-8 transition-transform duration-300 focus-visible:ring-2 focus-visible:ring-[#93C5FD] focus-visible:outline-none"
+                onClick={(e) => handleLink(e, '/facilities-management')}
+                className="group relative rounded-[18px] overflow-hidden cursor-pointer min-h-[250px] sm:min-h-[250px] flex-1 bg-[#0B1C2F] flex flex-col justify-end p-6 sm:p-8 transition-transform duration-300 focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:outline-none"
               >
                 <img
                   src="/assets/images/project-chiller.jpg"
@@ -210,7 +269,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                     Facilities Management
                   </h3>
                   <p className="mt-1.5 text-xs text-slate-300 leading-relaxed font-normal">
-                    24/7 hard MEP engineering, predictive central chiller stewardship, aquatic hygiene, and live-plant zero-downtime retrofits.
+                    24/7 hard MEP engineering, predictive central chiller plant maintenance, aquatic hygiene, and live-plant zero-downtime retrofits.
                   </p>
                   <div className="mt-3.5 inline-flex items-center gap-1.5 text-xs font-semibold tracking-wider uppercase text-white group-hover:text-slate-200">
                     <span>Explore division</span>
@@ -219,14 +278,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 </div>
               </a>
 
-              {/* SUPPORTING PANEL 2: Trading */}
+              {/* SUPPORTING PILLAR 2: Trading */}
               <a
                 href="/trading"
-                onClick={(e) => {
-                  e.preventDefault();
-                  onNavigate('/trading');
-                }}
-                className="group relative rounded-[18px] overflow-hidden cursor-pointer min-h-[250px] sm:min-h-[260px] flex-1 bg-[#0B1C2F] flex flex-col justify-end p-6 sm:p-8 transition-transform duration-300 focus-visible:ring-2 focus-visible:ring-[#93C5FD] focus-visible:outline-none"
+                onClick={(e) => handleLink(e, '/trading')}
+                className="group relative rounded-[18px] overflow-hidden cursor-pointer min-h-[250px] sm:min-h-[250px] flex-1 bg-[#0B1C2F] flex flex-col justify-end p-6 sm:p-8 transition-transform duration-300 focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:outline-none"
               >
                 <img
                   src="/assets/images/industry-logistics.jpg"
@@ -244,7 +300,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                     Trading &amp; Component Supply
                   </h3>
                   <p className="mt-1.5 text-xs text-slate-300 leading-relaxed font-normal">
-                    Authorized distribution of genuine OEM HVAC spare parts, variable frequency drives, ultrasonic BTU meters, and EV chargers.
+                    Regional distribution of genuine OEM HVAC spare parts, variable frequency drives, smart ultrasonic BTU heat meters, and EV chargers.
                   </p>
                   <div className="mt-3.5 inline-flex items-center gap-1.5 text-xs font-semibold tracking-wider uppercase text-white group-hover:text-slate-200">
                     <span>Explore division</span>
@@ -258,101 +314,214 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       </section>
 
       {/* =====================================================================
-          SECTION 03 — ENGINEERING CAPABILITY (65/35 EDITORIAL SPLIT)
-          - Large engineering image: ~65%
-          - Small text area: ~35%
-          - Typographic links: MEP, Solar, Control Switchgear (no cards)
+          04 CAPABILITIES / SERVICES
+          - Editorial grouped disciplines underneath business areas (no card walls)
+          - Column 1: Engineering & Construction (MEP, Solar, Switchgear)
+          - Column 2: Facilities Management (Hard Services, Soft Services, Retrofits)
+          - Column 3: Trading (Spares, Controls, Metering, Lights, EV)
       ===================================================================== */}
       <section
-        aria-label="Engineering Capability"
+        aria-label="Capabilities and Scope"
         className="py-20 lg:py-28 bg-white"
       >
         <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-            {/* 65% Dominant Engineering Image */}
-            <div className="lg:col-span-8 order-2 lg:order-1">
-              <div className="relative aspect-[16/10] sm:aspect-[16/9] rounded-[20px] overflow-hidden bg-[#0B1C2F]">
-                <img
-                  src="/assets/images/engineering-intro.jpg"
-                  alt="LTS Engineering & Construction"
-                  className="w-full h-full object-cover object-center"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-tr from-[#0B1C2F]/40 via-transparent to-transparent" />
-              </div>
-            </div>
+          {/* Section Intro */}
+          <div className="max-w-xl text-left mb-12 lg:mb-14">
+            <span className="text-[11px] font-mono text-[#173C62] uppercase tracking-[0.2em] font-semibold block mb-2">
+              03 / CAPABILITY ARCHITECTURE
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#0B1320] tracking-tight">
+              Specialized electromechanical disciplines.
+            </h2>
+            <p className="mt-3 text-sm text-[#4A5568] leading-relaxed">
+              Every division operates with dedicated engineering teams, specialized tools, and direct statutory clearance compliance.
+            </p>
+          </div>
 
-            {/* 35% Typographic Text Column */}
-            <div className="lg:col-span-4 order-1 lg:order-2 text-left space-y-6">
-              <div>
-                <span className="text-[11px] font-mono text-[#173C62] uppercase tracking-[0.2em] font-semibold block mb-2">
-                  DISCIPLINE FOCUS
+          {/* 3 Clean Editorial Columns */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 text-left">
+            {/* Column 1: Engineering & Construction */}
+            <div className="space-y-6">
+              <div className="border-b border-[#E5E7EB] pb-3">
+                <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#64748B] block">
+                  CAPABILITY 01
                 </span>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#0B1320] tracking-tight leading-snug">
+                <h3 className="text-xl font-medium text-[#0B1320] mt-1">
                   Engineering &amp; Construction
-                </h2>
-                <p className="mt-4 text-sm text-[#4A5568] leading-relaxed font-normal">
-                  We engineer, coordinate, and commission high-performance electromechanical systems for complex built environments. Single-source delivery eliminates multi-vendor coordination friction from pre-construction submittals to authority handover.
-                </p>
+                </h3>
               </div>
 
-              {/* Simple Typographic Links (No Cards) */}
-              <div className="pt-3 border-t border-[#E5E7EB] space-y-2">
+              <div className="space-y-3.5">
                 <a
                   href="/engineering-construction/mep"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    onNavigate('/engineering-construction/mep');
-                  }}
-                  className="group flex items-center justify-between w-full text-left py-2.5 min-h-[44px] border-b border-[#F1F5F9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] rounded"
+                  onClick={(e) => handleLink(e, '/engineering-construction/mep')}
+                  className="group block p-3 -m-3 rounded-[8px] hover:bg-[#F8FAFC] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
                 >
-                  <div>
+                  <div className="flex items-center justify-between">
                     <h4 className="text-[15px] font-medium text-[#0B1320] group-hover:text-[#173C62] transition-colors">
                       MEP Contracting
                     </h4>
-                    <p className="text-xs text-[#64748B]">
-                      Commercial, Residential &amp; Infrastructure Hydronics &amp; Power
-                    </p>
+                    <ArrowRight className="w-3.5 h-3.5 text-[#94A3B8] group-hover:text-[#173C62] transition-transform group-hover:translate-x-1" />
                   </div>
-                  <ArrowRight className="w-4 h-4 text-[#94A3B8] group-hover:text-[#173C62] transition-all group-hover:translate-x-1 shrink-0" />
+                  <p className="mt-1 text-xs text-[#64748B] leading-relaxed">
+                    Commercial towers, residential developments, and infrastructure power networks.
+                  </p>
                 </a>
 
                 <a
                   href="/engineering-construction/solar"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    onNavigate('/engineering-construction/solar');
-                  }}
-                  className="group flex items-center justify-between w-full text-left py-2.5 min-h-[44px] border-b border-[#F1F5F9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] rounded"
+                  onClick={(e) => handleLink(e, '/engineering-construction/solar')}
+                  className="group block p-3 -m-3 rounded-[8px] hover:bg-[#F8FAFC] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
                 >
-                  <div>
+                  <div className="flex items-center justify-between">
                     <h4 className="text-[15px] font-medium text-[#0B1320] group-hover:text-[#173C62] transition-colors">
-                      Solar Solutions
+                      Solar Solutions (EPC)
                     </h4>
-                    <p className="text-xs text-[#64748B]">
-                      Rooftop PV EPC under DEWA Shams Dubai
-                    </p>
+                    <ArrowRight className="w-3.5 h-3.5 text-[#94A3B8] group-hover:text-[#173C62] transition-transform group-hover:translate-x-1" />
                   </div>
-                  <ArrowRight className="w-4 h-4 text-[#94A3B8] group-hover:text-[#173C62] transition-all group-hover:translate-x-1 shrink-0" />
+                  <p className="mt-1 text-xs text-[#64748B] leading-relaxed">
+                    Rooftop, carport, and ground-mount PV under DEWA Shams Dubai net-metering.
+                  </p>
                 </a>
 
                 <a
                   href="/engineering-construction/control-switchgear"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    onNavigate('/engineering-construction/control-switchgear');
-                  }}
-                  className="group flex items-center justify-between w-full text-left py-2.5 min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] rounded"
+                  onClick={(e) => handleLink(e, '/engineering-construction/control-switchgear')}
+                  className="group block p-3 -m-3 rounded-[8px] hover:bg-[#F8FAFC] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
                 >
-                  <div>
+                  <div className="flex items-center justify-between">
                     <h4 className="text-[15px] font-medium text-[#0B1320] group-hover:text-[#173C62] transition-colors">
                       Control Switchgear
                     </h4>
-                    <p className="text-xs text-[#64748B]">
-                      Form-4 Type-Tested Low-Voltage Assemblies
-                    </p>
+                    <ArrowRight className="w-3.5 h-3.5 text-[#94A3B8] group-hover:text-[#173C62] transition-transform group-hover:translate-x-1" />
                   </div>
-                  <ArrowRight className="w-4 h-4 text-[#94A3B8] group-hover:text-[#173C62] transition-all group-hover:translate-x-1 shrink-0" />
+                  <p className="mt-1 text-xs text-[#64748B] leading-relaxed">
+                    Form-4 type-tested low-voltage distribution boards, MCCs, and ATS panels.
+                  </p>
+                </a>
+              </div>
+            </div>
+
+            {/* Column 2: Facilities Management */}
+            <div className="space-y-6">
+              <div className="border-b border-[#E5E7EB] pb-3">
+                <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#64748B] block">
+                  CAPABILITY 02
+                </span>
+                <h3 className="text-xl font-medium text-[#0B1320] mt-1">
+                  Facilities Management
+                </h3>
+              </div>
+
+              <div className="space-y-3.5">
+                <a
+                  href="/facilities-management/hard-services"
+                  onClick={(e) => handleLink(e, '/facilities-management/hard-services')}
+                  className="group block p-3 -m-3 rounded-[8px] hover:bg-[#F8FAFC] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
+                >
+                  <div className="flex items-center justify-between">
+                    <h4 className="text-[15px] font-medium text-[#0B1320] group-hover:text-[#173C62] transition-colors">
+                      Hard Services
+                    </h4>
+                    <ArrowRight className="w-3.5 h-3.5 text-[#94A3B8] group-hover:text-[#173C62] transition-transform group-hover:translate-x-1" />
+                  </div>
+                  <p className="mt-1 text-xs text-[#64748B] leading-relaxed">
+                    Continuous PPM for central chillers, electrical switchrooms, BMS, and hydraulics.
+                  </p>
+                </a>
+
+                <a
+                  href="/facilities-management/soft-services"
+                  onClick={(e) => handleLink(e, '/facilities-management/soft-services')}
+                  className="group block p-3 -m-3 rounded-[8px] hover:bg-[#F8FAFC] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
+                >
+                  <div className="flex items-center justify-between">
+                    <h4 className="text-[15px] font-medium text-[#0B1320] group-hover:text-[#173C62] transition-colors">
+                      Soft Services &bull; Pools
+                    </h4>
+                    <ArrowRight className="w-3.5 h-3.5 text-[#94A3B8] group-hover:text-[#173C62] transition-transform group-hover:translate-x-1" />
+                  </div>
+                  <p className="mt-1 text-xs text-[#64748B] leading-relaxed">
+                    Commercial aquatic care, automated dosing balancing, and Dubai Municipality standards.
+                  </p>
+                </a>
+
+                <a
+                  href="/facilities-management/retrofits"
+                  onClick={(e) => handleLink(e, '/facilities-management/retrofits')}
+                  className="group block p-3 -m-3 rounded-[8px] hover:bg-[#F8FAFC] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
+                >
+                  <div className="flex items-center justify-between">
+                    <h4 className="text-[15px] font-medium text-[#0B1320] group-hover:text-[#173C62] transition-colors">
+                      Plant Retrofits &bull; Overhauls
+                    </h4>
+                    <ArrowRight className="w-3.5 h-3.5 text-[#94A3B8] group-hover:text-[#173C62] transition-transform group-hover:translate-x-1" />
+                  </div>
+                  <p className="mt-1 text-xs text-[#64748B] leading-relaxed">
+                    Live-building phased chiller replacements, VFD conversions, and energy optimization.
+                  </p>
+                </a>
+              </div>
+            </div>
+
+            {/* Column 3: Trading & Supply */}
+            <div className="space-y-6">
+              <div className="border-b border-[#E5E7EB] pb-3">
+                <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#64748B] block">
+                  CAPABILITY 03
+                </span>
+                <h3 className="text-xl font-medium text-[#0B1320] mt-1">
+                  Trading &amp; Component Supply
+                </h3>
+              </div>
+
+              <div className="space-y-3.5">
+                <a
+                  href="/trading/hvac"
+                  onClick={(e) => handleLink(e, '/trading/hvac')}
+                  className="group block p-3 -m-3 rounded-[8px] hover:bg-[#F8FAFC] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
+                >
+                  <div className="flex items-center justify-between">
+                    <h4 className="text-[15px] font-medium text-[#0B1320] group-hover:text-[#173C62] transition-colors">
+                      HVAC Spare Parts
+                    </h4>
+                    <ArrowRight className="w-3.5 h-3.5 text-[#94A3B8] group-hover:text-[#173C62] transition-transform group-hover:translate-x-1" />
+                  </div>
+                  <p className="mt-1 text-xs text-[#64748B] leading-relaxed">
+                    OEM semi-hermetic compressors, condenser coils, valves, and refrigerant gases.
+                  </p>
+                </a>
+
+                <a
+                  href="/trading/controls-vfds"
+                  onClick={(e) => handleLink(e, '/trading/controls-vfds')}
+                  className="group block p-3 -m-3 rounded-[8px] hover:bg-[#F8FAFC] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
+                >
+                  <div className="flex items-center justify-between">
+                    <h4 className="text-[15px] font-medium text-[#0B1320] group-hover:text-[#173C62] transition-colors">
+                      Controls &amp; VFDs
+                    </h4>
+                    <ArrowRight className="w-3.5 h-3.5 text-[#94A3B8] group-hover:text-[#173C62] transition-transform group-hover:translate-x-1" />
+                  </div>
+                  <p className="mt-1 text-xs text-[#64748B] leading-relaxed">
+                    Low-harmonic variable frequency drives, soft starters, and intelligent transducers.
+                  </p>
+                </a>
+
+                <a
+                  href="/trading/metering"
+                  onClick={(e) => handleLink(e, '/trading/metering')}
+                  className="group block p-3 -m-3 rounded-[8px] hover:bg-[#F8FAFC] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
+                >
+                  <div className="flex items-center justify-between">
+                    <h4 className="text-[15px] font-medium text-[#0B1320] group-hover:text-[#173C62] transition-colors">
+                      Metering, Lights &amp; EV
+                    </h4>
+                    <ArrowRight className="w-3.5 h-3.5 text-[#94A3B8] group-hover:text-[#173C62] transition-transform group-hover:translate-x-1" />
+                  </div>
+                  <p className="mt-1 text-xs text-[#64748B] leading-relaxed">
+                    Ultrasonic BTU meters, industrial LED luminaires, and commercial EV fast chargers.
+                  </p>
                 </a>
               </div>
             </div>
@@ -361,489 +530,121 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       </section>
 
       {/* =====================================================================
-          SECTION 04 — FEATURED PROJECT BREAKOUT
-          - Full-width architectural image breakout
-          - Single real project highlight (DEWA Substation 132/11kV)
-          - Verified record from PROJECTS_DATA
+          05 FEATURED PROJECTS
+          - Deep navy architectural canvas (#0B1C2F)
+          - 1 large dominant project + 2 smaller supporting projects
+          - Real verified project monographs only
       ===================================================================== */}
       <section
-        aria-label="Featured Project"
-        className="py-16 lg:py-24 bg-[#0B1320] text-white"
+        aria-label="Featured Projects"
+        className="py-20 lg:py-28 bg-[#0B1C2F] text-white"
       >
         <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between mb-8">
-            <span className="text-[11px] font-mono text-slate-300 uppercase tracking-[0.2em] font-semibold">
-              FEATURED PROJECT
-            </span>
-            <a
-              href="/projects"
-              onClick={(e) => {
-                e.preventDefault();
-                onNavigate('/projects');
-              }}
-              className="group inline-flex items-center gap-1.5 text-xs text-slate-300 hover:text-white font-mono tracking-wider uppercase py-2 min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded px-1"
-            >
-              <span>Explore all projects</span>
-              <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
-          </div>
-
-          {/* Dominant Project Showcase */}
-          <a
-            href={`/projects/${featuredHighRise.slug}`}
-            onClick={(e) => {
-              e.preventDefault();
-              onNavigate(`/projects/${featuredHighRise.slug}`);
-            }}
-            className="group relative rounded-[20px] overflow-hidden cursor-pointer min-h-[380px] sm:min-h-[500px] lg:min-h-[600px] flex flex-col justify-end p-6 sm:p-10 lg:p-12 focus-visible:ring-2 focus-visible:ring-[#93C5FD] focus-visible:outline-none"
-          >
-            <img
-              src={featuredHighRise.image}
-              alt={featuredHighRise.title}
-              className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.02]"
-              loading="lazy"
-            />
-            {/* Scrim */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0B1320]/95 via-[#0B1320]/40 to-transparent" />
-
-            {/* Integrated Minimalist Information Area */}
-            <div className="relative z-10 max-w-2xl text-left">
-              <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#CBD5E1]">
-                {featuredHighRise.categoryLabel} &bull; {featuredHighRise.location}
-              </span>
-              <h3 className="mt-2 text-2xl sm:text-3xl lg:text-4xl font-light text-white tracking-tight">
-                {featuredHighRise.title}
-              </h3>
-              <p className="mt-3 text-xs sm:text-sm text-slate-300 font-normal leading-relaxed max-w-xl">
-                {featuredHighRise.scopeOverview}
-              </p>
-              <div className="mt-6 inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-white group-hover:text-slate-200">
-                <span>View project case record</span>
-                <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
-              </div>
-            </div>
-          </a>
-        </div>
-      </section>
-
-      {/* =====================================================================
-          SECTION 05 — FACILITIES MANAGEMENT
-          - Large immersive image with concise overlay text
-          - Horizontal service index: Hard Services, Soft Services, Retrofits
-          - No cards; typography and small icons
-      ===================================================================== */}
-      <section
-        aria-label="Facilities Management"
-        className="relative py-24 lg:py-32 bg-[#0B1C2F] text-white overflow-hidden"
-      >
-        {/* Background Immersive Image with Veil */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/assets/images/project-chiller.jpg"
-            alt="Central Chiller Plant Engineering"
-            className="w-full h-full object-cover object-center opacity-30"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-[#0B1C2F]/75 backdrop-blur-[2px]" />
-        </div>
-
-        <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header */}
-          <div className="max-w-2xl text-left mb-14 lg:mb-18">
-            <span className="text-[11px] font-mono text-[#CBD5E1] uppercase tracking-[0.2em] font-semibold block mb-2">
-              ASSET PRESERVATION
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-light text-white tracking-tight leading-tight">
-              Preserving built asset performance and operational reliability.
-            </h2>
-            <p className="mt-4 text-sm text-slate-300 font-normal leading-relaxed">
-              We deploy disciplined preventive maintenance, continuous thermodynamic monitoring, and emergency response teams to safeguard critical MEP equipment over decades of operation.
-            </p>
-          </div>
-
-          {/* Horizontal Service Index (No Cards — Typography & Minimalist Icons) */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 pt-8 border-t border-white/15 text-left">
-            {/* Hard Services */}
-            <a
-              href="/facilities-management/hard-services"
-              onClick={(e) => {
-                e.preventDefault();
-                onNavigate('/facilities-management/hard-services');
-              }}
-              className="group block space-y-3 p-2 -m-2 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B1C2F]"
-            >
-              <div className="flex items-center gap-3">
-                <Wrench className="w-5 h-5 text-slate-300 group-hover:text-white transition-colors shrink-0" />
-                <h3 className="text-lg sm:text-xl font-medium text-white group-hover:text-slate-200 transition-colors">
-                  Hard Services
-                </h3>
-              </div>
-              <p className="text-xs text-slate-400 leading-relaxed font-normal">
-                Continuous preventive and reactive maintenance for central chillers, electrical distribution, life-safety plumbing, BMS, and structural civil works.
-              </p>
-              <div className="pt-1 inline-flex items-center gap-1.5 text-xs text-slate-300 group-hover:text-white font-medium transition-colors">
-                <span>View Hard FM</span>
-                <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
-              </div>
-            </a>
-
-            {/* Soft Services */}
-            <a
-              href="/facilities-management/soft-services"
-              onClick={(e) => {
-                e.preventDefault();
-                onNavigate('/facilities-management/soft-services');
-              }}
-              className="group block space-y-3 p-2 -m-2 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B1C2F]"
-            >
-              <div className="flex items-center gap-3">
-                <Droplets className="w-5 h-5 text-slate-300 group-hover:text-white transition-colors shrink-0" />
-                <h3 className="text-lg sm:text-xl font-medium text-white group-hover:text-slate-200 transition-colors">
-                  Soft Services
-                </h3>
-              </div>
-              <p className="text-xs text-slate-400 leading-relaxed font-normal">
-                Commercial swimming pool maintenance, chemical water balancing, filtration care, and statutory health authority compliance.
-              </p>
-              <div className="pt-1 inline-flex items-center gap-1.5 text-xs text-slate-300 group-hover:text-white font-medium transition-colors">
-                <span>View Aquatic Care</span>
-                <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
-              </div>
-            </a>
-
-            {/* Retrofits / Refurbishment */}
-            <a
-              href="/facilities-management/retrofits"
-              onClick={(e) => {
-                e.preventDefault();
-                onNavigate('/facilities-management/retrofits');
-              }}
-              className="group block space-y-3 p-2 -m-2 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B1C2F]"
-            >
-              <div className="flex items-center gap-3">
-                <RotateCcw className="w-5 h-5 text-slate-300 group-hover:text-white transition-colors shrink-0" />
-                <h3 className="text-lg sm:text-xl font-medium text-white group-hover:text-slate-200 transition-colors">
-                  Retrofits &amp; Refurbishment
-                </h3>
-              </div>
-              <p className="text-xs text-slate-400 leading-relaxed font-normal">
-                Live-building equipment changeouts, variable primary flow conversions, energy optimization audits, and full testing &amp; commissioning.
-              </p>
-              <div className="pt-1 inline-flex items-center gap-1.5 text-xs text-slate-300 group-hover:text-white font-medium transition-colors">
-                <span>View Retrofits</span>
-                <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
-              </div>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* =====================================================================
-          SECTION 06 — TRADING & TECHNICAL SUPPLY
-          - Product photography
-          - Horizontal product composition (NOT 5 equal cards!)
-          - 1 large featured product visual + 4 smaller supporting items
-      ===================================================================== */}
-      <section
-        aria-label="Trading and Technical Supply"
-        className="py-20 lg:py-28 bg-[#F8FAFC]"
-      >
-        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12 text-left">
             <div>
-              <span className="text-[11px] font-mono text-[#173C62] uppercase tracking-[0.2em] font-semibold block mb-2">
-                EQUIPMENT &bull; CONTROLS &bull; COMPONENTS
+              <span className="text-[11px] font-mono text-[#CBD5E1] uppercase tracking-[0.2em] font-semibold block mb-2">
+                04 / VERIFIED PORTFOLIO
               </span>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#0B1320] tracking-tight">
-                Trading &amp; Component Supply
-              </h2>
-            </div>
-            <a
-              href="/trading"
-              onClick={(e) => {
-                e.preventDefault();
-                onNavigate('/trading');
-              }}
-              className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#173C62] hover:text-[#102B47] py-2 min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] rounded px-1"
-            >
-              <span>Explore Trading Division</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </a>
-          </div>
-
-          {/* Asymmetric Product Composition: 1 Featured Visual + 4 Supporting Items */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
-            {/* Large Featured Product Visual (7 cols) */}
-            <a
-              href="/trading/controls-vfds"
-              onClick={(e) => {
-                e.preventDefault();
-                onNavigate('/trading/controls-vfds');
-              }}
-              className="lg:col-span-7 group relative rounded-[18px] overflow-hidden cursor-pointer min-h-[360px] sm:min-h-[420px] bg-[#0B1C2F] flex flex-col justify-end p-7 sm:p-9 focus-visible:ring-2 focus-visible:ring-[#93C5FD] focus-visible:outline-none"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1200&q=80"
-                alt="Controls and Variable Frequency Drives"
-                className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.025]"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0B1C2F]/95 via-[#0B1C2F]/40 to-transparent" />
-
-              <div className="relative z-10 text-left text-white max-w-md">
-                <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#CBD5E1] block mb-1">
-                  FEATURED OEM SUPPLY
-                </span>
-                <h3 className="text-2xl font-normal text-white tracking-tight">
-                  Controls &amp; Variable Frequency Drives
-                </h3>
-                <p className="mt-2 text-xs text-slate-300 leading-relaxed font-normal">
-                  Factory-authorized supply of heavy-duty low-harmonic VFDs, soft starters, and intelligent motor controllers calibrated for continuous GCC ambient loads.
-                </p>
-                <div className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold tracking-wider uppercase text-white group-hover:text-slate-200">
-                  <span>View controls range</span>
-                  <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
-                </div>
-              </div>
-            </a>
-
-            {/* 4 Supporting Technical Items (5 cols — 2x2 Grid) */}
-            <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {/* HVAC Spare Parts */}
-              <a
-                href="/trading/hvac"
-                onClick={(e) => {
-                  e.preventDefault();
-                  onNavigate('/trading/hvac');
-                }}
-                className="group relative rounded-[14px] overflow-hidden cursor-pointer bg-white border border-[#E5E7EB] hover:border-[#173C62] p-5 flex flex-col justify-between transition-colors text-left focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:outline-none min-h-[140px]"
-              >
-                <div>
-                  <span className="text-[10px] font-mono text-[#64748B] uppercase tracking-wider block mb-1">
-                    SUPPLY 01
-                  </span>
-                  <h4 className="text-base font-medium text-[#0B1320] group-hover:text-[#173C62] transition-colors">
-                    HVAC Spare Parts
-                  </h4>
-                  <p className="mt-1 text-xs text-[#64748B] leading-relaxed">
-                    Genuine OEM compressors, heat exchanger coils, gaskets, and filter media.
-                  </p>
-                </div>
-                <div className="mt-4 flex items-center gap-1 text-[11px] font-semibold uppercase text-[#173C62]">
-                  <span>Details</span>
-                  <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
-                </div>
-              </a>
-
-              {/* Metering & Accessories */}
-              <a
-                href="/trading/metering"
-                onClick={(e) => {
-                  e.preventDefault();
-                  onNavigate('/trading/metering');
-                }}
-                className="group relative rounded-[14px] overflow-hidden cursor-pointer bg-white border border-[#E5E7EB] hover:border-[#173C62] p-5 flex flex-col justify-between transition-colors text-left focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:outline-none min-h-[140px]"
-              >
-                <div>
-                  <span className="text-[10px] font-mono text-[#64748B] uppercase tracking-wider block mb-1">
-                    SUPPLY 02
-                  </span>
-                  <h4 className="text-base font-medium text-[#0B1320] group-hover:text-[#173C62] transition-colors">
-                    BTU Metering
-                  </h4>
-                  <p className="mt-1 text-xs text-[#64748B] leading-relaxed">
-                    Ultrasonic thermal energy meters and dynamic pressure balancing accessories.
-                  </p>
-                </div>
-                <div className="mt-4 flex items-center gap-1 text-[11px] font-semibold uppercase text-[#173C62]">
-                  <span>Details</span>
-                  <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
-                </div>
-              </a>
-
-              {/* Lights */}
-              <a
-                href="/trading/lights"
-                onClick={(e) => {
-                  e.preventDefault();
-                  onNavigate('/trading/lights');
-                }}
-                className="group relative rounded-[14px] overflow-hidden cursor-pointer bg-white border border-[#E5E7EB] hover:border-[#173C62] p-5 flex flex-col justify-between transition-colors text-left focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:outline-none min-h-[140px]"
-              >
-                <div>
-                  <span className="text-[10px] font-mono text-[#64748B] uppercase tracking-wider block mb-1">
-                    SUPPLY 03
-                  </span>
-                  <h4 className="text-base font-medium text-[#0B1320] group-hover:text-[#173C62] transition-colors">
-                    Architectural Lighting
-                  </h4>
-                  <p className="mt-1 text-xs text-[#64748B] leading-relaxed">
-                    Commercial LED luminaires, explosion-proof industrial fittings, and sensors.
-                  </p>
-                </div>
-                <div className="mt-4 flex items-center gap-1 text-[11px] font-semibold uppercase text-[#173C62]">
-                  <span>Details</span>
-                  <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
-                </div>
-              </a>
-
-              {/* EV Chargers */}
-              <a
-                href="/trading/ev"
-                onClick={(e) => {
-                  e.preventDefault();
-                  onNavigate('/trading/ev');
-                }}
-                className="group relative rounded-[14px] overflow-hidden cursor-pointer bg-white border border-[#E5E7EB] hover:border-[#173C62] p-5 flex flex-col justify-between transition-colors text-left focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:outline-none min-h-[140px]"
-              >
-                <div>
-                  <span className="text-[10px] font-mono text-[#64748B] uppercase tracking-wider block mb-1">
-                    SUPPLY 04
-                  </span>
-                  <h4 className="text-base font-medium text-[#0B1320] group-hover:text-[#173C62] transition-colors">
-                    EV Chargers
-                  </h4>
-                  <p className="mt-1 text-xs text-[#64748B] leading-relaxed">
-                    Level-2 AC destination chargers and high-power DC fast-charging units.
-                  </p>
-                </div>
-                <div className="mt-4 flex items-center gap-1 text-[11px] font-semibold uppercase text-[#173C62]">
-                  <span>Details</span>
-                  <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* =====================================================================
-          SECTION 07 — PROJECT PORTFOLIO RAIL
-          - Editorial project rail
-          - One dominant project + two smaller supporting projects
-          - Verified real project records from PROJECTS_DATA
-      ===================================================================== */}
-      <section
-        aria-label="Selected Project Deployments"
-        className="py-20 lg:py-28 bg-white"
-      >
-        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12 text-left">
-            <div>
-              <span className="text-[11px] font-mono text-[#173C62] uppercase tracking-[0.2em] font-semibold block mb-2">
-                VERIFIED PORTFOLIO
-              </span>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#0B1320] tracking-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-white tracking-tight">
                 Engineering in execution.
               </h2>
             </div>
             <a
               href="/projects"
-              onClick={(e) => {
-                e.preventDefault();
-                onNavigate('/projects');
-              }}
-              className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#173C62] hover:text-[#102B47] py-2 min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] rounded px-1"
+              onClick={(e) => handleLink(e, '/projects')}
+              className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white py-2 min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#93C5FD] rounded-[4px]"
             >
-              <span>View all projects</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              <span>Explore all projects</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
           </div>
 
-          {/* Editorial Project Rail: 1 Dominant (7 cols) + 2 Supporting (5 cols) */}
+          {/* 1 Dominant (7 cols) + 2 Supporting (5 cols) */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
-            {/* Dominant Project Card (Solar PV) */}
+            {/* DOMINANT PROJECT CARD */}
             <a
-              href={`/projects/${solarProject.slug}`}
-              onClick={(e) => {
-                e.preventDefault();
-                onNavigate(`/projects/${solarProject.slug}`);
-              }}
-              className="lg:col-span-7 group relative rounded-[18px] overflow-hidden block min-h-[360px] sm:min-h-[460px] bg-[#0B1C2F] flex flex-col justify-end p-6 sm:p-9 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:ring-offset-2"
+              href={`/projects/${featuredProject.slug}`}
+              onClick={(e) => handleLink(e, `/projects/${featuredProject.slug}`)}
+              className="lg:col-span-7 group relative rounded-[18px] overflow-hidden block min-h-[380px] sm:min-h-[480px] bg-[#0B1320] flex flex-col justify-end p-7 sm:p-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#93C5FD]"
             >
               <img
-                src={solarProject.image}
-                alt={solarProject.title}
-                className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.025]"
+                src={featuredProject.image}
+                alt={featuredProject.title}
+                className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0B1C2F]/95 via-[#0B1C2F]/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0B1320]/95 via-[#0B1320]/45 to-transparent" />
 
               <div className="relative z-10 text-left text-white max-w-lg">
-                <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#CBD5E1] block mb-1">
-                  {solarProject.categoryLabel} &bull; {solarProject.location}
+                <span className="text-[10.5px] font-mono uppercase tracking-[0.2em] text-[#CBD5E1] block mb-1">
+                  {featuredProject.categoryLabel} &bull; {featuredProject.location}
                 </span>
-                <h3 className="text-2xl font-normal text-white tracking-tight">
-                  {solarProject.title}
+                <h3 className="text-2xl sm:text-3xl font-light text-white tracking-tight">
+                  {featuredProject.title}
                 </h3>
-                <p className="mt-2 text-xs text-slate-300 leading-relaxed font-normal">
-                  {solarProject.scopeOverview}
+                <p className="mt-2 text-xs sm:text-sm text-slate-300 font-normal leading-relaxed">
+                  {featuredProject.scopeOverview}
                 </p>
-                <div className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold tracking-wider uppercase text-white group-hover:text-slate-200">
+                <div className="mt-4 inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-white group-hover:text-slate-200">
                   <span>View case details</span>
                   <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
                 </div>
               </div>
             </a>
 
-            {/* Two Supporting Project Cards (5 cols) */}
+            {/* TWO SUPPORTING PROJECT CARDS */}
             <div className="lg:col-span-5 flex flex-col gap-6">
-              {/* Supporting Project 1 (Healthcare FM) */}
+              {/* Supporting Project 1: Solar */}
               <a
-                href={`/projects/${fmProject.slug}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  onNavigate(`/projects/${fmProject.slug}`);
-                }}
-                className="group relative rounded-[18px] overflow-hidden block flex-1 min-h-[200px] sm:min-h-[220px] bg-[#0B1C2F] flex flex-col justify-end p-5 sm:p-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:ring-offset-2"
+                href={`/projects/${supportingProject1.slug}`}
+                onClick={(e) => handleLink(e, `/projects/${supportingProject1.slug}`)}
+                className="group relative rounded-[18px] overflow-hidden block flex-1 min-h-[220px] bg-[#0B1320] flex flex-col justify-end p-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#93C5FD]"
               >
                 <img
-                  src="/assets/images/project-chiller.jpg"
-                  alt={fmProject.title}
+                  src={supportingProject1.image}
+                  alt={supportingProject1.title}
                   className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.025]"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1C2F]/95 via-[#0B1C2F]/45 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1320]/95 via-[#0B1320]/45 to-transparent" />
 
                 <div className="relative z-10 text-left text-white">
                   <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#CBD5E1] block mb-1">
-                    {fmProject.categoryLabel} &bull; {fmProject.location}
+                    {supportingProject1.categoryLabel} &bull; {supportingProject1.location}
                   </span>
                   <h4 className="text-lg font-medium text-white tracking-tight">
-                    {fmProject.title}
+                    {supportingProject1.title}
                   </h4>
-                  <div className="mt-2.5 inline-flex items-center gap-1 text-[11px] font-semibold uppercase text-white group-hover:text-slate-200">
+                  <div className="mt-2.5 inline-flex items-center gap-1 text-[11.5px] font-semibold uppercase text-white group-hover:text-slate-200">
                     <span>View project</span>
                     <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
                   </div>
                 </div>
               </a>
 
-              {/* Supporting Project 2 (Switchgear Assembly) */}
+              {/* Supporting Project 2: FM Overhaul */}
               <a
-                href={`/projects/${switchgearProject.slug}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  onNavigate(`/projects/${switchgearProject.slug}`);
-                }}
-                className="group relative rounded-[18px] overflow-hidden block flex-1 min-h-[200px] sm:min-h-[220px] bg-[#0B1C2F] flex flex-col justify-end p-5 sm:p-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:ring-offset-2"
+                href={`/projects/${supportingProject2.slug}`}
+                onClick={(e) => handleLink(e, `/projects/${supportingProject2.slug}`)}
+                className="group relative rounded-[18px] overflow-hidden block flex-1 min-h-[220px] bg-[#0B1320] flex flex-col justify-end p-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#93C5FD]"
               >
                 <img
-                  src="/assets/images/mep-construction.jpg"
-                  alt={switchgearProject.title}
+                  src={supportingProject2.image}
+                  alt={supportingProject2.title}
                   className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.025]"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1C2F]/95 via-[#0B1C2F]/45 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1320]/95 via-[#0B1320]/45 to-transparent" />
 
                 <div className="relative z-10 text-left text-white">
                   <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#CBD5E1] block mb-1">
-                    {switchgearProject.categoryLabel} &bull; {switchgearProject.location}
+                    {supportingProject2.categoryLabel} &bull; {supportingProject2.location}
                   </span>
                   <h4 className="text-lg font-medium text-white tracking-tight">
-                    {switchgearProject.title}
+                    {supportingProject2.title}
                   </h4>
-                  <div className="mt-2.5 inline-flex items-center gap-1 text-[11px] font-semibold uppercase text-white group-hover:text-slate-200">
+                  <div className="mt-2.5 inline-flex items-center gap-1 text-[11.5px] font-semibold uppercase text-white group-hover:text-slate-200">
                     <span>View project</span>
                     <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
                   </div>
@@ -855,206 +656,289 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       </section>
 
       {/* =====================================================================
-          SECTION 08 — INDUSTRIES
-          - Visual industry index (no generic 3-column cards)
-          - Large image + industry title with subtle hover state
-          - Direct connection to /industries
+          06 INDUSTRIES
+          - Restrained 3-column architectural list / subtle cards
+          - Only approved LTSGROUP sectors
+          - Simple typography with clear engineering use cases
       ===================================================================== */}
       <section
         aria-label="Industry Sectors"
         className="py-20 lg:py-28 bg-[#F8FAFC]"
       >
         <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-xl text-left mb-12">
-            <span className="text-[11px] font-mono text-[#173C62] uppercase tracking-[0.2em] font-semibold block mb-2">
-              SECTOR EXPERTISE
-            </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#0B1320] tracking-tight">
-              Calibrated for mission-critical sectors.
-            </h2>
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12 text-left">
+            <div>
+              <span className="text-[11px] font-mono text-[#173C62] uppercase tracking-[0.2em] font-semibold block mb-2">
+                05 / SECTOR EXPERTISE
+              </span>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#0B1320] tracking-tight">
+                Calibrated for mission-critical built environments.
+              </h2>
+            </div>
+            <a
+              href="/industries"
+              onClick={(e) => handleLink(e, '/industries')}
+              className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#173C62] hover:text-[#0B1320] py-2 min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] rounded-[4px]"
+            >
+              <span>Explore all industries</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </a>
           </div>
 
-          {/* Visual Industry Index: Asymmetric 4-Card Composition */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Commercial Towers */}
-            <a
-              href="/industries"
-              onClick={(e) => {
-                e.preventDefault();
-                onNavigate('/industries');
-              }}
-              className="group relative rounded-[16px] overflow-hidden block aspect-[4/3] sm:aspect-[3/4] bg-[#0B1C2F] flex flex-col justify-end p-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:ring-offset-2"
-            >
-              <img
-                src="/assets/images/industry-commercial.jpg"
-                alt="Commercial & Corporate Towers"
-                className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.03]"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0B1C2F]/90 via-[#0B1C2F]/30 to-transparent" />
-              <div className="relative z-10 text-left text-white">
-                <span className="text-[10px] font-mono uppercase tracking-[0.16em] text-[#CBD5E1] block">
-                  SECTOR 01
-                </span>
-                <h3 className="text-lg font-medium text-white tracking-tight mt-1 group-hover:text-slate-200 transition-colors">
-                  Commercial Towers
-                </h3>
-                <p className="text-xs text-slate-300 mt-1 line-clamp-2">
-                  High-density vertical busways, 3,200 TR district cooling, and smoke pressurization.
-                </p>
-              </div>
-            </a>
-
-            {/* Healthcare */}
-            <a
-              href="/industries"
-              onClick={(e) => {
-                e.preventDefault();
-                onNavigate('/industries');
-              }}
-              className="group relative rounded-[16px] overflow-hidden block aspect-[4/3] sm:aspect-[3/4] bg-[#0B1C2F] flex flex-col justify-end p-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:ring-offset-2"
-            >
-              <img
-                src="/assets/images/industry-healthcare.jpg"
-                alt="Healthcare & Clinical Facilities"
-                className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.03]"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0B1C2F]/90 via-[#0B1C2F]/30 to-transparent" />
-              <div className="relative z-10 text-left text-white">
-                <span className="text-[10px] font-mono uppercase tracking-[0.16em] text-[#CBD5E1] block">
-                  SECTOR 02
-                </span>
-                <h3 className="text-lg font-medium text-white tracking-tight mt-1 group-hover:text-slate-200 transition-colors">
-                  Healthcare Facilities
-                </h3>
-                <p className="text-xs text-slate-300 mt-1 line-clamp-2">
-                  HTM cleanroom ventilation, medical gas piping, and isolated hospital power networks.
-                </p>
-              </div>
-            </a>
-
-            {/* Industrial Logistics */}
-            <a
-              href="/industries"
-              onClick={(e) => {
-                e.preventDefault();
-                onNavigate('/industries');
-              }}
-              className="group relative rounded-[16px] overflow-hidden block aspect-[4/3] sm:aspect-[3/4] bg-[#0B1C2F] flex flex-col justify-end p-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:ring-offset-2"
-            >
-              <img
-                src="/assets/images/industry-logistics.jpg"
-                alt="Industrial Logistics & Warehousing"
-                className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.03]"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0B1C2F]/90 via-[#0B1C2F]/30 to-transparent" />
-              <div className="relative z-10 text-left text-white">
-                <span className="text-[10px] font-mono uppercase tracking-[0.16em] text-[#CBD5E1] block">
-                  SECTOR 03
-                </span>
-                <h3 className="text-lg font-medium text-white tracking-tight mt-1 group-hover:text-slate-200 transition-colors">
-                  Industrial Logistics
-                </h3>
-                <p className="text-xs text-slate-300 mt-1 line-clamp-2">
-                  High-capacity motor control centers, 11kV substations, and rooftop solar arrays.
-                </p>
-              </div>
-            </a>
-
-            {/* Hospitality & Residential */}
-            <a
-              href="/industries"
-              onClick={(e) => {
-                e.preventDefault();
-                onNavigate('/industries');
-              }}
-              className="group relative rounded-[16px] overflow-hidden block aspect-[4/3] sm:aspect-[3/4] bg-[#0B1C2F] flex flex-col justify-end p-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:ring-offset-2"
-            >
-              <img
-                src="/assets/images/industry-hospitality.jpg"
-                alt="Hospitality & Mixed-Use"
-                className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.03]"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0B1C2F]/90 via-[#0B1C2F]/30 to-transparent" />
-              <div className="relative z-10 text-left text-white">
-                <span className="text-[10px] font-mono uppercase tracking-[0.16em] text-[#CBD5E1] block">
-                  SECTOR 04
-                </span>
-                <h3 className="text-lg font-medium text-white tracking-tight mt-1 group-hover:text-slate-200 transition-colors">
-                  Hospitality &amp; Residential
-                </h3>
-                <p className="text-xs text-slate-300 mt-1 line-clamp-2">
-                  Centralized water boosting, aquatic filtration hygiene, and comprehensive hard FM.
-                </p>
-              </div>
-            </a>
+          {/* Restrained 3-Column Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+            {[
+              {
+                num: '01',
+                title: 'Commercial Towers & Offices',
+                scope: 'High-density vertical busways, 3,200 TR central hydronics, and stairwell pressurization.',
+                slug: '/industries',
+              },
+              {
+                num: '02',
+                title: 'Residential Master Developments',
+                scope: 'Potable water booster skids, community switchgear networks, and aquatic leisure care.',
+                slug: '/industries',
+              },
+              {
+                num: '03',
+                title: 'Healthcare & Clinical Facilities',
+                scope: 'Cleanroom HTM air handling units, medical gas infrastructure, and isolated backup circuits.',
+                slug: '/industries',
+              },
+              {
+                num: '04',
+                title: 'Industrial Facilities & Logistics',
+                scope: 'Heavy motor control centers (MCC), 11kV transformer tie-ins, and turnkey rooftop solar PV.',
+                slug: '/industries',
+              },
+              {
+                num: '05',
+                title: 'Retail & Hospitality Destinations',
+                scope: 'Sound-attenuated fan coil units, commercial kitchen extract, and dynamic BTU balancing.',
+                slug: '/industries',
+              },
+              {
+                num: '06',
+                title: 'Public Infrastructure & Utilities',
+                scope: 'Municipal pumping stations, drainage lift infrastructure, and statutory utility compliance.',
+                slug: '/industries',
+              },
+            ].map((sector) => (
+              <a
+                key={sector.title}
+                href={sector.slug}
+                onClick={(e) => handleLink(e, sector.slug)}
+                className="group p-6 rounded-[14px] bg-white border border-[#E5E7EB] hover:border-[#173C62] transition-colors flex flex-col justify-between focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
+              >
+                <div>
+                  <span className="text-[10px] font-mono text-[#64748B] uppercase tracking-[0.18em] block mb-2">
+                    SECTOR {sector.num}
+                  </span>
+                  <h3 className="text-lg font-medium text-[#0B1320] group-hover:text-[#173C62] transition-colors">
+                    {sector.title}
+                  </h3>
+                  <p className="mt-2 text-xs text-[#4A5568] leading-relaxed">
+                    {sector.scope}
+                  </p>
+                </div>
+                <div className="mt-4 pt-3 border-t border-[#F1F5F9] flex items-center justify-between text-[11.5px] font-semibold text-[#173C62]">
+                  <span>Sector Scope</span>
+                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                </div>
+              </a>
+            ))}
           </div>
         </div>
       </section>
 
       {/* =====================================================================
-          SECTION 09 — TRUST / CORPORATE DOCTRINE
-          - Zero invented statistics
-          - Elegant typographic section explaining how LTS business areas connect
-          - Single-source accountability
+          07 WHY LTSGROUP / APPROACH
+          - Actual capabilities and verified information (no marketing fluff)
+          - 4 structured capability pillars:
+            01 Integrated capabilities
+            02 Engineering + execution
+            03 Facilities lifecycle support
+            04 Technical supply
       ===================================================================== */}
       <section
-        aria-label="Corporate Accountability"
-        className="py-24 lg:py-32 bg-white"
+        aria-label="Approach and Methodology"
+        className="py-20 lg:py-28 bg-white"
       >
         <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center space-y-6">
-            <span className="text-[11px] font-mono text-[#173C62] uppercase tracking-[0.24em] font-semibold block">
-              OPERATIONAL DOCTRINE
-            </span>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+            {/* Left Column: Doctrine Narrative (5 cols) */}
+            <div className="lg:col-span-5 text-left space-y-5 lg:pr-6">
+              <span className="text-[11px] font-mono text-[#173C62] uppercase tracking-[0.2em] font-semibold block">
+                06 / OPERATING DOCTRINE
+              </span>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#0B1320] tracking-tight leading-[1.18]">
-              Single-source accountability eliminates the friction between engineering, preservation, and supply.
-            </h2>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#0B1320] tracking-tight leading-snug">
+                Single-source accountability eliminates multi-vendor failure.
+              </h2>
 
-            <p className="text-sm sm:text-base text-[#4A5568] leading-relaxed font-normal pt-2 max-w-2xl mx-auto">
-              Most built environments suffer from disconnected hand-offs: contractors complete installation without long-term operational empathy, maintenance providers lack deep engineering insight, and procurement relies on third-party supply chains.
-            </p>
+              <p className="text-sm text-[#4A5568] leading-relaxed font-normal">
+                Most built environments suffer from disconnected handoffs: contractors complete installation without long-term operational empathy, maintenance providers lack deep engineering insight, and component replacement suffers from third-party supply chain delays.
+              </p>
 
-            <p className="text-sm sm:text-base text-[#4A5568] leading-relaxed font-normal max-w-2xl mx-auto">
-              LTSGROUP unifies electromechanical contracting, continuous facilities management, and authorized OEM trading under a singular engineering governance model.
-            </p>
+              <p className="text-sm text-[#4A5568] leading-relaxed font-normal">
+                LTSGROUP unifies turnkey electromechanical contracting, continuous facilities management, and authorized OEM trading under a singular engineering governance model.
+              </p>
 
-            <div className="pt-6 flex justify-center">
-              <a
-                href="/about-us"
-                onClick={(e) => {
-                  e.preventDefault();
-                  onNavigate('/about-us');
-                }}
-                className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#173C62] hover:text-[#102B47] py-2 min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] rounded px-1"
-              >
-                <span>Learn more about our governance</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </a>
+              <div className="pt-2">
+                <a
+                  href="/about-us"
+                  onClick={(e) => handleLink(e, '/about-us')}
+                  className="group inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#173C62] hover:text-[#0B1320] py-2 min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] rounded-[4px]"
+                >
+                  <span>Learn about our governance</span>
+                  <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
+                </a>
+              </div>
+            </div>
+
+            {/* Right Column: 4 Capability Pillars (7 cols, 2x2 Grid) */}
+            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6 text-left">
+              <div className="p-6 rounded-[14px] bg-[#F8FAFC] border border-[#E5E7EB] space-y-2.5">
+                <span className="text-xs font-mono font-bold text-[#173C62] block">
+                  01
+                </span>
+                <h3 className="text-[16px] font-medium text-[#0B1320]">
+                  Integrated Capabilities
+                </h3>
+                <p className="text-xs text-[#4A5568] leading-relaxed">
+                  Complete electromechanical spectrum spanning mechanical hydronics, electrical distribution, and digital BMS controls under one roof.
+                </p>
+              </div>
+
+              <div className="p-6 rounded-[14px] bg-[#F8FAFC] border border-[#E5E7EB] space-y-2.5">
+                <span className="text-xs font-mono font-bold text-[#173C62] block">
+                  02
+                </span>
+                <h3 className="text-[16px] font-medium text-[#0B1320]">
+                  Engineering + Execution
+                </h3>
+                <p className="text-xs text-[#4A5568] leading-relaxed">
+                  Authority-approved engineering design synchronized with certified on-site installation and factory-tested Form-4 low-voltage switchgear.
+                </p>
+              </div>
+
+              <div className="p-6 rounded-[14px] bg-[#F8FAFC] border border-[#E5E7EB] space-y-2.5">
+                <span className="text-xs font-mono font-bold text-[#173C62] block">
+                  03
+                </span>
+                <h3 className="text-[16px] font-medium text-[#0B1320]">
+                  Facilities Lifecycle Support
+                </h3>
+                <p className="text-xs text-[#4A5568] leading-relaxed">
+                  Decades of operational asset care with guaranteed SLAs, continuous chiller optimization, and live-plant zero-downtime retrofits.
+                </p>
+              </div>
+
+              <div className="p-6 rounded-[14px] bg-[#F8FAFC] border border-[#E5E7EB] space-y-2.5">
+                <span className="text-xs font-mono font-bold text-[#173C62] block">
+                  04
+                </span>
+                <h3 className="text-[16px] font-medium text-[#0B1320]">
+                  Technical Component Supply
+                </h3>
+                <p className="text-xs text-[#4A5568] leading-relaxed">
+                  Factory-authorized wholesale distribution providing verified OEM spares, VFDs, and smart BTU meters with direct technical support.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* =====================================================================
-          SECTION 10 — NEWS & TECHNICAL BRIEFINGS
-          - One large featured article + two smaller article previews
-          - Image-led; no generic card grid
-          - Verified news data
+          08 CLIENTS / AUTHORITY GOVERNANCE
+          - Clean, restrained authority credentials grid
+          - DEWA, Dubai Civil Defense, Dubai Municipality, ISO Standards
+          - Zero invented client logos
       ===================================================================== */}
       <section
-        aria-label="Technical Briefings"
-        className="py-20 lg:py-28 bg-[#F8FAFC]"
+        aria-label="Statutory Clearances and Governance"
+        className="py-16 lg:py-20 bg-[#F8FAFC] border-y border-[#E5E7EB]"
+      >
+        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 text-left">
+            <div>
+              <span className="text-[11px] font-mono text-[#173C62] uppercase tracking-[0.2em] font-semibold block mb-1">
+                07 / STATUTORY COMPLIANCE
+              </span>
+              <h2 className="text-xl sm:text-2xl font-light text-[#0B1320] tracking-tight">
+                Accredited authority clearances across the UAE.
+              </h2>
+            </div>
+            <a
+              href="/clients"
+              onClick={(e) => handleLink(e, '/clients')}
+              className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#173C62] hover:text-[#0B1320] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] rounded"
+            >
+              <span>Explore statutory clearances</span>
+              <ArrowRight className="w-3 h-3" />
+            </a>
+          </div>
+
+          {/* Clean 4-Column Restrained Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 text-left">
+            {[
+              {
+                code: 'DEWA APPROVED',
+                authority: 'Dubai Electricity & Water Authority',
+                scope: 'Substation works, LV switchgear submittals & Shams Dubai solar PV net-metering.',
+              },
+              {
+                code: 'DCD CERTIFIED',
+                authority: 'Dubai Civil Defense',
+                scope: 'Fire life-safety systems, stairwell smoke pressurization & statutory inspections.',
+              },
+              {
+                code: 'DUBAI MUNICIPALITY',
+                authority: 'DM Public Health & Hydraulics',
+                scope: 'Potable water storage hygiene, drainage lift infrastructure & aquatic water chemistry.',
+              },
+              {
+                code: 'ISO CERTIFIED',
+                authority: 'Integrated Management Systems',
+                scope: 'Independently audited ISO 9001:2015, ISO 14001:2015 & ISO 45001:2018 governance.',
+              },
+            ].map((auth) => (
+              <div
+                key={auth.code}
+                className="p-5 rounded-[12px] bg-white border border-[#E5E7EB] space-y-2"
+              >
+                <span className="text-[10.5px] font-mono font-bold text-[#173C62] uppercase tracking-wider block">
+                  {auth.code}
+                </span>
+                <h3 className="text-sm font-medium text-[#0B1320]">
+                  {auth.authority}
+                </h3>
+                <p className="text-[11.5px] text-[#64748B] leading-relaxed">
+                  {auth.scope}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================================
+          09 NEWS / INSIGHTS
+          - One featured article + two compact previews
+          - Verified news data from NEWS_DATA
+          - Avoid 6-card blog grid
+      ===================================================================== */}
+      <section
+        aria-label="Technical Briefings and News"
+        className="py-20 lg:py-28 bg-white"
       >
         <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12 text-left">
             <div>
               <span className="text-[11px] font-mono text-[#173C62] uppercase tracking-[0.2em] font-semibold block mb-2">
-                TECHNICAL BRIEFINGS
+                08 / TECHNICAL BRIEFINGS
               </span>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#0B1320] tracking-tight">
                 Engineering intelligence.
@@ -1062,11 +946,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             </div>
             <a
               href="/news"
-              onClick={(e) => {
-                e.preventDefault();
-                onNavigate('/news');
-              }}
-              className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#173C62] hover:text-[#102B47] py-2 min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] rounded px-1"
+              onClick={(e) => handleLink(e, '/news')}
+              className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#173C62] hover:text-[#0B1320] py-2 min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] rounded-[4px]"
             >
               <span>View all briefings</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -1074,15 +955,12 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           </div>
 
           {/* 1 Large Featured Article + 2 Smaller Supporting Previews */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-            {/* Large Featured Article (7 cols) */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
+            {/* Featured Article (7 cols) */}
             <a
               href={`/news/${featuredArticle.slug}`}
-              onClick={(e) => {
-                e.preventDefault();
-                onNavigate(`/news/${featuredArticle.slug}`);
-              }}
-              className="lg:col-span-7 group relative rounded-[18px] overflow-hidden block min-h-[360px] sm:min-h-[440px] bg-[#0B1C2F] flex flex-col justify-end p-6 sm:p-9 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:ring-offset-2"
+              onClick={(e) => handleLink(e, `/news/${featuredArticle.slug}`)}
+              className="lg:col-span-7 group relative rounded-[18px] overflow-hidden block min-h-[360px] sm:min-h-[440px] bg-[#0B1C2F] flex flex-col justify-end p-7 sm:p-9 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
             >
               <img
                 src={featuredArticle.image}
@@ -1093,7 +971,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B1C2F]/95 via-[#0B1C2F]/40 to-transparent" />
 
               <div className="relative z-10 text-left text-white max-w-lg">
-                <span className="text-[10.5px] font-mono uppercase tracking-[0.2em] text-[#CBD5E1] block mb-1">
+                <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#CBD5E1] block mb-1">
                   {featuredArticle.category} &bull; {featuredArticle.date}
                 </span>
                 <h3 className="text-xl sm:text-2xl font-normal text-white tracking-tight">
@@ -1114,11 +992,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               {/* Supporting Article 1 */}
               <a
                 href={`/news/${supportingArticle1.slug}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  onNavigate(`/news/${supportingArticle1.slug}`);
-                }}
-                className="group relative rounded-[16px] overflow-hidden block flex-1 min-h-[180px] sm:min-h-[200px] bg-[#0B1C2F] flex flex-col justify-end p-5 sm:p-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:ring-offset-2"
+                onClick={(e) => handleLink(e, `/news/${supportingArticle1.slug}`)}
+                className="group relative rounded-[16px] overflow-hidden block flex-1 min-h-[190px] bg-[#0B1C2F] flex flex-col justify-end p-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
               >
                 <img
                   src={supportingArticle1.image}
@@ -1145,11 +1020,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               {/* Supporting Article 2 */}
               <a
                 href={`/news/${supportingArticle2.slug}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  onNavigate(`/news/${supportingArticle2.slug}`);
-                }}
-                className="group relative rounded-[16px] overflow-hidden block flex-1 min-h-[180px] sm:min-h-[200px] bg-[#0B1C2F] flex flex-col justify-end p-5 sm:p-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:ring-offset-2"
+                onClick={(e) => handleLink(e, `/news/${supportingArticle2.slug}`)}
+                className="group relative rounded-[16px] overflow-hidden block flex-1 min-h-[190px] bg-[#0B1C2F] flex flex-col justify-end p-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
               >
                 <img
                   src={supportingArticle2.image}
@@ -1178,21 +1050,22 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       </section>
 
       {/* =====================================================================
-          SECTION 11 — VISUAL CLOSING / CONTACT
-          - Large architectural image
-          - Simple statement
-          - CTA: "Start a conversation →"
-          - Direct phone & email channels
+          10 FINAL CTA
+          - Established dark architectural closing section (#0B1C2F)
+          - Clear, direct, action-oriented headline
+          - Primary Action: Contact / Enquire
+          - Secondary: Direct telephone & email dispatch
       ===================================================================== */}
       <section
-        aria-label="Direct Consultation"
+        aria-label="Direct Commercial Consultation"
         className="relative py-24 lg:py-32 bg-[#0B1C2F] text-white overflow-hidden"
       >
+        {/* Architectural Image Backdrop */}
         <div className="absolute inset-0 z-0">
           <img
             src="/assets/images/hero-building.jpg"
             alt="LTS Consultation"
-            className="w-full h-full object-cover object-center opacity-30"
+            className="w-full h-full object-cover object-center opacity-25"
             loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0B1C2F] via-[#0B1C2F]/85 to-[#0B1C2F]/70" />
@@ -1200,16 +1073,16 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
         <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 text-left">
           <div className="max-w-2xl">
-            <span className="text-[11px] font-mono text-slate-300 uppercase tracking-[0.24em] font-semibold block mb-3">
-              CONSULTATION &bull; RFP &bull; TENDERS
+            <span className="text-[11px] font-mono text-[#CBD5E1] uppercase tracking-[0.24em] font-semibold block mb-3">
+              COMMERCIAL &bull; TENDERS &bull; RFPS
             </span>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-white tracking-tight leading-tight">
-              Start an engineering conversation.
+              Ready to engineer your next built environment?
             </h2>
 
             <p className="mt-4 text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
-              Connect directly with our technical leadership regarding turnkey MEP contracting, commercial rooftop solar EPC feasibility, or life-cycle facilities management.
+              Connect directly with LTSGROUP estimating engineers and technical directors in Dubai for turnkey MEP contracting tenders, commercial rooftop solar EPC feasibility, or life-cycle facilities management agreements.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-5">
@@ -1218,31 +1091,31 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 size="md"
                 shape="capsule"
                 onClick={() => onNavigate('/contact')}
-                className="text-[12px] tracking-[0.06em]"
+                className="text-[12px] tracking-[0.06em] px-6 min-h-[44px]"
               >
-                Start a conversation →
+                Contact / Enquire →
               </Button>
             </div>
 
-            {/* Direct Lines */}
+            {/* Direct Official Communication Channels */}
             <div className="mt-12 pt-8 border-t border-white/15 flex flex-wrap gap-8 text-xs font-mono text-slate-300">
               <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-slate-400" />
+                <Phone className="w-4 h-4 text-slate-400" aria-hidden="true" />
                 <a
                   href={`tel:${CORPORATE_INFO.contact.telephone.replace(/\s+/g, '')}`}
-                  className="hover:text-white transition-colors"
+                  className="hover:text-white transition-colors py-1 min-h-[44px] flex items-center"
                 >
-                  {CORPORATE_INFO.contact.telephone}
+                  <span>{CORPORATE_INFO.contact.telephone} (24/7 Dispatch)</span>
                 </a>
               </div>
 
               <div className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-slate-400" />
+                <Mail className="w-4 h-4 text-slate-400" aria-hidden="true" />
                 <a
                   href={`mailto:${CORPORATE_INFO.contact.emailGeneral}`}
-                  className="hover:text-white transition-colors"
+                  className="hover:text-white transition-colors py-1 min-h-[44px] flex items-center"
                 >
-                  {CORPORATE_INFO.contact.emailGeneral}
+                  <span>{CORPORATE_INFO.contact.emailGeneral}</span>
                 </a>
               </div>
             </div>

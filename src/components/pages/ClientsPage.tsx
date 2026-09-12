@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, ArrowUpRight, ShieldCheck, Lock, Check } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, ShieldCheck, Lock, Building2, Hospital, Factory, Warehouse, Compass } from 'lucide-react';
 import { PROJECTS_DATA, ProjectDetailData } from '../../data/projectsData';
 
 interface ClientsPageProps {
@@ -36,6 +36,35 @@ export const ClientsPage: React.FC<ClientsPageProps> = ({ onNavigate }) => {
       role: 'IEC, ASHRAE, AHRI & HTM Standards Compliance',
       scope:
         'Rigorous adherence to IEC 61439-1/2 (low-voltage switchboards), ASHRAE 90.1 (energy conservation), AHRI 550/590 (chiller efficiency), and HTM 03-01 (hospital cleanroom air hygiene).',
+    },
+  ];
+
+  // Approved Institutional Client Sectors & Relationships (Strict Rule: Zero invented company names)
+  const clientSectors = [
+    {
+      icon: Building2,
+      sector: 'Commercial Real Estate Funds & Developers',
+      focus: 'High-rise MEP delivery, tenant BTU sub-metering, and ongoing hard FM stewardship.',
+    },
+    {
+      icon: Hospital,
+      sector: 'Healthcare Networks & Specialized Clinics',
+      focus: '24/7 mission-critical chiller uptime, cleanroom ventilation, and medical gas pipeline support.',
+    },
+    {
+      icon: Factory,
+      sector: 'Industrial Manufacturers & Processing Plants',
+      focus: 'Heavy motor control centers (MCC), live-plant chiller retrofits, and solar PV self-consumption.',
+    },
+    {
+      icon: Warehouse,
+      sector: 'Logistics Parks & Distribution Hubs',
+      focus: 'Megawatt-scale rooftop solar PV EPC under DEWA Shams Dubai and DC fleet rapid charging.',
+    },
+    {
+      icon: Compass,
+      sector: 'Master Planned Residential Communities',
+      focus: 'Hydraulic booster stations, community stormwater networks, and commercial aquatic facilities.',
     },
   ];
 
@@ -78,9 +107,9 @@ export const ClientsPage: React.FC<ClientsPageProps> = ({ onNavigate }) => {
   return (
     <div className="bg-white text-[#0B1320] selection:bg-[#173C62] selection:text-white antialiased">
       {/* =========================================================================
-          01 — HERO IMAGE
+          01 — HERO
           Full-bleed architectural image (~75-80vh).
-          H1: Credentials & Client Governance
+          H1: Credentials & Client Clearances
           Short statement.
           No two-column hero.
       ========================================================================= */}
@@ -109,11 +138,11 @@ export const ClientsPage: React.FC<ClientsPageProps> = ({ onNavigate }) => {
               </span>
 
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-light text-white tracking-tight leading-[0.98]">
-                Credentials &amp; Client Governance
+                Clients &amp; Clearances
               </h1>
 
               <p className="text-base sm:text-xl text-white/90 font-normal leading-relaxed max-w-2xl pt-1">
-                Institutional trust built on statutory authority licensing, rigorous commissioning, and strict commercial confidentiality across the UAE.
+                Institutional trust built on statutory authority licensing, audited commissioning dossiers, and strict commercial confidentiality across the UAE.
               </p>
             </div>
           </div>
@@ -167,10 +196,10 @@ export const ClientsPage: React.FC<ClientsPageProps> = ({ onNavigate }) => {
                 </div>
 
                 <a
-                  href="/contact?tab=rfp"
+                  href="/contact"
                   onClick={(e) => {
                     e.preventDefault();
-                    onNavigate('/contact?tab=rfp');
+                    onNavigate('/contact');
                   }}
                   className="min-h-[44px] inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#173C62] hover:text-[#11253E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] rounded-[4px] cursor-pointer whitespace-nowrap"
                 >
@@ -184,19 +213,20 @@ export const ClientsPage: React.FC<ClientsPageProps> = ({ onNavigate }) => {
       </section>
 
       {/* =========================================================================
-          03 — AUTHORITY / COMPLIANCE SECTION
-          Verified UAE statutory authority frameworks (DEWA, DCD, DM, Standards).
-          Clean editorial layout, zero fake logos or generic cards.
+          03 — APPROVED CLIENT CONTENT & STATUTORY AUTHORITY FRAMEWORKS
+          Verified UAE statutory authority frameworks (DEWA, DCD, DM, Standards)
+          along with verified institutional client sectors.
       ========================================================================= */}
       <section className="py-16 sm:py-24 md:py-28 bg-[#F8FAFC] border-b border-[#E5E7EB]">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
-          <div className="space-y-12 sm:space-y-16">
+        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 space-y-16">
+          {/* Statutory Licensure */}
+          <div className="space-y-10 sm:space-y-12">
             <div className="max-w-3xl space-y-3">
               <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
-                02 &bull; Statutory Authority Compliance
+                02 &bull; Statutory Authority Licensure
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#0B1320] tracking-tight">
-                Authority Licensure &amp; Standards
+                Regulator &amp; Code Clearances
               </h2>
               <p className="text-base sm:text-lg text-[#4A5568] leading-relaxed">
                 Operating under formal pre-qualification frameworks governed by Dubai utility directors, municipal civil defense authorities, and international engineering bodies.
@@ -234,11 +264,45 @@ export const ClientsPage: React.FC<ClientsPageProps> = ({ onNavigate }) => {
               ))}
             </div>
           </div>
+
+          {/* Approved Institutional Client Sectors Grid */}
+          <div className="pt-8 border-t border-[#E5E7EB] space-y-8">
+            <div className="max-w-3xl space-y-2">
+              <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
+                Institutional Client Segments
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-light text-[#0B1320] tracking-tight">
+                Operating Relationships Across Sectors
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {clientSectors.map((sect, sIdx) => {
+                const IconComponent = sect.icon;
+                return (
+                  <div
+                    key={sIdx}
+                    className="p-6 rounded-[18px] bg-white border border-[#E5E7EB] space-y-3"
+                  >
+                    <div className="w-9 h-9 rounded-full bg-[#173C62]/10 text-[#173C62] flex items-center justify-center">
+                      <IconComponent className="w-4 h-4" />
+                    </div>
+                    <h4 className="text-base font-medium text-[#0B1320] leading-snug">
+                      {sect.sector}
+                    </h4>
+                    <p className="text-xs sm:text-sm text-[#4A5568] leading-relaxed">
+                      {sect.focus}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </section>
 
       {/* =========================================================================
-          04 — CLEARANCES / CREDENTIALS MILESTONES
+          04 — CLEARANCE & VERIFICATION PROCEDURES
           Dignified presentation of operational clearances from permit to handover.
       ========================================================================= */}
       <section className="py-16 sm:py-24 md:py-28 border-b border-[#E5E7EB]">
@@ -277,7 +341,7 @@ export const ClientsPage: React.FC<ClientsPageProps> = ({ onNavigate }) => {
       </section>
 
       {/* =========================================================================
-          05 — SUPPORTING EXPLANATION & DELIVERED EVIDENCE
+          05 — OPTIONAL SELECTED PROJECT RELATIONSHIPS
           Connects trust directly to verified built works (PROJECTS_DATA).
           Builds confidence without fake logos.
       ========================================================================= */}
@@ -287,7 +351,7 @@ export const ClientsPage: React.FC<ClientsPageProps> = ({ onNavigate }) => {
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
               <div className="max-w-3xl space-y-3">
                 <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
-                  04 &bull; Verified Delivered Evidence
+                  04 &bull; Selected Project Relationships
                 </span>
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#0B1320] tracking-tight">
                   Field Execution as Primary Proof
@@ -310,7 +374,7 @@ export const ClientsPage: React.FC<ClientsPageProps> = ({ onNavigate }) => {
               </a>
             </div>
 
-            {/* 4-Project Monograph Cards (Soft 18-20px radius, image-first) */}
+            {/* 4-Project Monograph Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
               {verifiedReferences.map((ref) => (
                 <a
@@ -352,7 +416,7 @@ export const ClientsPage: React.FC<ClientsPageProps> = ({ onNavigate }) => {
       </section>
 
       {/* =========================================================================
-          06 — CONTACT / PREQUALIFICATION CTA
+          06 — PREQUALIFICATION CTA
           Tender dossier and vendor pre-qualification intake.
       ========================================================================= */}
       <section className="py-20 sm:py-28 bg-white">
@@ -372,10 +436,10 @@ export const ClientsPage: React.FC<ClientsPageProps> = ({ onNavigate }) => {
 
             <div className="pt-2 flex flex-wrap items-center gap-4">
               <a
-                href="/contact?tab=rfp"
+                href="/contact"
                 onClick={(e) => {
                   e.preventDefault();
-                  onNavigate('/contact?tab=rfp');
+                  onNavigate('/contact');
                 }}
                 className="min-h-[44px] inline-flex items-center gap-2 px-7 py-3.5 rounded-[12px] bg-[#173C62] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#11253E] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] cursor-pointer"
               >

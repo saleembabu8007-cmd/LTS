@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ArrowRight, ChevronDown } from 'lucide-react';
 import { PROJECTS_DATA, ProjectDetailData } from '../../data/projectsData';
 
 interface ProjectsPageProps {
@@ -7,28 +7,29 @@ interface ProjectsPageProps {
 }
 
 /**
- * PortfolioCard
- * Conforms strictly to portfolio design rules:
- * - Image (dominant, soft 18-20px radius, no border)
- * - Project name
- * - Short discipline label
- * - Arrow (translates 4-6px on hover)
- * - Zero tags, zero borders, zero metadata overload
- * - Subtle hover micro-animation (image zoom 1.025x, text shift -2px, arrow shift 6px)
+ * Standardized Project Card
+ * Conforms strictly to LTSGROUP Project Card Rules:
+ * - Image (dominant, soft 18-20px radius, subtle hover zoom 1.025x)
+ * - Category (clean uppercase mono tag)
+ * - Project title (crisp editorial typography)
+ * - Short metadata (location, asset sector, concise scope summary)
+ * - View project (explicit link with micro-arrow shift)
  */
-interface PortfolioCardProps {
+interface ProjectCardProps {
   project: ProjectDetailData;
-  aspectClass: string;
-  isLarge?: boolean;
+  aspectClass?: string;
+  variant?: 'featured' | 'standard';
   onNavigate: (slug: string) => void;
 }
 
-const PortfolioCard: React.FC<PortfolioCardProps> = ({
+const ProjectCard: React.FC<ProjectCardProps> = ({
   project,
-  aspectClass,
-  isLarge = false,
+  aspectClass = 'aspect-[16/10]',
+  variant = 'standard',
   onNavigate,
 }) => {
+  const isFeatured = variant === 'featured';
+
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     onNavigate(`/projects/${project.slug}`);
@@ -41,8 +42,8 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({
       className="group cursor-pointer block select-none focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:outline-none rounded-[20px]"
       aria-label={`View case study: ${project.title}`}
     >
-      <article>
-        {/* Photographic Container (Soft 18-20px radius, NO borders, NO tags) */}
+      <article className="space-y-4">
+        {/* Dominant Contextual Image (Soft 18-20px radius, NO borders, NO AI tags) */}
         <div
           className={`relative overflow-hidden rounded-[18px] sm:rounded-[20px] bg-[#0B1C2F] ${aspectClass}`}
         >
@@ -56,46 +57,50 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({
                 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80';
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0B1320]/25 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0B1320]/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
         </div>
 
-        {/* Card Info: Short discipline label + project name + subtle arrow */}
-        <div className="mt-4 sm:mt-5 transition-transform duration-200 ease-out group-hover:-translate-y-0.5">
-          <div className="flex items-start justify-between gap-4">
-            <div className="space-y-1">
-              <span className="font-mono text-[11px] sm:text-xs uppercase tracking-[0.16em] text-[#64748B] block font-medium">
-                {project.categoryLabel} &bull; {project.location.split(',')[0]}
-              </span>
-              <h3
-                className={`text-[#0B1320] font-light leading-snug tracking-tight group-hover:text-[#173C62] transition-colors duration-200 ${
-                  isLarge
-                    ? 'text-xl sm:text-2xl lg:text-3xl'
-                    : 'text-lg sm:text-xl'
-                }`}
-              >
-                {project.title}
-              </h3>
-            </div>
+        {/* Card Info: Category + Project title + Short metadata + View project */}
+        <div className="space-y-2 transition-transform duration-200 ease-out group-hover:-translate-y-0.5">
+          {/* Category & Location */}
+          <div className="flex items-center gap-2">
+            <span className="font-mono text-[11px] sm:text-xs uppercase tracking-[0.18em] text-[#173C62] font-semibold block">
+              {project.categoryLabel}
+            </span>
+            <span className="text-[#94A3B8] text-xs">&bull;</span>
+            <span className="font-mono text-[11px] sm:text-xs text-[#64748B]">
+              {project.location.split(',')[0]}
+            </span>
+          </div>
 
-            {/* Minimal 4-6px shifting arrow */}
-            <div
-              className="shrink-0 mt-1.5 text-[#173C62] transition-transform duration-200 ease-out group-hover:translate-x-1.5"
-              aria-hidden="true"
-            >
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="1.75"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-                />
-              </svg>
-            </div>
+          {/* Project Title */}
+          <h3
+            className={`text-[#0B1320] font-light leading-snug tracking-tight group-hover:text-[#173C62] transition-colors duration-200 ${
+              isFeatured
+                ? 'text-2xl sm:text-3xl lg:text-4xl'
+                : 'text-xl sm:text-2xl'
+            }`}
+          >
+            {project.title}
+          </h3>
+
+          {/* Short Metadata / Scope overview */}
+          <p
+            className={`text-[#4A5568] font-normal leading-relaxed ${
+              isFeatured
+                ? 'text-sm sm:text-base line-clamp-2 max-w-3xl'
+                : 'text-xs sm:text-sm line-clamp-2'
+            }`}
+          >
+            {project.scopeOverview}
+          </p>
+
+          {/* Explicit "View project" action with micro arrow shift */}
+          <div className="pt-2">
+            <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#173C62] group-hover:text-[#102B47] transition-colors">
+              <span className="group-hover:underline underline-offset-4">View project case record</span>
+              <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
+            </span>
           </div>
         </div>
       </article>
@@ -106,6 +111,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({
 export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
   const [selectedDivision, setSelectedDivision] = useState<string>('all');
 
+  // Simple, authentic categories supported by existing project records
   const filterOptions = [
     {
       id: 'all',
@@ -124,7 +130,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
     },
     {
       id: 'Trading',
-      label: 'Trading & Components',
+      label: 'Trading & Supply',
       count: PROJECTS_DATA.filter((p) => p.division === 'Trading').length,
     },
   ];
@@ -134,21 +140,31 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
     return PROJECTS_DATA.filter((p) => p.division === selectedDivision);
   }, [selectedDivision]);
 
+  // Group filtered projects into sets of 3: [1 featured, up to 2 standards]
+  const projectSets = useMemo(() => {
+    const sets: { featured: ProjectDetailData; standards: ProjectDetailData[] }[] = [];
+    for (let i = 0; i < filteredProjects.length; i += 3) {
+      sets.push({
+        featured: filteredProjects[i],
+        standards: filteredProjects.slice(i + 1, i + 3),
+      });
+    }
+    return sets;
+  }, [filteredProjects]);
+
   return (
     <div className="bg-white text-[#0B1320] selection:bg-[#173C62] selection:text-white antialiased">
       {/* =========================================================================
-          01 — HEADER
-          Large editorial title: Projects
-          Short one-line description.
-          No huge white empty header.
-          Introduces a large project image immediately through Row 1.
+          HERO
+          Clean, editorial title: Projects
+          A concise introduction.
       ========================================================================= */}
-      <section className="pt-8 sm:pt-12 md:pt-14 pb-6 md:pb-8">
+      <section className="pt-10 sm:pt-14 md:pt-16 pb-6 md:pb-8">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-8 pb-8 md:pb-10 border-b border-[#E5E7EB]">
             <div>
               <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block mb-2 font-semibold">
-                Portfolio Monograph
+                LTSGROUP &bull; DELIVERED ASSETS
               </span>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light text-[#0B1320] tracking-tight leading-[0.95]">
                 Projects
@@ -161,13 +177,12 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
           </div>
 
           {/* =========================================================================
-              02 — FILTER CONTROL
-              Do not use a row of pill buttons.
-              Desktop: compact filter selector / segmented text navigation.
-              Mobile: single filter dropdown.
+              FILTER / CATEGORIES
+              Simple, non-dashboard segmented text filter
+              Only uses categories supported by available project data
           ========================================================================= */}
           <div className="pt-6 md:pt-8 flex items-center justify-between gap-6">
-            {/* Desktop Segmented Text Navigation (No pills, no borders, clean baseline) */}
+            {/* Desktop Segmented Text Navigation */}
             <div className="hidden md:flex items-center gap-8 lg:gap-10">
               {filterOptions.map((opt) => {
                 const isActive = selectedDivision === opt.id;
@@ -231,23 +246,22 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
                   ? `0${filteredProjects.length}`
                   : filteredProjects.length}
               </span>
-              <span> verified case studies</span>
+              <span> verified case records</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* =========================================================================
-          03 — CURATED EDITORIAL GRID
-          Do not use equal 3-column cards.
-          Row 1: large featured project ~60%, smaller project ~40%
-          Row 2: two differently sized projects (~40% / ~60%)
-          Row 3: large project (wide panoramic)
-          Vary aspect ratios deliberately.
+          PROJECT GRID
+          Visual editorial grid adhering to the master formula:
+          featured project + 2 standard projects + repeat
+          Varied image sizes while maintaining a coherent 12-column grid.
       ========================================================================= */}
-      <section className="pt-4 pb-20 sm:pb-28 md:pb-36">
+      <section className="pt-6 pb-20 sm:pb-28 md:pb-36">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
           {filteredProjects.length === 0 ? (
+            /* EMPTY / LIMITED CONTENT */
             <div className="py-24 text-center space-y-4 max-w-md mx-auto">
               <p className="text-base text-[#4A5568]">
                 No project records found in this discipline category.
@@ -260,109 +274,51 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
               </button>
             </div>
           ) : (
-            <div className="space-y-16 sm:space-y-20 md:space-y-28">
-              {/* Row 1: Large featured project ~60% (7 cols) + Smaller project ~40% (5 cols) */}
-              {filteredProjects.length >= 1 && (
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-                  <div className="lg:col-span-7">
-                    <PortfolioCard
-                      project={filteredProjects[0]}
-                      aspectClass="aspect-[16/10]"
-                      isLarge={true}
-                      onNavigate={onNavigate}
-                    />
+            <div className="space-y-16 sm:space-y-24 md:space-y-32">
+              {projectSets.map((set, setIdx) => {
+                const isEvenSet = setIdx % 2 === 0;
+
+                return (
+                  <div key={set.featured.id} className="space-y-12 sm:space-y-16">
+                    {/* 1. FEATURED PROJECT (Dominant presentation, varied aspect) */}
+                    <div className="w-full">
+                      <ProjectCard
+                        project={set.featured}
+                        variant="featured"
+                        aspectClass={
+                          isEvenSet
+                            ? 'aspect-[16/9] lg:aspect-[21/9]'
+                            : 'aspect-[16/10] lg:aspect-[16/8]'
+                        }
+                        onNavigate={onNavigate}
+                      />
+                    </div>
+
+                    {/* 2. TWO STANDARD PROJECTS (Balanced 2-column pairing) */}
+                    {set.standards.length > 0 && (
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-start pt-4 border-t border-[#F1F5F9]">
+                        {set.standards.map((stdProject) => (
+                          <div key={stdProject.id}>
+                            <ProjectCard
+                              project={stdProject}
+                              variant="standard"
+                              aspectClass="aspect-[16/10] sm:aspect-[4/3] lg:aspect-[16/10]"
+                              onNavigate={onNavigate}
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
-                  {filteredProjects[1] && (
-                    <div className="lg:col-span-5">
-                      <PortfolioCard
-                        project={filteredProjects[1]}
-                        aspectClass="aspect-[4/3] sm:aspect-[5/4] lg:aspect-[4/3]"
-                        isLarge={false}
-                        onNavigate={onNavigate}
-                      />
-                    </div>
-                  )}
-                </div>
-              )}
-
-              {/* Row 2: Two differently sized projects (e.g. 5 cols / 7 cols reversed rhythm) */}
-              {filteredProjects.length >= 3 && (
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-                  <div className="lg:col-span-5">
-                    <PortfolioCard
-                      project={filteredProjects[2]}
-                      aspectClass="aspect-[4/3] sm:aspect-[5/4] lg:aspect-[4/3]"
-                      isLarge={false}
-                      onNavigate={onNavigate}
-                    />
-                  </div>
-                  {filteredProjects[3] && (
-                    <div className="lg:col-span-7">
-                      <PortfolioCard
-                        project={filteredProjects[3]}
-                        aspectClass="aspect-[16/10]"
-                        isLarge={true}
-                        onNavigate={onNavigate}
-                      />
-                    </div>
-                  )}
-                </div>
-              )}
-
-              {/* Row 3: Large project (wide / panoramic 12-column dominant monograph) */}
-              {filteredProjects.length >= 5 && (
-                <div className="w-full">
-                  <PortfolioCard
-                    project={filteredProjects[4]}
-                    aspectClass="aspect-[16/9] lg:aspect-[21/9]"
-                    isLarge={true}
-                    onNavigate={onNavigate}
-                  />
-                </div>
-              )}
-
-              {/* Row 4+: Remaining projects in intentional asymmetric pairings */}
-              {filteredProjects.length > 5 && (
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-                  {filteredProjects[5] && (
-                    <div className="lg:col-span-7">
-                      <PortfolioCard
-                        project={filteredProjects[5]}
-                        aspectClass="aspect-[16/10]"
-                        isLarge={true}
-                        onNavigate={onNavigate}
-                      />
-                    </div>
-                  )}
-                  {filteredProjects[6] && (
-                    <div className="lg:col-span-5">
-                      <PortfolioCard
-                        project={filteredProjects[6]}
-                        aspectClass="aspect-[4/3] sm:aspect-[5/4] lg:aspect-[4/3]"
-                        isLarge={false}
-                        onNavigate={onNavigate}
-                      />
-                    </div>
-                  )}
-                  {filteredProjects[7] && (
-                    <div className="lg:col-span-12 mt-8 lg:mt-12">
-                      <PortfolioCard
-                        project={filteredProjects[7]}
-                        aspectClass="aspect-[16/9] lg:aspect-[21/9]"
-                        isLarge={true}
-                        onNavigate={onNavigate}
-                      />
-                    </div>
-                  )}
-                </div>
-              )}
+                );
+              })}
             </div>
           )}
         </div>
       </section>
 
       {/* =========================================================================
-          04 — CONSULTATION / TENDER INTAKE
+          CONSULTATION / SPECIFICATION INTAKE
           Quiet, architectural closing section for drawings and engineering reviews
       ========================================================================= */}
       <section className="py-16 sm:py-24 bg-[#F8FAFC] border-t border-[#E5E7EB]">

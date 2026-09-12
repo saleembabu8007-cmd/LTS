@@ -26,9 +26,9 @@ export const Section: React.FC<SectionProps> = ({
 }) => {
   const spacingClasses: Record<SectionSpacing, string> = {
     none: 'py-0',
-    compact: 'editorial-section-tight',
-    standard: 'editorial-section',
-    spacious: 'editorial-section-spacious',
+    compact: 'section-rhythm-compact',
+    standard: 'section-rhythm-standard',
+    spacious: 'section-rhythm-spacious',
   };
 
   const toneClasses: Record<SectionTone, string> = {

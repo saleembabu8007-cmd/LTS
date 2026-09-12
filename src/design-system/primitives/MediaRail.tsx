@@ -48,11 +48,11 @@ export const MediaRail: React.FC<MediaRailProps> = ({
               key={idx}
               className="w-[280px] sm:w-[360px] lg:w-[420px] shrink-0 snap-start space-y-3"
             >
-              <div className="aspect-[16/11] rounded-[28px] overflow-hidden bg-slate-100">
+              <div className="aspect-[16/11] rounded-[18px] overflow-hidden bg-slate-100">
                 <img
                   src={item.imageSrc}
                   alt={item.imageAlt}
-                  className="w-full h-full object-cover object-center rounded-[28px] transition-transform duration-[400ms] ease-out hover:scale-[1.025]"
+                  className="w-full h-full object-cover object-center rounded-[18px] transition-transform duration-[400ms] ease-out hover:scale-[1.025]"
                 />
               </div>
 

@@ -11,6 +11,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   iconLeading?: React.ReactNode;
   iconTrailing?: React.ReactNode;
   fullWidth?: boolean;
+  light?: boolean;
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -23,6 +24,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       iconLeading,
       iconTrailing,
       fullWidth = false,
+      light = false,
       className = '',
       disabled,
       type = 'button',
@@ -36,8 +38,11 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       rounded: 'rounded-[12px]',
     };
 
-    const baseStyles =
-      'group inline-flex items-center justify-center font-sans font-semibold uppercase transition-colors duration-[180ms] ease-out cursor-pointer select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:ring-offset-2 disabled:opacity-40 disabled:pointer-events-none disabled:cursor-not-allowed shadow-none whitespace-nowrap';
+    const focusRingStyle = light
+      ? 'focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B1C2F]'
+      : 'focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:ring-offset-2';
+
+    const baseStyles = `group inline-flex items-center justify-center font-sans font-semibold uppercase transition-colors duration-[180ms] ease-out cursor-pointer select-none focus:outline-none ${focusRingStyle} disabled:opacity-40 disabled:pointer-events-none disabled:cursor-not-allowed shadow-none whitespace-nowrap`;
 
     // Standardized Heights: 38px (sm), 44px (md), 48px (lg)
     const sizeStyles: Record<ButtonSize, string> = {

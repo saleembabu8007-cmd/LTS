@@ -851,6 +851,177 @@ export const SERVICE_PAGES_REGISTRY: Record<string, ServicePageData> = {
     },
   },
 
+  // FM: Retrofits - Design & Engineering
+  'design-engineering': {
+    id: 'design-engineering',
+    slug: '/facilities-management/retrofits/design-engineering',
+    pillar: 'Facilities Management',
+    pillarSlug: '/facilities-management',
+    parentCategory: 'Retrofits / Refurbishment',
+    parentCategorySlug: '/facilities-management/retrofits',
+    title: 'Retrofit Design & Engineering',
+    tagline: 'Engineering assessment, cooling load calculations, and mechanical-electrical schematic integration for operational facility upgrades.',
+    archetype: 'fm-operations',
+    hero: {
+      eyebrow: 'Retrofits & Refurbishment / Design & Engineering',
+      heading: 'Retrofit Engineering & Systems Design',
+      summary: 'Engineering diagnostics, thermodynamic load modeling, and mechanical-electrical integration drawings designed to modernize aging building systems with zero disruption to continuous operations.',
+      primaryCta: { label: 'Request Engineering Assessment', slug: '/contact?tab=rfp' },
+      image: 'https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1400&q=80',
+    },
+    introduction: {
+      leadText: 'Upgrading central plants in live buildings requires disciplined front-end engineering to ensure new high-efficiency equipment matches existing distribution hydronics and power capacity.',
+      bodyParagraphs: [
+        'LTSGROUP provides turnkey engineering assessments, load verification, and plant coordination to ensure retrofit solutions integrate seamlessly with building infrastructure.',
+      ],
+      scopeInclusion: [
+        'Cooling load calculations and chiller plant thermodynamic optimization modeling',
+        'Electrical load flow and short-circuit validation for upgraded switchgear and VFDs',
+        'Spatial coordination for equipment replacement in restricted plant room footprints',
+        'Authority submittals and utility compliance coordination across Dubai and the UAE',
+      ],
+      standards: ['ASHRAE 90.1 Energy Standards', 'DEWA Regulations'],
+    },
+    capabilities: {
+      sectionTitle: 'Core Engineering Scope',
+      items: [
+        {
+          title: 'Thermal & Electrical Diagnostics',
+          description: 'Comprehensive baseline measurements of operating plant efficiency, power draw, and hydronic pressure drops.',
+        },
+        {
+          title: 'Equipment Replacement Sizing',
+          description: 'Selecting modern variable-speed equipment matched to actual facility cooling and power profiles.',
+        },
+        {
+          title: 'Authority Compliance Submittals',
+          description: 'Preparing single-line diagrams, layout drawings, and safety filings for statutory approvals.',
+        },
+      ],
+    },
+    cta: {
+      headline: 'Discuss Retrofit Design & Engineering',
+      subheadline: 'Consult our senior engineering team to review existing plant drawings and replacement options.',
+      primaryButtonText: 'Start Engineering Review',
+      contactHotline: '+971 4 347 1234',
+      contactEmail: 'tenders@ltsgroup.ae',
+    },
+  },
+
+  // FM: Retrofits - Project Management
+  'project-management': {
+    id: 'project-management',
+    slug: '/facilities-management/retrofits/project-management',
+    pillar: 'Facilities Management',
+    pillarSlug: '/facilities-management',
+    parentCategory: 'Retrofits / Refurbishment',
+    parentCategorySlug: '/facilities-management/retrofits',
+    title: 'Retrofit Project Management',
+    tagline: 'Phased site management, heavy equipment rigging, and zero-downtime execution in operational buildings.',
+    archetype: 'fm-operations',
+    hero: {
+      eyebrow: 'Retrofits & Refurbishment / Project Management',
+      heading: 'Live-Building Retrofit Execution',
+      summary: 'Methodical site management and phased equipment changeover protocols engineered to maintain 100% facility uptime during heavy mechanical and electrical replacements.',
+      primaryCta: { label: 'Consult Project Managers', slug: '/contact?tab=rfp' },
+      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1400&q=80',
+    },
+    introduction: {
+      leadText: 'Executing major equipment replacements within fully occupied commercial towers, hotels, or hospitals demands rigorous logistics, temporary bypass engineering, and strict safety management.',
+      bodyParagraphs: [
+        'LTSGROUP project managers coordinate crane lifting, off-hours deliveries, temporary utility loops, and phased cutovers to eliminate disruption to tenants and critical operations.',
+      ],
+      scopeInclusion: [
+        'Detailed phased transition plans and temporary cooling/power bypass design',
+        'Heavy equipment rigging, roof-level crane mobilization, and structural coordination',
+        'Strict HSE compliance, hot-work permits, and acoustic mitigation in occupied assets',
+        'Multi-contractor site coordination and milestone schedule tracking',
+      ],
+      standards: ['ISO 9001:2015 Quality Management', 'UAE Civil Defense Guidelines'],
+    },
+    capabilities: {
+      sectionTitle: 'Project Management Deliverables',
+      items: [
+        {
+          title: 'Zero-Downtime Transition Planning',
+          description: 'Sequencing mechanical cuts and electrical transfers during scheduled low-load windows.',
+        },
+        {
+          title: 'Rigging & Heavy Lifting Logistics',
+          description: 'Obtaining municipal permits, road closure permissions, and coordinated crane lifts.',
+        },
+        {
+          title: 'Live Building HSE & Acoustic Control',
+          description: 'Strict dust containment, noise-restricted work hours, and fire life-safety protection.',
+        },
+      ],
+    },
+    cta: {
+      headline: 'Plan Live-Building Equipment Replacement',
+      subheadline: 'Engage our experienced site project managers for phased changeover execution.',
+      primaryButtonText: 'Consult Project Team',
+      contactHotline: '+971 4 347 1234',
+      contactEmail: 'tenders@ltsgroup.ae',
+    },
+  },
+
+  // FM: Retrofits - Testing & Commissioning
+  'testing-commissioning': {
+    id: 'testing-commissioning',
+    slug: '/facilities-management/retrofits/testing-commissioning',
+    pillar: 'Facilities Management',
+    pillarSlug: '/facilities-management',
+    parentCategory: 'Retrofits / Refurbishment',
+    parentCategorySlug: '/facilities-management/retrofits',
+    title: 'Testing & Commissioning',
+    tagline: 'Independent testing, hydronic balancing, electrical energization validation, and authority handover.',
+    archetype: 'fm-operations',
+    hero: {
+      eyebrow: 'Retrofits & Refurbishment / Testing & Commissioning',
+      heading: 'Testing, Adjusting & Commissioning (TAB)',
+      summary: 'Independent thermodynamic performance verification, chilled water hydronic balancing, electrical protection testing, and statutory handover certification.',
+      primaryCta: { label: 'Request TAB Consultation', slug: '/contact?tab=rfp' },
+      image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1400&q=80',
+    },
+    introduction: {
+      leadText: 'Proper testing and balancing ensures that installed mechanical and electrical equipment operates at designed efficiency and delivers expected comfort and safety.',
+      bodyParagraphs: [
+        'Our commissioning engineers verify airflow volume, hydronic flow distribution, sensor calibration, and safety interlocks prior to formal client and authority signoff.',
+      ],
+      scopeInclusion: [
+        'Hydronic balancing of chilled water distribution loops, risers, and control valves',
+        'Air distribution testing, adjusting, and balancing (TAB) to NEBB/BSRIA standards',
+        'Electrical insulation testing, relay calibration, and generator transfer verification',
+        'BMS sensor loop calibration and automated sequence-of-operation verification',
+      ],
+      standards: ['ASHRAE Commissioning Guidelines', 'DEWA Regulations', 'CIBSE Code M'],
+    },
+    capabilities: {
+      sectionTitle: 'Testing & Handover Scope',
+      items: [
+        {
+          title: 'Hydronic & Air Balancing (TAB)',
+          description: 'Precision flow verification using calibrated ultrasonic and differential pressure meters.',
+        },
+        {
+          title: 'Electrical Protection Validation',
+          description: 'Primary and secondary injection testing, phase sequence checks, and insulation resistance.',
+        },
+        {
+          title: 'Statutory Handover Documentation',
+          description: 'Comprehensive O&M manuals, as-built documentation, and authority signoff dossiers.',
+        },
+      ],
+    },
+    cta: {
+      headline: 'Engage Commissioning & Balancing Engineers',
+      subheadline: 'Ensure newly installed plant meets designed flow rates, temperatures, and power benchmarks.',
+      primaryButtonText: 'Request Commissioning Support',
+      contactHotline: '+971 4 347 1234',
+      contactEmail: 'tenders@ltsgroup.ae',
+    },
+  },
+
   // =========================================================================
   // 3. TRADING & COMPONENT SUPPLY
   // =========================================================================
@@ -1089,21 +1260,67 @@ export const getServiceBySlug = (slug: string): ServicePageData | null => {
   const exact = Object.values(SERVICE_PAGES_REGISTRY).find((s) => s.slug === cleanSlug);
   if (exact) return exact;
 
-  // Common aliases & direct routes
-  if (cleanSlug === '/facilities-management/soft-services' || cleanSlug === '/facilities-management/swimming-pool') {
-    return SERVICE_PAGES_REGISTRY['swimming-pool-maintenance'] || null;
+  // Facilities Management Aliases & Direct Sub-Routes
+  if (cleanSlug === '/facilities-management/hard-services') {
+    return SERVICE_PAGES_REGISTRY['hard-services'] || null;
   }
-  if (cleanSlug === '/facilities-management/civil') {
+  if (cleanSlug === '/facilities-management/hvac') {
+    return SERVICE_PAGES_REGISTRY['fm-hvac'] || null;
+  }
+  if (cleanSlug === '/facilities-management/electrical') {
+    return SERVICE_PAGES_REGISTRY['fm-electrical'] || null;
+  }
+  if (cleanSlug === '/facilities-management/plumbing') {
+    return SERVICE_PAGES_REGISTRY['fm-plumbing'] || null;
+  }
+  if (cleanSlug === '/facilities-management/bms') {
+    return SERVICE_PAGES_REGISTRY['fm-bms'] || null;
+  }
+  if (cleanSlug === '/facilities-management/civil' || cleanSlug === '/facilities-management/civil-works') {
     return SERVICE_PAGES_REGISTRY['fm-civil-works'] || null;
   }
-  if (cleanSlug === '/trading/hvac') {
+  if (cleanSlug === '/facilities-management/soft-services' || cleanSlug === '/facilities-management/swimming-pool' || cleanSlug === '/facilities-management/swimming-pool-maintenance') {
+    return SERVICE_PAGES_REGISTRY['swimming-pool-maintenance'] || null;
+  }
+  if (cleanSlug === '/facilities-management/retrofits' || cleanSlug === '/facilities-management/retrofits-refurbishment') {
+    return SERVICE_PAGES_REGISTRY['retrofits-refurbishment'] || null;
+  }
+  if (cleanSlug === '/facilities-management/retrofits/design-engineering' || cleanSlug === '/facilities-management/retrofits-refurbishment/design-engineering') {
+    return SERVICE_PAGES_REGISTRY['design-engineering'] || null;
+  }
+  if (cleanSlug === '/facilities-management/retrofits/project-management' || cleanSlug === '/facilities-management/retrofits-refurbishment/project-management') {
+    return SERVICE_PAGES_REGISTRY['project-management'] || null;
+  }
+  if (cleanSlug === '/facilities-management/retrofits/testing-commissioning' || cleanSlug === '/facilities-management/retrofits-refurbishment/testing-commissioning') {
+    return SERVICE_PAGES_REGISTRY['testing-commissioning'] || null;
+  }
+
+  // Trading Aliases & Direct Sub-Routes
+  if (cleanSlug === '/trading/hvac' || cleanSlug === '/trading/hvac-spare-parts') {
     return SERVICE_PAGES_REGISTRY['trading-hvac-spare-parts'] || null;
   }
-  if (cleanSlug === '/trading/metering') {
+  if (cleanSlug === '/trading/controls' || cleanSlug === '/trading/controls-vfds') {
+    return SERVICE_PAGES_REGISTRY['trading-controls-vfds'] || null;
+  }
+  if (cleanSlug === '/trading/metering' || cleanSlug === '/trading/metering-accessories') {
     return SERVICE_PAGES_REGISTRY['trading-metering-accessories'] || null;
   }
-  if (cleanSlug === '/trading/ev') {
+  if (cleanSlug === '/trading/lights' || cleanSlug === '/trading/lighting') {
+    return SERVICE_PAGES_REGISTRY['trading-lights'] || null;
+  }
+  if (cleanSlug === '/trading/ev' || cleanSlug === '/trading/ev-charger') {
     return SERVICE_PAGES_REGISTRY['trading-ev-charger'] || null;
+  }
+
+  // Engineering & Construction Aliases
+  if (cleanSlug === '/engineering-construction/mep') {
+    return SERVICE_PAGES_REGISTRY['mep'] || null;
+  }
+  if (cleanSlug === '/engineering-construction/solar') {
+    return SERVICE_PAGES_REGISTRY['solar'] || null;
+  }
+  if (cleanSlug === '/engineering-construction/switchgear' || cleanSlug === '/engineering-construction/control-switchgear') {
+    return SERVICE_PAGES_REGISTRY['control-switchgear'] || null;
   }
 
   return null;

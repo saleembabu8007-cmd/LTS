@@ -48,7 +48,7 @@ export const Accordion: React.FC<AccordionProps> = ({
         isDark
           ? 'divide-white/10 border border-white/10 bg-[#0B1C2F]'
           : 'divide-[#E5E7EB] border border-[#E5E7EB] bg-white'
-      } rounded-[2px] overflow-hidden`;
+      } rounded-[16px] overflow-hidden`;
 
   return (
     <div className={`${containerClasses} ${className}`} role="region" aria-label="Accordion">

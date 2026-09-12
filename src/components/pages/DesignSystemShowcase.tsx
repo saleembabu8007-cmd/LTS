@@ -87,6 +87,25 @@ import {
   SectionEntrance,
   Media,
   Card,
+  // 7 Core Image Card Types
+  FeatureImageCard,
+  StandardImageCard,
+  CompactImageCard,
+  ProjectCard,
+  ServiceImageCard,
+  IndustryImageCard,
+  EditorialStoryCard,
+  // 10 Editorial Section Compositions (A through J)
+  CompositionA,
+  CompositionB,
+  CompositionC,
+  CompositionD,
+  CompositionE,
+  CompositionF,
+  CompositionG,
+  CompositionH,
+  CompositionI,
+  CompositionJ,
 } from '../../design-system';
 import {
   Shield,
@@ -105,7 +124,7 @@ interface DesignSystemShowcaseProps {
 }
 
 export const DesignSystemShowcase: React.FC<DesignSystemShowcaseProps> = ({ onNavigate }) => {
-  const [activeTab, setActiveTab] = useState<'tokens' | 'atoms' | 'molecules' | 'organisms' | 'primitives' | 'motion' | 'cards-media'>('tokens');
+  const [activeTab, setActiveTab] = useState<'tokens' | 'atoms' | 'molecules' | 'organisms' | 'primitives' | 'motion' | 'cards-media' | 'compositions'>('tokens');
   const [canvasTone, setCanvasTone] = useState<'white' | 'warm' | 'dark'>('white');
   const [activeFilter, setActiveFilter] = useState<string>('all');
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -183,6 +202,7 @@ export const DesignSystemShowcase: React.FC<DesignSystemShowcaseProps> = ({ onNa
                   { id: 'primitives', label: '5. Section Primitives (14)' },
                   { id: 'motion', label: '6. Restrained Motion' },
                   { id: 'cards-media', label: '7. Cards & Media System' },
+                  { id: 'compositions', label: '8. Compositions (A–J)' },
                 ].map((tab) => (
                   <button
                     key={tab.id}
@@ -294,36 +314,36 @@ export const DesignSystemShowcase: React.FC<DesignSystemShowcaseProps> = ({ onNa
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div className={`p-6 rounded-[24px] border ${panelBg} space-y-3`}>
-                  <span className="font-mono text-xs text-[#173C62] font-bold block">LARGE FEATURE MEDIA</span>
-                  <div className="h-14 rounded-[32px] border border-[#CBD5E1] flex items-center justify-center font-mono text-xs text-[#173C62] bg-white">
-                    32px – 36px
+                <div className={`p-6 rounded-[16px] border ${panelBg} space-y-3`}>
+                  <span className="font-mono text-xs text-[#173C62] font-bold block">FEATURE MEDIA (20px)</span>
+                  <div className="h-14 rounded-[20px] border border-[#CBD5E1] flex items-center justify-center font-mono text-xs text-[#173C62] bg-white">
+                    20px
                   </div>
                   <p className={`text-xs ${textSecondary}`}>Panoramic heroes, cinematic facility video frames, landmark project banners.</p>
                 </div>
 
-                <div className={`p-6 rounded-[24px] border ${panelBg} space-y-3`}>
-                  <span className="font-mono text-xs text-[#173C62] font-bold block">STANDARD IMAGES</span>
-                  <div className="h-14 rounded-[28px] border border-[#CBD5E1] flex items-center justify-center font-mono text-xs text-[#173C62] bg-white">
-                    28px
+                <div className={`p-6 rounded-[16px] border ${panelBg} space-y-3`}>
+                  <span className="font-mono text-xs text-[#173C62] font-bold block">STANDARD IMAGES (18px)</span>
+                  <div className="h-14 rounded-[18px] border border-[#CBD5E1] flex items-center justify-center font-mono text-xs text-[#173C62] bg-white">
+                    18px
                   </div>
                   <p className={`text-xs ${textSecondary}`}>Split layout photography, photo mosaics, project archive imagery.</p>
                 </div>
 
-                <div className={`p-6 rounded-[24px] border ${panelBg} space-y-3`}>
-                  <span className="font-mono text-xs text-[#173C62] font-bold block">CONTENT SURFACES</span>
-                  <div className="h-14 rounded-[24px] border border-[#CBD5E1] flex items-center justify-center font-mono text-xs text-[#173C62] bg-white">
-                    24px
+                <div className={`p-6 rounded-[16px] border ${panelBg} space-y-3`}>
+                  <span className="font-mono text-xs text-[#173C62] font-bold block">CONTENT SURFACES (16px)</span>
+                  <div className="h-14 rounded-[16px] border border-[#CBD5E1] flex items-center justify-center font-mono text-xs text-[#173C62] bg-white">
+                    16px
                   </div>
-                  <p className={`text-xs ${textSecondary}`}>Selected editorial quote enclosures, tender submission panels, forms.</p>
+                  <p className={`text-xs ${textSecondary}`}>Standard cards, editorial quote enclosures, tender submission panels, forms.</p>
                 </div>
 
-                <div className={`p-6 rounded-[24px] border ${panelBg} space-y-3`}>
-                  <span className="font-mono text-xs text-[#173C62] font-bold block">BUTTONS &amp; SMALL UI</span>
+                <div className={`p-6 rounded-[16px] border ${panelBg} space-y-3`}>
+                  <span className="font-mono text-xs text-[#173C62] font-bold block">BUTTONS &amp; CONTROLS</span>
                   <div className="h-14 rounded-full border border-[#CBD5E1] flex items-center justify-center font-mono text-xs text-[#173C62] bg-white">
-                    Capsule / 12–16px
+                    Capsule / 11–12px / 8px
                   </div>
-                  <p className={`text-xs ${textSecondary}`}>Restrained rounded capsule buttons, 12px form inputs, 9999px filter chips.</p>
+                  <p className={`text-xs ${textSecondary}`}>Capsule / 12px buttons, 11px form inputs, 8px badges, 9999px filter chips.</p>
                 </div>
               </div>
             </div>
@@ -1499,6 +1519,582 @@ export const DesignSystemShowcase: React.FC<DesignSystemShowcaseProps> = ({ onNa
               </div>
             </Container>
           </section>
+
+          {/* Section 5: The 7 Core Image Card Types */}
+          <section className="space-y-8 pt-8 border-t border-black/10">
+            <Container variant="wide">
+              <SectionHeading
+                eyebrow="LEVEL 05 — REFINED IMAGE CARD SYSTEM"
+                title="The 7 Core Image Card Archetypes"
+                description="Engineered for high architectural clarity: normalized aspect ratios (21:9, 16:9, 16:10, 4/5), subtle hover transitions (scale 1.025), contextual gradient scrims only when text overlays photos, and zero floating SaaS drop shadows."
+              />
+
+              <div className="space-y-10 pt-6">
+                {/* 1. Feature Image Card */}
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-xs font-bold text-[#173C62] uppercase tracking-wider">
+                      01 · Feature Image Card (Large Architectural Focal Point)
+                    </span>
+                    <span className="text-[11px] font-mono text-[#64748B]">Aspect Ratio 21:9 · 20–24px Radius · Text Overlay Scrim</span>
+                  </div>
+                  <FeatureImageCard
+                    imageSrc="/assets/images/solar-epc.jpg"
+                    imageAlt="Logistics Solar Rooftop EPC"
+                    aspectRatio="21/9"
+                    eyebrow="ENGINEERING & CONSTRUCTION · SOLAR EPC"
+                    title="Commercial Rooftop Photovoltaic EPC & Grid Synchronization"
+                    description="Full turnkey EPC execution adhering to DEWA Shams Dubai standards, bifacial Tier-1 modules, and integrated medium-voltage substation connection."
+                    meta="DEWA Shams Dubai Certified · 2.4 MWp Capacity"
+                    ctaText="View EPC Project Scope"
+                    onClick={() => alert('Feature card clicked')}
+                  />
+                </div>
+
+                {/* 2 & 3. Standard Image Card + Compact Image Cards (7/5 Split) */}
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-xs font-bold text-[#173C62] uppercase tracking-wider">
+                      02 &amp; 03 · Standard Image Card (7 Cols) &amp; Compact Image Cards (5 Cols)
+                    </span>
+                    <span className="text-[11px] font-mono text-[#64748B]">Clean Photo (Zero Dark Overlay) &bull; 16px &amp; 12px Radii</span>
+                  </div>
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                    {/* Standard Image Card (7 Cols) */}
+                    <div className="lg:col-span-7">
+                      <StandardImageCard
+                        imageSrc="/assets/images/project-chiller.jpg"
+                        imageAlt="Chilled Water Plant Modernization"
+                        aspectRatio="16/10"
+                        eyebrow="FACILITIES MANAGEMENT · HARD SERVICES"
+                        title="Chilled Water Plant Overhauls & District Cooling Integration"
+                        description="Phased mechanical overhauls, primary/secondary pumping retrofits, and VFD speed control to optimize continuous chilled water distribution."
+                        meta="HVAC Engineering &amp; Modernization"
+                        tags={['District Cooling', 'Chiller Retrofit', 'Energy Optimization']}
+                        ctaText="Explore Service Scope"
+                        onClick={() => alert('Standard card clicked')}
+                      />
+                    </div>
+
+                    {/* Compact Image Cards (5 Cols) */}
+                    <div className="lg:col-span-5 space-y-4">
+                      <CompactImageCard
+                        imageSrc="/assets/images/mep-construction.jpg"
+                        imageAlt="Form-4 Switchgear Testing"
+                        eyebrow="ENGINEERING &amp; CONSTRUCTION"
+                        title="Form-4 Switchgear &amp; LV Distribution Panels"
+                        meta="Substations &amp; Distribution"
+                        badge="Certified"
+                        onClick={() => alert('Compact card 1 clicked')}
+                      />
+                      <CompactImageCard
+                        imageSrc="/assets/images/hero-building.jpg"
+                        imageAlt="BMS Automation System"
+                        eyebrow="FACILITIES MANAGEMENT"
+                        title="Building Management Systems (BMS) Automation"
+                        meta="Automated Climate &amp; Lighting"
+                        badge="Active 24/7"
+                        onClick={() => alert('Compact card 2 clicked')}
+                      />
+                      <CompactImageCard
+                        imageSrc="/assets/images/engineering-intro.jpg"
+                        imageAlt="Testing and Commissioning"
+                        eyebrow="RETROFITS &amp; REFURBISHMENT"
+                        title="Testing, Balancing &amp; Commissioning Operations"
+                        meta="Single-Source Accountability"
+                        badge="Standardized"
+                        onClick={() => alert('Compact card 3 clicked')}
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* 4 & 5. Project Card + Service Image Card (6/6 Split) */}
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-xs font-bold text-[#173C62] uppercase tracking-wider">
+                      04 &amp; 05 · Project Card &amp; Service Image Card
+                    </span>
+                    <span className="text-[11px] font-mono text-[#64748B]">Project Specs &bull; Verified Subservices &bull; 18px Radius</span>
+                  </div>
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+                    {/* 04 Project Card */}
+                    <ProjectCard
+                      title="Commercial High-Rise Electromechanical Infrastructure"
+                      category="Engineering & Construction"
+                      imageSrc="/assets/images/project-highrise.jpg"
+                      imageAlt="Commercial High-Rise MEP"
+                      location="Downtown Dubai, UAE"
+                      sector="Commercial High-Rise"
+                      specPills={['48 Floors', 'Turnkey MEP', '11kV Substation']}
+                      aspectRatio="landscape"
+                      onClick={() => alert('Project card clicked')}
+                    />
+
+                    {/* 05 Service Image Card */}
+                    <ServiceImageCard
+                      title="MEP Commercial & Residential Engineering"
+                      division="Engineering & Construction"
+                      imageSrc="/assets/images/engineering-intro.jpg"
+                      imageAlt="MEP Engineering Systems"
+                      description="Integrated HVAC, electrical distribution, fire protection, and plumbing engineering designed for mission-critical reliability across high-density developments."
+                      subservices={[
+                        'HVAC & Air Distribution',
+                        'Power & LV Distribution',
+                        'Fire Alarm & Life Safety',
+                        'Potable & Drainage Plumbing',
+                      ]}
+                      onClick={() => alert('Service card clicked')}
+                    />
+                  </div>
+                </div>
+
+                {/* 6 & 7. Industry Image Card + Editorial Story Card (6/6 Split) */}
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-xs font-bold text-[#173C62] uppercase tracking-wider">
+                      06 &amp; 07 · Industry Image Card &amp; Editorial Story Card
+                    </span>
+                    <span className="text-[11px] font-mono text-[#64748B]">Sector Code &bull; Editorial News &bull; 18px Radius</span>
+                  </div>
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+                    {/* 06 Industry Image Card */}
+                    <IndustryImageCard
+                      title="Logistics, Warehousing & Cold Storage"
+                      sector="Industrial Sector"
+                      imageSrc="/assets/images/industry-logistics.jpg"
+                      imageAlt="Logistics and Warehousing Facility"
+                      description="Specialized high-bay climate control, heavy-duty electrical distribution, and rooftop solar installations tailored for modern logistics parks."
+                      capabilitiesCount={5}
+                      aspectRatio="16/10"
+                      variant="text-below"
+                      onClick={() => alert('Industry card clicked')}
+                    />
+
+                    {/* 07 Editorial Story Card */}
+                    <EditorialStoryCard
+                      title="LTSGROUP Completes 2.4 MWp Industrial Solar Commissioning"
+                      category="Corporate News"
+                      date="September 2026"
+                      readTime="3 min read"
+                      summary="Commissioning milestone achieved for turnkey rooftop photovoltaic array in Dubai Industrial City, supporting long-term decarbonization targets."
+                      imageSrc="/assets/images/project-solar.jpg"
+                      imageAlt="Solar PV System Commissioning"
+                      aspectRatio="16/10"
+                      layout="stacked"
+                      onClick={() => alert('Editorial story card clicked')}
+                    />
+                  </div>
+                </div>
+              </div>
+            </Container>
+          </section>
+        </div>
+      )}
+
+      {/* TAB 8: SECTION COMPOSITIONS (A–J) */}
+      {activeTab === 'compositions' && (
+        <div className="space-y-16 py-12">
+          {/* Header Banner */}
+          <section>
+            <Container variant="wide">
+              <div className="p-8 sm:p-10 rounded-[20px] bg-[#0B1C2F] text-white space-y-4 border border-white/10">
+                <div className="flex items-center gap-3">
+                  <span className="px-2.5 py-1 bg-[#173C62] text-xs font-mono font-semibold rounded-full uppercase tracking-wider text-[#93C5FD]">
+                    ARCHITECTURAL RHYTHM CONSTITUTION
+                  </span>
+                  <span className="text-xs font-mono text-slate-300">Level 06 &bull; Compositions A through J</span>
+                </div>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light tracking-tight text-white">
+                  Controlled Page Section Compositions
+                </h2>
+                <p className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-3xl">
+                  Enforces the permanent design rule: <strong>&ldquo;Do not use card grid, card grid, card grid throughout the website.&rdquo;</strong> Every page must combine open editorial layouts, asymmetric focal features, disciplined metric strips, and authoritative dark statements.
+                </p>
+              </div>
+            </Container>
+          </section>
+
+          {/* 01. COMPOSITION A: TEXT + IMAGE (40% / 60%) */}
+          <div className="space-y-4">
+            <Container variant="wide">
+              <div className="flex items-center justify-between border-b border-black/10 pb-2">
+                <span className="font-mono text-xs font-bold text-[#173C62] uppercase tracking-wider">
+                  01 &bull; COMPOSITION A: TEXT + IMAGE (TEXT 40% / IMAGE 60%)
+                </span>
+                <span className="text-[11px] font-mono text-[#64748B]">Asymmetric 5/7 Ratio &bull; Soft Radius &bull; Technical Attribution</span>
+              </div>
+            </Container>
+            <CompositionA
+              eyebrow="ENGINEERING &amp; CONSTRUCTION &bull; MEP INFRASTRUCTURE"
+              title="Single-Source Electromechanical Contracting Across the UAE"
+              description="LTSGROUP integrates complex MEP engineering, solar photovoltaic generation, and low-voltage control switchgear under unified engineering accountability."
+              secondaryText="Adhering to rigorous DEWA, Dubai Civil Defense, and Dubai Municipality statutory frameworks."
+              highlights={[
+                'Integrated 3D BIM coordination preventing on-site clashes',
+                'High-ambient psychrometric HVAC calculations for UAE conditions',
+                'DEWA-approved substation and medium-voltage interconnection',
+              ]}
+              actions={
+                <Button variant="primary" size="md" iconTrailing={<ArrowRight className="w-4 h-4" />}>
+                  Explore Engineering Scope
+                </Button>
+              }
+              imageSrc="/assets/images/engineering-intro.jpg"
+              imageAlt="Mechanical Pumping Infrastructure"
+              imageCaption="Chilled water pumping headers and variable speed hydronics."
+              attribution="LTSGROUP ASSET"
+            />
+          </div>
+
+          {/* 02. COMPOSITION B: IMAGE + TEXT (60% / 40%) */}
+          <div className="space-y-4">
+            <Container variant="wide">
+              <div className="flex items-center justify-between border-b border-black/10 pb-2">
+                <span className="font-mono text-xs font-bold text-[#173C62] uppercase tracking-wider">
+                  02 &bull; COMPOSITION B: IMAGE + TEXT (IMAGE 60% / TEXT 40%)
+                </span>
+                <span className="text-[11px] font-mono text-[#64748B]">Asymmetric 7/5 Ratio &bull; Visual-First Narrative</span>
+              </div>
+            </Container>
+            <CompositionB
+              eyebrow="FACILITIES MANAGEMENT &bull; HARD SERVICES"
+              title="Lifecycle Facilities Management &amp; Asset Stewardship"
+              description="Continuous preventive maintenance, 24/7 central plant monitoring, and rapid emergency response teams preserving real estate asset value."
+              highlights={[
+                'Bespoke CAFM maintenance regimes with computerized scheduling',
+                'Specialized chilled water hydronic balancing and IAQ testing',
+                'Statutory life safety compliance and emergency power standby',
+              ]}
+              actions={
+                <Button variant="secondary" size="md" iconTrailing={<ArrowRight className="w-4 h-4" />}>
+                  View FM Capabilities
+                </Button>
+              }
+              imageSrc="/assets/images/hero-building.jpg"
+              imageAlt="Commercial Facility High-Rise"
+              imageCaption="Commercial high-rise facility maintained under long-term hard services agreements."
+              attribution="DUBAI PORTFOLIO"
+            />
+          </div>
+
+          {/* 03. COMPOSITION C: LARGE FEATURE + SMALL SUPPORTING CARDS */}
+          <div className="space-y-4">
+            <Container variant="wide">
+              <div className="flex items-center justify-between border-b border-black/10 pb-2">
+                <span className="font-mono text-xs font-bold text-[#173C62] uppercase tracking-wider">
+                  03 &bull; COMPOSITION C: LARGE FEATURE + SMALL SUPPORTING CARDS
+                </span>
+                <span className="text-[11px] font-mono text-[#64748B]">1 Large Feature (7 cols) + 2 Smaller Items (5 cols) &bull; Anti-Formula Grid</span>
+              </div>
+            </Container>
+            <CompositionC
+              sectionEyebrow="SOLAR PHOTOVOLTAIC GENERATION &bull; DISTRIBUTED ASSETS"
+              sectionTitle="Flagship Turnkey EPC Deployments"
+              sectionDescription="One dominant 7-column feature module paired with two 5-column supporting cards, eliminating predictable 3-equal-card layouts."
+              featureImageSrc="/assets/images/solar-epc.jpg"
+              featureImageAlt="Logistics Solar Rooftop"
+              featureEyebrow="TURNKEY EPC &bull; 2.4 MWp"
+              featureTitle="Industrial Logistics Solar Photovoltaic Plant"
+              featureDescription="Turnkey bifacial solar PV system designed for high-dust desert environments under DEWA Shams Dubai interconnection regulations."
+              featureMeta="Dubai Industrial City &bull; Tier-1 Modules"
+              featureCtaText="View Plant Dossier"
+              supportingItems={[
+                {
+                  imageSrc: '/assets/images/mep-construction.jpg',
+                  eyebrow: 'SWITCHGEAR',
+                  title: 'Form-4 Substation Distribution Panels',
+                  meta: '11kV / 415V Transformation',
+                  badge: 'IEC 61439',
+                },
+                {
+                  imageSrc: '/assets/images/project-chiller.jpg',
+                  eyebrow: 'HVAC',
+                  title: 'Central Chilled Water Pumping Stations',
+                  meta: 'Variable Speed Hydronics',
+                  badge: 'Continuous Care',
+                },
+              ]}
+            />
+          </div>
+
+          {/* 04. COMPOSITION D: EDITORIAL LIST */}
+          <div className="space-y-4">
+            <Container variant="wide">
+              <div className="flex items-center justify-between border-b border-black/10 pb-2">
+                <span className="font-mono text-xs font-bold text-[#173C62] uppercase tracking-wider">
+                  04 &bull; COMPOSITION D: EDITORIAL LIST
+                </span>
+                <span className="text-[11px] font-mono text-[#64748B]">Large Heading + Horizontal Hairline Rows &bull; Zero Card Containers</span>
+              </div>
+            </Container>
+            <CompositionD
+              eyebrow="CAPABILITY TAXONOMY &bull; SCOPE MATRIX"
+              title="Comprehensive Engineering &amp; Maintenance Disciplines"
+              description="Open horizontal rows with hairline dividers replacing card boxes for an airy, prestigious editorial narrative."
+              items={[
+                {
+                  id: 'd-1',
+                  index: '01',
+                  category: 'MEP Contracting',
+                  title: 'Mechanical, Electrical & Plumbing EPC',
+                  description: 'Turnkey electromechanical contracting for commercial high-rises and mission-critical infrastructure under single-source accountability.',
+                  tags: ['HVAC Hydronics', 'Electrical Distribution', 'Fire Life Safety', 'Sanitary Systems'],
+                },
+                {
+                  id: 'd-2',
+                  index: '02',
+                  category: 'Solar Energy',
+                  title: 'Rooftop & Ground-Mounted Solar Photovoltaic EPC',
+                  description: 'Full turnkey solar PV execution adhering to DEWA Shams Dubai standards with high-yield Tier-1 bifacial panels.',
+                  tags: ['EPC Delivery', 'Shams Dubai Certified', 'Medium Voltage Sync'],
+                },
+                {
+                  id: 'd-3',
+                  index: '03',
+                  category: 'Facilities Management',
+                  title: 'Hard & Soft Facility Stewardship',
+                  description: 'Preventive, predictive, and corrective maintenance regimes keeping building assets operational 24/7 with computerized CAFM regimes.',
+                  tags: ['HVAC Stewardship', 'BMS Automation', 'Civil Works'],
+                },
+                {
+                  id: 'd-4',
+                  index: '04',
+                  category: 'Trading & Component Supply',
+                  title: 'Wholesale Equipment & Critical Spare Parts',
+                  description: 'Authorized direct distribution of genuine HVAC spare parts, variable frequency drives, and smart EV charging stations.',
+                  tags: ['VFD Controls', 'BTU Metering', 'EV Chargers'],
+                },
+              ]}
+            />
+          </div>
+
+          {/* 05. COMPOSITION E: METRIC STRIP */}
+          <div className="space-y-4">
+            <Container variant="wide">
+              <div className="flex items-center justify-between border-b border-black/10 pb-2">
+                <span className="font-mono text-xs font-bold text-[#173C62] uppercase tracking-wider">
+                  05 &bull; COMPOSITION E: METRIC STRIP
+                </span>
+                <span className="text-[11px] font-mono text-[#64748B]">Verified Corporate Benchmarks &bull; Strict Factual Alignment</span>
+              </div>
+            </Container>
+            <CompositionE
+              eyebrow="VERIFIED ENGINEERING BENCHMARKS &bull; STATUTORY ALIGNMENT"
+              metrics={[
+                {
+                  value: '100%',
+                  label: 'DEWA Shams Dubai',
+                  subtext: 'Utility grid compliance and statutory solar PV certification.',
+                  statutoryReference: 'DEWA Approved',
+                },
+                {
+                  value: '24/7',
+                  label: 'Hard Services Response',
+                  subtext: 'Rapid-response emergency maintenance across critical UAE assets.',
+                  statutoryReference: 'Continuous FM',
+                },
+                {
+                  value: 'Form-4',
+                  label: 'Switchgear Segregation',
+                  subtext: 'Internal compartmentalization meeting international IEC standards.',
+                  statutoryReference: 'IEC 61439',
+                },
+                {
+                  value: '0',
+                  label: 'Lost-Time Incidents',
+                  subtext: 'Uncompromising HSE site protocols and rigorous safety management.',
+                  statutoryReference: 'HSE Protocol',
+                },
+              ]}
+            />
+          </div>
+
+          {/* 06. COMPOSITION F: LOGO GRID */}
+          <div className="space-y-4">
+            <Container variant="wide">
+              <div className="flex items-center justify-between border-b border-black/10 pb-2">
+                <span className="font-mono text-xs font-bold text-[#173C62] uppercase tracking-wider">
+                  06 &bull; COMPOSITION F: LOGO GRID
+                </span>
+                <span className="text-[11px] font-mono text-[#64748B]">Approved Regulatory Authorities &amp; Standards &bull; Monochromatic Dignity</span>
+              </div>
+            </Container>
+            <CompositionF
+              eyebrow="STATUTORY CLEARANCES &bull; REGULATORY BODIES"
+              title="Authority Approvals &amp; Standards Compliance"
+              description="Restrained, disciplined corporate grid displaying verified statutory clearance frameworks and international engineering standards."
+              columns={4}
+              logos={[
+                {
+                  name: 'DEWA',
+                  sublabel: 'Dubai Electricity & Water Authority',
+                  clearanceCode: 'Statutory Grid',
+                },
+                {
+                  name: 'Dubai Civil Defense',
+                  sublabel: 'Fire & Life Safety Standards',
+                  clearanceCode: 'Life Safety NOC',
+                },
+                {
+                  name: 'Dubai Municipality',
+                  sublabel: 'Building Regulations & Specifications',
+                  clearanceCode: 'Code Compliance',
+                },
+                {
+                  name: 'ASHRAE 90.1',
+                  sublabel: 'Energy & Environmental Design',
+                  clearanceCode: 'Building Energy',
+                },
+                {
+                  name: 'IEC 61439',
+                  sublabel: 'Low-Voltage Switchgear Assemblies',
+                  clearanceCode: 'Global Standard',
+                },
+                {
+                  name: 'HTM 03-01',
+                  sublabel: 'Specialized Healthcare Ventilation',
+                  clearanceCode: 'Clinical Air',
+                },
+                {
+                  name: 'AHRI Certified',
+                  sublabel: 'Performance Rating of Equipment',
+                  clearanceCode: 'Equipment Standard',
+                },
+                {
+                  name: 'NFPA Standards',
+                  sublabel: 'National Fire Protection Compliance',
+                  clearanceCode: 'Fire Safety',
+                },
+              ]}
+            />
+          </div>
+
+          {/* 07. COMPOSITION G: FEATURED STORY */}
+          <div className="space-y-4">
+            <Container variant="wide">
+              <div className="flex items-center justify-between border-b border-black/10 pb-2">
+                <span className="font-mono text-xs font-bold text-[#173C62] uppercase tracking-wider">
+                  07 &bull; COMPOSITION G: FEATURED STORY
+                </span>
+                <span className="text-[11px] font-mono text-[#64748B]">Large Architectural Image + Editorial Headline &bull; Publication Layout</span>
+              </div>
+            </Container>
+            <CompositionG
+              sectionEyebrow="FEATURED TECHNICAL BRIEFING"
+              category="Solar PV Interconnection"
+              date="September 2026"
+              readTime="4 min read"
+              headline="DEWA Shams Dubai: Technical Standards for Commercial Rooftop Solar Interconnection"
+              leadParagraph="An engineering briefing examining medium-voltage inverter synchronization, bifacial yield optimization in high-ambient Middle Eastern conditions, and mandatory protection relay schemes."
+              imageSrc="/assets/images/project-solar.jpg"
+              imageCaption="Commissioned commercial rooftop solar installation in Dubai Industrial City."
+              attribution="SHAMS DUBAI"
+              layout="split"
+              onClick={() => alert('Featured story briefing clicked')}
+            />
+          </div>
+
+          {/* 08. COMPOSITION H: SERVICE MATRIX */}
+          <div className="space-y-4">
+            <Container variant="wide">
+              <div className="flex items-center justify-between border-b border-black/10 pb-2">
+                <span className="font-mono text-xs font-bold text-[#173C62] uppercase tracking-wider">
+                  08 &bull; COMPOSITION H: SERVICE MATRIX
+                </span>
+                <span className="text-[11px] font-mono text-[#64748B]">Grouped Taxonomy &bull; Minimal Lines &bull; Zero Heavy Card Boxes</span>
+              </div>
+            </Container>
+            <CompositionH
+              eyebrow="DISCIPLINE TAXONOMY &bull; CAPABILITY MATRIX"
+              title="Grouped Service Taxonomy &amp; Operating Matrix"
+              description="Grouped services presented with minimal visual treatment and clean columns, eliminating heavy card containers."
+              columns={3}
+              groups={[
+                {
+                  id: 'h-1',
+                  index: '01 / ENGINEERING & CONSTRUCTION',
+                  title: 'Electromechanical Contracting',
+                  description: 'Turnkey electromechanical infrastructure delivery.',
+                  services: [
+                    { name: 'Commercial & Residential MEP', code: 'MEP-01' },
+                    { name: 'Civil & Transport Infrastructure', code: 'INF-02' },
+                    { name: 'Solar PV EPC & Grid Interconnection', code: 'SOL-03' },
+                    { name: 'Form-4 Control Switchgear Assembly', code: 'SWG-04' },
+                  ],
+                },
+                {
+                  id: 'h-2',
+                  index: '02 / FACILITIES MANAGEMENT',
+                  title: 'Hard & Soft Services',
+                  description: 'Lifecycle building stewardship and operations.',
+                  services: [
+                    { name: 'HVAC & Chiller Plant Maintenance', code: 'FM-01' },
+                    { name: 'Electrical Distribution Stewardship', code: 'FM-02' },
+                    { name: 'Plumbing & Drainage Engineering', code: 'FM-03' },
+                    { name: 'Centralized BMS Automation', code: 'FM-04' },
+                  ],
+                },
+                {
+                  id: 'h-3',
+                  index: '03 / RETROFITS & REFURBISHMENT',
+                  title: 'Single-Source Modernization',
+                  description: 'Upgrades and performance commissioning.',
+                  services: [
+                    { name: 'Electromechanical Design & Engineering', code: 'RET-01' },
+                    { name: 'Turnkey Phased Project Management', code: 'RET-02' },
+                    { name: 'Third-Party Testing & Commissioning', code: 'RET-03' },
+                    { name: 'Air & Hydronic Balancing Validation', code: 'RET-04' },
+                  ],
+                },
+              ]}
+            />
+          </div>
+
+          {/* 09. COMPOSITION I: FULL-WIDTH MEDIA */}
+          <div className="space-y-4">
+            <Container variant="wide">
+              <div className="flex items-center justify-between border-b border-black/10 pb-2">
+                <span className="font-mono text-xs font-bold text-[#173C62] uppercase tracking-wider">
+                  09 &bull; COMPOSITION I: FULL-WIDTH MEDIA
+                </span>
+                <span className="text-[11px] font-mono text-[#64748B]">Large Photography &bull; Minimal Overlay &bull; Narrative Pacing</span>
+              </div>
+            </Container>
+            <CompositionI
+              imageSrc="/assets/images/hero-building.jpg"
+              aspectRatio="panoramic"
+              bleed={false}
+              overlayEyebrow="ARCHITECTURAL SCALE"
+              overlayTitle="Engineering the Built Environment with Precision"
+              overlaySubtitle="High-performance electromechanical systems delivering operational continuity across the United Arab Emirates."
+              caption="Downtown Dubai Commercial District infrastructure."
+              location="DUBAI, UAE"
+              attribution="LTSGROUP ASSET"
+            />
+          </div>
+
+          {/* 10. COMPOSITION J: DARK STATEMENT SECTION */}
+          <div className="space-y-4">
+            <Container variant="wide">
+              <div className="flex items-center justify-between border-b border-black/10 pb-2">
+                <span className="font-mono text-xs font-bold text-[#173C62] uppercase tracking-wider">
+                  10 &bull; COMPOSITION J: DARK STATEMENT SECTION
+                </span>
+                <span className="text-[11px] font-mono text-[#64748B]">Deep Navy &bull; Authoritative Statement &bull; Direct CTA</span>
+              </div>
+            </Container>
+            <CompositionJ
+              eyebrow="INSTITUTIONAL ACCOUNTABILITY &bull; RIGOROUS STANDARDS"
+              statement="Single-source electromechanical accountability delivered through rigorous statutory compliance and technical precision."
+              supportingText="From initial capital contracting through lifetime facility stewardship and component supply, LTSGROUP preserves the operational continuity of mission-critical built environments."
+              primaryActionLabel="Initiate Technical Consultation"
+              onPrimaryActionClick={() => alert('Consultation initiated')}
+              secondaryActionLabel="Explore Delivered Projects"
+              onSecondaryActionClick={() => alert('Explore projects')}
+              footnote="DEWA Shams Dubai Certified &bull; Dubai Civil Defense Approved &bull; Operating Across the UAE"
+            />
+          </div>
         </div>
       )}
     </div>

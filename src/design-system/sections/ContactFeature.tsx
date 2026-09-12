@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button } from '../atoms/Button';
 
 export interface ContactFeatureProps {
   eyebrow?: string;
@@ -205,12 +206,16 @@ export const ContactFeature: React.FC<ContactFeatureProps> = ({
                   />
                 </div>
 
-                <button
+                <Button
                   type="submit"
-                  className="w-full min-h-[48px] rounded-[12px] bg-[#173C62] text-white hover:bg-[#102B47] text-[13px] font-semibold uppercase tracking-[0.08em] transition-colors cursor-pointer"
+                  variant="primary"
+                  size="lg"
+                  shape="rounded"
+                  fullWidth
+                  iconTrailing="→"
                 >
-                  Submit Engineering Consultation →
-                </button>
+                  Submit Engineering Consultation
+                </Button>
               </form>
             )}
           </div>

@@ -31,7 +31,7 @@ export const Form: React.FC<FormProps> = ({
   return (
     <form
       onSubmit={onSubmit}
-      className={`bg-white border border-[#E5E7EB] rounded-[2px] p-6 sm:p-8 lg:p-10 space-y-8 ${className}`}
+      className={`bg-white border border-[#E5E7EB] rounded-[16px] p-6 sm:p-8 lg:p-10 space-y-8 ${className}`}
       {...props}
     >
       {(eyebrow || title || description) && (
@@ -56,7 +56,7 @@ export const Form: React.FC<FormProps> = ({
 
       {/* Success Notification */}
       {successMessage && (
-        <div className="p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-[2px] flex items-center gap-3 typography-body-sm">
+        <div className="p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-[8px] flex items-center gap-3 typography-body-sm">
           <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
           <span>{successMessage}</span>
         </div>
@@ -64,7 +64,7 @@ export const Form: React.FC<FormProps> = ({
 
       {/* Error Notification */}
       {errorMessage && (
-        <div className="p-4 bg-red-50 border border-red-200 text-red-800 rounded-[2px] flex items-center gap-3 typography-body-sm">
+        <div className="p-4 bg-red-50 border border-red-200 text-red-800 rounded-[8px] flex items-center gap-3 typography-body-sm">
           <AlertCircle className="w-4 h-4 text-red-600 shrink-0" />
           <span>{errorMessage}</span>
         </div>

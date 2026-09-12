@@ -1,4 +1,7 @@
 import React from 'react';
+import { FeatureImageCard, FeatureImageCardProps } from '../cards/FeatureImageCard';
+import { StandardImageCard, StandardImageCardProps } from '../cards/StandardImageCard';
+import { CompactImageCard, CompactImageCardProps } from '../cards/CompactImageCard';
 
 export type CardVariant =
   | 'feature'
@@ -124,3 +127,86 @@ export const MetricBlock: React.FC<MetricBlockProps> = ({
     </div>
   );
 };
+
+export type ImageCardVariant = 'feature' | 'standard' | 'compact';
+
+export interface ImageCardProps {
+  title: string;
+  imageUrl: string;
+  imageAlt?: string;
+  variant?: ImageCardVariant;
+  subtitle?: string;
+  description?: string;
+  href?: string;
+  ctaText?: string;
+  light?: boolean;
+  onNavigate?: (href: string) => void;
+  className?: string;
+}
+
+/**
+ * ImageCard
+ * Unified dispatcher for Feature, Standard, and Compact image cards.
+ */
+export const ImageCard: React.FC<ImageCardProps> = ({
+  title,
+  imageUrl,
+  imageAlt = '',
+  variant = 'standard',
+  subtitle,
+  description,
+  href,
+  ctaText = 'Explore details',
+  onNavigate,
+  className = '',
+}) => {
+  if (variant === 'feature') {
+    return (
+      <FeatureImageCard
+        title={title}
+        imageUrl={imageUrl}
+        imageAlt={imageAlt}
+        eyebrow={subtitle}
+        description={description}
+        href={href}
+        ctaText={ctaText}
+        onNavigate={onNavigate}
+        className={className}
+      />
+    );
+  }
+
+  if (variant === 'compact') {
+    return (
+      <CompactImageCard
+        title={title}
+        imageUrl={imageUrl}
+        imageAlt={imageAlt}
+        eyebrow={subtitle}
+        description={description}
+        href={href}
+        onNavigate={onNavigate}
+        className={className}
+      />
+    );
+  }
+
+  // Standard Image Card
+  return (
+    <StandardImageCard
+      title={title}
+      imageUrl={imageUrl}
+      imageAlt={imageAlt}
+      eyebrow={subtitle}
+      description={description}
+      href={href}
+      ctaText={ctaText}
+      onNavigate={onNavigate}
+      className={className}
+    />
+  );
+};
+
+// Re-export core card types
+export { FeatureImageCard, StandardImageCard, CompactImageCard };
+export type { FeatureImageCardProps, StandardImageCardProps, CompactImageCardProps };
