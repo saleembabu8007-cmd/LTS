@@ -1,0 +1,515 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  
+  /* Primary LTS Architectural Palette */
+  --color-primary: #173C62;
+  --color-primary-hover: #102B47;
+  --color-primary-dark: #0B1C2F;
+  --color-primary-tint: #EDF3F9;
+  --color-primary-subtle: #F2F6FA;
+
+  /* Editorial Ink & Typography */
+  --color-ink: #0B1320;
+  --color-text: #334155;
+  --color-text-secondary: #4A5568;
+  --color-muted: #64748B;
+  --color-subtle: #94A3B8;
+  --color-inverse: #FFFFFF;
+
+  /* Architectural Canvas */
+  --color-surface: #FFFFFF;
+  --color-surface-subtle: #F8FAFC;
+  --color-surface-warm: #F1F5F9;
+  --color-surface-dark: #0B1C2F;
+
+  /* Structural Hairline Borders */
+  --color-border: #E5E7EB;
+  --color-border-strong: #CBD5E1;
+  --color-border-dark: rgba(255, 255, 255, 0.12);
+
+  /* Deliberate Soft-Radius Scale (Section 2) */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-image: 18px;
+  --radius-surface: 16px;
+  --radius-feature: 20px;
+  --radius-form: 11px;
+  --radius-control: 12px;
+  --radius-pill: 9999px;
+
+  /* Subtle Professional Shadows (Section 4) */
+  --shadow-subtle: 0 8px 30px rgba(0, 0, 0, 0.06);
+  --shadow-elevated: 0 16px 50px rgba(0, 0, 0, 0.08);
+
+  /* Restrained Motion Tokens (Constitutional Language) */
+  --duration-ui-fast: 150ms;
+  --duration-ui: 180ms;
+  --duration-ui-normal: 220ms;
+  --duration-media: 400ms;
+  --duration-media-slow: 500ms;
+  --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-scale-image: 1.025;
+  --motion-translate-arrow: 3px;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-ink);
+    background-color: var(--color-surface);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+  }
+
+  ::selection {
+    background-color: #173C62;
+    color: #FFFFFF;
+  }
+
+  /* Universal Accessible Keyboard Focus States */
+  :focus-visible {
+    outline: 2px solid #173C62;
+    outline-offset: 2px;
+  }
+
+  /* Dark surfaces & Footer focus rings */
+  footer :focus-visible,
+  [data-theme="dark"] :focus-visible,
+  .dark :focus-visible {
+    outline: 2px solid #93C5FD;
+    outline-offset: 2px;
+  }
+}
+
+/* Subtle elevation classes (Section 4) */
+.shadow-subtle {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+.shadow-elevated {
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================================================
+   1. EDITORIAL GRID & CONTAINER ARCHITECTURE
+   Strict bounded content width (1360px), 48–72px generous desktop gutters
+========================================================================= */
+
+.lts-container {
+  width: 100%;
+  max-width: 1360px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1.25rem, 4vw, 4.5rem);
+  padding-right: clamp(1.25rem, 4vw, 4.5rem);
+}
+
+/* Readable prose limit: never create huge paragraphs spanning the entire viewport */
+.max-prose-editorial {
+  max-width: 68ch;
+}
+
+/* Responsive Editorial Grid: 12 Desktop / 8 Tablet / 4 Mobile */
+.editorial-grid-12 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .editorial-grid-12 {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .editorial-grid-12 {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 2rem;
+  }
+}
+
+.editorial-grid-8 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .editorial-grid-8 {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+.editorial-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .editorial-grid-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+/* Asymmetric 5/7 Split Grid */
+.asymmetric-grid-5-7 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .asymmetric-grid-5-7 {
+    grid-template-columns: 5fr 7fr;
+    gap: 3.5rem;
+  }
+}
+
+/* Asymmetric 7/5 Split Grid */
+.asymmetric-grid-7-5 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .asymmetric-grid-7-5 {
+    grid-template-columns: 7fr 5fr;
+    gap: 3.5rem;
+  }
+}
+
+/* =========================================================================
+   2. RESTRAINED CORPORATE EDITORIAL TYPOGRAPHY
+========================================================================= */
+
+.typography-display-xxl {
+  font-family: var(--font-sans);
+  font-size: clamp(2.75rem, 6vw, 5.25rem);
+  line-height: 1.04;
+  font-weight: 300;
+  letter-spacing: -0.035em;
+}
+
+.typography-display-xl {
+  font-family: var(--font-sans);
+  font-size: clamp(2.35rem, 5.5vw, 4.75rem);
+  line-height: 1.08;
+  font-weight: 300;
+  letter-spacing: -0.03em;
+}
+
+.typography-display-l {
+  font-family: var(--font-sans);
+  font-size: clamp(2.1rem, 4.5vw, 3.75rem);
+  line-height: 1.10;
+  font-weight: 350;
+  letter-spacing: -0.025em;
+}
+
+.typography-display-m {
+  font-family: var(--font-sans);
+  font-size: clamp(1.85rem, 3.5vw, 3rem);
+  line-height: 1.14;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.typography-display {
+  font-family: var(--font-sans);
+  font-size: clamp(1.85rem, 3.8vw, 3.25rem);
+  line-height: 1.14;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+}
+
+.typography-h1 {
+  font-family: var(--font-sans);
+  font-size: clamp(1.5rem, 2.8vw, 2.5rem);
+  line-height: 1.2;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.typography-h2 {
+  font-family: var(--font-sans);
+  font-size: clamp(1.25rem, 2vw, 1.875rem);
+  line-height: 1.25;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.typography-h3 {
+  font-family: var(--font-sans);
+  font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+  line-height: 1.35;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.typography-h4 {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.45;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+.typography-body-lg {
+  font-family: var(--font-sans);
+  font-size: clamp(0.9375rem, 1.2vw, 1.0625rem);
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+.typography-body {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.typography-body-sm {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  font-weight: 400;
+}
+
+.typography-label,
+.typography-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.typography-btn {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.typography-caption {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--color-muted);
+}
+
+/* =========================================================================
+   3. SPACING SCALE & ARCHITECTURAL CADENCE
+========================================================================= */
+
+.editorial-section {
+  padding-top: clamp(4.5rem, 6.5vw, 7rem);
+  padding-bottom: clamp(4.5rem, 6.5vw, 7rem);
+}
+
+.editorial-section-tight {
+  padding-top: clamp(3rem, 4.5vw, 4.5rem);
+  padding-bottom: clamp(3rem, 4.5vw, 4.5rem);
+}
+
+.editorial-section-spacious {
+  padding-top: clamp(6.5rem, 9vw, 10rem);
+  padding-bottom: clamp(6.5rem, 9vw, 10rem);
+}
+
+/* Hairline borders */
+.hairline-border {
+  border-width: 1px;
+  border-color: #E5E7EB;
+}
+
+.hairline-border-strong {
+  border-width: 1px;
+  border-color: #CBD5E1;
+}
+
+.hairline-border-dark {
+  border-width: 1px;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.hairline-b {
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.hairline-b-dark {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.hairline-t {
+  border-top: 1px solid #E5E7EB;
+}
+
+.hairline-t-dark {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* =========================================================================
+   4. INTENTIONALLY ROUNDED EDITORIAL FRAMES & SURFACES (8–20px)
+========================================================================= */
+
+/* Large image containers: 18px */
+.editorial-image-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  background-color: #0B1C2F;
+}
+
+/* Feature media & panoramic banners: 20px */
+.editorial-image-frame-lg {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: #0B1C2F;
+}
+
+.editorial-feature-media {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: #0B1C2F;
+}
+
+/* Selected content surfaces where necessary: 16px */
+.editorial-surface {
+  border-radius: 16px;
+}
+
+/* Forms & Inputs: 11px */
+.editorial-form-field {
+  border-radius: 11px;
+}
+
+/* Restrained pill / capsule */
+.editorial-pill {
+  border-radius: 9999px;
+}
+
+/* Master Full-Bleed Hero Scrims (Rule 04) */
+.full-bleed-scrim-cinematic {
+  background: linear-gradient(
+    180deg,
+    rgba(11, 28, 47, 0.40) 0%,
+    rgba(11, 28, 47, 0.65) 45%,
+    rgba(11, 28, 47, 0.92) 100%
+  );
+}
+
+.full-bleed-scrim-lateral {
+  background: linear-gradient(
+    90deg,
+    rgba(11, 28, 47, 0.94) 0%,
+    rgba(11, 28, 47, 0.82) 48%,
+    rgba(11, 28, 47, 0.40) 100%
+  );
+}
+
+/* Editorial media transitions: 150–300ms, ease-out, scale 1.02–1.04 */
+.editorial-image-frame img,
+.editorial-image-frame-lg img,
+.editorial-feature-media img {
+  transition: transform 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.editorial-image-frame:hover img,
+.editorial-image-frame-lg:hover img,
+.editorial-feature-media:hover img {
+  transform: scale(1.025);
+}
+
+/* Directional arrow transitions: 180ms ease-out, 3px translation */
+.group-hover-arrow {
+  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.group:hover .group-hover-arrow {
+  transform: translateX(3px);
+}
+
+/* Restrained Motion Utility Classes */
+.motion-ui {
+  transition: all 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.motion-fade {
+  transition: opacity 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.motion-media {
+  transition: transform 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Hide scrollbar for horizontal strips */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* =========================================================================
+   5. UNIVERSAL ACCESSIBILITY: PREFERS-REDUCED-MOTION
+   Strict compliance: disables all spatial animations, transforms, and transitions
+========================================================================= */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .editorial-image-frame img,
+  .editorial-image-frame-lg img,
+  .editorial-feature-media img,
+  .editorial-image-frame:hover img,
+  .editorial-image-frame-lg:hover img,
+  .editorial-feature-media:hover img {
+    transition: none !important;
+    transform: none !important;
+  }
+
+  .group-hover-arrow,
+  .group:hover .group-hover-arrow {
+    transition: none !important;
+    transform: none !important;
+  }
+
+  .group:hover img,
+  img:hover {
+    transform: none !important;
+  }
+}

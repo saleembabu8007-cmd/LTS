@@ -1,0 +1,6 @@
+{
+  "name": "LTSGROUP",
+  "description": "Official corporate website for LTSGROUP, multi-division electromechanical engineering, facilities management, and trading company.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
