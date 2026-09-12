@@ -90,7 +90,7 @@ export const ContactPanel: React.FC<ContactPanelProps> = ({
                   Headquarters
                 </span>
                 <span className="text-xs text-[#0B1320]">
-                  Dubai Investment Park &bull; Al Gurg Tower, Deira, Dubai, UAE
+                  Al Quoz Industrial Area 3, Dubai, UAE
                 </span>
               </div>
             </div>

@@ -18,7 +18,7 @@ export const Footer: React.FC<FooterProps> = ({
       <div className="py-14 sm:py-16 lg:py-20 border-b border-white/10">
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-14">
-            {/* Column 1: Brand & Al Gurg Group Credential (4 Cols) */}
+            {/* Column 1: Brand & Corporate Credentials (4 Cols) */}
             <div className="lg:col-span-4 space-y-6">
               <BrandLogo variant="light" withTagline onClick={() => onNavigate('/')} />
 
@@ -28,11 +28,11 @@ export const Footer: React.FC<FooterProps> = ({
 
               <div className="pt-3 border-t border-white/10 space-y-2">
                 <span className="block font-mono text-[10px] uppercase tracking-wider text-slate-400">
-                  Group Affiliation
+                  Operational Jurisdiction
                 </span>
                 <p className="text-xs font-medium text-white flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-[#173C62] inline-block shrink-0" />
-                  A Proud Member of Easa Saleh Al Gurg Group
+                  Dubai, United Arab Emirates
                 </p>
               </div>
 
@@ -246,7 +246,7 @@ export const Footer: React.FC<FooterProps> = ({
         <Container>
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="font-mono text-[11px]">
-              &copy; {new Date().getFullYear()} LTSGROUP &bull; Easa Saleh Al Gurg Group LLC. All rights reserved.
+              &copy; {new Date().getFullYear()} LTSGROUP Electromechanical LLC. All rights reserved.
             </p>
 
             <div className="flex items-center gap-6 font-mono text-[11px]">

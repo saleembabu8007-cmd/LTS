@@ -85,6 +85,8 @@ import {
   Container,
   Section,
   SectionEntrance,
+  Media,
+  Card,
 } from '../../design-system';
 import {
   Shield,
@@ -93,10 +95,7 @@ import {
   Check,
   Search,
   ExternalLink,
-  ChevronRight,
-  Sun,
-  Moon,
-  Layers,
+  ChevronDown,
   ArrowRight,
   ArrowUpRight,
 } from 'lucide-react';
@@ -106,7 +105,7 @@ interface DesignSystemShowcaseProps {
 }
 
 export const DesignSystemShowcase: React.FC<DesignSystemShowcaseProps> = ({ onNavigate }) => {
-  const [activeTab, setActiveTab] = useState<'tokens' | 'atoms' | 'molecules' | 'organisms' | 'primitives' | 'motion'>('tokens');
+  const [activeTab, setActiveTab] = useState<'tokens' | 'atoms' | 'molecules' | 'organisms' | 'primitives' | 'motion' | 'cards-media'>('tokens');
   const [canvasTone, setCanvasTone] = useState<'white' | 'warm' | 'dark'>('white');
   const [activeFilter, setActiveFilter] = useState<string>('all');
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -183,6 +182,7 @@ export const DesignSystemShowcase: React.FC<DesignSystemShowcaseProps> = ({ onNa
                   { id: 'organisms', label: '4. Organisms (13)' },
                   { id: 'primitives', label: '5. Section Primitives (14)' },
                   { id: 'motion', label: '6. Restrained Motion' },
+                  { id: 'cards-media', label: '7. Cards & Media System' },
                 ].map((tab) => (
                   <button
                     key={tab.id}
@@ -819,7 +819,7 @@ export const DesignSystemShowcase: React.FC<DesignSystemShowcaseProps> = ({ onNa
             </Container>
             <EditorialHero
               headline="Electromechanical Contracting &amp; Critical Infrastructure"
-              lead="Delivering single-source MEP engineering, commercial solar EPC, and Form-4 switchgear assembly backed by the stability of the Easa Saleh Al Gurg Group."
+              lead="Delivering single-source MEP engineering, commercial solar EPC, and Form-4 switchgear assembly backed by comprehensive statutory governance across the UAE."
               mediaSrc="https://images.unsplash.com/photo-1541888946425-d0fbb186c5f8?auto=format&fit=crop&w=1400&q=80"
               mediaAlt="Infrastructure site"
               bannerTitle="Turnkey Electromechanical Infrastructure"
@@ -884,7 +884,7 @@ export const DesignSystemShowcase: React.FC<DesignSystemShowcaseProps> = ({ onNa
                 { name: 'DEWA', category: 'Utility Authority', clearanceLevel: 'Class 1 Approved' },
                 { name: 'Dubai Civil Defense', category: 'Life Safety', clearanceLevel: 'Class A Certified' },
                 { name: 'Dubai Municipality', category: 'Civic Authority', clearanceLevel: 'G+Unlimited' },
-                { name: 'Easa Saleh Al Gurg', category: 'Parent Group', clearanceLevel: 'Conglomerate' },
+                { name: 'Roads & Transport Authority', category: 'Infrastructure', clearanceLevel: 'RTA Approved' },
                 { name: 'Empower', category: 'District Cooling', clearanceLevel: 'PHE Verified' },
                 { name: 'Tabreed', category: 'Thermal Energy', clearanceLevel: 'Network Approved' },
               ]}
@@ -1025,8 +1025,8 @@ export const DesignSystemShowcase: React.FC<DesignSystemShowcaseProps> = ({ onNa
             </Container>
             <QuoteFeature
               quote="True engineering excellence is measured by operational longevity, statutory compliance, and zero unplanned downtime."
-              authorName="Easa Saleh Al Gurg Directorate"
-              authorTitle="Parent Group Governance"
+              authorName="LTSGROUP Engineering Council"
+              authorTitle="Technical Governance Board"
               tone={isDark ? 'dark' : 'subtle'}
             />
           </div>
@@ -1262,6 +1262,243 @@ export const DesignSystemShowcase: React.FC<DesignSystemShowcaseProps> = ({ onNa
               </div>
             </div>
           </Container>
+        </div>
+      )}
+
+      {/* =========================================================================
+          TAB 07 — NORMALIZED CARDS, MEDIA SYSTEM & CONTAINERS
+      ========================================================================= */}
+      {activeTab === 'cards-media' && (
+        <div className="py-14 sm:py-20 space-y-20">
+          {/* Section 1: Normalized Containers */}
+          <section className="space-y-6">
+            <Container variant="wide">
+              <SectionHeading
+                eyebrow="LEVEL 01 — LAYOUT FOUNDATIONS"
+                title="Normalized Container Architecture"
+                description="Four deliberate container boundaries standardizing horizontal margins and readable prose widths across all pages."
+              />
+            </Container>
+
+            <div className="space-y-4 pt-4">
+              <Container variant="global" className="bg-[#173C62]/10 border border-[#173C62]/30 py-4 rounded-[12px] text-center">
+                <span className="font-mono text-xs font-semibold text-[#173C62]">
+                  Container: Global Canvas — Max Width: 1440px (`variant="global"`) &bull; Site Header, Global Utility &amp; Footer
+                </span>
+              </Container>
+
+              <Container variant="wide" className="bg-[#173C62]/15 border border-[#173C62]/40 py-4 rounded-[12px] text-center">
+                <span className="font-mono text-xs font-semibold text-[#173C62]">
+                  Container: Wide Editorial — Max Width: 1360px (`variant="wide"`) &bull; Primary Landing Pages &amp; Division Splits
+                </span>
+              </Container>
+
+              <Container variant="standard" className="bg-[#173C62]/20 border border-[#173C62]/50 py-4 rounded-[12px] text-center">
+                <span className="font-mono text-xs font-semibold text-[#173C62]">
+                  Container: Standard Focused — Max Width: 1140px (`variant="standard"`) &bull; Focused Service Sections &amp; Specifications
+                </span>
+              </Container>
+
+              <Container variant="narrow" className="bg-[#173C62]/25 border border-[#173C62]/60 py-4 rounded-[12px] text-center">
+                <span className="font-mono text-xs font-semibold text-[#173C62]">
+                  Container: Narrow Reading — Max Width: 760px (`variant="narrow"`) &bull; Editorial Articles &amp; Prose
+                </span>
+              </Container>
+            </div>
+          </section>
+
+          {/* Section 2: Standardized Buttons & States */}
+          <section className="space-y-6">
+            <Container variant="wide">
+              <SectionHeading
+                eyebrow="LEVEL 02 — INTERACTIVE CONTROLS"
+                title="Normalized Button System &amp; States"
+                description="Strictly standardized button heights (38px, 44px, 48px), 12px soft radius or capsule, zero arbitrary drop shadows, and accessible focus rings."
+              />
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-6">
+                {/* Variant: Primary */}
+                <div className={`p-6 rounded-[16px] border ${panelBg} space-y-4`}>
+                  <div className="flex items-center justify-between border-b border-black/10 pb-2">
+                    <span className="font-mono text-xs font-bold text-[#173C62]">VARIANT: PRIMARY</span>
+                    <span className="text-[11px] font-mono text-[#64748B]">Main Action</span>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <Button variant="primary" size="sm">Small (38px)</Button>
+                    <Button variant="primary" size="md">Medium (44px)</Button>
+                    <Button variant="primary" size="lg">Large (48px)</Button>
+                  </div>
+                  <div className="flex items-center gap-3 pt-2">
+                    <Button variant="primary" size="sm" disabled>Disabled State</Button>
+                    <Button variant="primary" size="sm" iconTrailing={<ArrowRight className="w-3.5 h-3.5" />}>With Icon</Button>
+                  </div>
+                </div>
+
+                {/* Variant: Secondary */}
+                <div className={`p-6 rounded-[16px] border ${panelBg} space-y-4`}>
+                  <div className="flex items-center justify-between border-b border-black/10 pb-2">
+                    <span className="font-mono text-xs font-bold text-[#173C62]">VARIANT: SECONDARY</span>
+                    <span className="text-[11px] font-mono text-[#64748B]">Supporting</span>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <Button variant="secondary" size="sm">Small (38px)</Button>
+                    <Button variant="secondary" size="md">Medium (44px)</Button>
+                    <Button variant="secondary" size="lg">Large (48px)</Button>
+                  </div>
+                  <div className="flex items-center gap-3 pt-2">
+                    <Button variant="secondary" size="sm" disabled>Disabled State</Button>
+                    <Button variant="secondary" size="sm" shape="rounded">12px Rounded</Button>
+                  </div>
+                </div>
+
+                {/* Variant: Outline & Icon */}
+                <div className={`p-6 rounded-[16px] border ${panelBg} space-y-4`}>
+                  <div className="flex items-center justify-between border-b border-black/10 pb-2">
+                    <span className="font-mono text-xs font-bold text-[#173C62]">VARIANT: OUTLINE &amp; ICON</span>
+                    <span className="text-[11px] font-mono text-[#64748B]">Controls</span>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <Button variant="outline" size="md">Outline Action</Button>
+                    <Button variant="text" size="md">Text Link</Button>
+                    <Button variant="icon" size="md" aria-label="Next item">
+                      <ArrowRight className="w-4 h-4" />
+                    </Button>
+                  </div>
+                  <div className="flex items-center gap-3 pt-2">
+                    <Button variant="white" size="sm" className="bg-slate-200">White on Light</Button>
+                  </div>
+                </div>
+              </div>
+            </Container>
+          </section>
+
+          {/* Section 3: Canonical Cards System */}
+          <section className="space-y-6">
+            <Container variant="wide">
+              <SectionHeading
+                eyebrow="LEVEL 03 — ARCHITECTURAL SURFACES"
+                title="Canonical Card Archetypes"
+                description="Feature (20px radius), Standard (16px radius), and Compact (12px radius) surfaces with disciplined 1px hairlines and zero heavy SaaS shadows."
+              />
+
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-6">
+                {/* 1. Feature Card (7 Cols) */}
+                <div className="lg:col-span-7">
+                  <Card variant="feature" interactive className="h-full flex flex-col justify-between">
+                    <div className="space-y-4">
+                      <div className="flex items-center justify-between">
+                        <span className="font-mono text-[10.5px] uppercase tracking-[0.2em] text-[#173C62] font-semibold">
+                          FEATURE ARCHETYPE &bull; RADIUS 20PX
+                        </span>
+                        <span className="px-2.5 py-1 bg-[#EDF3F9] text-[#173C62] text-[11px] font-mono rounded-full font-semibold">
+                          Turnkey EPC
+                        </span>
+                      </div>
+                      <h3 className="text-2xl sm:text-3xl font-light text-[#0B1320] tracking-tight leading-snug">
+                        Commercial Rooftop Solar Photovoltaic EPC
+                      </h3>
+                      <p className="text-sm text-[#4A5568] leading-relaxed max-w-xl">
+                        Comprehensive Shams Dubai engineering submittals, bifacial Tier-1 module layouts, and live-grid grid synchronization under single-source accountability.
+                      </p>
+                    </div>
+
+                    <div className="pt-6 mt-6 border-t border-[#E5E7EB] flex items-center justify-between">
+                      <span className="font-mono text-xs text-[#64748B]">DEWA Shams Dubai Certified</span>
+                      <Button variant="primary" size="sm" iconTrailing={<ArrowRight className="w-3.5 h-3.5" />}>
+                        Explore Scope
+                      </Button>
+                    </div>
+                  </Card>
+                </div>
+
+                {/* 2. Standard Card (5 Cols) */}
+                <div className="lg:col-span-5 space-y-4">
+                  <Card variant="standard" interactive>
+                    <div className="space-y-3">
+                      <span className="font-mono text-[10.5px] uppercase tracking-[0.2em] text-[#64748B]">
+                        STANDARD ARCHETYPE &bull; RADIUS 16PX
+                      </span>
+                      <h4 className="text-lg font-semibold text-[#0B1320] tracking-tight">
+                        Chilled Water Plant Modernization
+                      </h4>
+                      <p className="text-xs text-[#4A5568] leading-relaxed">
+                        Phased live chiller overhauls and VFD retrofits maintaining continuous building climate control.
+                      </p>
+                    </div>
+                  </Card>
+
+                  {/* 3. Compact Card */}
+                  <Card variant="compact" interactive>
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <span className="font-mono text-[10px] uppercase text-[#64748B] block">COMPACT &bull; 12PX</span>
+                        <span className="text-xs font-semibold text-[#0B1320]">Form-4 Switchgear Testing</span>
+                      </div>
+                      <ArrowRight className="w-4 h-4 text-[#173C62]" />
+                    </div>
+                  </Card>
+                </div>
+              </div>
+            </Container>
+          </section>
+
+          {/* Section 4: Reusable Media System */}
+          <section className="space-y-6">
+            <Container variant="wide">
+              <SectionHeading
+                eyebrow="LEVEL 04 — REUSABLE MEDIA SYSTEM"
+                title="Architectural Media &amp; Normalized Ratios"
+                description="Normalized aspect ratios (16:9, 16:10, 4:3, 1:1, 21:9), directional scrim overlays, technical captions, and accessible video placeholders."
+              />
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-6">
+                {/* Media 1: Image with Overlay */}
+                <div className="space-y-2">
+                  <span className="font-mono text-xs font-bold text-[#173C62] block">1. IMAGE WITH OVERLAY</span>
+                  <Media
+                    variant="image-overlay"
+                    src="/assets/images/hero-building.jpg"
+                    alt="Corporate high-rise architecture"
+                    aspectRatio="16/10"
+                    radius="image"
+                    overlayBadge="CIVIL INFRASTRUCTURE"
+                    overlayTitle="Commercial High-Rise MEP"
+                    overlaySubtitle="48-story integrated electromechanical installation in Dubai."
+                    interactive
+                  />
+                </div>
+
+                {/* Media 2: Image Feature with Caption */}
+                <div className="space-y-2">
+                  <span className="font-mono text-xs font-bold text-[#173C62] block">2. IMAGE WITH CAPTION</span>
+                  <Media
+                    variant="image-caption"
+                    src="/assets/images/project-solar.jpg"
+                    alt="Logistics solar rooftop installation"
+                    aspectRatio="16/10"
+                    radius="image"
+                    caption="2.4 MWp turnkey grid-tied solar photovoltaic installation on warehouse roofing."
+                    attribution="DUBAI INDUSTRIAL CITY &bull; SHAMS DUBAI"
+                  />
+                </div>
+
+                {/* Media 3: Video Placeholder */}
+                <div className="space-y-2">
+                  <span className="font-mono text-xs font-bold text-[#173C62] block">3. VIDEO PLACEHOLDER</span>
+                  <Media
+                    variant="video-placeholder"
+                    src="/assets/images/mep-construction.jpg"
+                    alt="Engineering site installation walk-through"
+                    aspectRatio="16/10"
+                    radius="image"
+                    videoDuration="02:45 MIN"
+                    caption="Technical site walk-through documenting primary mechanical pumping installation."
+                    onPlayClick={() => alert('Video preview modal trigger')}
+                  />
+                </div>
+              </div>
+            </Container>
+          </section>
         </div>
       )}
     </div>

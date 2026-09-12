@@ -45,9 +45,8 @@ export { NewsFeature as NewsFeatureSection, type NewsFeatureProps as NewsFeature
 export { QuoteFeature as EditorialQuoteFeature, type QuoteFeatureProps as EditorialQuoteFeatureProps } from './sections/QuoteFeature';
 export { ContactFeature, type ContactFeatureProps } from './sections/ContactFeature';
 
-// 6. Structural Components (Backward Compatibility)
 export { Container } from './structures/Container';
-export type { ContainerProps } from './structures/Container';
+export type { ContainerProps, ContainerVariant } from './structures/Container';
 export { Section } from './structures/Section';
 export type { SectionProps, SectionSpacing, SectionTone } from './structures/Section';
 export { SplitSection } from './structures/SplitSection';
@@ -69,31 +68,13 @@ export type { EditorialGridProps, GridCols } from './structures/EditorialGrid';
 export { MediaGrid } from './structures/MediaGrid';
 export type { MediaGridProps, MediaGridItem } from './structures/MediaGrid';
 
-// 7. DEPRECATION LAYER — Legacy Card Patterns (Do NOT use in new page implementations)
-// These are temporarily maintained for existing untouched pages during migration.
-// New pages MUST use editorial rows, mandate rows, mosaics, and split compositions instead.
-export { ImageBlock } from './components/ImageBlock';
-export type { ImageBlockProps, ImageAspectRatio } from './components/ImageBlock';
+// Reusable Media System
+export { Media } from './components/Media';
+export type { MediaProps, MediaVariant, MediaAspectRatio, MediaRadius } from './components/Media';
 
-export { ProjectCard } from './components/ProjectCard';
-export type { ProjectCardProps } from './components/ProjectCard';
-
-export { ServiceCard } from './components/ServiceCard';
-export type { ServiceCardProps } from './components/ServiceCard';
-
-export { IndustryCard } from './components/IndustryCard';
-export type { IndustryCardProps } from './components/IndustryCard';
-
-export { NewsCard } from './components/NewsCard';
-export type { NewsCardProps } from './components/NewsCard';
-
-export { CTA } from './components/CTA';
-export type { CTAProps } from './components/CTA';
-
-export { PageHero } from './components/PageHero';
-export type { PageHeroProps } from './components/PageHero';
-
+// Canonical Cards & Modules
 export { Card, MetricBlock } from './components/Card';
+export type { CardProps, CardVariant, MetricBlockProps } from './components/Card';
 export { Accordion } from './components/Accordion';
 export type { AccordionProps, AccordionItem } from './components/Accordion';
 

@@ -38,7 +38,7 @@ export const IconButton: React.FC<IconButtonProps> = ({
       type="button"
       aria-label={label}
       disabled={disabled}
-      className={`inline-flex items-center justify-center rounded-[2px] shadow-none transition-colors cursor-pointer select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] disabled:opacity-30 disabled:pointer-events-none ${sizeStyles[size]} ${variantStyles[variant]} ${className}`}
+      className={`inline-flex items-center justify-center rounded-[12px] shadow-none transition-colors cursor-pointer select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:ring-offset-2 disabled:opacity-30 disabled:pointer-events-none ${sizeStyles[size]} ${variantStyles[variant]} ${className}`}
       {...props}
     >
       {icon}

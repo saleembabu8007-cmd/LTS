@@ -1,8 +1,8 @@
 import React from 'react';
 
-export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'text' | 'white';
+export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'text' | 'white' | 'icon';
 export type ButtonSize = 'sm' | 'md' | 'lg';
-export type ButtonShape = 'capsule' | 'rounded' | 'sharp';
+export type ButtonShape = 'capsule' | 'rounded';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
@@ -30,24 +30,23 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref
   ) => {
-    // Restrained rounded capsule (rounded-full) or 10-12px soft radius; zero shadows
+    // Soft intentional radius: capsule (rounded-full) or 12px soft radius
     const shapeStyles: Record<ButtonShape, string> = {
       capsule: 'rounded-full',
       rounded: 'rounded-[12px]',
-      sharp: 'rounded-[10px]',
     };
 
     const baseStyles =
-      'group inline-flex items-center justify-center font-sans font-semibold uppercase transition-colors duration-[180ms] ease-out cursor-pointer select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] disabled:opacity-40 disabled:pointer-events-none disabled:cursor-not-allowed shadow-none whitespace-nowrap';
+      'group inline-flex items-center justify-center font-sans font-semibold uppercase transition-colors duration-[180ms] ease-out cursor-pointer select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:ring-offset-2 disabled:opacity-40 disabled:pointer-events-none disabled:cursor-not-allowed shadow-none whitespace-nowrap';
 
-    // Size Scale: Standardized heights (38px, 44px, 48px)
+    // Standardized Heights: 38px (sm), 44px (md), 48px (lg)
     const sizeStyles: Record<ButtonSize, string> = {
-      sm: 'text-[11px] px-4 py-1.5 gap-2 tracking-[0.08em] min-h-[38px]',
-      md: 'text-[12px] px-5 py-2 gap-2.5 tracking-[0.08em] min-h-[44px]',
-      lg: 'text-[13px] px-6 py-2.5 gap-3 tracking-[0.10em] min-h-[48px]',
+      sm: variant === 'icon' ? 'w-[38px] h-[38px] p-0' : 'text-[11px] px-4 py-1.5 gap-2 tracking-[0.08em] min-h-[38px]',
+      md: variant === 'icon' ? 'w-[44px] h-[44px] p-0' : 'text-[12px] px-5 py-2 gap-2.5 tracking-[0.08em] min-h-[44px]',
+      lg: variant === 'icon' ? 'w-[48px] h-[48px] p-0' : 'text-[13px] px-6 py-2.5 gap-3 tracking-[0.10em] min-h-[48px]',
     };
 
-    // Variant Palette (No drop shadows, 1px structural borders)
+    // Variant Palette (Strict 1px structural hairline borders, zero arbitrary shadows)
     const variantStyles: Record<ButtonVariant, string> = {
       primary:
         'bg-[#173C62] text-white hover:bg-[#102B47] active:bg-[#0B1C2F] border border-[#173C62]',
@@ -59,6 +58,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         'bg-transparent text-[#173C62] hover:text-[#102B47] border-0 p-0 hover:underline underline-offset-4 rounded-none min-h-0',
       white:
         'bg-white text-[#173C62] hover:bg-[#F8FAFC] active:bg-[#EDF3F9] border border-white',
+      icon:
+        'bg-transparent text-[#0B1320] hover:bg-[#F8FAFC] active:bg-[#EDF3F9] border border-[#CBD5E1] hover:border-[#173C62]',
     };
 
     const widthStyle = fullWidth ? 'w-full' : '';
@@ -73,7 +74,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
       >
         {iconLeading && <span className="shrink-0">{iconLeading}</span>}
-        <span>{children}</span>
+        {children && <span>{children}</span>}
         {iconTrailing && (
           <span className="shrink-0 transition-transform duration-[180ms] ease-out group-hover:translate-x-[3px]">
             {iconTrailing}

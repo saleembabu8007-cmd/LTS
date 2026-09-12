@@ -56,11 +56,12 @@ export const COLOR_TOKENS = {
 } as const;
 
 export const SPACING_TOKENS = {
-  // Strict 13-step deliberate spacing scale (4 to 160 px)
+  // Strict deliberate spacing scale (4 to 160 px)
   4: '4px',
   8: '8px',
   12: '12px',
   16: '16px',
+  20: '20px',
   24: '24px',
   32: '32px',
   40: '40px',
@@ -84,10 +85,15 @@ export const SPACING_TOKENS = {
   '5xl': '128px',
   '6xl': '160px',
 
-  // Section Vertical Rhythm (Generous Breathing Room)
+  // Normalized Section & Element Rhythm Tokens
   sectionCompact: 'clamp(3.5rem, 5vw, 5rem)',       // ~56px–80px
   sectionStandard: 'clamp(5rem, 7vw, 7rem)',        // ~80px–112px
   sectionSpacious: 'clamp(6.5rem, 9vw, 10rem)',      // ~104px–160px
+  componentGap: '1.5rem',                           // 24px
+  cardGap: '1.25rem',                                // 20px
+  headingGap: '0.875rem',                            // 14px
+  paragraphGap: '1rem',                              // 16px
+  buttonGap: '0.75rem',                              // 12px
 } as const;
 
 export const TYPOGRAPHY_TOKENS = {
@@ -227,8 +233,30 @@ export const BORDER_TOKENS = {
 } as const;
 
 export const CONTAINER_TOKENS = {
-  maxWidth: '1360px',          // Strictly 1360px content boundary
-  padding: 'px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20', // 48–72px desktop padding
+  // 4 Standard Architectural Container Variants
+  global: {
+    maxWidth: '1440px',
+    padding: 'px-4 sm:px-6 lg:px-8',
+    className: 'w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8',
+  },
+  wide: {
+    maxWidth: '1360px',
+    padding: 'px-6 sm:px-8 md:px-12 lg:px-16',
+    className: 'w-full max-w-[1360px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16',
+  },
+  standard: {
+    maxWidth: '1140px',
+    padding: 'px-6 sm:px-8 md:px-10',
+    className: 'w-full max-w-[1140px] mx-auto px-6 sm:px-8 md:px-10',
+  },
+  narrow: {
+    maxWidth: '760px',
+    padding: 'px-4 sm:px-6',
+    className: 'w-full max-w-[760px] mx-auto px-4 sm:px-6',
+  },
+  // Backward compatibility alias
+  maxWidth: '1360px',
+  padding: 'px-6 sm:px-8 md:px-12 lg:px-16',
 } as const;
 
 export const GRID_TOKENS = {

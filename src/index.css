@@ -108,13 +108,57 @@
    Strict bounded content width (1360px), 48–72px generous desktop gutters
 ========================================================================= */
 
-.lts-container {
+.lts-container,
+.lts-container-wide {
   width: 100%;
   max-width: 1360px;
   margin-left: auto;
   margin-right: auto;
   padding-left: clamp(1.25rem, 4vw, 4.5rem);
   padding-right: clamp(1.25rem, 4vw, 4.5rem);
+}
+
+.lts-container-global {
+  width: 100%;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1rem, 3vw, 2.5rem);
+  padding-right: clamp(1rem, 3vw, 2.5rem);
+}
+
+.lts-container-standard {
+  width: 100%;
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1.25rem, 3.5vw, 3rem);
+  padding-right: clamp(1.25rem, 3.5vw, 3rem);
+}
+
+.lts-container-narrow {
+  width: 100%;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1rem, 2.5vw, 2rem);
+  padding-right: clamp(1rem, 2.5vw, 2rem);
+}
+
+/* Section Vertical Rhythm Standards */
+.section-rhythm-compact {
+  padding-top: clamp(3.5rem, 5vw, 5rem);
+  padding-bottom: clamp(3.5rem, 5vw, 5rem);
+}
+
+.section-rhythm-standard {
+  padding-top: clamp(5rem, 7vw, 7rem);
+  padding-bottom: clamp(5rem, 7vw, 7rem);
+}
+
+.section-rhythm-spacious {
+  padding-top: clamp(6.5rem, 9vw, 10rem);
+  padding-bottom: clamp(6.5rem, 9vw, 10rem);
 }
 
 /* Readable prose limit: never create huge paragraphs spanning the entire viewport */
