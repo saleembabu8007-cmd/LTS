@@ -77,10 +77,10 @@ export const CompositionEditorialList: React.FC<CompositionEditorialListProps> =
               <ContentWrapper
                 key={item.id}
                 {...interactiveProps}
-                className="py-7 lg:py-9 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-baseline group hover:bg-[#FAFAFA]/70 transition-colors px-2 sm:px-4 -mx-2 sm:-mx-4 rounded-[12px] cursor-pointer"
+                className="py-5 sm:py-7 lg:py-9 grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 lg:gap-8 items-baseline group hover:bg-[#FAFAFA]/70 transition-colors px-2 sm:px-4 -mx-2 sm:-mx-4 rounded-[12px] cursor-pointer"
               >
-                {/* 1. Index Numerals */}
-                <div className="lg:col-span-1">
+                {/* 1. Index Numerals (Desktop only) */}
+                <div className="hidden lg:block lg:col-span-1">
                   <span className="font-mono text-xs sm:text-sm font-semibold text-[#94A3B8] group-hover:text-[#173C62] transition-colors">
                     {item.index}
                   </span>
@@ -88,12 +88,17 @@ export const CompositionEditorialList: React.FC<CompositionEditorialListProps> =
 
                 {/* 2. Category & Title */}
                 <div className="lg:col-span-4 space-y-1.5">
-                  {item.category && (
-                    <span className="font-mono text-[10.5px] uppercase tracking-wider text-[#64748B] block font-medium">
-                      {item.category}
+                  <div className="flex items-center gap-2.5">
+                    <span className="lg:hidden font-mono text-xs font-semibold text-[#173C62]">
+                      {item.index}
                     </span>
-                  )}
-                  <h3 className="text-xl sm:text-2xl font-light text-[#0B1320] group-hover:text-[#173C62] transition-colors tracking-tight">
+                    {item.category && (
+                      <span className="font-mono text-[10.5px] uppercase tracking-wider text-[#64748B] block font-medium">
+                        {item.category}
+                      </span>
+                    )}
+                  </div>
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-light text-[#0B1320] group-hover:text-[#173C62] transition-colors tracking-tight">
                     {item.title}
                   </h3>
                   {item.meta && (
@@ -104,8 +109,8 @@ export const CompositionEditorialList: React.FC<CompositionEditorialListProps> =
                 </div>
 
                 {/* 3. Description & Tags */}
-                <div className="lg:col-span-5 space-y-3">
-                  <p className="text-sm text-[#4A5568] leading-relaxed font-normal">
+                <div className="lg:col-span-5 space-y-2.5 sm:space-y-3">
+                  <p className="text-xs sm:text-sm text-[#4A5568] leading-relaxed font-normal">
                     {item.description}
                   </p>
                   {item.tags && item.tags.length > 0 && (
@@ -113,7 +118,7 @@ export const CompositionEditorialList: React.FC<CompositionEditorialListProps> =
                       {item.tags.map((tag, tIdx) => (
                         <span
                           key={tIdx}
-                          className="px-2.5 py-0.5 bg-[#F1F5F9] text-[#173C62] text-[11px] font-mono rounded-full"
+                          className="px-2.5 py-0.5 bg-[#F1F5F9] text-[#173C62] text-[10.5px] sm:text-[11px] font-mono rounded-full"
                         >
                           {tag}
                         </span>
@@ -123,7 +128,7 @@ export const CompositionEditorialList: React.FC<CompositionEditorialListProps> =
                 </div>
 
                 {/* 4. Action Chevron */}
-                <div className="lg:col-span-2 flex justify-start lg:justify-end items-center pt-2 lg:pt-0">
+                <div className="lg:col-span-2 flex justify-start lg:justify-end items-center pt-1 lg:pt-0 min-h-[44px]">
                   <div className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold uppercase tracking-wider text-[#173C62] group-hover:text-[#0B1320] transition-colors">
                     <span>{actionLabel}</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />

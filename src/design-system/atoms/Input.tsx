@@ -35,9 +35,9 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
         <input
           ref={ref}
           disabled={disabled}
-          className={`h-11 ${
+          className={`h-11 min-h-[44px] ${
             leadingIcon ? 'pl-10' : 'pl-4'
-          } ${trailingIcon ? 'pr-10' : 'pr-4'} py-2 text-sm text-[#0B1320] bg-white border ${borderClass} rounded-[12px] shadow-none outline-none transition-all placeholder:text-[#94A3B8] disabled:bg-slate-50 disabled:text-slate-400 disabled:cursor-not-allowed ${
+          } ${trailingIcon ? 'pr-10' : 'pr-4'} py-2 text-base sm:text-sm text-[#0B1320] bg-white border ${borderClass} rounded-[12px] shadow-none outline-none transition-all placeholder:text-[#94A3B8] disabled:bg-slate-50 disabled:text-slate-400 disabled:cursor-not-allowed ${
             fullWidth ? 'w-full' : ''
           } ${className}`}
           {...props}

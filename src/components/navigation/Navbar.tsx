@@ -239,7 +239,7 @@ export const Navbar: React.FC<HeaderProps> = ({ currentPath, onNavigate }) => {
           </div>
 
           {/* =====================================================================
-              4. MOBILE CONTROLS
+              4. MOBILE CONTROLS (44px Minimum Touch Targets)
           ===================================================================== */}
           <div className="flex items-center space-x-2 lg:hidden">
             <Button
@@ -247,14 +247,14 @@ export const Navbar: React.FC<HeaderProps> = ({ currentPath, onNavigate }) => {
               size="sm"
               shape="capsule"
               onClick={() => handleItemClick('/contact')}
-              className="whitespace-nowrap shrink-0 text-[11px] px-3.5 py-1.5 min-h-[40px]"
+              className="whitespace-nowrap shrink-0 text-xs px-3.5 sm:px-4 py-2 min-h-[44px]"
             >
               Enquire
             </Button>
 
             <button
               onClick={() => setIsMobileOpen(true)}
-              className="w-10 h-10 flex items-center justify-center rounded-[10px] border border-[#E5E7EB] text-[#334155] hover:text-[#173C62] hover:bg-[#F8FAFC] transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] shadow-none"
+              className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-[10px] border border-[#E5E7EB] text-[#334155] hover:text-[#173C62] hover:bg-[#F8FAFC] transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] shadow-none"
               aria-label="Open Navigation Menu"
             >
               <Menu className="w-5 h-5" />

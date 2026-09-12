@@ -160,13 +160,13 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
           A concise introduction.
       ========================================================================= */}
       <section className="pt-10 sm:pt-14 md:pt-16 pb-6 md:pb-8">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-8 pb-8 md:pb-10 border-b border-[#E5E7EB]">
             <div>
               <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block mb-2 font-semibold">
                 LTSGROUP &bull; DELIVERED ASSETS
               </span>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light text-[#0B1320] tracking-tight leading-[0.95]">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light text-[#0B1320] tracking-tight leading-[0.98]">
                 Projects
               </h1>
             </div>
@@ -224,7 +224,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
                   id="mobile-project-filter"
                   value={selectedDivision}
                   onChange={(e) => setSelectedDivision(e.target.value)}
-                  className="w-full appearance-none bg-[#F8FAFC] border border-[#E5E7EB] text-[#0B1320] text-sm rounded-[12px] px-4 py-3 pr-10 font-medium focus:outline-none focus:border-[#173C62] focus:ring-1 focus:ring-[#173C62] cursor-pointer"
+                  className="w-full min-h-[44px] appearance-none bg-[#F8FAFC] border border-[#E5E7EB] text-[#0B1320] text-base sm:text-sm rounded-[12px] px-4 py-2.5 pr-10 font-medium focus:outline-none focus:border-[#173C62] focus:ring-1 focus:ring-[#173C62] cursor-pointer"
                 >
                   {filterOptions.map((opt) => (
                     <option key={opt.id} value={opt.id}>
@@ -259,7 +259,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
           Varied image sizes while maintaining a coherent 12-column grid.
       ========================================================================= */}
       <section className="pt-6 pb-20 sm:pb-28 md:pb-36">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           {filteredProjects.length === 0 ? (
             /* EMPTY / LIMITED CONTENT */
             <div className="py-24 text-center space-y-4 max-w-md mx-auto">
@@ -268,27 +268,27 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
               </p>
               <button
                 onClick={() => setSelectedDivision('all')}
-                className="text-xs font-semibold text-[#173C62] uppercase tracking-wider hover:underline cursor-pointer"
+                className="text-xs font-semibold text-[#173C62] uppercase tracking-wider hover:underline cursor-pointer min-h-[44px] py-2"
               >
                 Reset Filter View &rarr;
               </button>
             </div>
           ) : (
-            <div className="space-y-16 sm:space-y-24 md:space-y-32">
+            <div className="space-y-12 sm:space-y-20 md:space-y-28">
               {projectSets.map((set, setIdx) => {
                 const isEvenSet = setIdx % 2 === 0;
 
                 return (
-                  <div key={set.featured.id} className="space-y-12 sm:space-y-16">
-                    {/* 1. FEATURED PROJECT (Dominant presentation, varied aspect) */}
+                  <div key={set.featured.id} className="space-y-8 sm:space-y-12 md:space-y-16">
+                    {/* 1. FEATURED PROJECT (Dominant presentation, responsive aspect) */}
                     <div className="w-full">
                       <ProjectCard
                         project={set.featured}
                         variant="featured"
                         aspectClass={
                           isEvenSet
-                            ? 'aspect-[16/9] lg:aspect-[21/9]'
-                            : 'aspect-[16/10] lg:aspect-[16/8]'
+                            ? 'aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9]'
+                            : 'aspect-[4/3] sm:aspect-[16/10] lg:aspect-[16/8]'
                         }
                         onNavigate={onNavigate}
                       />
@@ -302,7 +302,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
                             <ProjectCard
                               project={stdProject}
                               variant="standard"
-                              aspectClass="aspect-[16/10] sm:aspect-[4/3] lg:aspect-[16/10]"
+                              aspectClass="aspect-[4/3] sm:aspect-[16/10]"
                               onNavigate={onNavigate}
                             />
                           </div>
@@ -321,28 +321,28 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
           CONSULTATION / SPECIFICATION INTAKE
           Quiet, architectural closing section for drawings and engineering reviews
       ========================================================================= */}
-      <section className="py-16 sm:py-24 bg-[#F8FAFC] border-t border-[#E5E7EB]">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
+      <section className="py-14 sm:py-20 lg:py-24 bg-[#F8FAFC] border-t border-[#E5E7EB]">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
             <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
               Tender &amp; Specification Intake
             </span>
-            <h2 className="text-3xl sm:text-4xl font-light text-[#0B1320] tracking-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#0B1320] tracking-tight">
               Commission LTSGROUP on Your Next Built Asset
             </h2>
-            <p className="text-base text-[#4A5568] leading-relaxed">
+            <p className="text-sm sm:text-base text-[#4A5568] leading-relaxed">
               Directly submit architectural drawings, electromechanical specifications, or equipment schedules to our engineering estimating desk for constructability and EPC reviews.
             </p>
-            <div className="pt-4 flex flex-wrap items-center gap-4">
+            <div className="pt-4 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
               <button
                 onClick={() => onNavigate('/contact?tab=rfp')}
-                className="inline-flex items-center justify-center px-6 py-3.5 rounded-[12px] bg-[#173C62] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#11253E] transition-colors cursor-pointer"
+                className="inline-flex items-center justify-center px-6 py-3 min-h-[44px] rounded-[12px] bg-[#173C62] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#11253E] transition-colors cursor-pointer w-full sm:w-auto"
               >
                 Submit Project Specification &rarr;
               </button>
               <button
                 onClick={() => onNavigate('/contact')}
-                className="inline-flex items-center justify-center px-6 py-3.5 rounded-[12px] border border-[#CBD5E1] text-[#0B1320] text-xs font-semibold uppercase tracking-wider hover:bg-white transition-colors cursor-pointer"
+                className="inline-flex items-center justify-center px-6 py-3 min-h-[44px] rounded-[12px] border border-[#CBD5E1] text-[#0B1320] text-xs font-semibold uppercase tracking-wider hover:bg-white transition-colors cursor-pointer w-full sm:w-auto"
               >
                 Contact Estimating Team
               </button>

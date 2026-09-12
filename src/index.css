@@ -82,11 +82,6 @@
     overflow-wrap: break-word;
   }
 
-  ::selection {
-    background-color: #173C62;
-    color: #FFFFFF;
-  }
-
   /* Universal Accessible Keyboard Focus States */
   :focus-visible {
     outline: 2px solid #173C62;
@@ -100,6 +95,16 @@
     outline: 2px solid #93C5FD;
     outline-offset: 2px;
   }
+
+  /* iOS Mobile Safari auto-zoom prevention (16px font size on mobile) */
+  input, select, textarea {
+    font-size: 16px;
+  }
+  @media (min-width: 640px) {
+    input, select, textarea {
+      font-size: 0.875rem;
+    }
+  }
 }
 
 /* Subtle elevation classes (Section 4) */
@@ -111,9 +116,23 @@
   box-shadow: 0 16px 50px rgba(0, 0, 0, 0.08);
 }
 
+/* Safe-area insets for mobile edge-to-edge screens */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 1.5rem);
+}
+
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 0rem);
+}
+
+.touch-target-min {
+  min-height: 44px;
+  min-width: 44px;
+}
+
 /* =========================================================================
    1. EDITORIAL GRID & CONTAINER ARCHITECTURE
-   Strict bounded content width (1360px), 48–72px generous desktop gutters
+   Strict bounded content width (1360px), 16px mobile up to 72px desktop gutters
 ========================================================================= */
 
 .lts-container,
@@ -122,8 +141,8 @@
   max-width: 1360px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: clamp(1.25rem, 4vw, 4.5rem);
-  padding-right: clamp(1.25rem, 4vw, 4.5rem);
+  padding-left: clamp(1rem, 3.5vw, 4.5rem);
+  padding-right: clamp(1rem, 3.5vw, 4.5rem);
 }
 
 .lts-container-global {
@@ -140,8 +159,8 @@
   max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: clamp(1.25rem, 3.5vw, 3rem);
-  padding-right: clamp(1.25rem, 3.5vw, 3rem);
+  padding-left: clamp(1rem, 3.5vw, 3rem);
+  padding-right: clamp(1rem, 3.5vw, 3rem);
 }
 
 .lts-container-narrow {
@@ -276,15 +295,15 @@
 
 .typography-display-xxl {
   font-family: var(--font-sans);
-  font-size: clamp(2.75rem, 6vw, 5.25rem);
-  line-height: 1.04;
+  font-size: clamp(2.25rem, 5.5vw, 5.25rem);
+  line-height: 1.05;
   font-weight: 300;
   letter-spacing: -0.035em;
 }
 
 .typography-display-xl {
   font-family: var(--font-sans);
-  font-size: clamp(2.35rem, 5.5vw, 4.75rem);
+  font-size: clamp(2rem, 5vw, 4.75rem);
   line-height: 1.08;
   font-weight: 300;
   letter-spacing: -0.03em;
@@ -292,31 +311,31 @@
 
 .typography-display-l {
   font-family: var(--font-sans);
-  font-size: clamp(2.1rem, 4.5vw, 3.75rem);
-  line-height: 1.10;
+  font-size: clamp(1.75rem, 4vw, 3.75rem);
+  line-height: 1.12;
   font-weight: 350;
   letter-spacing: -0.025em;
 }
 
 .typography-display-m {
   font-family: var(--font-sans);
-  font-size: clamp(1.85rem, 3.5vw, 3rem);
-  line-height: 1.14;
+  font-size: clamp(1.5rem, 3.2vw, 3rem);
+  line-height: 1.15;
   font-weight: 400;
   letter-spacing: -0.02em;
 }
 
 .typography-display {
   font-family: var(--font-sans);
-  font-size: clamp(1.85rem, 3.8vw, 3.25rem);
-  line-height: 1.14;
+  font-size: clamp(1.5rem, 3.5vw, 3.25rem);
+  line-height: 1.15;
   font-weight: 400;
   letter-spacing: -0.025em;
 }
 
 .typography-h1 {
   font-family: var(--font-sans);
-  font-size: clamp(1.5rem, 2.8vw, 2.5rem);
+  font-size: clamp(1.35rem, 2.8vw, 2.5rem);
   line-height: 1.2;
   font-weight: 500;
   letter-spacing: -0.02em;
@@ -324,7 +343,7 @@
 
 .typography-h2 {
   font-family: var(--font-sans);
-  font-size: clamp(1.25rem, 2vw, 1.875rem);
+  font-size: clamp(1.15rem, 2vw, 1.875rem);
   line-height: 1.25;
   font-weight: 600;
   letter-spacing: -0.015em;

@@ -145,7 +145,7 @@ export const MobileNavDrawer: React.FC<MobileNavDrawerProps> = ({
             aria-label="Mobile Navigation Menu"
           >
             {/* Top Bar: Brand Logo & 44px Accessible Close Control */}
-            <div className="px-6 py-4 border-b border-[#E5E7EB] flex items-center justify-between bg-white shrink-0 min-h-[68px]">
+            <div className="px-4 sm:px-6 py-3.5 sm:py-4 border-b border-[#E5E7EB] flex items-center justify-between bg-white shrink-0 min-h-[64px] sm:min-h-[68px]">
               <a
                 href="/"
                 onClick={(e) => handleSelect(e, '/')}
@@ -159,7 +159,7 @@ export const MobileNavDrawer: React.FC<MobileNavDrawerProps> = ({
               </a>
               <button
                 onClick={onClose}
-                className="w-11 h-11 flex items-center justify-center rounded-[10px] border border-[#E5E7EB] text-[#334155] hover:text-[#0B1320] hover:bg-[#F8FAFC] transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] shadow-none"
+                className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-[10px] border border-[#E5E7EB] text-[#334155] hover:text-[#0B1320] hover:bg-[#F8FAFC] transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] shadow-none"
                 aria-label="Close Navigation Menu"
               >
                 <X className="w-5 h-5" />
@@ -167,7 +167,7 @@ export const MobileNavDrawer: React.FC<MobileNavDrawerProps> = ({
             </div>
 
             {/* Scrollable Navigation Body */}
-            <div className="flex-1 overflow-y-auto px-6 py-6 space-y-6 text-left overscroll-contain">
+            <div className="flex-1 overflow-y-auto px-4 sm:px-6 py-5 sm:py-6 space-y-6 text-left overscroll-contain pb-12 pb-safe">
               {/* Expandable Core Divisions */}
               <div className="space-y-2 pb-6 border-b border-[#E5E7EB]">
                 <span className="text-[11px] font-mono text-[#64748B] uppercase tracking-[0.16em] block mb-2 font-semibold">

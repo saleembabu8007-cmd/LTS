@@ -34,9 +34,9 @@ export const SectionSubNav: React.FC<SectionSubNavProps> = ({
 }) => {
   return (
     <div className="bg-white/95 backdrop-blur-xs border-b border-slate-200 sticky top-0 z-20 transition-all">
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 flex items-center justify-between">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Left: Discipline Label & Quiet Text Tabs */}
-        <div className="flex items-center gap-6 sm:gap-8 overflow-x-auto scrollbar-none">
+        <div className="flex items-center gap-4 sm:gap-6 md:gap-8 overflow-x-auto no-scrollbar py-0.5">
           {title && (
             <div className="hidden md:flex items-center gap-2 pr-6 border-r border-slate-200 shrink-0 py-3.5">
               <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#64748B] font-semibold">
@@ -46,7 +46,7 @@ export const SectionSubNav: React.FC<SectionSubNavProps> = ({
             </div>
           )}
 
-          <nav className="flex space-x-6 sm:space-x-8" aria-label={`${title} Sub Navigation`}>
+          <nav className="flex space-x-4 sm:space-x-6 md:space-x-8 shrink-0" aria-label={`${title} Sub Navigation`}>
             {tabs.map((tab) => {
               const isActive = activeTab === tab.id;
               return (
@@ -55,7 +55,7 @@ export const SectionSubNav: React.FC<SectionSubNavProps> = ({
                   type="button"
                   onClick={() => onTabChange(tab.id)}
                   aria-current={isActive ? 'true' : undefined}
-                  className={`py-3.5 text-xs transition-colors whitespace-nowrap cursor-pointer border-b-2 focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:outline-none rounded-[4px] ${
+                  className={`py-3 sm:py-3.5 min-h-[44px] text-xs transition-colors whitespace-nowrap cursor-pointer border-b-2 focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:outline-none rounded-[4px] flex items-center ${
                     isActive
                       ? 'border-[#173C62] text-[#0B1320] font-semibold'
                       : 'border-transparent text-slate-500 hover:text-[#0B1320] hover:border-slate-300 font-normal'

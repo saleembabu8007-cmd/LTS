@@ -90,12 +90,12 @@ export const CompositionFeatureWithSupporting: React.FC<CompositionFeatureWithSu
               ctaText={featureCtaText}
               href={featureHref}
               onClick={onFeatureClick}
-              className="w-full h-full min-h-[360px]"
+              className="w-full h-full min-h-[290px] sm:min-h-[360px]"
             />
           </div>
 
           {/* Supporting Items Column (5 of 12 cols): Two Stacked Items */}
-          <div className="lg:col-span-5 flex flex-col justify-between gap-4 sm:gap-5">
+          <div className="lg:col-span-5 flex flex-col justify-between gap-3 sm:gap-4 lg:gap-5">
             {supportingItems.map((item, idx) => (
               <CompactImageCard
                 key={item.id || idx}

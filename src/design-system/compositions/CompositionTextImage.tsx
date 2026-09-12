@@ -44,29 +44,29 @@ export const CompositionTextImage: React.FC<CompositionTextImageProps> = ({
   className = '',
 }) => {
   const aspectClass = {
-    '16/10': 'aspect-[16/10]',
+    '16/10': 'aspect-[4/3] sm:aspect-[16/10]',
     '4/3': 'aspect-[4/3]',
-    '16/9': 'aspect-[16/9]',
+    '16/9': 'aspect-[4/3] sm:aspect-[16/9]',
   }[aspectRatio];
 
   return (
     <Section id={id} tone={tone} spacing={spacing} className={className}>
       <Container variant="wide">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-16 items-center">
           {/* Text Column: 40% (5 of 12 cols) */}
-          <div className="lg:col-span-5 space-y-6">
-            <div className="space-y-3">
+          <div className="lg:col-span-5 space-y-5 sm:space-y-6">
+            <div className="space-y-2.5 sm:space-y-3">
               {eyebrow && (
                 <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] font-semibold block">
                   {eyebrow}
                 </span>
               )}
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#0B1320] tracking-tight leading-[1.15]">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-light text-[#0B1320] tracking-tight leading-[1.18] sm:leading-[1.15]">
                 {title}
               </h2>
             </div>
 
-            <p className="text-base sm:text-lg text-[#4A5568] font-light leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-[#4A5568] font-light leading-relaxed">
               {description}
             </p>
 

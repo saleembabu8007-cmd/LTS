@@ -41,7 +41,7 @@ export const Input: React.FC<InputProps> = ({
         <input
           id={inputId}
           disabled={disabled}
-          className={`w-full typography-body-sm rounded-[11px] border transition-colors py-2.5 px-3 bg-white text-[#0B1320] placeholder:text-[#999999] focus:outline-none ${
+          className={`w-full min-h-[44px] text-base sm:text-sm rounded-[11px] border transition-colors py-2.5 px-3 bg-white text-[#0B1320] placeholder:text-[#999999] focus:outline-none ${
             iconLeading ? 'pl-9' : ''
           } ${
             error
@@ -98,7 +98,7 @@ export const Select: React.FC<SelectProps> = ({
       <select
         id={selectId}
         disabled={disabled}
-        className={`w-full typography-body-sm rounded-[11px] border transition-colors py-2.5 px-3 bg-white text-[#0B1320] focus:outline-none ${
+        className={`w-full min-h-[44px] text-base sm:text-sm rounded-[11px] border transition-colors py-2.5 px-3 bg-white text-[#0B1320] focus:outline-none ${
           error
             ? 'border-red-400 focus:border-red-600'
             : 'border-[#E5E7EB] hover:border-slate-400 focus:border-[#173C62]'
@@ -158,7 +158,7 @@ export const Textarea: React.FC<TextareaProps> = ({
         id={textareaId}
         rows={rows}
         disabled={disabled}
-        className={`w-full typography-body-sm rounded-[11px] border transition-colors p-3 bg-white text-[#0B1320] placeholder:text-[#999999] focus:outline-none ${
+        className={`w-full text-base sm:text-sm rounded-[11px] border transition-colors p-3 bg-white text-[#0B1320] placeholder:text-[#999999] focus:outline-none ${
           error
             ? 'border-red-400 focus:border-red-600'
             : 'border-[#E5E7EB] hover:border-slate-400 focus:border-[#173C62]'
@@ -192,7 +192,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
   const checkboxId = id || label.toLowerCase().replace(/\s+/g, '-');
 
   return (
-    <div className="flex items-start gap-2.5">
+    <div className="flex items-start gap-2.5 min-h-[44px] py-1">
       <input
         type="checkbox"
         id={checkboxId}

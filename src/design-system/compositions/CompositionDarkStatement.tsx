@@ -52,21 +52,21 @@ export const CompositionDarkStatement: React.FC<CompositionDarkStatementProps> =
             </span>
           )}
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-white tracking-tight leading-[1.14]">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white tracking-tight leading-[1.18] sm:leading-[1.14]">
             {statement}
           </h2>
 
           {supportingText && (
-            <p className="text-base sm:text-lg text-slate-300 font-light leading-relaxed max-w-2xl pt-1">
+            <p className="text-sm sm:text-base md:text-lg text-slate-300 font-light leading-relaxed max-w-2xl pt-1">
               {supportingText}
             </p>
           )}
 
           {/* Action Triggers */}
           {actions ? (
-            <div className="pt-4 flex flex-wrap items-center gap-4">{actions}</div>
+            <div className="pt-4 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">{actions}</div>
           ) : (primaryActionLabel || secondaryActionLabel) ? (
-            <div className="pt-4 flex flex-wrap items-center gap-4">
+            <div className="pt-4 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
               {primaryActionLabel && (
                 <Button
                   variant="primary"

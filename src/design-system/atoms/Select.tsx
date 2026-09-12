@@ -32,7 +32,7 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
             id={id}
             required={required}
             disabled={disabled}
-            className={`w-full typography-body-sm rounded-[11px] border transition-colors py-2.5 pl-3 pr-10 bg-white text-[#0B1320] appearance-none cursor-pointer shadow-none focus:outline-none disabled:bg-slate-50 disabled:cursor-not-allowed ${
+            className={`w-full min-h-[44px] text-base sm:text-sm rounded-[11px] border transition-colors py-2.5 pl-3 pr-10 bg-white text-[#0B1320] appearance-none cursor-pointer shadow-none focus:outline-none disabled:bg-slate-50 disabled:cursor-not-allowed ${
               error
                 ? 'border-red-600 focus:border-red-600 focus:ring-1 focus:ring-red-600'
                 : 'border-[#E5E7EB] hover:border-[#CBD5E1] focus:border-[#173C62] focus:ring-1 focus:ring-[#173C62]'

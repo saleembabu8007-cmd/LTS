@@ -218,7 +218,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             <a
               href="/engineering-construction"
               onClick={(e) => handleLink(e, '/engineering-construction')}
-              className="lg:col-span-7 group relative rounded-[18px] overflow-hidden cursor-pointer min-h-[360px] sm:min-h-[460px] lg:min-h-[520px] bg-[#0B1C2F] flex flex-col justify-end p-7 sm:p-10 transition-transform duration-300 focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:outline-none"
+              className="lg:col-span-7 group relative rounded-[18px] overflow-hidden cursor-pointer min-h-[340px] sm:min-h-[440px] lg:min-h-[520px] bg-[#0B1C2F] flex flex-col justify-end p-5 sm:p-7 md:p-10 transition-transform duration-300 focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:outline-none"
             >
               <img
                 src="/assets/images/mep-construction.jpg"
@@ -232,13 +232,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 <span className="text-[10.5px] font-mono uppercase tracking-[0.2em] text-[#CBD5E1] block mb-1">
                   DIVISION 01
                 </span>
-                <h3 className="text-2xl sm:text-3xl font-normal text-white tracking-tight">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-normal text-white tracking-tight">
                   Engineering &amp; Construction
                 </h3>
-                <p className="mt-2.5 text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+                <p className="mt-2 text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
                   Turnkey MEP contracting, commercial rooftop solar PV EPC under DEWA Shams Dubai, and type-tested low-voltage control switchgear assembly.
                 </p>
-                <div className="mt-5 inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-white group-hover:text-slate-200">
+                <div className="mt-4 sm:mt-5 inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-white group-hover:text-slate-200">
                   <span>Explore division</span>
                   <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
                 </div>
@@ -246,12 +246,12 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             </a>
 
             {/* TWO SUPPORTING PILLARS (5 Columns Stacked) */}
-            <div className="lg:col-span-5 flex flex-col gap-6 lg:gap-8">
+            <div className="lg:col-span-5 flex flex-col gap-5 sm:gap-6 lg:gap-8">
               {/* SUPPORTING PILLAR 1: Facilities Management */}
               <a
                 href="/facilities-management"
                 onClick={(e) => handleLink(e, '/facilities-management')}
-                className="group relative rounded-[18px] overflow-hidden cursor-pointer min-h-[250px] sm:min-h-[250px] flex-1 bg-[#0B1C2F] flex flex-col justify-end p-6 sm:p-8 transition-transform duration-300 focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:outline-none"
+                className="group relative rounded-[18px] overflow-hidden cursor-pointer min-h-[220px] sm:min-h-[240px] flex-1 bg-[#0B1C2F] flex flex-col justify-end p-5 sm:p-6 md:p-8 transition-transform duration-300 focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:outline-none"
               >
                 <img
                   src="/assets/images/project-chiller.jpg"
@@ -265,13 +265,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#CBD5E1] block mb-1">
                     DIVISION 02
                   </span>
-                  <h3 className="text-xl sm:text-2xl font-normal text-white tracking-tight">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-normal text-white tracking-tight">
                     Facilities Management
                   </h3>
-                  <p className="mt-1.5 text-xs text-slate-300 leading-relaxed font-normal">
+                  <p className="mt-1 text-xs text-slate-300 leading-relaxed font-normal">
                     24/7 hard MEP engineering, predictive central chiller plant maintenance, aquatic hygiene, and live-plant zero-downtime retrofits.
                   </p>
-                  <div className="mt-3.5 inline-flex items-center gap-1.5 text-xs font-semibold tracking-wider uppercase text-white group-hover:text-slate-200">
+                  <div className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold tracking-wider uppercase text-white group-hover:text-slate-200">
                     <span>Explore division</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
                   </div>
@@ -282,7 +282,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               <a
                 href="/trading"
                 onClick={(e) => handleLink(e, '/trading')}
-                className="group relative rounded-[18px] overflow-hidden cursor-pointer min-h-[250px] sm:min-h-[250px] flex-1 bg-[#0B1C2F] flex flex-col justify-end p-6 sm:p-8 transition-transform duration-300 focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:outline-none"
+                className="group relative rounded-[18px] overflow-hidden cursor-pointer min-h-[220px] sm:min-h-[240px] flex-1 bg-[#0B1C2F] flex flex-col justify-end p-5 sm:p-6 md:p-8 transition-transform duration-300 focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:outline-none"
               >
                 <img
                   src="/assets/images/industry-logistics.jpg"

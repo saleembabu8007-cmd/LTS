@@ -51,11 +51,13 @@ export const CompositionMetricStrip: React.FC<CompositionMetricStripProps> = ({
           </div>
         )}
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 divide-y lg:divide-y-0 lg:divide-x divide-[#E5E7EB]/40">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10">
           {metrics.map((metric, idx) => (
             <div
               key={metric.id || idx}
-              className={`space-y-2 ${idx !== 0 ? 'pt-6 lg:pt-0 lg:pl-8' : ''}`}
+              className={`space-y-2 pb-6 sm:pb-0 border-b sm:border-b-0 sm:border-l first:border-l-0 ${
+                isDark ? 'border-white/10' : 'border-[#E5E7EB]'
+              } sm:pl-6 lg:pl-8 first:pl-0 last:border-b-0`}
             >
               <div
                 className={`text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight leading-none ${

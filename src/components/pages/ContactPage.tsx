@@ -208,11 +208,11 @@ export const ContactPage: React.FC<ContactPageProps> = ({
           Left: Simple enquiry form (Business area, Name, Email, Phone, Company, Message, CTA)
           Right: Contact details directory.
       ========================================================================= */}
-      <section className="py-16 sm:py-24 bg-[#F8FAFC]">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+      <section className="py-12 sm:py-20 lg:py-24 bg-[#F8FAFC]">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
             {/* Left Column: Simple Enquiry Form */}
-            <div className="lg:col-span-7 bg-white p-8 sm:p-10 lg:p-12 rounded-[20px] sm:rounded-[24px] border border-[#E5E7EB] shadow-xs">
+            <div className="lg:col-span-7 bg-white p-5 sm:p-8 lg:p-12 rounded-[20px] sm:rounded-[24px] border border-[#E5E7EB] shadow-xs">
               {status === 'success' ? (
                 <div className="space-y-6 animate-fadeIn py-4">
                   <div className="flex items-start gap-4">
@@ -291,7 +291,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                       name="businessArea"
                       value={form.businessArea}
                       onChange={handleChange}
-                      className="w-full px-4 py-3.5 text-sm text-[#0B1320] bg-white border border-[#CBD5E1] rounded-[10px] sm:rounded-[12px] transition-colors focus:border-[#173C62] focus:ring-1 focus:ring-[#173C62] outline-none"
+                      className="w-full min-h-[44px] px-4 py-3 text-base sm:text-sm text-[#0B1320] bg-white border border-[#CBD5E1] rounded-[10px] sm:rounded-[12px] transition-colors focus:border-[#173C62] focus:ring-1 focus:ring-[#173C62] outline-none"
                     >
                       {businessAreas.map((area, idx) => (
                         <option key={idx} value={area}>
@@ -317,7 +317,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                         value={form.name}
                         onChange={handleChange}
                         placeholder="e.g. Tariq Al Mansoori"
-                        className={`w-full px-4 py-3.5 text-sm text-[#0B1320] placeholder:text-[#94A3B8] bg-white border ${
+                        className={`w-full min-h-[44px] px-4 py-3 text-base sm:text-sm text-[#0B1320] placeholder:text-[#94A3B8] bg-white border ${
                           errors.name ? 'border-rose-500 ring-1 ring-rose-500' : 'border-[#CBD5E1]'
                         } rounded-[10px] sm:rounded-[12px] transition-colors focus:border-[#173C62] focus:ring-1 focus:ring-[#173C62] outline-none`}
                       />
@@ -343,7 +343,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                         value={form.email}
                         onChange={handleChange}
                         placeholder="name@company.ae"
-                        className={`w-full px-4 py-3.5 text-sm text-[#0B1320] placeholder:text-[#94A3B8] bg-white border ${
+                        className={`w-full min-h-[44px] px-4 py-3 text-base sm:text-sm text-[#0B1320] placeholder:text-[#94A3B8] bg-white border ${
                           errors.email ? 'border-rose-500 ring-1 ring-rose-500' : 'border-[#CBD5E1]'
                         } rounded-[10px] sm:rounded-[12px] transition-colors focus:border-[#173C62] focus:ring-1 focus:ring-[#173C62] outline-none`}
                       />
@@ -372,7 +372,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                         value={form.phone}
                         onChange={handleChange}
                         placeholder="+971 50 000 0000"
-                        className={`w-full px-4 py-3.5 text-sm text-[#0B1320] placeholder:text-[#94A3B8] bg-white border ${
+                        className={`w-full min-h-[44px] px-4 py-3 text-base sm:text-sm text-[#0B1320] placeholder:text-[#94A3B8] bg-white border ${
                           errors.phone ? 'border-rose-500 ring-1 ring-rose-500' : 'border-[#CBD5E1]'
                         } rounded-[10px] sm:rounded-[12px] transition-colors focus:border-[#173C62] focus:ring-1 focus:ring-[#173C62] outline-none`}
                       />
@@ -398,7 +398,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                         value={form.company}
                         onChange={handleChange}
                         placeholder="e.g. Al Futtaim Real Estate"
-                        className={`w-full px-4 py-3.5 text-sm text-[#0B1320] placeholder:text-[#94A3B8] bg-white border ${
+                        className={`w-full min-h-[44px] px-4 py-3 text-base sm:text-sm text-[#0B1320] placeholder:text-[#94A3B8] bg-white border ${
                           errors.company ? 'border-rose-500 ring-1 ring-rose-500' : 'border-[#CBD5E1]'
                         } rounded-[10px] sm:rounded-[12px] transition-colors focus:border-[#173C62] focus:ring-1 focus:ring-[#173C62] outline-none`}
                       />
@@ -426,7 +426,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                       value={form.message}
                       onChange={handleChange}
                       placeholder="Please describe your requirements, project location, scope of work, or equipment inquiry..."
-                      className={`w-full px-4 py-3.5 text-sm text-[#0B1320] placeholder:text-[#94A3B8] bg-white border ${
+                      className={`w-full px-4 py-3 text-base sm:text-sm text-[#0B1320] placeholder:text-[#94A3B8] bg-white border ${
                         errors.message ? 'border-rose-500 ring-1 ring-rose-500' : 'border-[#CBD5E1]'
                       } rounded-[10px] sm:rounded-[12px] transition-colors focus:border-[#173C62] focus:ring-1 focus:ring-[#173C62] outline-none resize-y`}
                     />
@@ -443,7 +443,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                     <button
                       type="submit"
                       disabled={status === 'loading'}
-                      className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-[12px] bg-[#173C62] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#11253E] disabled:opacity-50 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
+                      className="inline-flex items-center justify-center gap-2 px-8 py-3.5 min-h-[44px] rounded-[12px] bg-[#173C62] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#11253E] disabled:opacity-50 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] w-full sm:w-auto"
                     >
                       {status === 'loading' ? (
                         <>

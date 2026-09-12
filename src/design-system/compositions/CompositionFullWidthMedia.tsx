@@ -39,9 +39,9 @@ export const CompositionFullWidthMedia: React.FC<CompositionFullWidthMediaProps>
   className = '',
 }) => {
   const aspectClass = {
-    panoramic: 'aspect-[21/9]',
-    cinematic: 'aspect-[16/9]',
-    banner: 'aspect-[2.4/1]',
+    panoramic: 'aspect-[16/10] sm:aspect-[16/9] lg:aspect-[21/9] min-h-[280px] sm:min-h-0',
+    cinematic: 'aspect-[4/3] sm:aspect-[16/10] lg:aspect-[16/9] min-h-[260px] sm:min-h-0',
+    banner: 'aspect-[16/10] sm:aspect-[2/1] lg:aspect-[2.4/1] min-h-[260px] sm:min-h-0',
   }[aspectRatio];
 
   const containerRadius = bleed ? 'rounded-none' : 'rounded-[20px] sm:rounded-[24px]';
@@ -62,20 +62,20 @@ export const CompositionFullWidthMedia: React.FC<CompositionFullWidthMediaProps>
 
         {/* Minimal Bottom Gradient Scrim ONLY when overlay text exists */}
         {(overlayTitle || overlaySubtitle || overlayEyebrow) && (
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent flex items-end p-6 sm:p-10 md:p-14">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent flex items-end p-5 sm:p-8 md:p-14">
             <div className="max-w-3xl space-y-2">
               {overlayEyebrow && (
-                <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#93C5FD] font-semibold block">
+                <span className="font-mono text-[11px] sm:text-xs uppercase tracking-[0.2em] text-[#93C5FD] font-semibold block">
                   {overlayEyebrow}
                 </span>
               )}
               {overlayTitle && (
-                <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white tracking-tight leading-tight">
+                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light text-white tracking-tight leading-tight">
                   {overlayTitle}
                 </h3>
               )}
               {overlaySubtitle && (
-                <p className="text-sm sm:text-base text-slate-300 font-light leading-relaxed max-w-2xl pt-1">
+                <p className="text-xs sm:text-sm md:text-base text-slate-300 font-light leading-relaxed max-w-2xl pt-1">
                   {overlaySubtitle}
                 </p>
               )}
