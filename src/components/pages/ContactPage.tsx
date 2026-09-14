@@ -137,12 +137,11 @@ export const ContactPage: React.FC<ContactPageProps> = ({
           Minimal architectural heading — no oversized 72vh hero or essay padding.
       ========================================================================= */}
       <section className="pt-28 pb-10 sm:pt-32 sm:pb-14 border-b border-[#E5E7EB] bg-white">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
+        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 text-left">
           <div className="max-w-3xl space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[6px] bg-[#173C62]/5 border border-[#173C62]/10 text-[11px] font-mono tracking-widest uppercase text-[#173C62]">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#173C62]" />
+            <span className="font-mono text-xs uppercase tracking-[0.22em] text-[#173C62] font-semibold block mb-2">
               CONTACT &bull; DUBAI CORPORATE DESK
-            </div>
+            </span>
 
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-light text-[#173C62] tracking-tight leading-[1.05]">
               Let&apos;s discuss your project.
@@ -156,15 +155,15 @@ export const ContactPage: React.FC<ContactPageProps> = ({
       </section>
 
       {/* =========================================================================
-          02 — CONTACT DETAILS & SIMPLE ENQUIRY FORM
-          Clean, responsive 2-column layout: Form on Left, Directory on Right.
+          02 — CONTACT DETAILS & ARCHITECTURAL ENQUIRY DESK
+          Open editorial composition without heavy boxed card containers.
       ========================================================================= */}
-      <section className="py-12 sm:py-20 bg-[#F8FAFC]">
+      <section className="py-16 sm:py-24 bg-[#F8FAFC]">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start text-left">
             
-            {/* Left Column: Simple Enquiry Form */}
-            <div className="lg:col-span-7 bg-white p-6 sm:p-10 rounded-[20px] sm:rounded-[24px] border border-[#E5E7EB]">
+            {/* Left Column: Architectural Intake Form */}
+            <div className="lg:col-span-7 bg-white p-8 sm:p-12 rounded-[20px]">
               {status === 'success' ? (
                 <div className="space-y-6 py-4">
                   <div className="flex items-start gap-4">
@@ -221,11 +220,11 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} noValidate className="space-y-6">
-                  <div className="space-y-1 pb-2 border-b border-[#E5E7EB]">
+                  <div className="space-y-1 pb-4 border-b border-[#E5E7EB]">
                     <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
                       Enquiry Form
                     </span>
-                    <h3 className="text-2xl font-light text-[#0B1320]">
+                    <h3 className="text-2xl sm:text-3xl font-light text-[#0B1320]">
                       Project &amp; Service Intake
                     </h3>
                   </div>
@@ -238,19 +237,21 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                     >
                       Business Area Selection <span className="text-[#173C62]">*</span>
                     </label>
-                    <select
-                      id="businessArea"
-                      name="businessArea"
-                      value={form.businessArea}
-                      onChange={handleChange}
-                      className="w-full min-h-[44px] px-4 py-3 text-base sm:text-sm text-[#0B1320] bg-white border border-[#CBD5E1] rounded-[10px] sm:rounded-[12px] transition-colors focus:border-[#173C62] focus:ring-1 focus:ring-[#173C62] outline-none"
-                    >
-                      {businessAreas.map((area, idx) => (
-                        <option key={idx} value={area}>
-                          {area}
-                        </option>
-                      ))}
-                    </select>
+                    <div className="relative">
+                      <select
+                        id="businessArea"
+                        name="businessArea"
+                        value={form.businessArea}
+                        onChange={handleChange}
+                        className="w-full min-h-[44px] px-4 py-3 text-base sm:text-sm text-[#0B1320] bg-[#F8FAFC] border border-[#CBD5E1] rounded-[10px] sm:rounded-[12px] transition-colors focus:border-[#173C62] focus:ring-1 focus:ring-[#173C62] outline-none cursor-pointer"
+                      >
+                        {businessAreas.map((area) => (
+                          <option key={area} value={area}>
+                            {area}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
                   </div>
 
                   {/* Name and Email */}
@@ -269,7 +270,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                         value={form.name}
                         onChange={handleChange}
                         placeholder="e.g. Tariq Al Mansoori"
-                        className={`w-full min-h-[44px] px-4 py-3 text-base sm:text-sm text-[#0B1320] placeholder:text-[#94A3B8] bg-white border ${
+                        className={`w-full min-h-[44px] px-4 py-3 text-base sm:text-sm text-[#0B1320] placeholder:text-[#94A3B8] bg-[#F8FAFC] border ${
                           errors.name ? 'border-rose-500 ring-1 ring-rose-500' : 'border-[#CBD5E1]'
                         } rounded-[10px] sm:rounded-[12px] transition-colors focus:border-[#173C62] focus:ring-1 focus:ring-[#173C62] outline-none`}
                       />
@@ -294,7 +295,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                         value={form.email}
                         onChange={handleChange}
                         placeholder="name@company.ae"
-                        className={`w-full min-h-[44px] px-4 py-3 text-base sm:text-sm text-[#0B1320] placeholder:text-[#94A3B8] bg-white border ${
+                        className={`w-full min-h-[44px] px-4 py-3 text-base sm:text-sm text-[#0B1320] placeholder:text-[#94A3B8] bg-[#F8FAFC] border ${
                           errors.email ? 'border-rose-500 ring-1 ring-rose-500' : 'border-[#CBD5E1]'
                         } rounded-[10px] sm:rounded-[12px] transition-colors focus:border-[#173C62] focus:ring-1 focus:ring-[#173C62] outline-none`}
                       />
@@ -322,7 +323,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                         value={form.phone}
                         onChange={handleChange}
                         placeholder="+971 50 000 0000"
-                        className={`w-full min-h-[44px] px-4 py-3 text-base sm:text-sm text-[#0B1320] placeholder:text-[#94A3B8] bg-white border ${
+                        className={`w-full min-h-[44px] px-4 py-3 text-base sm:text-sm text-[#0B1320] placeholder:text-[#94A3B8] bg-[#F8FAFC] border ${
                           errors.phone ? 'border-rose-500 ring-1 ring-rose-500' : 'border-[#CBD5E1]'
                         } rounded-[10px] sm:rounded-[12px] transition-colors focus:border-[#173C62] focus:ring-1 focus:ring-[#173C62] outline-none`}
                       />
@@ -347,7 +348,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                         value={form.company}
                         onChange={handleChange}
                         placeholder="e.g. Real Estate Development"
-                        className={`w-full min-h-[44px] px-4 py-3 text-base sm:text-sm text-[#0B1320] placeholder:text-[#94A3B8] bg-white border ${
+                        className={`w-full min-h-[44px] px-4 py-3 text-base sm:text-sm text-[#0B1320] placeholder:text-[#94A3B8] bg-[#F8FAFC] border ${
                           errors.company ? 'border-rose-500 ring-1 ring-rose-500' : 'border-[#CBD5E1]'
                         } rounded-[10px] sm:rounded-[12px] transition-colors focus:border-[#173C62] focus:ring-1 focus:ring-[#173C62] outline-none`}
                       />
@@ -374,7 +375,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                       value={form.message}
                       onChange={handleChange}
                       placeholder="Please describe your requirements, project location, scope of work, or equipment inquiry..."
-                      className={`w-full px-4 py-3 text-base sm:text-sm text-[#0B1320] placeholder:text-[#94A3B8] bg-white border ${
+                      className={`w-full px-4 py-3 text-base sm:text-sm text-[#0B1320] placeholder:text-[#94A3B8] bg-[#F8FAFC] border ${
                         errors.message ? 'border-rose-500 ring-1 ring-rose-500' : 'border-[#CBD5E1]'
                       } rounded-[10px] sm:rounded-[12px] transition-colors focus:border-[#173C62] focus:ring-1 focus:ring-[#173C62] outline-none resize-y`}
                     />
@@ -411,19 +412,16 @@ export const ContactPage: React.FC<ContactPageProps> = ({
               )}
             </div>
 
-            {/* Right Column: Contact Details Directory */}
+            {/* Right Column: Contact Details Directory (Architectural Hairlines) */}
             <div className="lg:col-span-5 space-y-6">
-              <div className="bg-white p-6 sm:p-8 rounded-[20px] sm:rounded-[24px] border border-[#E5E7EB] space-y-6">
+              <div className="bg-white p-8 sm:p-10 rounded-[20px] space-y-8 border-t-2 border-[#173C62]">
                 
                 {/* 01 Head Office */}
                 <div className="space-y-2 pb-6 border-b border-[#E5E7EB]">
-                  <div className="flex items-center gap-2">
-                    <IconLocation size="sm" color="primary" />
-                    <span className="font-mono text-xs font-semibold text-[#173C62] uppercase tracking-wider">
-                      Corporate Headquarters
-                    </span>
-                  </div>
-                  <h4 className="text-base font-medium text-[#0B1320]">
+                  <span className="font-mono text-xs font-semibold text-[#173C62] uppercase tracking-[0.18em] block">
+                    01 &bull; Corporate Headquarters
+                  </span>
+                  <h4 className="text-lg font-light text-[#0B1320] leading-snug">
                     {CORPORATE_INFO.contact.address.line1}
                   </h4>
                   <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed">
@@ -433,13 +431,10 @@ export const ContactPage: React.FC<ContactPageProps> = ({
 
                 {/* 02 Direct Telephone */}
                 <div className="space-y-2 pb-6 border-b border-[#E5E7EB]">
-                  <div className="flex items-center gap-2">
-                    <IconPhone size="sm" color="primary" />
-                    <span className="font-mono text-xs font-semibold text-[#173C62] uppercase tracking-wider">
-                      Direct Telephone
-                    </span>
-                  </div>
-                  <h4 className="text-base font-medium text-[#0B1320]">
+                  <span className="font-mono text-xs font-semibold text-[#173C62] uppercase tracking-[0.18em] block">
+                    02 &bull; Direct Telephone
+                  </span>
+                  <h4 className="text-lg font-light text-[#0B1320]">
                     <a
                       href={`tel:${CORPORATE_INFO.contact.telephone}`}
                       className="hover:text-[#173C62] transition-colors"
@@ -454,13 +449,10 @@ export const ContactPage: React.FC<ContactPageProps> = ({
 
                 {/* 03 Departmental Inquiries */}
                 <div className="space-y-2 pb-6 border-b border-[#E5E7EB]">
-                  <div className="flex items-center gap-2">
-                    <IconEmail size="sm" color="primary" />
-                    <span className="font-mono text-xs font-semibold text-[#173C62] uppercase tracking-wider">
-                      Division Email Desks
-                    </span>
-                  </div>
-                  <div className="space-y-2 text-xs">
+                  <span className="font-mono text-xs font-semibold text-[#173C62] uppercase tracking-[0.18em] block">
+                    03 &bull; Division Email Desks
+                  </span>
+                  <div className="space-y-2.5 text-xs pt-1">
                     <div className="flex justify-between items-center py-0.5">
                       <span className="text-[#64748B]">Engineering Tenders:</span>
                       <a

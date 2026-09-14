@@ -170,8 +170,8 @@ export const NewsCenterPage: React.FC<NewsCenterPageProps> = ({ onNavigate }) =>
       ========================================================================= */}
       <section className="py-14 sm:py-20 bg-[#F8FAFC]">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 space-y-10">
-          {/* Header & Filter Controls */}
-          <div className="space-y-6 pb-4 border-b border-[#E5E7EB]">
+          {/* Header & Segmented Text Filter Controls */}
+          <div className="space-y-6 pb-6 border-b border-[#E5E7EB]">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div className="space-y-1">
                 <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
@@ -187,28 +187,34 @@ export const NewsCenterPage: React.FC<NewsCenterPageProps> = ({ onNavigate }) =>
               </span>
             </div>
 
-            {/* Category Filter Controls */}
-            <div className="flex flex-wrap items-center gap-2 pt-2">
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  type="button"
-                  onClick={() => handleCategorySelect(cat)}
-                  className={`px-4 py-2.5 rounded-[10px] text-xs font-medium uppercase tracking-wider transition-colors cursor-pointer border ${
-                    selectedCategory === cat
-                      ? 'bg-[#173C62] text-white border-[#173C62]'
-                      : 'bg-white text-[#4A5568] border-[#E5E7EB] hover:border-[#173C62] hover:text-[#0B1320]'
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
+            {/* Architectural Segmented Text Filter Controls (Arup / Skanska Standard) */}
+            <div className="flex flex-wrap items-center gap-6 sm:gap-8 pt-2 overflow-x-auto scrollbar-none pb-1">
+              {categories.map((cat) => {
+                const isActive = selectedCategory === cat;
+                return (
+                  <button
+                    key={cat}
+                    type="button"
+                    onClick={() => handleCategorySelect(cat)}
+                    className={`relative py-2 text-xs sm:text-sm tracking-wider uppercase transition-colors cursor-pointer shrink-0 ${
+                      isActive
+                        ? 'text-[#173C62] font-semibold'
+                        : 'text-[#64748B] hover:text-[#0B1320] font-medium'
+                    }`}
+                  >
+                    <span>{cat}</span>
+                    {isActive && (
+                      <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#173C62]" />
+                    )}
+                  </button>
+                );
+              })}
             </div>
           </div>
 
-          {/* Minimal Editorial Rows */}
+          {/* Open Architectural Editorial Rows — Zero boxed card containers */}
           {paginatedArticles.length > 0 ? (
-            <div className="divide-y divide-[#E5E7EB] bg-white rounded-[20px] border border-[#E5E7EB] px-6 sm:px-10">
+            <div className="divide-y divide-[#E5E7EB] border-t border-b border-[#E5E7EB]">
               {paginatedArticles.map((art) => (
                 <a
                   key={art.id}
@@ -217,12 +223,12 @@ export const NewsCenterPage: React.FC<NewsCenterPageProps> = ({ onNavigate }) =>
                     e.preventDefault();
                     onNavigate(`/news/${art.slug}`);
                   }}
-                  className="py-8 sm:py-10 group block select-none transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] rounded-[18px]"
+                  className="py-8 sm:py-12 group block select-none transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
                   aria-label={`Read article: ${art.title}`}
                 >
-                  <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 lg:gap-10 items-center">
-                    {/* Left: Article Image (Soft 16-18px radius) */}
-                    <div className="md:col-span-4 lg:col-span-4">
+                  <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-10 lg:gap-12 items-center">
+                    {/* Left: Article Image (16-18px soft radius, zero box borders) */}
+                    <div className="md:col-span-4 lg:col-span-5">
                       <div className="relative overflow-hidden rounded-[16px] sm:rounded-[18px] bg-[#173C62] aspect-[16/10]">
                         <img
                           src={art.image}
@@ -238,9 +244,9 @@ export const NewsCenterPage: React.FC<NewsCenterPageProps> = ({ onNavigate }) =>
                     </div>
 
                     {/* Right: Article Details */}
-                    <div className="md:col-span-8 lg:col-span-8 space-y-2.5 transition-transform duration-200 ease-out group-hover:-translate-y-0.5">
+                    <div className="md:col-span-8 lg:col-span-7 space-y-3 transition-transform duration-200 ease-out group-hover:-translate-y-0.5 text-left">
                       <div className="flex items-center gap-3">
-                        <span className="font-mono text-xs uppercase tracking-[0.16em] text-[#173C62] font-semibold">
+                        <span className="font-mono text-xs uppercase tracking-[0.18em] text-[#173C62] font-semibold">
                           {art.category}
                         </span>
                         <span className="text-[#CBD5E1]">&bull;</span>
@@ -249,17 +255,17 @@ export const NewsCenterPage: React.FC<NewsCenterPageProps> = ({ onNavigate }) =>
                         </span>
                       </div>
 
-                      <h3 className="text-xl sm:text-2xl font-light text-[#0B1320] leading-snug tracking-tight group-hover:text-[#173C62] transition-colors duration-200">
+                      <h3 className="text-xl sm:text-2xl lg:text-3xl font-light text-[#0B1320] leading-snug tracking-tight group-hover:text-[#173C62] transition-colors duration-200">
                         {art.title}
                       </h3>
 
-                      <p className="text-sm text-[#4A5568] leading-relaxed font-normal line-clamp-2 max-w-3xl">
+                      <p className="text-sm sm:text-base text-[#4A5568] leading-relaxed font-normal line-clamp-2 max-w-3xl">
                         {art.summary}
                       </p>
 
                       <div className="pt-2 flex items-center justify-between">
                         <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#173C62] group-hover:text-[#12304F] transition-colors">
-                          <span>Read technical analysis</span>
+                          <span className="border-b border-transparent group-hover:border-[#12304F]">Read technical analysis</span>
                           <span className="transition-transform duration-200 group-hover:translate-x-1.5">&rarr;</span>
                         </span>
 
@@ -276,7 +282,7 @@ export const NewsCenterPage: React.FC<NewsCenterPageProps> = ({ onNavigate }) =>
               ))}
             </div>
           ) : (
-            <div className="py-16 text-center text-[#64748B] text-sm bg-white rounded-[20px] border border-[#E5E7EB]">
+            <div className="py-16 text-center text-[#64748B] text-sm py-20 border-y border-[#E5E7EB]">
               No technical bulletins match this category selection.
             </div>
           )}

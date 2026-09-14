@@ -179,7 +179,7 @@ export const FacilitiesManagementPage: React.FC<FacilitiesManagementPageProps> =
       <section className="py-16 sm:py-24 bg-[#F8FAFC] border-b border-[#E5E7EB]">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 space-y-10 text-left">
           
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between pb-6 border-b border-[#E5E7EB] gap-4">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between pb-4 gap-6">
             <div className="space-y-1">
               <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
                 02 • SERVICE ARCHITECTURE
@@ -189,49 +189,36 @@ export const FacilitiesManagementPage: React.FC<FacilitiesManagementPageProps> =
               </h2>
             </div>
 
-            {/* Category Switcher Tabs */}
-            <div className="flex flex-wrap items-center gap-2">
-              <button
-                type="button"
-                onClick={() => setActiveTab('hard-services')}
-                className={`px-5 py-2.5 rounded-[10px] text-xs font-medium tracking-wider uppercase transition-colors cursor-pointer border ${
-                  activeTab === 'hard-services'
-                    ? 'bg-[#173C62] text-white border-[#173C62]'
-                    : 'bg-white text-[#173C62] border-[#E5E7EB] hover:border-[#173C62]'
-                }`}
-              >
-                <span>Hard Services (5)</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setActiveTab('soft-services')}
-                className={`px-5 py-2.5 rounded-[10px] text-xs font-medium tracking-wider uppercase transition-colors cursor-pointer border ${
-                  activeTab === 'soft-services'
-                    ? 'bg-[#173C62] text-white border-[#173C62]'
-                    : 'bg-white text-[#173C62] border-[#E5E7EB] hover:border-[#173C62]'
-                }`}
-              >
-                <span>Soft Services (1)</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setActiveTab('retrofits')}
-                className={`px-5 py-2.5 rounded-[10px] text-xs font-medium tracking-wider uppercase transition-colors cursor-pointer border ${
-                  activeTab === 'retrofits'
-                    ? 'bg-[#173C62] text-white border-[#173C62]'
-                    : 'bg-white text-[#173C62] border-[#E5E7EB] hover:border-[#173C62]'
-                }`}
-              >
-                <span>Retrofits (3)</span>
-              </button>
+            {/* Category Switcher: Architectural Segmented Underline Controls */}
+            <div className="flex items-center gap-6 sm:gap-8 border-b border-[#CBD5E1]">
+              {[
+                { id: 'hard-services', label: 'Hard Services (5)' },
+                { id: 'soft-services', label: 'Soft Services (1)' },
+                { id: 'retrofits', label: 'Retrofits (3)' },
+              ].map((tab) => {
+                const isActive = activeTab === tab.id;
+                return (
+                  <button
+                    key={tab.id}
+                    type="button"
+                    onClick={() => setActiveTab(tab.id as FMTab)}
+                    className={`relative pb-3 text-xs uppercase tracking-wider font-semibold transition-colors cursor-pointer ${
+                      isActive ? 'text-[#173C62]' : 'text-slate-500 hover:text-[#0B1320]'
+                    }`}
+                  >
+                    <span>{tab.label}</span>
+                    {isActive && (
+                      <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#173C62]" />
+                    )}
+                  </button>
+                );
+              })}
             </div>
           </div>
 
-          {/* 01 HARD SERVICES: Open Editorial Line Items */}
+          {/* 01 HARD SERVICES: Open Editorial Line Items on Canvas (Zero Boxed Containers) */}
           {activeTab === 'hard-services' && (
-            <div className="divide-y divide-[#E5E7EB] bg-white rounded-[20px] border border-[#E5E7EB] px-6 sm:px-10">
+            <div className="divide-y divide-[#E5E7EB] border-t border-b border-[#E5E7EB]">
               {hardServices.map((svc) => {
                 const IconComponent = svc.icon;
                 return (
@@ -276,9 +263,9 @@ export const FacilitiesManagementPage: React.FC<FacilitiesManagementPageProps> =
             </div>
           )}
 
-          {/* 02 SOFT SERVICES: Editorial Showcase */}
+          {/* 02 SOFT SERVICES: Open Architectural Showcase */}
           {activeTab === 'soft-services' && (
-            <div className="bg-white rounded-[20px] border border-[#E5E7EB] p-8 sm:p-12 max-w-3xl space-y-5">
+            <div className="border-t-2 border-[#173C62] pt-8 max-w-3xl space-y-5">
               <span className="font-mono text-xs uppercase tracking-wider text-[#173C62] font-semibold block">
                 SOFT SERVICES &bull; AQUATIC HYGIENE
               </span>
@@ -304,9 +291,9 @@ export const FacilitiesManagementPage: React.FC<FacilitiesManagementPageProps> =
             </div>
           )}
 
-          {/* 03 RETROFITS: 3-Phase Editorial Roadmap */}
+          {/* 03 RETROFITS: 3-Phase Open Hairline Roadmap */}
           {activeTab === 'retrofits' && (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
               {[
                 {
                   phase: 'PHASE 01',
@@ -330,13 +317,13 @@ export const FacilitiesManagementPage: React.FC<FacilitiesManagementPageProps> =
                 <div
                   key={rf.phase}
                   onClick={() => onNavigate(rf.slug)}
-                  className="bg-white rounded-[20px] border border-[#E5E7EB] p-7 space-y-4 cursor-pointer hover:border-[#173C62] transition-colors flex flex-col justify-between"
+                  className="border-t-2 border-[#173C62] pt-6 space-y-4 cursor-pointer group flex flex-col justify-between"
                 >
                   <div className="space-y-2">
                     <span className="font-mono text-xs font-semibold text-[#173C62] uppercase tracking-wider block">
                       {rf.phase}
                     </span>
-                    <h4 className="text-xl font-normal text-[#0B1320] tracking-tight">
+                    <h4 className="text-xl font-normal text-[#0B1320] group-hover:text-[#173C62] transition-colors tracking-tight">
                       {rf.title}
                     </h4>
                     <p className="text-sm text-[#4A5568] leading-relaxed">
@@ -344,7 +331,7 @@ export const FacilitiesManagementPage: React.FC<FacilitiesManagementPageProps> =
                     </p>
                   </div>
 
-                  <div className="pt-3 border-t border-[#E5E7EB] flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-[#173C62]">
+                  <div className="pt-4 border-t border-[#E5E7EB] flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-[#173C62]">
                     <span>Inspect Phase</span>
                     <IconArrow size="sm" color="primary" interactive />
                   </div>

@@ -244,14 +244,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       </section>
 
       {/* =====================================================================
-          03 WHAT WE DO
-          - Three large visual business area panels:
-            1. ENGINEERING & CONSTRUCTION
-            2. FACILITIES MANAGEMENT
-            3. TRADING
-          - Large image, title, very short descriptor, arrow
-          - Asymmetric 12-column editorial panels (7 cols dominant + 5 cols stacked)
-          - Not a 3-card SaaS layout
+          03 WHAT WE DO (OPERATING DIVISIONS)
+          - Three large visual business area panels: E&C, FM, Trading
+          - Asymmetric 12-column editorial layout (7 cols dominant + 5 cols stacked)
+          - Full photographic narrative with authentic LTS Blue scrims
       ===================================================================== */}
       <section
         aria-label="What We Do"
@@ -272,7 +268,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             <a
               href="/engineering-construction"
               onClick={(e) => handleLink(e, '/engineering-construction')}
-              className="lg:col-span-7 group relative rounded-[20px] overflow-hidden block min-h-[380px] sm:min-h-[480px] lg:min-h-[560px] bg-[#173C62] flex flex-col justify-end p-8 sm:p-12 transition-transform duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
+              className="lg:col-span-7 group relative rounded-[20px] overflow-hidden block min-h-[400px] sm:min-h-[500px] lg:min-h-[580px] bg-[#173C62] flex flex-col justify-end p-8 sm:p-12 transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
             >
               <img
                 src="/assets/images/mep-construction.jpg"
@@ -280,17 +276,17 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.025]"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/95 via-[#173C62]/45 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/95 via-[#173C62]/50 to-transparent" />
 
               <div className="relative z-10 text-white max-w-lg">
-                <span className="text-[10.5px] font-mono uppercase tracking-[0.2em] text-[#CBD5E1] block mb-2">
-                  DIVISION 01
+                <span className="text-[10.5px] font-mono uppercase tracking-[0.22em] text-[#93C5FD] block mb-2 font-semibold">
+                  DIVISION 01 &bull; CAPITAL CONTRACTING
                 </span>
                 <h3 className="text-2xl sm:text-3xl lg:text-4xl font-light text-white tracking-tight">
                   ENGINEERING &amp; CONSTRUCTION
                 </h3>
-                <p className="mt-2 text-xs sm:text-sm text-slate-200 leading-relaxed font-normal">
-                  Turnkey MEP contracting, commercial rooftop solar EPC, and type-tested switchgear assembly.
+                <p className="mt-2.5 text-xs sm:text-sm text-slate-200 leading-relaxed font-normal">
+                  Turnkey MEP contracting, commercial rooftop solar EPC under DEWA Shams Dubai, and factory type-tested switchboard assemblies.
                 </p>
                 <div className="mt-6 inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-white group-hover:text-slate-200">
                   <span>Explore division</span>
@@ -305,7 +301,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               <a
                 href="/facilities-management"
                 onClick={(e) => handleLink(e, '/facilities-management')}
-                className="group relative rounded-[20px] overflow-hidden block flex-1 min-h-[230px] sm:min-h-[260px] bg-[#173C62] flex flex-col justify-end p-7 sm:p-9 transition-transform duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
+                className="group relative rounded-[20px] overflow-hidden block flex-1 min-h-[240px] sm:min-h-[270px] bg-[#173C62] flex flex-col justify-end p-7 sm:p-9 transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
               >
                 <img
                   src="/assets/images/project-chiller.jpg"
@@ -313,17 +309,17 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/95 via-[#173C62]/45 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/95 via-[#173C62]/50 to-transparent" />
 
                 <div className="relative z-10 text-white">
-                  <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#CBD5E1] block mb-1">
-                    DIVISION 02
+                  <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#93C5FD] block mb-1 font-semibold">
+                    DIVISION 02 &bull; ASSET STEWARDSHIP
                   </span>
                   <h3 className="text-xl sm:text-2xl font-light text-white tracking-tight">
                     FACILITIES MANAGEMENT
                   </h3>
-                  <p className="mt-1 text-xs text-slate-200 leading-relaxed font-normal">
-                    24/7 engineering, central plant chiller care, and live-plant retrofits.
+                  <p className="mt-1.5 text-xs text-slate-200 leading-relaxed font-normal">
+                    24/7 predictive maintenance, central chiller plant overhauls, and live-plant energy retrofits.
                   </p>
                   <div className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold tracking-wider uppercase text-white group-hover:text-slate-200">
                     <span>Explore division</span>
@@ -336,7 +332,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               <a
                 href="/trading"
                 onClick={(e) => handleLink(e, '/trading')}
-                className="group relative rounded-[20px] overflow-hidden block flex-1 min-h-[230px] sm:min-h-[260px] bg-[#173C62] flex flex-col justify-end p-7 sm:p-9 transition-transform duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
+                className="group relative rounded-[20px] overflow-hidden block flex-1 min-h-[240px] sm:min-h-[270px] bg-[#173C62] flex flex-col justify-end p-7 sm:p-9 transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
               >
                 <img
                   src="/assets/images/industry-logistics.jpg"
@@ -344,17 +340,17 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/95 via-[#173C62]/45 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/95 via-[#173C62]/50 to-transparent" />
 
                 <div className="relative z-10 text-white">
-                  <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#CBD5E1] block mb-1">
-                    DIVISION 03
+                  <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#93C5FD] block mb-1 font-semibold">
+                    DIVISION 03 &bull; OEM PROCUREMENT
                   </span>
                   <h3 className="text-xl sm:text-2xl font-light text-white tracking-tight">
                     TRADING &amp; COMPONENT SUPPLY
                   </h3>
-                  <p className="mt-1 text-xs text-slate-200 leading-relaxed font-normal">
-                    Genuine OEM HVAC spare parts, variable frequency drives, and BTU metering.
+                  <p className="mt-1.5 text-xs text-slate-200 leading-relaxed font-normal">
+                    Genuine OEM HVAC spare parts, low-harmonic VFDs, and Class-2 ultrasonic BTU metering.
                   </p>
                   <div className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold tracking-wider uppercase text-white group-hover:text-slate-200">
                     <span>Explore division</span>
@@ -370,10 +366,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       {/* =====================================================================
           04 FEATURED CAPABILITY
           - One visually dominant story
-          - Large image occupying ~65%
-          - Small text area (~35%)
-          - One capability, zero explanation overload
-          - CTA: EXPLORE CAPABILITIES →
+          - Cinematic panoramic visual (~65% / 8 cols)
+          - Concise architectural narrative (~35% / 4 cols)
+          - Zero excessive shadows or card boxes
       ===================================================================== */}
       <section
         aria-label="Featured Capability"
@@ -381,23 +376,23 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       >
         <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center text-left">
-            {/* Large Dominant Visual (~65% / 8 cols) */}
+            {/* Cinematic Dominant Visual (8 cols) */}
             <div className="lg:col-span-8">
-              <div className="relative aspect-[16/10] rounded-[20px] overflow-hidden bg-[#173C62] shadow-[0_16px_40px_-16px_rgba(23,60,98,0.18)]">
+              <div className="relative aspect-[16/10] sm:aspect-[21/11] rounded-[20px] overflow-hidden bg-[#173C62]">
                 <img
                   src="/assets/images/solar-epc.jpg"
                   alt="Commercial Solar PV EPC and Infrastructure"
                   className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-[1.02]"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/70 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-5 text-white font-mono text-xs uppercase tracking-wider">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/80 via-[#173C62]/20 to-transparent" />
+                <div className="absolute bottom-5 left-6 text-white font-mono text-xs uppercase tracking-wider">
                   DEWA Shams Dubai Synchronized &bull; Zero-Carbon Infrastructure
                 </div>
               </div>
             </div>
 
-            {/* Minimal Text Area (~35% / 4 cols) */}
+            {/* Minimal Text Area (4 cols) */}
             <div className="lg:col-span-4 space-y-6">
               <div className="space-y-2">
                 <span className="text-[11px] font-mono text-[#173C62] uppercase tracking-[0.22em] font-semibold block">
@@ -408,8 +403,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 </h2>
               </div>
 
-              <p className="text-sm text-[#4A5568] leading-relaxed font-normal">
-                Turnkey EPC delivery under DEWA Shams Dubai, transforming industrial and commercial building envelopes into high-yield power generation assets.
+              <p className="text-sm sm:text-base text-[#4A5568] leading-relaxed font-normal">
+                Turnkey EPC delivery under DEWA Shams Dubai, transforming industrial and commercial building envelopes into high-yield power generation assets with statutory grid synchronization.
               </p>
 
               <div className="pt-2">
@@ -598,7 +593,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
       {/* =====================================================================
           07 NUMBERS & PROOF
-          - Premium ProofStrip (Option A) with large typography (text-6xl to 8xl)
+          - Premium ProofStrip with large typography (text-6xl to 8xl)
           - Generous negative space, thin separators, zero tiny cards
           - Strictly verified values: 03 Divisions, 24/7 Dispatch, 100% Clearances
       ===================================================================== */}
@@ -725,45 +720,47 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       </section>
 
       {/* =====================================================================
-          09 CLIENTS
-          - Minimal logo field under heading: TRUSTED BY
-          - Official statutory authority marks, zero paragraphs
+          09 CLIENTS & STATUTORY GOVERNANCE
+          - Architectural hairline trust field (Skanska/Arup standard)
+          - Zero boxed cards, pure institutional authority
       ===================================================================== */}
       <section
         aria-label="Trusted By"
         className="py-20 lg:py-28 bg-[#F8FAFC] border-b border-[#E5E7EB]"
       >
         <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12 text-left">
-          <div className="max-w-xl mb-10 lg:mb-12">
+          <div className="max-w-xl mb-12 lg:mb-16">
             <span className="text-[11px] font-mono text-[#173C62] uppercase tracking-[0.22em] font-semibold block mb-2">
               08 / GOVERNANCE
             </span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#0B1320] tracking-tight">
-              TRUSTED BY
+              STATUTORY TRUST &amp; CODE CLEARANCES
             </h2>
           </div>
 
-          {/* Minimal Authority Logo / Trust Field */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-stretch">
+          {/* Architectural Hairline Field — Zero boxed cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
             {[
-              { code: 'DEWA', label: 'Dubai Electricity & Water Authority' },
-              { code: 'DCD', label: 'Dubai Civil Defense' },
-              { code: 'DM', label: 'Dubai Municipality' },
-              { code: 'ISO', label: 'ISO 9001 / 14001 / 45001' },
+              { code: 'DEWA', label: 'Dubai Electricity & Water Authority', scope: '11kV substation & Shams Dubai solar PV EPC accreditation' },
+              { code: 'DCD', label: 'Dubai Civil Defense', scope: 'Fire life-safety, smoke pressurization & emergency extract clearances' },
+              { code: 'DM', label: 'Dubai Municipality', scope: 'Building hydraulics, potable water skids & public health hygiene' },
+              { code: 'IEC', label: 'International Electrotechnical Commission', scope: 'IEC 61439 Form-4 type-tested switchgear assemblies up to 65kA' },
             ].map((item) => (
               <div
                 key={item.code}
-                className="p-6 rounded-[16px] bg-white border border-[#E5E7EB] flex flex-col justify-between space-y-3"
+                className="border-t-2 border-[#173C62] pt-6 flex flex-col justify-between space-y-4 text-left"
               >
-                <div className="flex items-center justify-between">
-                  <span className="font-mono text-base font-bold text-[#173C62] tracking-wider">
+                <div className="space-y-2">
+                  <span className="font-mono text-xl sm:text-2xl font-semibold text-[#173C62] tracking-wider block">
                     {item.code}
                   </span>
-                  <IconShieldCheck size="sm" color="primary" />
+                  <h3 className="text-sm font-medium text-[#0B1320] leading-snug">
+                    {item.label}
+                  </h3>
                 </div>
-                <span className="text-xs text-[#4A5568] font-medium leading-snug">
-                  {item.label}
-                </span>
+                <p className="text-xs text-[#64748B] font-normal leading-relaxed">
+                  {item.scope}
+                </p>
               </div>
             ))}
           </div>

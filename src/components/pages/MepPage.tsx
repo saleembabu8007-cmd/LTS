@@ -328,90 +328,96 @@ export const MepPage: React.FC<MepPageProps> = ({ onNavigate }) => {
               </p>
             </div>
 
-            {/* 3-Tier Functional Systems Composition */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* 3-Tier Functional Systems Composition: Open Architectural Hairline Flow */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-12">
               {/* Tier 1 */}
-              <div className="p-8 bg-white/[0.06] border border-white/15 rounded-[16px] space-y-5">
-                <div className="flex items-center justify-between border-b border-white/15 pb-3">
-                  <span className="font-mono text-xs text-[#93C5FD] font-semibold">TIER 01</span>
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-slate-300">Utility Intake</span>
+              <div className="border-t-2 border-[#93C5FD] pt-6 space-y-5 flex flex-col justify-between">
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-xs text-[#93C5FD] font-semibold tracking-wider">01 / UTILITY INTAKE</span>
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-slate-300">Municipal Interface</span>
+                  </div>
+
+                  <h4 className="text-xl font-medium text-white tracking-tight">Primary Utility Interface</h4>
+
+                  <p className="text-xs text-slate-200 leading-relaxed">
+                    Direct statutory interface with municipal grids, ensuring incoming power, district cooling, and public water supply satisfy peak load demands without tariff penalties.
+                  </p>
                 </div>
 
-                <h4 className="text-lg font-medium text-white">Primary Utility Interface</h4>
-
-                <p className="text-xs text-slate-200 leading-relaxed">
-                  Direct statutory interface with municipal grids, ensuring incoming power, district cooling, and public water supply satisfy peak load demands without tariff penalties.
-                </p>
-
-                <div className="space-y-2.5 pt-3 border-t border-white/15 text-xs text-slate-200">
+                <div className="space-y-2.5 pt-4 border-t border-white/15 text-xs text-slate-200">
                   <div className="flex items-center justify-between">
-                    <span>DEWA Substation Connection</span>
+                    <span className="text-slate-300">DEWA Substation Connection</span>
                     <span className="font-mono text-[11px] text-white/90">11kV / 33kV</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span>District Cooling Interface</span>
+                    <span className="text-slate-300">District Cooling Interface</span>
                     <span className="font-mono text-[11px] text-white/90">PHE Heat Exchangers</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span>Municipal Potable Supply</span>
+                    <span className="text-slate-300">Municipal Potable Supply</span>
                     <span className="font-mono text-[11px] text-white/90">Underground Reservoirs</span>
                   </div>
                 </div>
               </div>
 
               {/* Tier 2 */}
-              <div className="p-8 bg-white/[0.06] border border-white/15 rounded-[16px] space-y-5">
-                <div className="flex items-center justify-between border-b border-white/15 pb-3">
-                  <span className="font-mono text-xs text-[#93C5FD] font-semibold">TIER 02</span>
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-slate-300">Plant Transformation</span>
+              <div className="border-t-2 border-[#93C5FD] pt-6 space-y-5 flex flex-col justify-between">
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-xs text-[#93C5FD] font-semibold tracking-wider">02 / TRANSFORMATION</span>
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-slate-300">Plant &amp; Switchgear</span>
+                  </div>
+
+                  <h4 className="text-xl font-medium text-white tracking-tight">Central Plant &amp; Switchboards</h4>
+
+                  <p className="text-xs text-slate-200 leading-relaxed">
+                    Factory-assembled Form-4 switchboards, variable speed secondary pumping skids, and automated transfer switches converting primary utility feeds into secure, conditioned services.
+                  </p>
                 </div>
 
-                <h4 className="text-lg font-medium text-white">Central Plant &amp; Switchgear</h4>
-
-                <p className="text-xs text-slate-200 leading-relaxed">
-                  Factory-assembled Form-4 switchboards, variable speed secondary pumping skids, and automated transfer switches converting primary utility feeds into secure, conditioned services.
-                </p>
-
-                <div className="space-y-2.5 pt-3 border-t border-white/15 text-xs text-slate-200">
+                <div className="space-y-2.5 pt-4 border-t border-white/15 text-xs text-slate-200">
                   <div className="flex items-center justify-between">
-                    <span>Main Distribution Boards (MDB)</span>
+                    <span className="text-slate-300">Main Distribution Boards (MDB)</span>
                     <span className="font-mono text-[11px] text-white/90">Form-4 • Up to 65kA</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span>Secondary Hydronic Pumping</span>
+                    <span className="text-slate-300">Secondary Hydronic Pumping</span>
                     <span className="font-mono text-[11px] text-white/90">Variable Primary Flow</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span>Emergency Power Transfer</span>
+                    <span className="text-slate-300">Emergency Power Transfer</span>
                     <span className="font-mono text-[11px] text-white/90">Automated ATS Panels</span>
                   </div>
                 </div>
               </div>
 
               {/* Tier 3 */}
-              <div className="p-8 bg-white/[0.06] border border-white/15 rounded-[16px] space-y-5">
-                <div className="flex items-center justify-between border-b border-white/15 pb-3">
-                  <span className="font-mono text-xs text-[#93C5FD] font-semibold">TIER 03</span>
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-slate-300">Terminal Delivery</span>
+              <div className="border-t-2 border-[#93C5FD] pt-6 space-y-5 flex flex-col justify-between">
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-xs text-[#93C5FD] font-semibold tracking-wider">03 / DISTRIBUTION</span>
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-slate-300">Terminal Delivery</span>
+                  </div>
+
+                  <h4 className="text-xl font-medium text-white tracking-tight">Telemetry &amp; Terminal Control</h4>
+
+                  <p className="text-xs text-slate-200 leading-relaxed">
+                    Vertical copper busways, calibrated air balancing, addressable smoke dampers, and Direct Digital Control (BMS) telemetry delivering precise zone temperature and life safety.
+                  </p>
                 </div>
 
-                <h4 className="text-lg font-medium text-white">Distribution &amp; BMS Telemetry</h4>
-
-                <p className="text-xs text-slate-200 leading-relaxed">
-                  Vertical copper busways, calibrated air balancing, addressable smoke dampers, and Direct Digital Control (BMS) telemetry delivering precise zone temperature and life safety.
-                </p>
-
-                <div className="space-y-2.5 pt-3 border-t border-white/15 text-xs text-slate-200">
+                <div className="space-y-2.5 pt-4 border-t border-white/15 text-xs text-slate-200">
                   <div className="flex items-center justify-between">
-                    <span>Vertical Power Risers</span>
+                    <span className="text-slate-300">Vertical Power Risers</span>
                     <span className="font-mono text-[11px] text-white/90">Sandwich Busbars</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span>Air Distribution Control</span>
+                    <span className="text-slate-300">Air Distribution Control</span>
                     <span className="font-mono text-[11px] text-white/90">VAV &amp; Attenuators</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span>Fire Life-Safety Systems</span>
+                    <span className="text-slate-300">Fire Life-Safety Systems</span>
                     <span className="font-mono text-[11px] text-white/90">DCD Class A Certified</span>
                   </div>
                 </div>
@@ -526,11 +532,11 @@ export const MepPage: React.FC<MepPageProps> = ({ onNavigate }) => {
       </section>
 
       {/* =========================================================================
-          07 — SECTORS SERVED (16px SOFT RADIUS, ZERO 2px SHARP BOXES)
+          07 — SECTORS SERVED (UNBOXED ARCHITECTURAL MONOGRAPHS)
       ========================================================================= */}
       <section id="section-industries" className="py-16 lg:py-24 border-b border-[#E5E7EB] bg-white">
         <Container>
-          <div className="space-y-10">
+          <div className="space-y-12">
             <div>
               <span className="font-mono text-xs font-semibold tracking-[0.2em] text-[#173C62] uppercase block">
                 SECTORS SERVED
@@ -540,15 +546,15 @@ export const MepPage: React.FC<MepPageProps> = ({ onNavigate }) => {
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {relatedIndustries.map((ind) => (
                 <div
                   key={ind.id}
                   onClick={() => onNavigate('/industries')}
-                  className="group bg-white border border-[#E5E7EB] rounded-[16px] overflow-hidden flex flex-col justify-between cursor-pointer hover:border-[#173C62] transition-colors"
+                  className="group cursor-pointer flex flex-col justify-between space-y-4"
                 >
-                  <div>
-                    <div className="relative aspect-[16/10] overflow-hidden bg-slate-100 border-b border-[#E5E7EB]">
+                  <div className="space-y-4">
+                    <div className="relative aspect-[16/10] overflow-hidden rounded-[16px] bg-slate-100">
                       <img
                         src={ind.imageSrc}
                         alt={ind.title}
@@ -556,17 +562,17 @@ export const MepPage: React.FC<MepPageProps> = ({ onNavigate }) => {
                         loading="lazy"
                       />
                     </div>
-                    <div className="p-5 space-y-2">
+                    <div className="space-y-1.5">
                       <h4 className="text-base font-medium text-[#0B1320] group-hover:text-[#173C62] transition-colors leading-snug">
                         {ind.title}
                       </h4>
-                      <p className="text-xs text-[#4A5568] line-clamp-2 leading-relaxed">
+                      <p className="text-xs text-[#4A5568] leading-relaxed">
                         {ind.description}
                       </p>
                     </div>
                   </div>
 
-                  <div className="px-5 pb-5 pt-2 border-t border-[#E5E7EB]/50 flex items-center gap-1.5 text-xs font-semibold text-[#173C62]">
+                  <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#173C62]">
                     <span>Inspect Sector</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                   </div>
@@ -578,12 +584,12 @@ export const MepPage: React.FC<MepPageProps> = ({ onNavigate }) => {
       </section>
 
       {/* =========================================================================
-          08 — CONTACT CTA (EDITORIAL SPLIT INVITATION)
+          08 — CONTACT CTA (OPEN ARCHITECTURAL SPLIT)
       ========================================================================= */}
       <section className="py-16 lg:py-24 bg-[#F8FAFC]">
         <Container>
-          <div className="bg-white rounded-[18px] border border-[#E5E7EB] p-8 sm:p-12 lg:p-16 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
-            <div className="max-w-2xl space-y-4">
+          <div className="border-t-2 border-[#173C62] pt-12 sm:pt-16 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+            <div className="max-w-2xl space-y-3">
               <span className="font-mono text-xs font-semibold tracking-[0.2em] text-[#173C62] uppercase block">
                 COMMERCIAL MEP COLLABORATION
               </span>
@@ -607,7 +613,7 @@ export const MepPage: React.FC<MepPageProps> = ({ onNavigate }) => {
               </Button>
               <a
                 href={`tel:${CORPORATE_INFO.contact.telephone.replace(/\s+/g, '')}`}
-                className="inline-flex items-center justify-center text-xs font-semibold text-[#0B1320] border border-[#CBD5E1] rounded-[10px] px-5 py-3 hover:bg-[#F8FAFC] transition-colors"
+                className="inline-flex items-center justify-center text-xs font-semibold text-[#0B1320] border border-[#CBD5E1] rounded-[10px] px-5 py-3 hover:bg-white hover:border-[#173C62] transition-colors"
               >
                 Direct Line: {CORPORATE_INFO.contact.telephone}
               </a>
