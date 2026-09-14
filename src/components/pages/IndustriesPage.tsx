@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import {
   IconArrow,
+  IconArrowLeft,
   IconArrowUpRight,
   IconCheck,
   IconHVAC,
@@ -27,9 +28,37 @@ interface IndustryItem {
 /**
  * IndustriesPage — LTSGROUP Sector Monograph
  * Conforms strictly to the 5-stage minimal-content architecture:
- * 01 Hero &rarr; 02 Industry Visual Grid (6 Sectors) &rarr; 03 Relevant Solutions &rarr; 04 Delivered Projects &rarr; 05 CTA.
+ * 01 Hero → 02 Horizontal Photographic Monograph Rail → 03 Typographic Solutions Split → 04 Delivered Projects → 05 CTA.
  */
 export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate }) => {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const checkScrollBounds = () => {
+    if (scrollContainerRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+      setCanScrollLeft(scrollLeft > 10);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
+    }
+  };
+
+  useEffect(() => {
+    checkScrollBounds();
+    window.addEventListener('resize', checkScrollBounds);
+    return () => window.removeEventListener('resize', checkScrollBounds);
+  }, []);
+
+  const handleScroll = (direction: 'left' | 'right') => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = Math.min(scrollContainerRef.current.clientWidth * 0.75, 400);
+      scrollContainerRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   // 6 Verified Industries conforming to approved business data
   const industries: IndustryItem[] = [
     {
@@ -91,39 +120,39 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate }) =>
   // Cross-sector solutions mapping
   const solutions = [
     {
+      num: '01',
       title: 'Turnkey MEP Contracting',
       desc: 'BIM-coordinated hydronic piping, electrical busways, and certified life-safety systems.',
-      icon: IconElectrical,
       slug: '/engineering-construction/mep',
     },
     {
+      num: '02',
       title: 'Solar Photovoltaic EPC',
-      desc: 'Commercial rooftop PV and carport arrays under the DEWA Shams Dubai framework.',
-      icon: IconSolar,
+      desc: 'DEWA Shams Dubai certified commercial rooftop and carpark canopy PV arrays.',
       slug: '/engineering-construction/solar',
     },
     {
-      title: 'Hard Facilities Stewardship',
-      desc: '24/7 central chiller plant maintenance, vibration diagnostics, and CAFM telemetry.',
-      icon: IconHVAC,
-      slug: '/facilities-management',
-    },
-    {
-      title: 'Control Switchgear',
-      desc: 'Form-4 type-tested low-voltage switchboards up to 65kA and Motor Control Centers (MCC).',
-      icon: IconSwitchgear,
+      num: '03',
+      title: 'Low-Voltage Control Switchgear',
+      desc: 'Form-4 motor control centers and factory type-tested switchboard assemblies.',
       slug: '/engineering-construction/control-switchgear',
     },
     {
-      title: 'BTU Metering & Controls',
-      desc: 'Ultrasonic thermal energy meters, low-harmonic VFDs, and automated building sensors.',
-      icon: IconBMS,
+      num: '04',
+      title: 'Hard Facilities Engineering',
+      desc: '24/7 predictive electromechanical stewardship, chiller overhauls, and continuous uptime SLAs.',
+      slug: '/facilities-management/hard-services',
+    },
+    {
+      num: '05',
+      title: 'Precision OEM Component Trading',
+      desc: 'Authentic compressors, low-harmonic VFDs, and revenue-grade ultrasonic BTU heat meters.',
       slug: '/trading',
     },
   ];
 
-  // Curated 2-case study projects
-  const relevantProjects = [PROJECTS_DATA[0], PROJECTS_DATA[2]].filter(Boolean);
+  // Filter curated delivered projects
+  const relevantProjects = PROJECTS_DATA.slice(0, 4);
 
   return (
     <div className="bg-white text-[#0B1320] selection:bg-[#173C62] selection:text-white antialiased">
@@ -166,108 +195,156 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate }) =>
       </section>
 
       {/* =========================================================================
-          02 — INDUSTRY VISUAL GRID
-          Asymmetric visual index of the 6 verified sectors.
+          02 — SECTOR MONOGRAPHS (Horizontal Photographic Rail)
+          Image-first portrait cards with bottom gradient & crisp typography.
+          Left / Right smooth scroll navigation controls.
       ========================================================================= */}
-      <section className="py-16 sm:py-24 border-b border-[#E5E7EB]">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 space-y-12 sm:space-y-16">
-          <div className="max-w-3xl space-y-3">
-            <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
-              01 &bull; Sector Portfolio
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#0B1320] tracking-tight">
-              Operating Sectors &amp; Environments
-            </h2>
-            <p className="text-base sm:text-lg text-[#4A5568] leading-relaxed">
-              Six established commercial, institutional, and infrastructure domains where LTSGROUP delivers capital execution and continuous reliability.
-            </p>
+      <section className="py-20 lg:py-28 bg-white border-b border-[#E5E7EB]">
+        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 text-left">
+          
+          {/* Header & Horizontal Scroll Controls */}
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 sm:mb-12 gap-6">
+            <div className="max-w-2xl space-y-3">
+              <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
+                01 &bull; Sector Portfolio
+              </span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#0B1320] tracking-tight leading-[1.12]">
+                Operating Sectors &amp;<br className="hidden sm:inline" /> Environments
+              </h2>
+            </div>
+
+            {/* Swipe Left & Right Navigation Controls */}
+            <div className="flex items-center gap-3 self-end sm:self-auto shrink-0">
+              <button
+                type="button"
+                onClick={() => handleScroll('left')}
+                disabled={!canScrollLeft}
+                aria-label="Scroll left"
+                className="w-11 h-11 rounded-[10px] border border-[#CBD5E1] bg-white text-[#173C62] flex items-center justify-center transition-all duration-200 hover:border-[#173C62] hover:bg-[#F8FAFC] disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
+              >
+                <IconArrowLeft size="sm" color="inherit" />
+              </button>
+
+              <button
+                type="button"
+                onClick={() => handleScroll('right')}
+                disabled={!canScrollRight}
+                aria-label="Scroll right"
+                className="w-11 h-11 rounded-[10px] border border-[#CBD5E1] bg-white text-[#173C62] flex items-center justify-center transition-all duration-200 hover:border-[#173C62] hover:bg-[#F8FAFC] disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
+              >
+                <IconArrow size="sm" color="inherit" />
+              </button>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+          {/* Horizontal Scrollable Rail */}
+          <div
+            ref={scrollContainerRef}
+            onScroll={checkScrollBounds}
+            className="flex items-stretch gap-6 overflow-x-auto scrollbar-none scroll-smooth pb-4 -mx-6 px-6 sm:-mx-8 sm:px-8 lg:-mx-16 lg:px-16"
+          >
             {industries.map((item) => (
               <div
                 key={item.num}
                 onClick={() => onNavigate(`/projects/${item.projectSlug}`)}
-                className="group cursor-pointer block text-left transition-all"
+                className="group relative cursor-pointer flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[340px] aspect-[3/4] rounded-[20px] overflow-hidden bg-[#173C62] border border-[#E5E7EB] select-none transition-all duration-300 hover:border-[#173C62]/40"
               >
-                <div className="relative overflow-hidden rounded-[18px] bg-[#173C62] aspect-[16/10] mb-5 border border-[#E5E7EB]">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
-                    onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).src = item.fallbackImage;
-                    }}
-                  />
-                  <div className="absolute bottom-3 left-3 font-mono text-[10px] uppercase tracking-wider text-white bg-[#173C62]/90 backdrop-blur-xs px-2.5 py-1 rounded-[6px] border border-white/15">
-                    Sector {item.num}
-                  </div>
-                </div>
+                {/* Full-bleed Photography */}
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  loading="lazy"
+                  className="w-full h-full object-cover object-center filter brightness-[0.92] transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = item.fallbackImage;
+                  }}
+                />
 
-                <div className="space-y-2">
-                  <h3 className="text-xl font-light text-[#0B1320] group-hover:text-[#173C62] transition-colors leading-snug">
+                {/* Dark Scrim Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1320] via-[#0B1320]/65 via-45% to-transparent pointer-events-none" />
+
+                {/* Bottom Content Typography Overlay */}
+                <div className="absolute inset-x-0 bottom-0 p-6 sm:p-7 flex flex-col justify-end text-left z-10 space-y-1.5 text-white">
+                  <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-[#93C5FD] font-semibold block">
+                    SECTOR {item.num}
+                  </span>
+
+                  <h3 className="text-xl sm:text-2xl font-normal text-white tracking-tight leading-snug group-hover:text-[#93C5FD] transition-colors">
                     {item.name}
                   </h3>
-                  <p className="text-sm text-[#4A5568] leading-relaxed font-normal">
+
+                  <p className="text-xs sm:text-sm text-slate-300 font-normal leading-relaxed line-clamp-3 pt-1">
                     {item.sentence}
                   </p>
-                  <div className="pt-2 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#173C62]">
-                    <span>Inspect Sector Monograph</span>
-                    <IconArrowUpRight size="sm" color="primary" interactive />
-                  </div>
                 </div>
               </div>
             ))}
           </div>
+
         </div>
       </section>
 
       {/* =========================================================================
-          03 — RELEVANT SOLUTIONS
-          Concise cross-sector engineering solutions matrix.
+          03 — CROSS-SECTOR DELIVERY (Architectural Typographic Split List)
+          Replaces generic 5-card grid with a clean, editorial typographic layout.
       ========================================================================= */}
-      <section className="py-16 sm:py-24 bg-[#F8FAFC] border-b border-[#E5E7EB]">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 space-y-12">
-          <div className="max-w-3xl space-y-3">
-            <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
-              02 &bull; Cross-Sector Delivery
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-light text-[#0B1320] tracking-tight">
-              Core Engineering Solutions
-            </h2>
-            <p className="text-base text-[#4A5568] leading-relaxed">
-              Standardized engineering packages deployed across commercial towers, healthcare complexes, and industrial logistics parks.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            {solutions.map((sol, sIdx) => {
-              const IconComp = sol.icon;
-              return (
+      <section className="py-20 lg:py-28 bg-[#F8FAFC] border-b border-[#E5E7EB]">
+        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            
+            {/* Left Context Column (4 cols) */}
+            <div className="lg:col-span-4 space-y-4 text-left">
+              <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
+                02 &bull; Cross-Sector Delivery
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-light text-[#0B1320] tracking-tight leading-tight">
+                Core Engineering Solutions
+              </h2>
+              <p className="text-sm sm:text-base text-[#4A5568] leading-relaxed">
+                Standardized, authority-compliant engineering packages deployed across commercial towers, healthcare complexes, and industrial logistics parks.
+              </p>
+              <div className="pt-2">
                 <button
-                  key={sIdx}
-                  onClick={() => onNavigate(sol.slug)}
-                  className="text-left group p-6 rounded-2xl bg-white border border-[#E5E7EB] hover:border-[#173C62] transition-all flex flex-col justify-between cursor-pointer"
+                  type="button"
+                  onClick={() => onNavigate('/engineering-construction')}
+                  className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#173C62] hover:text-[#0B1320] transition-colors py-2 min-h-[44px] cursor-pointer"
                 >
-                  <div className="space-y-3">
-                    <div className="w-10 h-10 rounded-xl bg-[#173C62]/5 text-[#173C62] flex items-center justify-center">
-                      <IconComp size="md" color="primary" />
+                  <span className="border-b border-[#173C62] pb-0.5">Explore All Capabilities</span>
+                  <IconArrow size="sm" color="primary" interactive />
+                </button>
+              </div>
+            </div>
+
+            {/* Right Typographic Rail (8 cols) — Zero boxy cards */}
+            <div className="lg:col-span-8 divide-y divide-[#E5E7EB] border-y border-[#E5E7EB] text-left">
+              {solutions.map((sol) => (
+                <button
+                  key={sol.num}
+                  type="button"
+                  onClick={() => onNavigate(sol.slug)}
+                  className="w-full py-6 sm:py-7 flex items-start justify-between gap-6 group text-left cursor-pointer transition-colors hover:bg-white/60 -mx-4 px-4 rounded-[10px]"
+                >
+                  <div className="flex items-start gap-5 sm:gap-8 max-w-xl">
+                    <span className="font-mono text-xs sm:text-sm text-[#999999] tracking-wider pt-0.5 shrink-0">
+                      {sol.num}
+                    </span>
+                    <div className="space-y-1.5">
+                      <h3 className="text-lg sm:text-xl font-normal text-[#0B1320] group-hover:text-[#173C62] transition-colors tracking-tight">
+                        {sol.title}
+                      </h3>
+                      <p className="text-xs sm:text-sm text-[#4A5568] leading-relaxed font-normal">
+                        {sol.desc}
+                      </p>
                     </div>
-                    <h4 className="text-base font-medium text-[#173C62] leading-snug">
-                      {sol.title}
-                    </h4>
-                    <p className="text-xs text-[#999999] leading-relaxed">
-                      {sol.desc}
-                    </p>
                   </div>
-                  <div className="pt-4 mt-4 border-t border-[#E5E7EB] flex items-center justify-between text-xs font-medium text-[#173C62]">
-                    <span>Scope Details</span>
+
+                  <div className="shrink-0 pt-1 text-[#173C62] group-hover:translate-x-1 transition-transform">
                     <IconArrow size="sm" color="primary" interactive />
                   </div>
                 </button>
-              );
-            })}
+              ))}
+            </div>
+
           </div>
         </div>
       </section>

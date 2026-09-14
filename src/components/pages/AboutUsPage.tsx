@@ -129,9 +129,9 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onNavigate }) => {
         supportingItems={[
           {
             index: '02',
-            value: '03',
-            label: 'Certified Management Systems',
-            subtext: 'Integrated ISO 9001:2015 Quality, ISO 14001 Environmental, and ISO 45001 Safety accreditation.',
+            value: '24/7',
+            label: 'Emergency Response SLA',
+            subtext: 'Continuous electromechanical monitoring and rapid UAE technical dispatch center.',
           },
           {
             index: '03',

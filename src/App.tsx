@@ -465,8 +465,8 @@ export default function App() {
         )}
       </main>
 
-      {/* 6. Complete Corporate Footer */}
-      <Footer onNavigate={handleNavigate} hidePreFooter={normalizedPath === '/' || normalizedPath.startsWith('/contact')} />
+      {/* 6. Complete Corporate Footer (Pre-footer suppressed on pages featuring terminal CTA sections) */}
+      <Footer onNavigate={handleNavigate} hidePreFooter={true} />
     </div>
 
   );

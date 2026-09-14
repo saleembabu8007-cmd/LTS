@@ -108,10 +108,10 @@ export const MepPage: React.FC<MepPageProps> = ({ onNavigate }) => {
           },
         }}
         technicalBadges={[
-          'DEWA CLASS 1 MEP',
-          'DUBAI CIVIL DEFENSE CLASS A',
-          'ASHRAE 90.1 & NFPA COMPLIANT',
-          'ISO 9001:2015 ACCREDITED',
+          'DEWA APPROVED MEP',
+          'DUBAI CIVIL DEFENSE COMPLIANT',
+          'ASHRAE 90.1 & NFPA ALIGNMENT',
+          'STATUTORY CODE COMPLIANCE',
         ]}
         datumStrip={{
           leftText: 'STATUTORY LICENSURE: DEWA • SEWA • DCD LIFE SAFETY • DUBAI MUNICIPALITY',
