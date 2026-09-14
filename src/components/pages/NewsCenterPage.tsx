@@ -85,7 +85,7 @@ export const NewsCenterPage: React.FC<NewsCenterPageProps> = ({ onNavigate }) =>
         <div className="absolute bottom-10 sm:bottom-16 md:bottom-20 left-0 right-0 z-10">
           <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
             <div className="max-w-3xl space-y-4">
-              <span className="font-mono text-xs uppercase tracking-[0.24em] text-[#93C5FD] block font-semibold">
+              <span className="text-xs uppercase tracking-[0.12em] text-[#CBD5E1] block font-semibold">
                 Technical Publications &bull; Engineering Bulletins
               </span>
 

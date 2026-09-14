@@ -39,11 +39,11 @@ export const ProcessWorkflowModule: React.FC<ProcessWorkflowModuleProps> = ({ da
               <div className="space-y-4">
                 {/* Step Sequence Badge */}
                 <div className="flex items-center justify-between gap-2">
-                  <span className="w-8 h-8 bg-[#173C62] text-white font-mono font-semibold text-xs flex items-center justify-center rounded-none">
+                  <span className="w-8 h-8 bg-[#173C62] text-white font-medium text-xs flex items-center justify-center rounded-none">
                     {step.number}
                   </span>
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400">
-                    STAGE // 0{idx + 1}
+                  <span className="text-[10px] uppercase tracking-[0.12em] text-slate-500 font-medium">
+                    STAGE &bull; 0{idx + 1}
                   </span>
                 </div>
 
@@ -59,7 +59,7 @@ export const ProcessWorkflowModule: React.FC<ProcessWorkflowModuleProps> = ({ da
               {/* Tangible Deliverable Box */}
               {step.deliverable && (
                 <div className="pt-4 border-t border-slate-200 space-y-1">
-                  <div className="text-[10px] font-mono uppercase tracking-wider text-slate-400">
+                  <div className="text-[10px] uppercase tracking-[0.12em] text-slate-500 font-medium">
                     Key Deliverable:
                   </div>
                   <div className="text-xs font-medium text-[#173C62] bg-slate-50 p-2.5 rounded-none border border-slate-200 flex items-start gap-1.5">

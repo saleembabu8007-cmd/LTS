@@ -46,11 +46,11 @@ export const CapabilityMatrixModule: React.FC<CapabilityMatrixModuleProps> = ({ 
               <div className="space-y-4">
                 {/* Capability Header & Badge */}
                 <div className="flex items-start justify-between gap-3">
-                  <span className="text-xs font-mono font-semibold text-[#173C62] uppercase tracking-[0.18em]">
-                    CAPABILITY // 0{idx + 1}
+                  <span className="text-xs font-semibold text-[#173C62] uppercase tracking-[0.14em]">
+                    CAPABILITY &bull; 0{idx + 1}
                   </span>
                   {cap.badge && (
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-slate-600 bg-slate-100 px-2 py-0.5 rounded-none border border-slate-200">
+                    <span className="text-[10px] font-medium uppercase tracking-wider text-slate-600 bg-slate-100 px-2 py-0.5 rounded-none border border-slate-200">
                       {cap.badge}
                     </span>
                   )}
@@ -67,7 +67,7 @@ export const CapabilityMatrixModule: React.FC<CapabilityMatrixModuleProps> = ({ 
                 {/* Technical Specifications Table / Key-Value Pairs */}
                 {cap.specs && cap.specs.length > 0 && (
                   <div className="pt-4 border-t border-slate-200 space-y-2">
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block">
+                    <span className="text-[10px] uppercase tracking-wider text-slate-500 font-medium block">
                       Engineering Parameters:
                     </span>
                     <div className="space-y-1.5 bg-slate-50 p-3 rounded-none border border-slate-200">
@@ -77,7 +77,7 @@ export const CapabilityMatrixModule: React.FC<CapabilityMatrixModuleProps> = ({ 
                           className="flex items-center justify-between text-xs gap-2"
                         >
                           <span className="text-slate-600">{spec.key}</span>
-                          <span className="font-mono font-medium text-[#173C62] text-right">
+                          <span className="font-medium text-[#173C62] text-right">
                             {spec.value}
                           </span>
                         </div>
@@ -93,7 +93,7 @@ export const CapabilityMatrixModule: React.FC<CapabilityMatrixModuleProps> = ({ 
                   {cap.tags.map((tag, tIdx) => (
                     <span
                       key={tIdx}
-                      className="px-2 py-0.5 bg-slate-100 text-slate-600 text-[10px] font-mono uppercase tracking-wider rounded-none border border-slate-200"
+                      className="px-2 py-0.5 bg-slate-100 text-slate-600 text-[10px] font-medium uppercase tracking-wider rounded-none border border-slate-200"
                     >
                       {tag}
                     </span>

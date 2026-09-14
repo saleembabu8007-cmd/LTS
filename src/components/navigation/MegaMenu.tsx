@@ -188,10 +188,10 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({
                   <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/95 via-[#173C62]/30 to-transparent" />
 
                   <div className="absolute bottom-0 inset-x-0 p-5 text-white">
-                    <span className="text-[10.5px] font-mono uppercase tracking-[0.16em] text-[#CBD5E1] block">
+                    <span className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#CBD5E1] block">
                       FEATURED CAPABILITY
                     </span>
-                    <h4 className="mt-1 text-[15px] font-medium text-white leading-snug group-hover:text-[#93C5FD] transition-colors">
+                    <h4 className="mt-1 text-[15px] font-medium text-white leading-snug group-hover:text-slate-200 transition-colors">
                       {data.visualFeature.title}
                     </h4>
                     <p className="mt-1 text-[12px] text-white/80 line-clamp-1 font-normal">

@@ -84,7 +84,9 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
     <button
       onClick={onClick}
       type="button"
-      className={`group inline-flex items-center gap-3 sm:gap-3.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] text-left select-none ${
+      className={`group inline-flex items-center gap-3 sm:gap-3.5 focus:outline-none focus-visible:ring-2 ${
+        isLight ? 'focus-visible:ring-white' : 'focus-visible:ring-[#173C62]'
+      } text-left select-none ${
         onClick ? 'cursor-pointer' : 'cursor-default'
       } ${className}`}
       aria-label="LTSGROUP Home"
@@ -97,7 +99,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
         <div className="flex items-baseline gap-1.5 leading-none">
           <span
             className={`font-semibold tracking-tight text-[1.35rem] sm:text-[1.5rem] leading-none ${
-              isLight ? 'text-white' : 'text-[#0B1320]'
+              isLight ? 'text-white' : 'text-[#173C62]'
             }`}
           >
             LTS

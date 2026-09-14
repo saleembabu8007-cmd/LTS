@@ -44,7 +44,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onNavigate }) => {
         <div className="absolute bottom-10 sm:bottom-16 md:bottom-20 left-0 right-0 z-10">
           <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
             <div className="max-w-3xl space-y-4">
-              <span className="font-mono text-xs uppercase tracking-[0.24em] text-[#93C5FD] block font-semibold">
+              <span className="text-xs uppercase tracking-[0.14em] text-[#CBD5E1] block font-medium">
                 Corporate Profile
               </span>
 
@@ -69,7 +69,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onNavigate }) => {
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
             <div className="lg:col-span-5 space-y-2 text-left">
-              <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
+              <span className="text-xs uppercase tracking-[0.14em] text-[#173C62] block font-semibold">
                 01 &bull; Corporate Overview
               </span>
               <h2 className="text-2xl sm:text-3xl font-light text-[#0B1320] tracking-tight">
@@ -118,7 +118,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onNavigate }) => {
           Forensic evidence: 03 Pillars + 03 ISO Standards + 100% Statutory Compliance
       ========================================================================= */}
       <ProofDominant
-        eyebrow="03 / SCALE &amp; EVIDENCE"
+        eyebrow="03 • SCALE &amp; EVIDENCE"
         title="VERIFIED INSTITUTIONAL PROOF"
         tone="white"
         dominantItem={{
@@ -151,7 +151,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onNavigate }) => {
       <section className="py-16 sm:py-24 bg-[#F8FAFC]">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 space-y-12 sm:space-y-16">
           <div className="max-w-3xl space-y-3 text-left">
-            <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
+            <span className="text-xs uppercase tracking-[0.14em] text-[#173C62] block font-semibold">
               02 &bull; Operational Architecture
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#0B1320] tracking-tight">
@@ -168,7 +168,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onNavigate }) => {
                 LTSGROUP
               </span>
               <span className="h-px flex-1 bg-[#CBD5E1]" />
-              <span className="font-mono text-xs text-[#64748B] uppercase tracking-widest shrink-0">
+              <span className="text-xs text-[#64748B] uppercase tracking-[0.12em] font-medium shrink-0">
                 Central Corporate Standard
               </span>
             </div>
@@ -178,14 +178,14 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onNavigate }) => {
               <div className="space-y-5 pt-2">
                 <div className="border-t-2 border-[#173C62] pt-4 space-y-2">
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs text-[#173C62] font-semibold">01</span>
+                    <span className="text-xs text-[#173C62] font-semibold">01</span>
                     <a
                       href="/engineering-construction"
                       onClick={(e) => {
                         e.preventDefault();
                         onNavigate('/engineering-construction');
                       }}
-                      className="inline-flex items-center gap-1 text-[11px] font-mono text-[#173C62] hover:underline uppercase tracking-wider py-1 focus-visible:outline-none"
+                      className="inline-flex items-center gap-1 text-[11px] font-medium text-[#173C62] hover:underline uppercase tracking-wider py-1 focus-visible:outline-none"
                     >
                       <span>Division Page</span>
                       <IconArrowUpRight size="sm" color="inherit" interactive />
@@ -216,14 +216,14 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onNavigate }) => {
               <div className="space-y-5 pt-2">
                 <div className="border-t-2 border-[#173C62] pt-4 space-y-2">
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs text-[#173C62] font-semibold">02</span>
+                    <span className="text-xs text-[#173C62] font-semibold">02</span>
                     <a
                       href="/facilities-management"
                       onClick={(e) => {
                         e.preventDefault();
                         onNavigate('/facilities-management');
                       }}
-                      className="inline-flex items-center gap-1 text-[11px] font-mono text-[#173C62] hover:underline uppercase tracking-wider py-1 focus-visible:outline-none"
+                      className="inline-flex items-center gap-1 text-[11px] font-medium text-[#173C62] hover:underline uppercase tracking-wider py-1 focus-visible:outline-none"
                     >
                       <span>Division Page</span>
                       <IconArrowUpRight size="sm" color="inherit" interactive />
@@ -254,14 +254,14 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onNavigate }) => {
               <div className="space-y-5 pt-2">
                 <div className="border-t-2 border-[#173C62] pt-4 space-y-2">
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs text-[#173C62] font-semibold">03</span>
+                    <span className="text-xs text-[#173C62] font-semibold">03</span>
                     <a
                       href="/trading"
                       onClick={(e) => {
                         e.preventDefault();
                         onNavigate('/trading');
                       }}
-                      className="inline-flex items-center gap-1 text-[11px] font-mono text-[#173C62] hover:underline uppercase tracking-wider py-1 focus-visible:outline-none"
+                      className="inline-flex items-center gap-1 text-[11px] font-medium text-[#173C62] hover:underline uppercase tracking-wider py-1 focus-visible:outline-none"
                     >
                       <span>Division Page</span>
                       <IconArrowUpRight size="sm" color="inherit" interactive />
@@ -318,7 +318,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onNavigate }) => {
 
         <div className="relative z-10 max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 text-center">
           <div className="max-w-2xl mx-auto space-y-5">
-            <span className="font-mono text-xs uppercase tracking-[0.24em] text-[#93C5FD] block font-semibold">
+            <span className="text-xs uppercase tracking-[0.14em] text-[#CBD5E1] block font-medium">
               Built to Perform
             </span>
 

@@ -523,14 +523,14 @@ export const ContactPage: React.FC<ContactPageProps> = ({
         <div className="absolute bottom-8 left-0 right-0 z-10">
           <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="space-y-1">
-              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#93C5FD] block font-semibold">
+              <span className="text-[11px] uppercase tracking-[0.14em] text-[#CBD5E1] block font-medium">
                 LTSGROUP &bull; Built Environment Excellence
               </span>
               <p className="text-sm sm:text-base font-light text-white">
                 Engineering environments built to perform across commercial, industrial, and infrastructure sectors.
               </p>
             </div>
-            <span className="font-mono text-xs text-white/70">
+            <span className="text-xs text-white/80 font-normal">
               Dubai, United Arab Emirates
             </span>
           </div>

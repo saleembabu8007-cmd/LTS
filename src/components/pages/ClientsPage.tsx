@@ -58,7 +58,7 @@ export const ClientsPage: React.FC<ClientsPageProps> = ({ onNavigate }) => {
         <div className="absolute bottom-10 sm:bottom-16 md:bottom-20 left-0 right-0 z-10">
           <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
             <div className="max-w-3xl space-y-4">
-              <span className="font-mono text-xs uppercase tracking-[0.24em] text-[#93C5FD] block font-semibold">
+              <span className="text-xs uppercase tracking-[0.14em] text-[#CBD5E1] block font-medium">
                 Trust &amp; Verification
               </span>
 
@@ -81,7 +81,7 @@ export const ClientsPage: React.FC<ClientsPageProps> = ({ onNavigate }) => {
       <section className="py-16 sm:py-24 bg-[#F8FAFC]">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 space-y-12 sm:space-y-16">
           <div className="max-w-3xl space-y-3">
-            <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
+            <span className="text-xs uppercase tracking-[0.14em] text-[#173C62] block font-semibold">
               01 &bull; Statutory Authority Licensure
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#0B1320] tracking-tight">
@@ -100,7 +100,7 @@ export const ClientsPage: React.FC<ClientsPageProps> = ({ onNavigate }) => {
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-xl font-semibold text-[#173C62] tracking-tight">
+                    <span className="text-xl font-semibold text-[#173C62] tracking-tight">
                       {auth.code}
                     </span>
                     <IconShieldCheck size="sm" color="primary" />
@@ -110,7 +110,7 @@ export const ClientsPage: React.FC<ClientsPageProps> = ({ onNavigate }) => {
                     {auth.name}
                   </h3>
 
-                  <p className="text-xs font-mono text-[#173C62] leading-snug">
+                  <p className="text-xs font-medium text-[#173C62] leading-snug">
                     {auth.role}
                   </p>
 
@@ -119,7 +119,7 @@ export const ClientsPage: React.FC<ClientsPageProps> = ({ onNavigate }) => {
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-[#E5E7EB] text-[11px] font-mono text-[#64748B] uppercase tracking-wider">
+                <div className="pt-4 border-t border-[#E5E7EB] text-[11px] uppercase tracking-[0.12em] font-medium text-[#64748B]">
                   STATUTORY CLEARANCE &bull; VERIFIED
                 </div>
               </div>
@@ -136,7 +136,7 @@ export const ClientsPage: React.FC<ClientsPageProps> = ({ onNavigate }) => {
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
             <div className="lg:col-span-4 border-l-2 border-[#173C62] pl-6 sm:pl-8">
-              <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block mb-2 font-semibold">
+              <span className="text-xs uppercase tracking-[0.14em] text-[#173C62] block mb-2 font-semibold">
                 02 &bull; Commercial Governance
               </span>
               <h3 className="text-2xl sm:text-3xl font-light text-[#0B1320] tracking-tight">
@@ -148,9 +148,9 @@ export const ClientsPage: React.FC<ClientsPageProps> = ({ onNavigate }) => {
               <p className="text-lg sm:text-xl font-light text-[#0B1320] leading-snug">
                 LTSGROUP operates under strict commercial non-disclosure agreements. Complete prequalification dossiers, trade licenses, and references are provided directly for verified tenders.
               </p>
-              <div className="flex items-center gap-2 text-xs font-mono text-[#64748B]">
+              <div className="flex items-center gap-2 text-xs text-[#64748B]">
                 <IconDocument size="sm" color="secondary" />
-                <span>NDA PROTECTED // OFFICIAL PRE-QUALIFICATION PACKS SHARED UPON INQUIRY</span>
+                <span>NDA PROTECTED &bull; OFFICIAL PRE-QUALIFICATION PACKS SHARED UPON INQUIRY</span>
               </div>
             </div>
           </div>
@@ -165,7 +165,7 @@ export const ClientsPage: React.FC<ClientsPageProps> = ({ onNavigate }) => {
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
           <div className="bg-[#173C62] text-white rounded-[8px] p-8 sm:p-14 lg:p-16 relative overflow-hidden">
             <div className="relative z-10 max-w-3xl space-y-6">
-              <span className="font-mono text-xs uppercase tracking-[0.24em] text-white/70 block">
+              <span className="text-xs uppercase tracking-[0.14em] text-white/80 block font-medium">
                 03 &bull; VENDOR ENROLLMENT &amp; PRE-QUALIFICATION
               </span>
 

@@ -167,7 +167,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             {/* Small LTS Eyebrow */}
             <div className="inline-flex items-center gap-2.5 mb-4">
               <span className="h-px w-6 bg-[#CBD5E1]" />
-              <span className="text-[11px] font-mono uppercase tracking-[0.24em] text-slate-200 font-semibold">
+              <span className="text-xs uppercase tracking-[0.12em] text-slate-200 font-semibold">
                 LTSGROUP &bull; BUILT ENVIRONMENT ENGINEERING
               </span>
             </div>
@@ -201,7 +201,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       {/* =====================================================================
           02 WHO WE ARE (PERSPECTIVE)
           - 5 / 7 Asymmetric Split
-          - Left (5 cols): 01 / PERSPECTIVE eyebrow, large heading, concise statement, CTA
+          - Left (5 cols): 01 • PERSPECTIVE eyebrow, large heading, concise statement, CTA
           - Right (7 cols): Editorial engineering photograph + coordinate caption
           - Generous negative space (py-28 lg:py-36)
       ===================================================================== */}
@@ -213,10 +213,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center text-left">
             {/* Left 5 Cols: Thesis & Title */}
             <div className="lg:col-span-5 space-y-6">
-              <span className="text-[11px] font-mono text-[#173C62] uppercase tracking-[0.22em] font-semibold block">
-                01 / PERSPECTIVE
+              <span className="text-xs text-[#173C62] uppercase tracking-[0.12em] font-semibold block">
+                01 &bull; PERSPECTIVE
               </span>
-              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-light text-[#0B1320] tracking-tight leading-[1.02]">
+              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-light text-[#173C62] tracking-tight leading-[1.02]">
                 WHO WE ARE
               </h2>
               <p className="text-lg sm:text-xl font-light text-[#0B1320] leading-relaxed tracking-tight max-w-xl">
@@ -246,9 +246,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/65 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute bottom-4 left-5 right-5 flex items-center justify-between text-[10px] font-mono text-white/90 tracking-widest uppercase pointer-events-none">
+                <div className="absolute bottom-4 left-5 right-5 flex items-center justify-between text-[10px] text-white/90 tracking-wider uppercase font-medium pointer-events-none">
                   <span>25.2048° N, 55.2708° E</span>
-                  <span>DUBAI UAE &bull; ELECTROMECHANICAL</span>
+                  <span>DUBAI GOVERNANCE</span>
                 </div>
               </div>
             </div>
@@ -268,10 +268,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       >
         <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12 text-left">
           <div className="max-w-xl mb-12 lg:mb-16">
-            <span className="text-[11px] font-mono text-[#173C62] uppercase tracking-[0.22em] font-semibold block mb-2">
-              02 / DIVISIONS
+            <span className="text-xs text-[#173C62] uppercase tracking-[0.12em] font-semibold block mb-2">
+              02 &bull; DIVISIONS
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#0B1320] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#173C62] tracking-tight">
               WHAT WE DO
             </h2>
           </div>
@@ -289,10 +289,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.025]"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/95 via-[#173C62]/50 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/85 via-[#173C62]/35 to-transparent" />
 
               <div className="relative z-10 text-white max-w-xl">
-                <span className="text-[10.5px] font-mono uppercase tracking-[0.22em] text-[#93C5FD] block mb-2 font-semibold">
+                <span className="text-[11px] uppercase tracking-[0.12em] text-[#CBD5E1] block mb-2 font-semibold">
                   DIVISION 01 &bull; CAPITAL CONTRACTING
                 </span>
                 <h3 className="text-2xl sm:text-3xl lg:text-4xl font-light text-white tracking-tight">
@@ -322,10 +322,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/95 via-[#173C62]/50 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/85 via-[#173C62]/35 to-transparent" />
 
                 <div className="relative z-10 text-white">
-                  <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#93C5FD] block mb-1 font-semibold">
+                  <span className="text-[10.5px] uppercase tracking-[0.12em] text-[#CBD5E1] block mb-1 font-semibold">
                     DIVISION 02 &bull; ASSET STEWARDSHIP
                   </span>
                   <h3 className="text-xl sm:text-2xl font-light text-white tracking-tight">
@@ -353,10 +353,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/95 via-[#173C62]/50 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/85 via-[#173C62]/35 to-transparent" />
 
                 <div className="relative z-10 text-white">
-                  <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#93C5FD] block mb-1 font-semibold">
+                  <span className="text-[10.5px] uppercase tracking-[0.12em] text-[#CBD5E1] block mb-1 font-semibold">
                     DIVISION 03 &bull; OEM PROCUREMENT
                   </span>
                   <h3 className="text-xl sm:text-2xl font-light text-white tracking-tight">
@@ -404,10 +404,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             {/* Minimal Technical Narrative Left (4 cols) */}
             <div className="lg:col-span-4 space-y-6">
               <div className="space-y-2">
-                <span className="text-[11px] font-mono text-[#173C62] uppercase tracking-[0.22em] font-semibold block">
-                  03 / CAPABILITY SPOTLIGHT
+                <span className="text-xs text-[#173C62] uppercase tracking-[0.12em] font-semibold block">
+                  03 &bull; CAPABILITY SPOTLIGHT
                 </span>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#0B1320] tracking-tight leading-tight">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#173C62] tracking-tight leading-tight">
                   Low-Voltage Switchgear &amp; Motor Automation.
                 </h2>
               </div>
@@ -436,11 +436,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 <img
                   src="/assets/images/trading-components.jpg"
                   alt="Type-tested switchgear and motor automation assembly"
-                  className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-[1.02]"
+                  className="w-full h-full object-cover object-center filter brightness-[0.95] transition-transform duration-700 hover:scale-[1.02]"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/75 via-[#173C62]/20 to-transparent pointer-events-none" />
-                <div className="absolute bottom-4 left-5 right-5 flex items-center justify-between text-[10px] font-mono text-white/90 tracking-widest uppercase pointer-events-none">
+                <div className="absolute bottom-4 left-5 right-5 flex items-center justify-between text-[10px] text-white/90 tracking-wider uppercase font-medium pointer-events-none">
                   <span>IEC 61439 FORM-4</span>
                   <span>DUBAI UTILITY CLEARANCE</span>
                 </div>
@@ -462,10 +462,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       >
         <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12 text-left">
           <div className="max-w-xl mb-12 lg:mb-16">
-            <span className="text-[11px] font-mono text-[#173C62] uppercase tracking-[0.22em] font-semibold block mb-2">
-              04 / SOLUTIONS
+            <span className="text-xs text-[#173C62] uppercase tracking-[0.12em] font-semibold block mb-2">
+              04 &bull; SOLUTIONS
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#0B1320] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#173C62] tracking-tight">
               ENGINEERING DISCIPLINES
             </h2>
           </div>
@@ -479,14 +479,14 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 className="group py-5 sm:py-6 flex items-center justify-between transition-all duration-200 hover:pl-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
               >
                 <div className="flex items-baseline gap-4 sm:gap-8">
-                  <span className="font-mono text-xs text-[#94A3B8] group-hover:text-[#173C62] transition-colors">
+                  <span className="text-xs text-[#94A3B8] font-semibold group-hover:text-[#173C62] transition-colors">
                     {String(idx + 1).padStart(2, '0')}
                   </span>
                   <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
                     <h3 className="text-lg sm:text-2xl font-light text-[#0B1320] group-hover:text-[#173C62] transition-colors tracking-tight">
                       {sol.name}
                     </h3>
-                    <span className="text-[11px] font-mono uppercase tracking-wider text-[#64748B]">
+                    <span className="text-[11px] uppercase tracking-wider text-[#64748B] font-medium">
                       {sol.category}
                     </span>
                   </div>
@@ -514,10 +514,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12 text-left">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12 lg:mb-16">
             <div>
-              <span className="text-[11px] font-mono text-[#173C62] uppercase tracking-[0.22em] font-semibold block mb-2">
-                05 / PORTFOLIO
+              <span className="text-xs text-[#173C62] uppercase tracking-[0.12em] font-semibold block mb-2">
+                05 &bull; PORTFOLIO
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#0B1320] tracking-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#173C62] tracking-tight">
                 SELECTED PROJECTS
               </h2>
             </div>
@@ -545,15 +545,15 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/95 via-[#173C62]/50 to-[#173C62]/10" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/85 via-[#173C62]/35 to-[#173C62]/10" />
 
               <div className="relative z-10 text-white max-w-2xl">
                 <div className="inline-flex items-center gap-2 mb-3">
-                  <span className="text-[10px] font-mono uppercase tracking-[0.22em] text-[#93C5FD] font-semibold">
+                  <span className="text-[11px] uppercase tracking-[0.12em] text-[#CBD5E1] font-semibold">
                     FEATURED RECORD &bull; {featuredProject.categoryLabel}
                   </span>
                   <span className="text-white/40">&bull;</span>
-                  <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#CBD5E1]">
+                  <span className="text-[10.5px] uppercase tracking-wider text-[#CBD5E1] font-medium">
                     {featuredProject.location}
                   </span>
                 </div>
@@ -571,7 +571,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
               {/* Overlaid Technical Delivery Parameters in Bottom-Right */}
               <div className="hidden md:flex absolute bottom-8 sm:bottom-12 right-8 sm:right-12 z-10 flex-col items-end text-right text-xs font-mono text-white/80 space-y-1">
-                <span className="text-[11px] text-[#93C5FD] font-semibold">DELIVERY PARAMETERS</span>
+                <span className="text-[11px] text-[#CBD5E1] font-semibold">DELIVERY PARAMETERS</span>
                 <span>48 FLOORS &bull; 3,200 TR DISTRICT COOLING</span>
                 <span>100% FIRST-PASS CIVIL DEFENSE CLEARANCE</span>
               </div>
@@ -590,10 +590,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/95 via-[#173C62]/45 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/85 via-[#173C62]/35 to-transparent" />
 
                 <div className="relative z-10 text-white">
-                  <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#93C5FD] block mb-1.5 font-semibold">
+                  <span className="text-[10.5px] uppercase tracking-[0.12em] text-[#CBD5E1] block mb-1.5 font-semibold">
                     {supportingProject1.categoryLabel} &bull; {supportingProject1.location}
                   </span>
                   <h4 className="text-xl sm:text-2xl font-light text-white tracking-tight">
@@ -620,10 +620,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/95 via-[#173C62]/45 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/85 via-[#173C62]/35 to-transparent" />
 
                 <div className="relative z-10 text-white">
-                  <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#93C5FD] block mb-1.5 font-semibold">
+                  <span className="text-[10.5px] uppercase tracking-[0.12em] text-[#CBD5E1] block mb-1.5 font-semibold">
                     {supportingProject2.categoryLabel} &bull; {supportingProject2.location}
                   </span>
                   <h4 className="text-xl sm:text-2xl font-light text-white tracking-tight">
@@ -650,7 +650,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           - Strictly verified values: 03 Divisions, 24/7 Dispatch, 100% Clearances
       ===================================================================== */}
       <ProofStrip
-        eyebrow="06 / SCALE"
+        eyebrow="06 &bull; SCALE"
         title="VERIFIED EVIDENCE"
         description="Factual operational benchmarks strictly established across our UAE built-environment operations."
         tone="subtle"
@@ -692,10 +692,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           {/* Header & Horizontal Scroll Controls */}
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 sm:mb-12 gap-6">
             <div className="max-w-2xl space-y-3">
-              <span className="text-[11px] font-mono text-[#173C62] uppercase tracking-[0.22em] font-semibold block">
-                SECTOR EXPERTISE
+              <span className="text-xs text-[#173C62] uppercase tracking-[0.12em] font-semibold block">
+                07 &bull; SECTOR EXPERTISE
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#0B1320] tracking-tight leading-[1.12]">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#173C62] tracking-tight leading-[1.12]">
                 Calibrated for mission-critical<br className="hidden sm:inline" /> sectors.
               </h2>
             </div>
@@ -744,23 +744,23 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   onError={(e) => {
                     (e.currentTarget as HTMLImageElement).src = ind.fallbackImage;
                   }}
-                  className="w-full h-full object-cover object-center filter brightness-[0.92] transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  className="w-full h-full object-cover object-center filter brightness-[0.95] transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                 />
 
-                {/* Dark Scrim Gradient matching reference image */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1320] via-[#0B1320]/65 via-45% to-transparent pointer-events-none" />
+                {/* Scrim Gradient matching official LTS Blue tone */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#173C62] via-[#173C62]/65 via-45% to-transparent pointer-events-none" />
 
                 {/* Bottom Content Typography Overlay */}
                 <div className="absolute inset-x-0 bottom-0 p-6 sm:p-7 flex flex-col justify-end text-left z-10 space-y-1.5 text-white">
-                  <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-[#93C5FD] font-semibold block">
+                  <span className="text-[11px] uppercase tracking-[0.12em] text-[#CBD5E1] font-semibold block">
                     SECTOR {ind.num}
                   </span>
 
-                  <h3 className="text-xl sm:text-2xl font-normal text-white tracking-tight leading-snug group-hover:text-[#93C5FD] transition-colors">
+                  <h3 className="text-xl sm:text-2xl font-normal text-white tracking-tight leading-snug group-hover:text-slate-200 transition-colors">
                     {ind.name}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-slate-300 font-normal leading-relaxed line-clamp-3 pt-1">
+                  <p className="text-xs sm:text-sm text-slate-200 font-normal leading-relaxed line-clamp-3 pt-1">
                     {ind.scope}
                   </p>
                 </div>
@@ -782,10 +782,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       >
         <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12 text-left">
           <div className="max-w-xl mb-12 lg:mb-16">
-            <span className="text-[11px] font-mono text-[#173C62] uppercase tracking-[0.22em] font-semibold block mb-2">
-              08 / GOVERNANCE
+            <span className="text-xs text-[#173C62] uppercase tracking-[0.12em] font-semibold block mb-2">
+              08 &bull; GOVERNANCE
             </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#0B1320] tracking-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#173C62] tracking-tight">
               STATUTORY TRUST &amp; CODE CLEARANCES
             </h2>
           </div>
@@ -803,7 +803,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 className="border-t-2 border-[#173C62] pt-6 flex flex-col justify-between space-y-4 text-left"
               >
                 <div className="space-y-2">
-                  <span className="font-mono text-xl sm:text-2xl font-semibold text-[#173C62] tracking-wider block">
+                  <span className="text-xl sm:text-2xl font-semibold text-[#173C62] tracking-wider block">
                     {item.code}
                   </span>
                   <h3 className="text-sm font-medium text-[#0B1320] leading-snug">
@@ -831,10 +831,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12 text-left">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12 lg:mb-16">
             <div>
-              <span className="text-[11px] font-mono text-[#173C62] uppercase tracking-[0.22em] font-semibold block mb-2">
-                09 / BRIEFINGS
+              <span className="text-xs text-[#173C62] uppercase tracking-[0.12em] font-semibold block mb-2">
+                09 &bull; BRIEFINGS
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#0B1320] tracking-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#173C62] tracking-tight">
                 ENGINEERING INTELLIGENCE
               </h2>
             </div>
@@ -862,10 +862,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.025]"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/95 via-[#173C62]/45 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/85 via-[#173C62]/35 to-transparent" />
 
               <div className="relative z-10 text-white max-w-lg">
-                <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#93C5FD] block mb-2 font-semibold">
+                <span className="text-[11px] uppercase tracking-[0.12em] text-[#CBD5E1] block mb-2 font-semibold">
                   {featuredArticle.category} &bull; {featuredArticle.date}
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-light text-white tracking-tight leading-snug">
@@ -894,10 +894,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/95 via-[#173C62]/45 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/85 via-[#173C62]/35 to-transparent" />
 
                 <div className="relative z-10 text-white">
-                  <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#93C5FD] block mb-1 font-semibold">
+                  <span className="text-[10.5px] uppercase tracking-[0.12em] text-[#CBD5E1] block mb-1 font-semibold">
                     {supportingArticle1.category} &bull; {supportingArticle1.date}
                   </span>
                   <h4 className="text-base sm:text-lg font-light text-white tracking-tight line-clamp-2">
@@ -921,10 +921,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/95 via-[#173C62]/45 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/85 via-[#173C62]/35 to-transparent" />
 
                 <div className="relative z-10 text-white">
-                  <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#93C5FD] block mb-1 font-semibold">
+                  <span className="text-[10.5px] uppercase tracking-[0.12em] text-[#CBD5E1] block mb-1 font-semibold">
                     {supportingArticle2.category} &bull; {supportingArticle2.date}
                   </span>
                   <h4 className="text-base sm:text-lg font-light text-white tracking-tight line-clamp-2">
@@ -963,8 +963,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
         <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12">
           <div className="max-w-3xl">
-            <span className="text-[11px] font-mono text-[#CBD5E1] uppercase tracking-[0.24em] font-semibold block mb-4">
-              10 / ENGAGEMENT
+            <span className="text-xs text-[#CBD5E1] uppercase tracking-[0.12em] font-semibold block mb-4">
+              10 &bull; ENGAGEMENT
             </span>
 
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-light text-white tracking-tight leading-[1.05]">
@@ -987,7 +987,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               </Button>
             </div>
 
-            <div className="mt-14 pt-8 border-t border-white/15 flex flex-wrap gap-8 text-xs font-mono text-slate-300">
+            <div className="mt-14 pt-8 border-t border-white/15 flex flex-wrap gap-8 text-xs text-slate-300 font-medium">
               <div className="flex items-center gap-2.5">
                 <IconPhone size="sm" color="white" />
                 <a

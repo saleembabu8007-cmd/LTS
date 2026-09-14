@@ -34,7 +34,7 @@ export const TopUtilityBar: React.FC<TopUtilityBarProps> = ({ onNavigate }) => {
         <div className="flex items-center gap-5">
           <a
             href={`tel:${CORPORATE_INFO.contact.telephone.replace(/\s+/g, '')}`}
-            className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-[#93C5FD] focus-visible:outline-none rounded-[4px] px-1 py-0.5"
+            className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded-[4px] px-1 py-0.5"
             aria-label={`Call operations switchboard at ${CORPORATE_INFO.contact.telephone}`}
           >
             <Phone className="w-3 h-3 text-slate-400" aria-hidden="true" />
@@ -50,7 +50,7 @@ export const TopUtilityBar: React.FC<TopUtilityBarProps> = ({ onNavigate }) => {
 
           <a
             href={`mailto:${CORPORATE_INFO.contact.emailGeneral}`}
-            className="flex items-center gap-1.5 text-slate-400 hover:text-white transition-colors tracking-wide focus-visible:ring-2 focus-visible:ring-[#93C5FD] focus-visible:outline-none rounded-[4px] px-1 py-0.5"
+            className="flex items-center gap-1.5 text-slate-400 hover:text-white transition-colors tracking-wide focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded-[4px] px-1 py-0.5"
             aria-label={`Send general inquiry email to ${CORPORATE_INFO.contact.emailGeneral}`}
           >
             <Mail className="w-3 h-3 text-slate-400" aria-hidden="true" />
@@ -62,7 +62,7 @@ export const TopUtilityBar: React.FC<TopUtilityBarProps> = ({ onNavigate }) => {
           <a
             href="/contact?tab=rfp"
             onClick={handleRfpClick}
-            className="text-white hover:text-[#93C5FD] font-medium tracking-wider uppercase text-[10.5px] flex items-center gap-1 transition-colors focus-visible:ring-2 focus-visible:ring-[#93C5FD] focus-visible:outline-none rounded-[4px] px-1 py-0.5"
+            className="text-white hover:text-[#CBD5E1] font-medium tracking-wider uppercase text-[10.5px] flex items-center gap-1 transition-colors focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded-[4px] px-1 py-0.5"
           >
             <span>Tender &amp; RFP Desk</span>
             <ArrowUpRight className="w-3 h-3 opacity-80" aria-hidden="true" />

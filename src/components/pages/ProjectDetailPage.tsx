@@ -105,7 +105,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ slug, onNa
         <div className="absolute bottom-8 sm:bottom-12 left-0 right-0 z-10">
           <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
             <div className="max-w-4xl space-y-3">
-              <span className="font-mono text-xs uppercase tracking-[0.22em] text-[#93C5FD] block font-semibold">
+              <span className="text-xs uppercase tracking-[0.12em] text-[#CBD5E1] block font-semibold">
                 {project.categoryLabel} &bull; Case Study Monograph
               </span>
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-light text-white tracking-tight leading-[1.05]">

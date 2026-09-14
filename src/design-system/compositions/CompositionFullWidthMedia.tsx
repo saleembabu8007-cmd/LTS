@@ -60,10 +60,10 @@ export const CompositionFullWidthMedia: React.FC<CompositionFullWidthMediaProps>
 
         {/* Minimal Bottom Gradient Scrim ONLY when overlay text exists */}
         {(overlayTitle || overlaySubtitle || overlayEyebrow) && (
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent flex items-end p-5 sm:p-8 md:p-14">
+          <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/85 via-[#173C62]/35 to-transparent flex items-end p-5 sm:p-8 md:p-14">
             <div className="max-w-3xl space-y-2">
               {overlayEyebrow && (
-                <span className="font-mono text-[11px] sm:text-xs uppercase tracking-[0.2em] text-[#93C5FD] font-semibold block">
+                <span className="text-[11px] sm:text-xs uppercase tracking-[0.12em] text-[#CBD5E1] font-semibold block">
                   {overlayEyebrow}
                 </span>
               )}
@@ -84,7 +84,7 @@ export const CompositionFullWidthMedia: React.FC<CompositionFullWidthMediaProps>
 
       {(caption || location || attribution) && (
         <div
-          className={`mt-3 flex flex-wrap items-center justify-between text-xs font-mono text-[#64748B] ${
+          className={`mt-3 flex flex-wrap items-center justify-between text-xs text-[#64748B] font-medium ${
             bleed ? 'px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto' : 'px-1'
           }`}
         >

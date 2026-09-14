@@ -43,7 +43,7 @@ export const CompositionLargeTypography: React.FC<CompositionLargeTypographyProp
   const eyebrowColors = {
     white: 'text-[#173C62]',
     stone: 'text-[#173C62]',
-    brand: 'text-[#93C5FD]',
+    brand: 'text-[#CBD5E1]',
   };
 
   return (
@@ -51,7 +51,7 @@ export const CompositionLargeTypography: React.FC<CompositionLargeTypographyProp
       <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
         <div className="max-w-4xl space-y-6 text-left">
           {eyebrow && (
-            <span className={`font-mono text-xs uppercase tracking-[0.24em] font-semibold block ${eyebrowColors[tone]}`}>
+            <span className={`text-xs uppercase tracking-[0.12em] font-semibold block ${eyebrowColors[tone]}`}>
               {eyebrow}
             </span>
           )}
@@ -68,7 +68,7 @@ export const CompositionLargeTypography: React.FC<CompositionLargeTypographyProp
 
           {attribution && (
             <div className="pt-4">
-              <span className={`font-mono text-xs uppercase tracking-widest block font-medium ${mutedTextColors[tone]}`}>
+              <span className={`text-xs uppercase tracking-wider block font-medium ${mutedTextColors[tone]}`}>
                 &bull; {attribution}
               </span>
             </div>

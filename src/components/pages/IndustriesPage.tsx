@@ -178,7 +178,7 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate }) =>
         <div className="absolute bottom-10 sm:bottom-16 md:bottom-20 left-0 right-0 z-10">
           <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
             <div className="max-w-3xl space-y-4">
-              <span className="font-mono text-xs uppercase tracking-[0.24em] text-[#93C5FD] block font-semibold">
+              <span className="text-xs uppercase tracking-[0.12em] text-[#CBD5E1] block font-semibold">
                 Sectors &amp; Operating Environments
               </span>
 
@@ -260,16 +260,16 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate }) =>
                   }}
                 />
 
-                {/* Dark Scrim Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1320] via-[#0B1320]/65 via-45% to-transparent pointer-events-none" />
+                {/* LTS Blue Scrim Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/90 via-[#173C62]/45 via-45% to-transparent pointer-events-none" />
 
                 {/* Bottom Content Typography Overlay */}
                 <div className="absolute inset-x-0 bottom-0 p-6 sm:p-7 flex flex-col justify-end text-left z-10 space-y-1.5 text-white">
-                  <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-[#93C5FD] font-semibold block">
+                  <span className="text-[11px] uppercase tracking-[0.14em] text-[#CBD5E1] font-medium block">
                     SECTOR {item.num}
                   </span>
 
-                  <h3 className="text-xl sm:text-2xl font-normal text-white tracking-tight leading-snug group-hover:text-[#93C5FD] transition-colors">
+                  <h3 className="text-xl sm:text-2xl font-normal text-white tracking-tight leading-snug group-hover:text-slate-200 transition-colors">
                     {item.name}
                   </h3>
 

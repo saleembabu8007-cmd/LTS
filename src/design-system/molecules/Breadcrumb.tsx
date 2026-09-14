@@ -28,10 +28,10 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({
   const isOverlay = variant === 'overlay';
 
   const linkColor = isOverlay
-    ? 'text-white/70 hover:text-white focus-visible:ring-[#93C5FD]'
-    : 'text-slate-500 hover:text-[#0B1320] focus-visible:ring-[#173C62]';
+    ? 'text-white/70 hover:text-white focus-visible:ring-white'
+    : 'text-slate-500 hover:text-[#173C62] focus-visible:ring-[#173C62]';
 
-  const activeColor = isOverlay ? 'text-white font-medium' : 'text-[#0B1320] font-medium';
+  const activeColor = isOverlay ? 'text-white font-medium' : 'text-[#173C62] font-semibold';
   const dividerColor = isOverlay ? 'text-white/40' : 'text-slate-300';
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, slug: string) => {

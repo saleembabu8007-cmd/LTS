@@ -46,19 +46,19 @@ export const CompositionFullWidthProject: React.FC<CompositionFullWidthProjectPr
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-[#E5E7EB]">
           <div className="space-y-1 text-left">
-            <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
+            <span className="text-xs uppercase tracking-[0.12em] text-[#173C62] block font-semibold">
               {eyebrow}
             </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#0B1320] tracking-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#173C62] tracking-tight">
               {projectTitle}
             </h2>
           </div>
           <div className="flex items-center gap-3">
-            <span className="text-xs font-mono uppercase tracking-wider text-[#64748B]">
+            <span className="text-xs uppercase tracking-wider text-[#64748B] font-medium">
               {category}
             </span>
             <span className="text-[#CBD5E1]">&bull;</span>
-            <span className="text-xs font-mono uppercase tracking-wider text-[#173C62] font-medium">
+            <span className="text-xs uppercase tracking-wider text-[#173C62] font-medium">
               {location}
             </span>
           </div>
@@ -69,7 +69,7 @@ export const CompositionFullWidthProject: React.FC<CompositionFullWidthProjectPr
           <img
             src={image}
             alt={imageAlt || projectTitle}
-            className="w-full h-full object-cover filter brightness-[0.9] transition-transform duration-700 hover:scale-[1.015]"
+            className="w-full h-full object-cover filter brightness-[0.95] transition-transform duration-700 hover:scale-[1.015]"
             loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/85 via-[#173C62]/35 to-transparent pointer-events-none" />
@@ -88,7 +88,7 @@ export const CompositionFullWidthProject: React.FC<CompositionFullWidthProjectPr
                       e.preventDefault();
                       onNavigate(ctaSlug);
                     }}
-                    className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-white hover:text-[#93C5FD] transition-colors"
+                    className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-white hover:text-slate-200 transition-colors"
                   >
                     <span>{ctaLabel}</span>
                     <IconArrow size="sm" color="white" interactive />
@@ -102,7 +102,7 @@ export const CompositionFullWidthProject: React.FC<CompositionFullWidthProjectPr
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6 bg-[#173C62]/80 backdrop-blur-md px-5 py-4 rounded-[14px] border border-white/15">
                 {parameters.map((param, pIdx) => (
                   <div key={pIdx} className="space-y-0.5 text-left">
-                    <span className="block font-mono text-[10px] uppercase tracking-wider text-[#93C5FD]">
+                    <span className="block text-[10.5px] uppercase tracking-wider text-[#CBD5E1] font-semibold">
                       {param.label}
                     </span>
                     <span className="block font-mono text-sm sm:text-base font-semibold text-white">

@@ -65,7 +65,7 @@ export const CompositionFeaturedStory: React.FC<CompositionFeaturedStoryProps> =
       <Container variant="wide">
         {sectionEyebrow && (
           <div className="mb-8">
-            <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] font-semibold block">
+            <span className="text-xs uppercase tracking-[0.12em] text-[#173C62] font-semibold block">
               {sectionEyebrow}
             </span>
           </div>
@@ -74,23 +74,23 @@ export const CompositionFeaturedStory: React.FC<CompositionFeaturedStoryProps> =
         {isStacked ? (
           /* Stacked Layout: Large full-width image followed by editorial story headline */
           <div className="space-y-8">
-            <div className="relative aspect-[21/9] sm:aspect-[2.2/1] overflow-hidden rounded-[8px] bg-[#0B1320] group">
+            <div className="relative aspect-[21/9] sm:aspect-[2.2/1] overflow-hidden rounded-[8px] bg-[#173C62] group">
               <img
                 src={imageSrc}
                 alt={imageAlt || headline}
                 loading="lazy"
-                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.025]"
+                className="w-full h-full object-cover object-center filter brightness-[0.95] transition-transform duration-500 group-hover:scale-[1.025]"
               />
               {(imageCaption || attribution) && (
-                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent p-4 sm:p-6 text-white flex items-center justify-between text-xs font-mono">
+                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#173C62]/80 to-transparent p-4 sm:p-6 text-white flex items-center justify-between text-xs font-medium">
                   <span>{imageCaption}</span>
-                  {attribution && <span className="uppercase tracking-wider text-[#93C5FD]">{attribution}</span>}
+                  {attribution && <span className="uppercase tracking-wider text-[#CBD5E1]">{attribution}</span>}
                 </div>
               )}
             </div>
 
             <div className="max-w-4xl space-y-4">
-              <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-[#64748B]">
+              <div className="flex flex-wrap items-center gap-3 text-xs text-[#64748B] font-medium">
                 <span className="px-2.5 py-0.5 bg-[#EDF3F9] text-[#173C62] font-semibold rounded-[4px] uppercase tracking-wider">
                   {category}
                 </span>
@@ -108,7 +108,7 @@ export const CompositionFeaturedStory: React.FC<CompositionFeaturedStoryProps> =
                 )}
               </div>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#0B1320] tracking-tight leading-[1.12]">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#173C62] tracking-tight leading-[1.12]">
                 {headline}
               </h2>
 
@@ -120,7 +120,7 @@ export const CompositionFeaturedStory: React.FC<CompositionFeaturedStoryProps> =
                 <div className="pt-2">
                   <ActionWrapper
                     {...actionProps}
-                    className="inline-flex items-center gap-2 text-sm font-mono font-semibold uppercase tracking-wider text-[#173C62] hover:text-[#0B1320] transition-colors cursor-pointer group"
+                    className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-[#173C62] hover:text-[#173C62]/80 transition-colors cursor-pointer group"
                   >
                     <span>{ctaText}</span>
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -134,16 +134,16 @@ export const CompositionFeaturedStory: React.FC<CompositionFeaturedStoryProps> =
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             {/* Image (7 cols) */}
             <div className="lg:col-span-7">
-              <div className="relative aspect-[16/10] overflow-hidden rounded-[8px] bg-[#0B1320] group">
+              <div className="relative aspect-[16/10] overflow-hidden rounded-[8px] bg-[#173C62] group">
                 <img
                   src={imageSrc}
                   alt={imageAlt || headline}
                   loading="lazy"
-                  className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.025]"
+                  className="w-full h-full object-cover object-center filter brightness-[0.95] transition-transform duration-500 group-hover:scale-[1.025]"
                 />
               </div>
               {(imageCaption || attribution) && (
-                <div className="mt-3 flex items-center justify-between text-xs font-mono text-[#64748B] px-1">
+                <div className="mt-3 flex items-center justify-between text-xs text-[#64748B] font-medium px-1">
                   <span>{imageCaption}</span>
                   {attribution && <span className="uppercase tracking-wider text-[#173C62]">{attribution}</span>}
                 </div>
@@ -152,7 +152,7 @@ export const CompositionFeaturedStory: React.FC<CompositionFeaturedStoryProps> =
 
             {/* Editorial Story (5 cols) */}
             <div className="lg:col-span-5 space-y-5">
-              <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-[#64748B]">
+              <div className="flex flex-wrap items-center gap-3 text-xs text-[#64748B] font-medium">
                 <span className="px-2.5 py-0.5 bg-[#EDF3F9] text-[#173C62] font-semibold rounded-full uppercase tracking-wider">
                   {category}
                 </span>
@@ -170,7 +170,7 @@ export const CompositionFeaturedStory: React.FC<CompositionFeaturedStoryProps> =
                 )}
               </div>
 
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#0B1320] tracking-tight leading-snug">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#173C62] tracking-tight leading-snug">
                 {headline}
               </h2>
 
@@ -188,7 +188,7 @@ export const CompositionFeaturedStory: React.FC<CompositionFeaturedStoryProps> =
                 <div className="pt-2">
                   <ActionWrapper
                     {...actionProps}
-                    className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-[#173C62] hover:text-[#0B1320] transition-colors cursor-pointer group"
+                    className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#173C62] hover:text-[#173C62]/80 transition-colors cursor-pointer group"
                   >
                     <span>{ctaText}</span>
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

@@ -42,7 +42,7 @@ export const CompositionMetricStrip: React.FC<CompositionMetricStripProps> = ({
         {eyebrow && (
           <div className="mb-8">
             <span
-              className={`font-mono text-xs uppercase tracking-[0.2em] font-semibold block ${
+              className={`text-xs font-semibold uppercase tracking-[0.12em] block ${
                 isDark ? 'text-[#94A3B8]' : 'text-[#173C62]'
               }`}
             >
@@ -61,15 +61,15 @@ export const CompositionMetricStrip: React.FC<CompositionMetricStripProps> = ({
             >
               <div
                 className={`text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight leading-none ${
-                  isDark ? 'text-white' : 'text-[#0B1320]'
+                  isDark ? 'text-white' : 'text-[#173C62]'
                 }`}
               >
                 {metric.value}
               </div>
 
               <div
-                className={`font-mono text-xs uppercase tracking-wider font-semibold pt-1 ${
-                  isDark ? 'text-[#93C5FD]' : 'text-[#173C62]'
+                className={`text-xs font-semibold uppercase tracking-[0.10em] pt-1 ${
+                  isDark ? 'text-[#CBD5E1]' : 'text-[#173C62]'
                 }`}
               >
                 {metric.label}
@@ -87,7 +87,7 @@ export const CompositionMetricStrip: React.FC<CompositionMetricStripProps> = ({
 
               {metric.statutoryReference && (
                 <span
-                  className={`inline-block text-[10px] font-mono px-2 py-0.5 rounded-sm uppercase tracking-wider ${
+                  className={`inline-block text-[10.5px] font-medium px-2 py-0.5 rounded-sm uppercase tracking-wider ${
                     isDark ? 'bg-white/10 text-slate-300' : 'bg-[#EDF3F9] text-[#173C62]'
                   }`}
                 >

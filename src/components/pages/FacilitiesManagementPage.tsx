@@ -114,7 +114,7 @@ export const FacilitiesManagementPage: React.FC<FacilitiesManagementPageProps> =
         <div className="absolute bottom-10 sm:bottom-16 md:bottom-20 left-0 right-0 z-10">
           <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 text-left">
             <div className="max-w-3xl space-y-4">
-              <span className="font-mono text-xs uppercase tracking-[0.24em] text-[#93C5FD] block font-semibold">
+              <span className="text-xs uppercase tracking-[0.12em] text-[#CBD5E1] block font-semibold">
                 LTSGROUP &bull; DIVISION 02 &bull; FACILITIES MANAGEMENT
               </span>
 
@@ -386,7 +386,7 @@ export const FacilitiesManagementPage: React.FC<FacilitiesManagementPageProps> =
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
           <div className="bg-[#173C62] text-white rounded-[8px] p-8 sm:p-14 lg:p-16 relative overflow-hidden">
             <div className="relative z-10 max-w-3xl space-y-5 text-left">
-              <span className="font-mono text-xs uppercase tracking-[0.24em] text-[#93C5FD] block font-semibold">
+              <span className="text-xs uppercase tracking-[0.12em] text-[#CBD5E1] block font-semibold">
                 OPERATIONAL AUDITS &bull; SLAS
               </span>
               <h2 className="text-2xl sm:text-4xl lg:text-5xl font-light tracking-tight leading-tight">

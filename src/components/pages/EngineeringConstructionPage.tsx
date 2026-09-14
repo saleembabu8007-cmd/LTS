@@ -53,7 +53,7 @@ export const EngineeringConstructionPage: React.FC<EngineeringConstructionPagePr
         <div className="absolute bottom-10 sm:bottom-16 md:bottom-20 left-0 right-0 z-10">
           <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 text-left">
             <div className="max-w-3xl space-y-4">
-              <span className="font-mono text-xs uppercase tracking-[0.24em] text-[#93C5FD] block font-semibold">
+              <span className="text-xs uppercase tracking-[0.12em] text-[#CBD5E1] block font-semibold">
                 LTSGROUP &bull; DIVISION 01 &bull; ENGINEERING &amp; CONSTRUCTION
               </span>
 
@@ -110,14 +110,14 @@ export const EngineeringConstructionPage: React.FC<EngineeringConstructionPagePr
           
           <div className="flex flex-col sm:flex-row sm:items-end justify-between pb-6 gap-4">
             <div className="space-y-1 text-left">
-              <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
+              <span className="text-xs uppercase tracking-[0.14em] text-[#173C62] block font-semibold">
                 02 • OPERATING DISCIPLINES
               </span>
               <h2 className="text-2xl sm:text-4xl font-light text-[#0B1320] tracking-tight">
                 Integrated Engineering Disciplines
               </h2>
             </div>
-            <span className="font-mono text-xs text-[#64748B]">
+            <span className="text-xs text-[#64748B] font-medium">
               [01 &bull; 02 &bull; 03]
             </span>
           </div>
@@ -128,10 +128,10 @@ export const EngineeringConstructionPage: React.FC<EngineeringConstructionPagePr
             <div className="lg:col-span-8 bg-white rounded-[8px] p-6 sm:p-10 flex flex-col justify-between space-y-6">
               <div className="space-y-5 text-left">
                 <div className="flex items-center justify-between pb-4 border-b border-[#E5E7EB]">
-                  <span className="font-mono text-xs font-semibold text-[#173C62] tracking-wider uppercase">
-                    DISCIPLINE 01 // CORE CONTRACTING
+                  <span className="text-xs font-semibold text-[#173C62] tracking-wider uppercase">
+                    DISCIPLINE 01 &bull; CORE CONTRACTING
                   </span>
-                  <span className="text-[11px] font-mono text-[#64748B] uppercase">
+                  <span className="text-[11px] font-medium text-[#64748B] uppercase">
                     COMMERCIAL &bull; INFRASTRUCTURE
                   </span>
                 </div>
@@ -200,10 +200,10 @@ export const EngineeringConstructionPage: React.FC<EngineeringConstructionPagePr
               <div className="bg-white rounded-[8px] p-6 sm:p-8 space-y-4 text-left flex-1 flex flex-col justify-between">
                 <div className="space-y-3">
                   <div className="flex items-center justify-between pb-3 border-b border-[#E5E7EB]">
-                    <span className="font-mono text-xs font-semibold text-[#173C62] tracking-wider uppercase">
+                    <span className="text-xs font-semibold text-[#173C62] tracking-wider uppercase">
                       DISCIPLINE 02
                     </span>
-                    <span className="text-[11px] font-mono text-[#64748B] uppercase">
+                    <span className="text-[11px] font-medium text-[#64748B] uppercase">
                       DEWA SHAMS DUBAI
                     </span>
                   </div>
@@ -233,10 +233,10 @@ export const EngineeringConstructionPage: React.FC<EngineeringConstructionPagePr
               <div className="bg-white rounded-[8px] p-6 sm:p-8 space-y-4 text-left flex-1 flex flex-col justify-between">
                 <div className="space-y-3">
                   <div className="flex items-center justify-between pb-3 border-b border-[#E5E7EB]">
-                    <span className="font-mono text-xs font-semibold text-[#173C62] tracking-wider uppercase">
+                    <span className="text-xs font-semibold text-[#173C62] tracking-wider uppercase">
                       DISCIPLINE 03
                     </span>
-                    <span className="text-[11px] font-mono text-[#64748B] uppercase">
+                    <span className="text-[11px] font-medium text-[#64748B] uppercase">
                       TYPE-TESTED UP TO 65kA
                     </span>
                   </div>
@@ -281,7 +281,7 @@ export const EngineeringConstructionPage: React.FC<EngineeringConstructionPagePr
         mainImageAlt="LTSGROUP Solar Infrastructure and High-Voltage Deployment"
         insetPlateImage="/assets/images/industry-logistics.jpg"
         insetPlateAlt="LTSGROUP Substation and Motor Control Center"
-        insetCaption="PLATE 01 // SUBSTATION SYNCHRONIZATION"
+        insetCaption="PLATE 01 &bull; SUBSTATION SYNCHRONIZATION"
         parameterTag="100% STATUTORY CLEARANCE RECORD"
       />
 
@@ -315,7 +315,7 @@ export const EngineeringConstructionPage: React.FC<EngineeringConstructionPagePr
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
           <div className="bg-[#173C62] text-white rounded-[8px] p-8 sm:p-14 lg:p-16 relative overflow-hidden">
             <div className="relative z-10 max-w-3xl space-y-5 text-left">
-              <span className="font-mono text-xs uppercase tracking-[0.24em] text-[#93C5FD] block font-semibold">
+              <span className="text-xs uppercase tracking-[0.12em] text-[#CBD5E1] block font-semibold">
                 COMMERCIAL ENGAGEMENT &bull; TENDERS
               </span>
               <h2 className="text-2xl sm:text-4xl lg:text-5xl font-light tracking-tight leading-tight">
@@ -343,7 +343,7 @@ export const EngineeringConstructionPage: React.FC<EngineeringConstructionPagePr
                 </button>
               </div>
 
-              <div className="pt-6 border-t border-white/15 flex flex-wrap items-center gap-8 text-xs font-mono text-white/80">
+              <div className="pt-6 border-t border-white/15 flex flex-wrap items-center gap-8 text-xs font-medium text-white/80">
                 <div className="flex items-center gap-2">
                   <IconPhone size="sm" color="white" />
                   <span>{CORPORATE_INFO.contact.telephone}</span>

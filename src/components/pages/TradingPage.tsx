@@ -143,7 +143,7 @@ export const TradingPage: React.FC<TradingPageProps> = ({
         <div className="absolute bottom-10 sm:bottom-16 md:bottom-20 left-0 right-0 z-10">
           <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 text-left">
             <div className="max-w-3xl space-y-4">
-              <span className="font-mono text-xs uppercase tracking-[0.24em] text-[#93C5FD] block font-semibold">
+              <span className="text-xs uppercase tracking-[0.12em] text-[#CBD5E1] block font-semibold">
                 LTSGROUP &bull; DIVISION 03 &bull; TRADING &amp; SUPPLY
               </span>
 
@@ -198,10 +198,10 @@ export const TradingPage: React.FC<TradingPageProps> = ({
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 text-left">
           
           <div className="flex items-center justify-between mb-4">
-            <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] font-semibold">
+            <span className="text-xs uppercase tracking-[0.14em] text-[#173C62] font-semibold">
               SELECT TECHNICAL CATEGORY:
             </span>
-            <span className="font-mono text-xs text-[#64748B]">
+            <span className="text-xs text-[#64748B] font-medium">
               5 EQUIPMENT DISCIPLINES
             </span>
           </div>
@@ -213,40 +213,34 @@ export const TradingPage: React.FC<TradingPageProps> = ({
               return (
                 <button
                   key={family.id}
-                  type="button"
                   onClick={() => setSelectedFamily(family.id)}
-                  className={`flex-shrink-0 inline-flex items-center gap-2.5 px-4 py-2.5 rounded-[6px] text-xs font-medium tracking-wide uppercase transition-all duration-200 cursor-pointer ${
+                  className={`px-5 py-3 rounded-[6px] text-xs font-semibold uppercase tracking-wider transition-all flex items-center gap-2.5 whitespace-nowrap cursor-pointer ${
                     isSelected
                       ? 'bg-[#173C62] text-white'
-                      : 'bg-white text-[#173C62] hover:bg-slate-100'
+                      : 'bg-white text-[#0B1320] hover:bg-slate-100 border border-[#E5E7EB]'
                   }`}
                 >
-                  <Icon className={`w-4 h-4 ${isSelected ? 'text-white' : 'text-[#64748B]'}`} />
-                  <span>{family.num} / {family.title}</span>
+                  <Icon size="sm" color={isSelected ? 'white' : 'primary'} />
+                  <span>{family.title}</span>
                 </button>
               );
             })}
           </div>
 
-        </div>
-      </section>
-
-      {/* =========================================================================
-          04 / LARGE PRODUCT FOCAL SHOWCASE + DYNAMIC SPECS (Asymmetric 8/4 Layout)
-      ========================================================================= */}
-      <section className="py-16 sm:py-24 bg-white">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
-          
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center text-left">
+          {/* Active Family Layout: Asymmetric 8/4 split */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mt-8 items-start">
             
-            {/* Large Product Photographic Focal Point (8 cols) */}
-            <div className="lg:col-span-8">
-              <div className="relative rounded-[8px] overflow-hidden bg-[#173C62] aspect-[16/10]">
+            {/* Lead Photographic Anchor (8 cols) */}
+            <div className="lg:col-span-8 bg-white rounded-[8px] overflow-hidden border border-[#E5E7EB]">
+              <div className="relative aspect-[16/10] bg-[#173C62]">
                 <img
-                  src="/assets/images/trading-components.jpg"
-                  alt="LTSGROUP Factory Authorized Component Supply"
-                  className="w-full h-full object-cover filter brightness-[0.92] transition-transform duration-700 hover:scale-[1.015]"
+                  src={activeFamilyData.heroImage || '/assets/images/trading-components.jpg'}
+                  alt={activeFamilyData.title}
+                  className="w-full h-full object-cover"
                   loading="lazy"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = activeFamilyData.fallbackImage || 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1920&q=80';
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/40 via-transparent to-transparent pointer-events-none" />
               </div>
@@ -255,8 +249,8 @@ export const TradingPage: React.FC<TradingPageProps> = ({
             {/* Dynamic Specification Column (4 cols) */}
             <div className="lg:col-span-4 space-y-6">
               <div>
-                <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] font-semibold block mb-2">
-                  CATEGORY {activeFamilyData.num} // SPECIFICATION MATRIX
+                <span className="text-xs uppercase tracking-[0.14em] text-[#173C62] font-semibold block mb-2">
+                  CATEGORY {activeFamilyData.num} &bull; SPECIFICATION MATRIX
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-light text-[#0B1320] tracking-tight">
                   {activeFamilyData.title}
@@ -340,7 +334,7 @@ export const TradingPage: React.FC<TradingPageProps> = ({
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
           <div className="bg-[#173C62] text-white rounded-[8px] p-8 sm:p-14 lg:p-16 relative overflow-hidden">
             <div className="relative z-10 max-w-3xl space-y-5 text-left">
-              <span className="font-mono text-xs uppercase tracking-[0.24em] text-[#93C5FD] block font-semibold">
+              <span className="text-xs uppercase tracking-[0.12em] text-[#CBD5E1] block font-semibold">
                 BOQ TENDERS &bull; WHOLESALE SUPPLY
               </span>
               <h2 className="text-2xl sm:text-4xl lg:text-5xl font-light tracking-tight leading-tight">
@@ -368,7 +362,7 @@ export const TradingPage: React.FC<TradingPageProps> = ({
                 </button>
               </div>
 
-              <div className="pt-6 border-t border-white/15 flex flex-wrap items-center gap-8 text-xs font-mono text-white/80">
+              <div className="pt-6 border-t border-white/15 flex flex-wrap items-center gap-8 text-xs font-medium text-white/80">
                 <div className="flex items-center gap-2">
                   <IconPhone size="sm" color="white" />
                   <span>{CORPORATE_INFO.contact.telephone}</span>

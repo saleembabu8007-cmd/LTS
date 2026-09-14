@@ -1827,7 +1827,7 @@ export const DesignSystemShowcase: React.FC<DesignSystemShowcaseProps> = ({ onNa
                     imageAlt="Solar PV Substation Synchronization"
                     eyebrow="DIVISION 01 &bull; SOLAR EPC"
                     description="Turnkey rooftop and carport solar photovoltaic systems engineered for peak continuous generation under intense ambient temperatures."
-                    metadata="DEWA Shams Dubai Certified // 2.4 MWp"
+                    metadata="DEWA Shams Dubai Certified &bull; 2.4 MWp"
                     badge="COMMISSIONED"
                     ctaText="Explore Solar Scope"
                     aspectRatio="21/9"
@@ -1925,7 +1925,7 @@ export const DesignSystemShowcase: React.FC<DesignSystemShowcaseProps> = ({ onNa
                     subtitle="BUILT ASSET STEWARDSHIP"
                     title="Mission-Critical Electromechanical Reliability Across the UAE"
                     statusBadge="ACTIVE STATUTORY MONITORING"
-                    metaRight="DUBAI &bull; UAE // DEWA CLASS 1"
+                    metaRight="DUBAI &bull; UAE &bull; DEWA CLASS 1"
                     ctaText="Review Verified Capabilities"
                     ctaHref="/about-us"
                   />
@@ -2043,7 +2043,7 @@ export const DesignSystemShowcase: React.FC<DesignSystemShowcaseProps> = ({ onNa
                     editorial={{
                       headline: 'Uninterrupted operational continuity for UAE built assets.',
                       explanation: 'LTSGROUP maintains continuous 24/7 emergency dispatch and computerized maintenance tracking, safeguarding central chiller plants, high-voltage busways, and critical plumbing networks against unpredicted downtime.',
-                      citation: 'CAFM Telemetry // 15-Minute Critical Response SLA',
+                      citation: 'CAFM Telemetry &bull; 15-Minute Critical Response SLA',
                       ctaText: 'Review Facilities Scope',
                       ctaHref: '/facilities-management',
                     }}
@@ -2102,10 +2102,10 @@ export const DesignSystemShowcase: React.FC<DesignSystemShowcaseProps> = ({ onNa
             <Container variant="wide">
               <div className="p-8 sm:p-10 rounded-[20px] bg-[#173C62] text-white space-y-4 border border-white/10">
                 <div className="flex items-center gap-3">
-                  <span className="px-2.5 py-1 bg-[#173C62] text-xs font-mono font-semibold rounded-full uppercase tracking-wider text-[#93C5FD]">
+                  <span className="px-2.5 py-1 bg-[#173C62] text-xs font-semibold rounded-full uppercase tracking-wider text-[#CBD5E1]">
                     ARCHITECTURAL RHYTHM CONSTITUTION
                   </span>
-                  <span className="text-xs font-mono text-slate-300">Level 06 &bull; Compositions A through J</span>
+                  <span className="text-xs text-slate-300">Level 06 &bull; Compositions A through J</span>
                 </div>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light tracking-tight text-white">
                   Controlled Page Section Compositions

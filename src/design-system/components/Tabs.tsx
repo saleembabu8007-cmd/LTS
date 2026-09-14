@@ -74,9 +74,9 @@ export const Tabs: React.FC<TabsProps> = ({
               <span>{tab.label}</span>
               {tab.count !== undefined && (
                 <span
-                  className={`text-[10px] px-1.5 py-0.5 rounded-none font-mono ${
+                  className={`text-[10px] px-1.5 py-0.5 rounded-none font-medium ${
                     isActive
-                      ? 'bg-blue-50 text-[#173C62] border border-blue-200'
+                      ? 'bg-[#173C62]/10 text-[#173C62] border border-[#173C62]/20'
                       : 'bg-slate-100 text-slate-600 border border-slate-200'
                   }`}
                 >

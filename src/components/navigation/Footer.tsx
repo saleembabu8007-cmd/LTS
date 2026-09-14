@@ -33,7 +33,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, hidePreFooter = fals
           <div className="py-12 sm:py-14 lg:py-16 border-b border-white/10">
             <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 lg:gap-12">
               <div className="max-w-2xl space-y-3">
-                <span className="font-mono text-xs uppercase tracking-[0.24em] text-[#93C5FD] block font-semibold">
+                <span className="text-xs uppercase tracking-[0.12em] text-[#CBD5E1] block font-semibold">
                   COMMERCIAL &amp; TENDER ENGAGEMENT
                 </span>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-white tracking-tight leading-[1.1]">
@@ -48,7 +48,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, hidePreFooter = fals
                 <a
                   href="/contact?tab=rfp"
                   onClick={(e) => handleLinkClick(e, '/contact?tab=rfp')}
-                  className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-white hover:bg-slate-100 text-[#0B1320] text-xs font-semibold uppercase tracking-wider rounded-[8px] transition-colors focus-visible:ring-2 focus-visible:ring-[#93C5FD] focus-visible:outline-none min-h-[44px]"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-white hover:bg-slate-100 text-[#173C62] text-xs font-semibold uppercase tracking-wider rounded-[8px] transition-colors focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none min-h-[44px]"
                 >
                   <span>Initiate Tender / Project Discussion</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -56,9 +56,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, hidePreFooter = fals
 
                 <a
                   href={`tel:${CORPORATE_INFO.contact.telephone.replace(/\s+/g, '')}`}
-                  className="inline-flex items-center justify-center gap-2 px-4 py-3 border border-white/20 hover:border-white/40 text-white text-xs font-semibold uppercase tracking-wider rounded-[8px] transition-colors focus-visible:ring-2 focus-visible:ring-[#93C5FD] focus-visible:outline-none min-h-[44px]"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-3 border border-white/20 hover:border-white/40 text-white text-xs font-semibold uppercase tracking-wider rounded-[8px] transition-colors focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none min-h-[44px]"
                 >
-                  <Phone className="w-3.5 h-3.5 text-[#93C5FD]" />
+                  <Phone className="w-3.5 h-3.5 text-slate-300" />
                   <span>{CORPORATE_INFO.contact.telephone}</span>
                 </a>
               </div>
@@ -81,7 +81,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, hidePreFooter = fals
                 onClick={() => onNavigate('/')}
               />
 
-              <p className="font-mono text-[11px] uppercase tracking-wider text-slate-400">
+              <p className="text-[11px] uppercase tracking-wider text-slate-400 font-medium">
                 {CORPORATE_INFO.tagline}
               </p>
 
@@ -90,10 +90,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, hidePreFooter = fals
               </p>
 
               <div className="pt-1 space-y-1.5">
-                <p className="text-[11px] font-mono uppercase tracking-wider text-slate-300">
+                <p className="text-[11px] uppercase tracking-wider text-slate-300 font-medium">
                   DEWA &bull; DCD &bull; DM Statutory Governance
                 </p>
-                <p className="text-[11px] text-slate-400 font-mono">
+                <p className="text-[11px] text-slate-400 font-medium">
                   Dubai Commercial License: {CORPORATE_INFO.legal.licenseNumber}
                 </p>
               </div>
@@ -103,15 +103,15 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, hidePreFooter = fals
                 2. BUSINESS AREAS (3 COLS)
             ----------------------------------------------------------------- */}
             <div className="lg:col-span-3 space-y-3.5">
-              <h3 className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-white">
-                01 / BUSINESS AREAS
+              <h3 className="text-xs font-semibold uppercase tracking-[0.12em] text-white">
+                01 &bull; BUSINESS AREAS
               </h3>
               <ul className="space-y-2 text-xs text-slate-300" role="list">
                 <li>
                   <a
                     href="/engineering-construction"
                     onClick={(e) => handleLinkClick(e, '/engineering-construction')}
-                    className="hover:text-white transition-colors block py-0.5 font-medium text-white focus-visible:ring-2 focus-visible:ring-[#93C5FD] focus-visible:outline-none rounded-[4px]"
+                    className="hover:text-white transition-colors block py-0.5 font-medium text-white focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded-[4px]"
                   >
                     Engineering &amp; Construction
                   </a>
@@ -120,21 +120,21 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, hidePreFooter = fals
                   <a
                     href="/engineering-construction/mep"
                     onClick={(e) => handleLinkClick(e, '/engineering-construction/mep')}
-                    className="hover:text-white transition-colors block py-0.5 text-slate-400 hover:text-slate-200 focus-visible:ring-2 focus-visible:ring-[#93C5FD] focus-visible:outline-none rounded-[4px]"
+                    className="hover:text-white transition-colors block py-0.5 text-slate-400 hover:text-slate-200 focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded-[4px]"
                   >
                     MEP Contracting
                   </a>
                   <a
                     href="/engineering-construction/solar"
                     onClick={(e) => handleLinkClick(e, '/engineering-construction/solar')}
-                    className="hover:text-white transition-colors block py-0.5 text-slate-400 hover:text-slate-200 focus-visible:ring-2 focus-visible:ring-[#93C5FD] focus-visible:outline-none rounded-[4px]"
+                    className="hover:text-white transition-colors block py-0.5 text-slate-400 hover:text-slate-200 focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded-[4px]"
                   >
                     Solar Solutions (EPC)
                   </a>
                   <a
                     href="/engineering-construction/control-switchgear"
                     onClick={(e) => handleLinkClick(e, '/engineering-construction/control-switchgear')}
-                    className="hover:text-white transition-colors block py-0.5 text-slate-400 hover:text-slate-200 focus-visible:ring-2 focus-visible:ring-[#93C5FD] focus-visible:outline-none rounded-[4px]"
+                    className="hover:text-white transition-colors block py-0.5 text-slate-400 hover:text-slate-200 focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded-[4px]"
                   >
                     Control Switchgear
                   </a>
@@ -143,7 +143,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, hidePreFooter = fals
                   <a
                     href="/facilities-management"
                     onClick={(e) => handleLinkClick(e, '/facilities-management')}
-                    className="hover:text-white transition-colors block py-0.5 font-medium text-white focus-visible:ring-2 focus-visible:ring-[#93C5FD] focus-visible:outline-none rounded-[4px]"
+                    className="hover:text-white transition-colors block py-0.5 font-medium text-white focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded-[4px]"
                   >
                     Facilities Management
                   </a>
@@ -152,21 +152,21 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, hidePreFooter = fals
                   <a
                     href="/facilities-management/hard-services"
                     onClick={(e) => handleLinkClick(e, '/facilities-management/hard-services')}
-                    className="hover:text-white transition-colors block py-0.5 text-slate-400 hover:text-slate-200 focus-visible:ring-2 focus-visible:ring-[#93C5FD] focus-visible:outline-none rounded-[4px]"
+                    className="hover:text-white transition-colors block py-0.5 text-slate-400 hover:text-slate-200 focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded-[4px]"
                   >
                     Hard Services
                   </a>
                   <a
                     href="/facilities-management/soft-services"
                     onClick={(e) => handleLinkClick(e, '/facilities-management/soft-services')}
-                    className="hover:text-white transition-colors block py-0.5 text-slate-400 hover:text-slate-200 focus-visible:ring-2 focus-visible:ring-[#93C5FD] focus-visible:outline-none rounded-[4px]"
+                    className="hover:text-white transition-colors block py-0.5 text-slate-400 hover:text-slate-200 focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded-[4px]"
                   >
                     Soft Services
                   </a>
                   <a
                     href="/facilities-management/retrofits"
                     onClick={(e) => handleLinkClick(e, '/facilities-management/retrofits')}
-                    className="hover:text-white transition-colors block py-0.5 text-slate-400 hover:text-slate-200 focus-visible:ring-2 focus-visible:ring-[#93C5FD] focus-visible:outline-none rounded-[4px]"
+                    className="hover:text-white transition-colors block py-0.5 text-slate-400 hover:text-slate-200 focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded-[4px]"
                   >
                     Retrofits / Refurbishment
                   </a>
@@ -175,7 +175,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, hidePreFooter = fals
                   <a
                     href="/trading"
                     onClick={(e) => handleLinkClick(e, '/trading')}
-                    className="hover:text-white transition-colors block py-0.5 font-medium text-white focus-visible:ring-2 focus-visible:ring-[#93C5FD] focus-visible:outline-none rounded-[4px]"
+                    className="hover:text-white transition-colors block py-0.5 font-medium text-white focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded-[4px]"
                   >
                     Trading &amp; Component Supply
                   </a>
@@ -187,15 +187,15 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, hidePreFooter = fals
                 3. CORPORATE (2.5 COLS)
             ----------------------------------------------------------------- */}
             <div className="lg:col-span-2 space-y-3.5">
-              <h3 className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-white">
-                02 / CORPORATE
+              <h3 className="text-xs font-semibold uppercase tracking-[0.12em] text-white">
+                02 &bull; CORPORATE
               </h3>
               <ul className="space-y-2 text-xs text-slate-300" role="list">
                 <li>
                   <a
                     href="/projects"
                     onClick={(e) => handleLinkClick(e, '/projects')}
-                    className="hover:text-white transition-colors block py-0.5 focus-visible:ring-2 focus-visible:ring-[#93C5FD] focus-visible:outline-none rounded-[4px]"
+                    className="hover:text-white transition-colors block py-0.5 focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded-[4px]"
                   >
                     Projects Portfolio
                   </a>
@@ -204,7 +204,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, hidePreFooter = fals
                   <a
                     href="/industries"
                     onClick={(e) => handleLinkClick(e, '/industries')}
-                    className="hover:text-white transition-colors block py-0.5 focus-visible:ring-2 focus-visible:ring-[#93C5FD] focus-visible:outline-none rounded-[4px]"
+                    className="hover:text-white transition-colors block py-0.5 focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded-[4px]"
                   >
                     Industries &amp; Sectors
                   </a>
@@ -213,7 +213,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, hidePreFooter = fals
                   <a
                     href="/about-us"
                     onClick={(e) => handleLinkClick(e, '/about-us')}
-                    className="hover:text-white transition-colors block py-0.5 focus-visible:ring-2 focus-visible:ring-[#93C5FD] focus-visible:outline-none rounded-[4px]"
+                    className="hover:text-white transition-colors block py-0.5 focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded-[4px]"
                   >
                     About Us &amp; Governance
                   </a>
@@ -222,7 +222,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, hidePreFooter = fals
                   <a
                     href="/clients"
                     onClick={(e) => handleLinkClick(e, '/clients')}
-                    className="hover:text-white transition-colors block py-0.5 focus-visible:ring-2 focus-visible:ring-[#93C5FD] focus-visible:outline-none rounded-[4px]"
+                    className="hover:text-white transition-colors block py-0.5 focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded-[4px]"
                   >
                     Credentials &amp; Clearances
                   </a>
@@ -231,7 +231,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, hidePreFooter = fals
                   <a
                     href="/news"
                     onClick={(e) => handleLinkClick(e, '/news')}
-                    className="hover:text-white transition-colors block py-0.5 focus-visible:ring-2 focus-visible:ring-[#93C5FD] focus-visible:outline-none rounded-[4px]"
+                    className="hover:text-white transition-colors block py-0.5 focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded-[4px]"
                   >
                     News Center
                   </a>
@@ -240,7 +240,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, hidePreFooter = fals
                   <a
                     href="/contact"
                     onClick={(e) => handleLinkClick(e, '/contact')}
-                    className="hover:text-white transition-colors block py-0.5 focus-visible:ring-2 focus-visible:ring-[#93C5FD] focus-visible:outline-none rounded-[4px]"
+                    className="hover:text-white transition-colors block py-0.5 focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded-[4px]"
                   >
                     Contact &amp; RFP Desk
                   </a>
@@ -252,42 +252,42 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, hidePreFooter = fals
                 4. CONTACT & DISPATCH (3 COLS)
             ----------------------------------------------------------------- */}
             <div className="lg:col-span-3 space-y-3.5">
-              <h3 className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-white">
-                03 / CONTACT
+              <h3 className="text-xs font-semibold uppercase tracking-[0.12em] text-white">
+                03 &bull; CONTACT
               </h3>
               <div className="space-y-3 text-xs text-slate-300">
                 <div className="space-y-0.5">
-                  <span className="block font-mono text-[10px] uppercase text-slate-400">
+                  <span className="block text-[10.5px] uppercase tracking-wider text-slate-400 font-semibold">
                     Tenders &amp; Estimating Desk
                   </span>
                   <a
                     href={`mailto:${CORPORATE_INFO.contact.emailTenders}`}
-                    className="font-mono text-white hover:text-[#93C5FD] transition-colors block font-medium focus-visible:ring-2 focus-visible:ring-[#93C5FD] focus-visible:outline-none rounded-[4px]"
+                    className="text-white hover:text-[#CBD5E1] transition-colors block font-medium focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded-[4px]"
                   >
                     {CORPORATE_INFO.contact.emailTenders}
                   </a>
                 </div>
 
                 <div className="space-y-0.5">
-                  <span className="block font-mono text-[10px] uppercase text-slate-400">
+                  <span className="block text-[10.5px] uppercase tracking-wider text-slate-400 font-semibold">
                     Central Switchboard
                   </span>
                   <a
                     href={`tel:${CORPORATE_INFO.contact.telephone.replace(/\s+/g, '')}`}
-                    className="font-mono text-white hover:text-[#93C5FD] transition-colors block font-medium focus-visible:ring-2 focus-visible:ring-[#93C5FD] focus-visible:outline-none rounded-[4px]"
+                    className="text-white hover:text-[#CBD5E1] transition-colors block font-medium focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded-[4px]"
                   >
                     {CORPORATE_INFO.contact.telephone}
                   </a>
                 </div>
 
                 <div className="space-y-0.5 pt-0.5">
-                  <span className="block font-mono text-[10px] uppercase text-slate-400">
+                  <span className="block text-[10.5px] uppercase tracking-wider text-slate-400 font-semibold">
                     Operational Headquarters
                   </span>
                   <p className="text-slate-300 text-xs leading-relaxed">
                     {CORPORATE_INFO.address.street}, {CORPORATE_INFO.address.city}, UAE
                   </p>
-                  <p className="text-[10.5px] text-slate-400 font-mono">
+                  <p className="text-[10.5px] text-slate-400 font-medium">
                     Mon–Fri: 08:00 – 18:00 GST
                   </p>
                 </div>
@@ -308,21 +308,21 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, hidePreFooter = fals
             <a
               href="/about-us"
               onClick={(e) => handleLinkClick(e, '/about-us')}
-              className="hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-[#93C5FD] focus-visible:outline-none rounded-[4px]"
+              className="hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded-[4px]"
             >
               Corporate Governance
             </a>
             <a
               href="/clients"
               onClick={(e) => handleLinkClick(e, '/clients')}
-              className="hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-[#93C5FD] focus-visible:outline-none rounded-[4px]"
+              className="hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded-[4px]"
             >
               Statutory Clearances
             </a>
             <a
               href="/contact?tab=rfp"
               onClick={(e) => handleLinkClick(e, '/contact?tab=rfp')}
-              className="hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-[#93C5FD] focus-visible:outline-none rounded-[4px]"
+              className="hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded-[4px]"
             >
               Direct RFP Submittal
             </a>

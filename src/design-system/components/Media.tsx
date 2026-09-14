@@ -106,11 +106,11 @@ export const Media: React.FC<MediaProps> = ({
         {(variant === 'image-overlay' || overlayTitle) && (
           <>
             {/* Directional Gradient Scrim */}
-            <div className={`absolute inset-0 bg-gradient-to-t from-[#173C62]/95 via-[#173C62]/45 to-transparent pointer-events-none ${actualRadiusClass}`} />
+            <div className={`absolute inset-0 bg-gradient-to-t from-[#173C62]/85 via-[#173C62]/35 to-transparent pointer-events-none ${actualRadiusClass}`} />
 
             <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 flex flex-col justify-end text-left z-10">
               {overlayBadge && (
-                <span className="font-mono text-[10.5px] uppercase tracking-[0.2em] text-[#93C5FD] mb-2 font-semibold">
+                <span className="text-[11px] uppercase tracking-[0.12em] text-[#CBD5E1] mb-2 font-semibold">
                   {overlayBadge}
                 </span>
               )}

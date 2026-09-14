@@ -47,7 +47,7 @@ export const CompositionDarkStatement: React.FC<CompositionDarkStatementProps> =
       <Container variant="wide">
         <div className="max-w-4xl space-y-8">
           {eyebrow && (
-            <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#93C5FD] font-semibold block">
+            <span className="text-xs uppercase tracking-[0.12em] text-[#CBD5E1] font-semibold block">
               {eyebrow}
             </span>
           )}

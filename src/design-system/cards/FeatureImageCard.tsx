@@ -93,19 +93,19 @@ export const FeatureImageCard: React.FC<FeatureImageCardProps> = ({
         />
 
         {/* Directional scrim applied ONLY because text is overlayed */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B1320]/90 via-[#0B1320]/45 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/85 via-[#173C62]/35 to-transparent pointer-events-none" />
 
         {/* Overlay Content */}
         <div className="absolute inset-x-0 bottom-0 p-5 sm:p-7 md:p-10 flex flex-col justify-end z-10">
           {(eyebrow || meta) && (
             <div className="flex items-center gap-2 mb-2 flex-wrap">
               {eyebrow && (
-                <span className="font-mono text-[11px] sm:text-xs uppercase tracking-[0.2em] text-[#93C5FD] font-semibold block">
+                <span className="text-[11px] sm:text-xs uppercase tracking-[0.12em] text-[#CBD5E1] font-semibold block">
                   {eyebrow}
                 </span>
               )}
               {meta && (
-                <span className="font-mono text-[11px] sm:text-xs text-white/70 block">
+                <span className="text-[11px] sm:text-xs text-white/70 block font-medium">
                   {meta}
                 </span>
               )}
@@ -123,7 +123,7 @@ export const FeatureImageCard: React.FC<FeatureImageCardProps> = ({
           )}
 
           {href && (
-            <div className="mt-3.5 sm:mt-5 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-white group-hover:text-[#93C5FD] transition-colors">
+            <div className="mt-3.5 sm:mt-5 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-white group-hover:text-slate-200 transition-colors">
               <span>{ctaText}</span>
               <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
             </div>

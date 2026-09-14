@@ -29,9 +29,9 @@ export const EdgeToEdgeMedia: React.FC<EdgeToEdgeMediaProps> = ({
 }) => {
   const scrimMap = {
     none: 'bg-transparent',
-    subtle: 'bg-gradient-to-t from-[#0B1320]/80 via-[#0B1320]/25 to-transparent',
-    medium: 'bg-gradient-to-t from-[#173C62]/90 via-[#173C62]/40 to-transparent',
-    dark: 'bg-gradient-to-t from-[#0B1320]/95 via-[#0B1320]/60 to-[#0B1320]/20',
+    subtle: 'bg-gradient-to-t from-[#173C62]/80 via-[#173C62]/20 to-transparent',
+    medium: 'bg-gradient-to-t from-[#173C62]/85 via-[#173C62]/35 to-transparent',
+    dark: 'bg-gradient-to-t from-[#173C62]/92 via-[#173C62]/50 to-[#173C62]/20',
   };
 
   return (
@@ -43,7 +43,7 @@ export const EdgeToEdgeMedia: React.FC<EdgeToEdgeMediaProps> = ({
         src={imageSrc}
         alt={imageAlt}
         loading="lazy"
-        className="w-full h-full object-cover object-center filter brightness-[0.92] transition-transform duration-[800ms] ease-out hover:scale-[1.015]"
+        className="w-full h-full object-cover object-center filter brightness-[0.95] transition-transform duration-[800ms] ease-out hover:scale-[1.015]"
         onError={(e) => {
           (e.currentTarget as HTMLImageElement).src = '/assets/images/engineering-intro.jpg';
         }}
@@ -60,7 +60,7 @@ export const EdgeToEdgeMedia: React.FC<EdgeToEdgeMediaProps> = ({
           <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12 flex flex-col sm:flex-row sm:items-end justify-between gap-3 text-white">
             <div className="space-y-1 max-w-xl text-left">
               {eyebrow && (
-                <span className="font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-[#93C5FD] block font-semibold">
+                <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.12em] text-[#CBD5E1] block">
                   {eyebrow}
                 </span>
               )}
@@ -72,7 +72,7 @@ export const EdgeToEdgeMedia: React.FC<EdgeToEdgeMediaProps> = ({
             </div>
 
             {coordinates && (
-              <span className="font-mono text-[10px] sm:text-xs text-white/75 uppercase tracking-widest sm:text-right shrink-0">
+              <span className="text-[10px] sm:text-xs text-white/75 uppercase tracking-wider sm:text-right shrink-0 font-medium">
                 {coordinates}
               </span>
             )}

@@ -311,7 +311,7 @@ export const MepPage: React.FC<MepPageProps> = ({ onNavigate }) => {
         <Container>
           <div className="space-y-12 sm:space-y-16">
             <div className="max-w-2xl space-y-2">
-              <span className="font-mono text-xs font-semibold tracking-[0.2em] text-[#93C5FD] uppercase block">
+              <span className="text-xs font-semibold tracking-[0.12em] text-[#CBD5E1] uppercase block">
                 ENGINEERING SYSTEMS ARCHITECTURE
               </span>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-white tracking-tight">
@@ -325,11 +325,11 @@ export const MepPage: React.FC<MepPageProps> = ({ onNavigate }) => {
             {/* 3-Tier Functional Systems Composition: Open Architectural Hairline Flow */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-12">
               {/* Tier 1 */}
-              <div className="border-t-2 border-[#93C5FD] pt-6 space-y-5 flex flex-col justify-between">
+              <div className="border-t-2 border-white/60 pt-6 space-y-5 flex flex-col justify-between">
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs text-[#93C5FD] font-semibold tracking-wider">01 / UTILITY INTAKE</span>
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-slate-300">Municipal Interface</span>
+                    <span className="text-xs text-[#CBD5E1] font-semibold tracking-wider">01 &bull; UTILITY INTAKE</span>
+                    <span className="text-[10px] uppercase tracking-wider text-slate-300 font-medium">Municipal Interface</span>
                   </div>
 
                   <h4 className="text-xl font-medium text-white tracking-tight">Primary Utility Interface</h4>
@@ -356,11 +356,11 @@ export const MepPage: React.FC<MepPageProps> = ({ onNavigate }) => {
               </div>
 
               {/* Tier 2 */}
-              <div className="border-t-2 border-[#93C5FD] pt-6 space-y-5 flex flex-col justify-between">
+              <div className="border-t-2 border-white/60 pt-6 space-y-5 flex flex-col justify-between">
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs text-[#93C5FD] font-semibold tracking-wider">02 / TRANSFORMATION</span>
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-slate-300">Plant &amp; Switchgear</span>
+                    <span className="text-xs text-[#CBD5E1] font-semibold tracking-wider">02 &bull; TRANSFORMATION</span>
+                    <span className="text-[10px] uppercase tracking-wider text-slate-300 font-medium">Plant &amp; Switchgear</span>
                   </div>
 
                   <h4 className="text-xl font-medium text-white tracking-tight">Central Plant &amp; Switchboards</h4>
@@ -387,11 +387,11 @@ export const MepPage: React.FC<MepPageProps> = ({ onNavigate }) => {
               </div>
 
               {/* Tier 3 */}
-              <div className="border-t-2 border-[#93C5FD] pt-6 space-y-5 flex flex-col justify-between">
+              <div className="border-t-2 border-white/60 pt-6 space-y-5 flex flex-col justify-between">
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs text-[#93C5FD] font-semibold tracking-wider">03 / DISTRIBUTION</span>
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-slate-300">Terminal Delivery</span>
+                    <span className="text-xs text-[#CBD5E1] font-semibold tracking-wider">03 &bull; DISTRIBUTION</span>
+                    <span className="text-[10px] uppercase tracking-wider text-slate-300 font-medium">Terminal Delivery</span>
                   </div>
 
                   <h4 className="text-xl font-medium text-white tracking-tight">Telemetry &amp; Terminal Control</h4>
