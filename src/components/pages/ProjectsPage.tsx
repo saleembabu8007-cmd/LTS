@@ -1,110 +1,26 @@
 import React, { useState, useMemo } from 'react';
 import { IconArrow } from '../../design-system/icons';
 import { PROJECTS_DATA, ProjectDetailData } from '../../data/projectsData';
+import {
+  ImageLargeFeature,
+  ImageOverlappingText,
+  ImageAsymmetricPair,
+  ImageHorizontalRowList,
+  ImageStack,
+  ImageNumberSplit,
+} from '../../design-system/visual-patterns';
 
 interface ProjectsPageProps {
   onNavigate: (slug: string) => void;
 }
 
-/**
- * Standardized Project Card
- * Conforms strictly to LTSGROUP Project Card Rules:
- * - Image (dominant, soft 18-20px radius, subtle hover zoom 1.025x)
- * - Category (clean uppercase mono tag)
- * - Project title (crisp editorial typography)
- * - Short metadata (location, asset sector, concise scope summary)
- * - View project (explicit link with micro-arrow shift)
- */
-interface ProjectCardProps {
-  project: ProjectDetailData;
-  aspectClass?: string;
-  variant?: 'featured' | 'standard';
-  onNavigate: (slug: string) => void;
-}
-
-const ProjectCard: React.FC<ProjectCardProps> = ({
-  project,
-  aspectClass = 'aspect-[16/10]',
-  variant = 'standard',
-  onNavigate,
-}) => {
-  const isFeatured = variant === 'featured';
-
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    onNavigate(`/projects/${project.slug}`);
-  };
-
-  return (
-    <a
-      href={`/projects/${project.slug}`}
-      onClick={handleClick}
-      className="group cursor-pointer block select-none focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:outline-none rounded-[8px]"
-      aria-label={`View case study: ${project.title}`}
-    >
-      <article className="space-y-4">
-        {/* Dominant Contextual Image (Restrained 8px radius, NO borders, NO AI tags) */}
-        <div
-          className={`relative overflow-hidden rounded-[8px] bg-[#173C62] ${aspectClass}`}
-        >
-          <img
-            src={project.image}
-            alt={project.title}
-            loading="lazy"
-            className="w-full h-full object-cover transition-transform duration-[450ms] cubic-bezier(0.16, 1, 0.3, 1) group-hover:scale-[1.025]"
-            onError={(e) => {
-              (e.currentTarget as HTMLImageElement).src =
-                'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80';
-            }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-        </div>
-
-        {/* Card Info: Category + Project title + Short metadata + View project */}
-        <div className="space-y-2 transition-transform duration-200 ease-out group-hover:-translate-y-0.5">
-          {/* Category & Location */}
-          <div className="flex items-center gap-2">
-            <span className="font-mono text-[11px] sm:text-xs uppercase tracking-[0.18em] text-[#173C62] font-semibold block">
-              {project.categoryLabel}
-            </span>
-            <span className="text-[#94A3B8] text-xs">&bull;</span>
-            <span className="font-mono text-[11px] sm:text-xs text-[#64748B]">
-              {project.location.split(',')[0]}
-            </span>
-          </div>
-
-          {/* Project Title */}
-          <h3
-            className={`text-[#0B1320] font-light leading-snug tracking-tight group-hover:text-[#173C62] transition-colors duration-200 ${
-              isFeatured
-                ? 'text-2xl sm:text-3xl lg:text-4xl'
-                : 'text-xl sm:text-2xl'
-            }`}
-          >
-            {project.title}
-          </h3>
-
-          {/* Explicit "View project" action with micro arrow shift */}
-          <div className="pt-1">
-            <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#173C62] group-hover:text-[#12304F] transition-colors">
-              <span className="group-hover:underline underline-offset-4">View project case record</span>
-              <IconArrow size="sm" color="primary" interactive className="w-3.5 h-3.5" />
-            </span>
-          </div>
-        </div>
-      </article>
-    </a>
-  );
-};
-
 export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
   const [selectedDivision, setSelectedDivision] = useState<string>('all');
 
-  // Simple, authentic categories supported by existing project records
   const filterOptions = [
     {
       id: 'all',
-      label: 'All Disciplines',
+      label: 'All Delivered Works',
       count: PROJECTS_DATA.length,
     },
     {
@@ -129,16 +45,29 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
     return PROJECTS_DATA.filter((p) => p.division === selectedDivision);
   }, [selectedDivision]);
 
-  // Group filtered projects into sets of 3: [1 featured, up to 2 standards]
-  const projectSets = useMemo(() => {
-    const sets: { featured: ProjectDetailData; standards: ProjectDetailData[] }[] = [];
-    for (let i = 0; i < filteredProjects.length; i += 3) {
-      sets.push({
-        featured: filteredProjects[i],
-        standards: filteredProjects.slice(i + 1, i + 3),
-      });
-    }
-    return sets;
+  // Lead featured project (Type 01)
+  const leadProject = filteredProjects[0];
+  // Pair projects (Type 03)
+  const pairProjects = filteredProjects.slice(1, 3);
+  // Numbered project (Type 08)
+  const metricProject = filteredProjects[3];
+  // Overlapping text projects (Type 02)
+  const overlapProjects = filteredProjects.slice(4, 6);
+  // Stacked project (Type 07)
+  const stackProject = filteredProjects[6] || filteredProjects[0];
+
+  // Convert all filtered projects into ledger rows for Type 05
+  const ledgerProjects = useMemo(() => {
+    return filteredProjects.map((p) => ({
+      id: p.id,
+      title: p.title,
+      location: p.location,
+      category: p.categoryLabel || p.category,
+      thumbnail: p.image,
+      thumbnailAlt: p.title,
+      specSummary: p.specifications && p.specifications[0] ? `${p.specifications[0].label}: ${p.specifications[0].value}` : p.industry,
+      href: `/projects/${p.slug}`,
+    }));
   }, [filteredProjects]);
 
   return (
@@ -152,16 +81,16 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-8 pb-8 md:pb-10">
             <div>
-              <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block mb-2 font-semibold">
+              <span className="text-xs uppercase tracking-[0.14em] text-[#173C62] block mb-2 font-semibold">
                 LTSGROUP &bull; DELIVERED ASSETS
               </span>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light text-[#0B1320] tracking-tight leading-[0.98]">
-                Projects
+                Delivered Projects
               </h1>
             </div>
 
             <p className="text-sm sm:text-base text-[#4A5568] max-w-xl font-normal leading-relaxed">
-              Curated records of critical electromechanical contracting, utility-scale solar PV, and plant operations across the UAE.
+              Curated records of critical electromechanical contracting, utility-scale solar PV, central plant reliability, and OEM component delivery across the UAE.
             </p>
           </div>
 
@@ -170,7 +99,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
               Simple, non-dashboard segmented text filter
               Only uses categories supported by available project data
           ========================================================================= */}
-          <div className="pt-6 md:pt-8 flex items-center justify-between gap-6">
+          <div className="pt-6 md:pt-8 flex items-center justify-between gap-6 border-b border-slate-200 pb-4">
             {/* Desktop Segmented Text Navigation */}
             <div className="hidden md:flex items-center gap-8 lg:gap-10">
               {filterOptions.map((opt) => {
@@ -187,7 +116,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
                   >
                     <span>{opt.label}</span>
                     <span
-                      className={`text-[11px] font-mono transition-colors ${
+                      className={`text-[11px] font-medium transition-colors ${
                         isActive
                           ? 'text-[#173C62] font-semibold'
                           : 'text-[#94A3B8] group-hover:text-[#64748B]'
@@ -230,7 +159,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
             </div>
 
             {/* Right: Record count indicator */}
-            <div className="hidden lg:block font-mono text-xs text-[#94A3B8]">
+            <div className="hidden lg:block text-xs text-[#94A3B8] font-normal">
               <span>Showing </span>
               <span className="text-[#0B1320] font-medium">
                 {filteredProjects.length < 10
@@ -244,13 +173,13 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
       </section>
 
       {/* =========================================================================
-          PROJECT GRID
-          Visual editorial grid adhering to the master formula:
-          featured project + 2 standard projects + repeat
-          Varied image sizes while maintaining a coherent 12-column grid.
+          MASTER IMAGE-FIRST EDITORIAL GALLERY
+          Replaces formulaic card repetition with varied editorial compositions:
+          Type 01 (Large Feature) -> Type 03 (Asymmetric Pair) -> Type 08 (Image + Number)
+          -> Type 02 (Overlapping Text) -> Type 07 (Image Stack) -> Type 05 (Project Ledger)
       ========================================================================= */}
-      <section className="pt-6 pb-20 sm:pb-28 md:pb-36">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="pt-8 pb-20 sm:pb-28 md:pb-36">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-24">
           {filteredProjects.length === 0 ? (
             /* EMPTY / LIMITED CONTENT */
             <div className="py-24 text-center space-y-4 max-w-md mx-auto">
@@ -265,45 +194,136 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
               </button>
             </div>
           ) : (
-            <div className="space-y-12 sm:space-y-20 md:space-y-28">
-              {projectSets.map((set, setIdx) => {
-                const isEvenSet = setIdx % 2 === 0;
+            <>
+              {/* 1. LEAD MARQUEE FEATURE (Type 01: Large Feature, 21:9 Aspect) */}
+              {leadProject && (
+                <div>
+                  <ImageLargeFeature
+                    title={leadProject.title}
+                    imageSrc={leadProject.image}
+                    imageAlt={leadProject.title}
+                    category={leadProject.categoryLabel || leadProject.category}
+                    metadata={`${leadProject.location.toUpperCase()} • ${leadProject.completionDate}`}
+                    description={leadProject.scopeOverview}
+                    href={`/projects/${leadProject.slug}`}
+                    onNavigate={onNavigate}
+                    aspectRatio="21/9"
+                  />
+                </div>
+              )}
 
-                return (
-                  <div key={set.featured.id} className="space-y-8 sm:space-y-12 md:space-y-16">
-                    {/* 1. FEATURED PROJECT (Dominant presentation, responsive aspect) */}
-                    <div className="w-full">
-                      <ProjectCard
-                        project={set.featured}
-                        variant="featured"
-                        aspectClass={
-                          isEvenSet
-                            ? 'aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9]'
-                            : 'aspect-[4/3] sm:aspect-[16/10] lg:aspect-[16/8]'
-                        }
-                        onNavigate={onNavigate}
-                      />
-                    </div>
+              {/* 2. ASYMMETRIC PAIR (Type 03: 1 Dominant + 1 Complementary with Specs) */}
+              {pairProjects.length >= 2 && (
+                <div className="border-t border-slate-200 pt-12 sm:pt-16">
+                  <ImageAsymmetricPair
+                    title={pairProjects[0].title}
+                    category={pairProjects[0].categoryLabel || pairProjects[0].category}
+                    eyebrow={`${pairProjects[0].location.toUpperCase()} • COMMISSIONED ${pairProjects[0].completionDate}`}
+                    description={pairProjects[0].scopeOverview}
+                    primaryImage={pairProjects[0].image}
+                    primaryImageAlt={pairProjects[0].title}
+                    primaryCaption={`${pairProjects[0].industry.toUpperCase()} • VERIFIED`}
+                    secondaryImage={pairProjects[1].image}
+                    secondaryImageAlt={pairProjects[1].title}
+                    secondaryCaption={`${pairProjects[1].categoryLabel.toUpperCase()}`}
+                    specs={pairProjects[0].specifications.slice(0, 4)}
+                    href={`/projects/${pairProjects[0].slug}`}
+                    ctaText="Examine Case Record"
+                    onNavigate={onNavigate}
+                  />
+                </div>
+              )}
 
-                    {/* 2. TWO STANDARD PROJECTS (Balanced 2-column pairing) */}
-                    {set.standards.length > 0 && (
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-start pt-4">
-                        {set.standards.map((stdProject) => (
-                          <div key={stdProject.id}>
-                            <ProjectCard
-                              project={stdProject}
-                              variant="standard"
-                              aspectClass="aspect-[4/3] sm:aspect-[16/10]"
-                              onNavigate={onNavigate}
-                            />
-                          </div>
-                        ))}
-                      </div>
-                    )}
+              {/* 3. IMAGE + NUMBER (Type 08: Forensic Metric Split) */}
+              {metricProject && (
+                <div className="border-t border-slate-200 pt-12 sm:pt-16">
+                  <ImageNumberSplit
+                    title={metricProject.title}
+                    category={metricProject.categoryLabel || metricProject.category}
+                    eyebrow={`${metricProject.location.toUpperCase()}`}
+                    imageSrc={metricProject.image}
+                    imageCaption={metricProject.industry.toUpperCase()}
+                    metricValue={
+                      metricProject.specifications && metricProject.specifications[1]
+                        ? metricProject.specifications[1].value.split(' ')[0]
+                        : '100%'
+                    }
+                    metricLabel={
+                      metricProject.specifications && metricProject.specifications[1]
+                        ? metricProject.specifications[1].label
+                        : 'Statutory Compliance Record'
+                    }
+                    metricSubtext={metricProject.specifications && metricProject.specifications[1] ? metricProject.specifications[1].value : undefined}
+                    description={metricProject.scopeOverview}
+                    citation={`AUDITED DOSSIER • ${metricProject.location.toUpperCase()} • DEWA APPROVED`}
+                    href={`/projects/${metricProject.slug}`}
+                    onNavigate={onNavigate}
+                    aspectRatio="16/10"
+                  />
+                </div>
+              )}
+
+              {/* 4. OVERLAPPING TEXT DUO (Type 02: 2 Side-by-Side Overlapping Cards) */}
+              {overlapProjects.length > 0 && (
+                <div className="border-t border-slate-200 pt-12 sm:pt-16">
+                  <div className="text-left pb-8">
+                    <span className="text-xs uppercase tracking-[0.14em] text-[#173C62] font-semibold block mb-1">
+                      SELECTED DELIVERIES &bull; CRITICAL ENVELOPES
+                    </span>
+                    <h3 className="text-2xl sm:text-3xl font-light text-[#0B1320] tracking-tight">
+                      Specialized Contracting &amp; Plant Reliability
+                    </h3>
                   </div>
-                );
-              })}
-            </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14 items-start">
+                    {overlapProjects.map((proj, pIdx) => (
+                      <ImageOverlappingText
+                        key={proj.id}
+                        title={proj.title}
+                        imageSrc={proj.image}
+                        imageAlt={proj.title}
+                        category={proj.categoryLabel || proj.category}
+                        metadata={proj.location}
+                        description={proj.scopeOverview}
+                        href={`/projects/${proj.slug}`}
+                        onNavigate={onNavigate}
+                        aspectRatio="4/3"
+                        overlapPosition={pIdx % 2 === 0 ? 'bottom-left' : 'bottom-right'}
+                      />
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* 5. IMAGE STACK (Type 07: Macro-to-Micro Engineering Depth) */}
+              {stackProject && (
+                <div className="border-t border-slate-200 pt-12 sm:pt-16">
+                  <ImageStack
+                    title={stackProject.title}
+                    category={stackProject.categoryLabel || stackProject.category}
+                    eyebrow={`${stackProject.location.toUpperCase()} • VERIFIED EXECUTION`}
+                    description={stackProject.challenge ? `${stackProject.challenge} ${stackProject.solution}` : stackProject.scopeOverview}
+                    macroImage={stackProject.image}
+                    macroCaption="PRIMARY FACILITY INFRASTRUCTURE"
+                    microImage={stackProject.secondaryImage || stackProject.image}
+                    microCaption="ELECTROMECHANICAL DETAIL"
+                    specs={stackProject.specifications.slice(0, 4)}
+                    href={`/projects/${stackProject.slug}`}
+                    onNavigate={onNavigate}
+                  />
+                </div>
+              )}
+
+              {/* 6. VERIFIED CASE RECORDS LEDGER (Type 05: Complete Architectural Row List) */}
+              <div className="border-t-2 border-[#173C62] pt-12 sm:pt-16">
+                <ImageHorizontalRowList
+                  headerTitle="Complete Verified Case Records Archive"
+                  headerEyebrow="DISCIPLINE INDEX &bull; PERMANENT REPOSITORY"
+                  projects={ledgerProjects}
+                  onNavigate={onNavigate}
+                />
+              </div>
+            </>
           )}
         </div>
       </section>
@@ -314,8 +334,8 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
       ========================================================================= */}
       <section className="py-14 sm:py-20 lg:py-24 bg-[#F8FAFC]">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl space-y-4">
-            <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
+          <div className="max-w-3xl space-y-4 text-left">
+            <span className="text-xs uppercase tracking-[0.14em] text-[#173C62] block font-semibold">
               Tender &amp; Specification Intake
             </span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#0B1320] tracking-tight">

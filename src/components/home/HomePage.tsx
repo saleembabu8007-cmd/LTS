@@ -10,6 +10,7 @@ import {
 import { Button } from '../../design-system/atoms/Button';
 import { ProofStrip } from '../../design-system/proof';
 import { EdgeToEdgeMedia } from '../../design-system/layouts';
+import { ImageLargeFeature, ImageOverlappingText } from '../../design-system/visual-patterns';
 import { PROJECTS_DATA } from '../../data/projectsData';
 import { NEWS_DATA } from '../../data/newsData';
 import { CORPORATE_INFO } from '../../data/corporateData';
@@ -532,112 +533,47 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             </a>
           </div>
 
-          <div className="space-y-8">
-            {/* 12-Column Hero Monograph Plate (Project 01) */}
-            <a
+          <div className="space-y-12 sm:space-y-16">
+            {/* Monumental Architectural Lead Plate (Type 01) */}
+            <ImageLargeFeature
+              title={featuredProject.title}
+              category={`FEATURED RECORD • ${featuredProject.categoryLabel.toUpperCase()}`}
+              metadata={`${featuredProject.location.toUpperCase()} • 48 FLOORS • 3,200 TR DISTRICT COOLING`}
+              description={featuredProject.scopeOverview}
+              imageSrc={featuredProject.image}
+              imageAlt={featuredProject.title}
+              aspectRatio="21/9"
               href={`/projects/${featuredProject.slug}`}
-              onClick={(e) => handleLink(e, `/projects/${featuredProject.slug}`)}
-              className="group relative rounded-[8px] overflow-hidden block min-h-[420px] sm:min-h-[480px] lg:min-h-[540px] bg-[#173C62] flex flex-col justify-end p-8 sm:p-12 lg:p-14 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
-            >
-              <img
-                src={featuredProject.image}
-                alt={featuredProject.title}
-                className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.02]"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/85 via-[#173C62]/35 to-[#173C62]/10" />
+              onNavigate={onNavigate}
+            />
 
-              <div className="relative z-10 text-white max-w-2xl">
-                <div className="inline-flex items-center gap-2 mb-3">
-                  <span className="text-[11px] uppercase tracking-[0.12em] text-[#CBD5E1] font-semibold">
-                    FEATURED RECORD &bull; {featuredProject.categoryLabel}
-                  </span>
-                  <span className="text-white/40">&bull;</span>
-                  <span className="text-[10.5px] uppercase tracking-wider text-[#CBD5E1] font-medium">
-                    {featuredProject.location}
-                  </span>
-                </div>
-                <h3 className="text-2xl sm:text-4xl lg:text-5xl font-light text-white tracking-tight leading-[1.08]">
-                  {featuredProject.title}
-                </h3>
-                <p className="mt-3 text-xs sm:text-sm text-slate-200 leading-relaxed max-w-xl line-clamp-2">
-                  {featuredProject.scopeOverview}
-                </p>
-                <div className="mt-6 inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-white group-hover:text-slate-200">
-                  <span>View case record</span>
-                  <IconArrow size="sm" color="white" interactive />
-                </div>
-              </div>
-
-              {/* Overlaid Technical Delivery Parameters in Bottom-Right */}
-              <div className="hidden md:flex absolute bottom-8 sm:bottom-12 right-8 sm:right-12 z-10 flex-col items-end text-right text-xs font-mono text-white/80 space-y-1">
-                <span className="text-[11px] text-[#CBD5E1] font-semibold">DELIVERY PARAMETERS</span>
-                <span>48 FLOORS &bull; 3,200 TR DISTRICT COOLING</span>
-                <span>100% FIRST-PASS CIVIL DEFENSE CLEARANCE</span>
-              </div>
-            </a>
-
-            {/* 6 / 6 Two-Up Pairing (Projects 02 & 03) */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-              <a
+            {/* Supporting Project Duo (Type 02 — Image + Overlapping Text) */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 pt-2">
+              <ImageOverlappingText
+                title={supportingProject1.title}
+                category={supportingProject1.categoryLabel.toUpperCase()}
+                metadata={`${supportingProject1.location.toUpperCase()} • 2.4 MWP NET-METERED`}
+                description={supportingProject1.scopeOverview}
+                imageSrc={supportingProject1.image}
+                imageAlt={supportingProject1.title}
+                aspectRatio="16/9"
+                overlapPosition="bottom-left"
                 href={`/projects/${supportingProject1.slug}`}
-                onClick={(e) => handleLink(e, `/projects/${supportingProject1.slug}`)}
-                className="lg:col-span-6 group relative rounded-[8px] overflow-hidden block min-h-[300px] sm:min-h-[360px] bg-[#173C62] flex flex-col justify-end p-8 sm:p-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
-              >
-                <img
-                  src={supportingProject1.image}
-                  alt={supportingProject1.title}
-                  className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.02]"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/85 via-[#173C62]/35 to-transparent" />
+                onNavigate={onNavigate}
+              />
 
-                <div className="relative z-10 text-white">
-                  <span className="text-[10.5px] uppercase tracking-[0.12em] text-[#CBD5E1] block mb-1.5 font-semibold">
-                    {supportingProject1.categoryLabel} &bull; {supportingProject1.location}
-                  </span>
-                  <h4 className="text-xl sm:text-2xl font-light text-white tracking-tight">
-                    {supportingProject1.title}
-                  </h4>
-                  <p className="mt-2 text-xs text-slate-200 leading-relaxed line-clamp-2">
-                    {supportingProject1.scopeOverview}
-                  </p>
-                  <div className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold uppercase text-white group-hover:text-slate-200">
-                    <span>View project</span>
-                    <IconArrow size="sm" color="white" interactive />
-                  </div>
-                </div>
-              </a>
-
-              <a
+              <ImageOverlappingText
+                title={supportingProject2.title}
+                category={supportingProject2.categoryLabel.toUpperCase()}
+                metadata={`${supportingProject2.location.toUpperCase()} • 24/7 HEALTHCARE RESIDENCY`}
+                description={supportingProject2.scopeOverview}
+                imageSrc={supportingProject2.image}
+                imageAlt={supportingProject2.title}
+                aspectRatio="16/9"
+                overlapPosition="bottom-left"
                 href={`/projects/${supportingProject2.slug}`}
-                onClick={(e) => handleLink(e, `/projects/${supportingProject2.slug}`)}
-                className="lg:col-span-6 group relative rounded-[8px] overflow-hidden block min-h-[300px] sm:min-h-[360px] bg-[#173C62] flex flex-col justify-end p-8 sm:p-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
-              >
-                <img
-                  src={supportingProject2.image}
-                  alt={supportingProject2.title}
-                  className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.02]"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/85 via-[#173C62]/35 to-transparent" />
-
-                <div className="relative z-10 text-white">
-                  <span className="text-[10.5px] uppercase tracking-[0.12em] text-[#CBD5E1] block mb-1.5 font-semibold">
-                    {supportingProject2.categoryLabel} &bull; {supportingProject2.location}
-                  </span>
-                  <h4 className="text-xl sm:text-2xl font-light text-white tracking-tight">
-                    {supportingProject2.title}
-                  </h4>
-                  <p className="mt-2 text-xs text-slate-200 leading-relaxed line-clamp-2">
-                    {supportingProject2.scopeOverview}
-                  </p>
-                  <div className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold uppercase text-white group-hover:text-slate-200">
-                    <span>View project</span>
-                    <IconArrow size="sm" color="white" interactive />
-                  </div>
-                </div>
-              </a>
+                onNavigate={onNavigate}
+              />
             </div>
           </div>
         </div>

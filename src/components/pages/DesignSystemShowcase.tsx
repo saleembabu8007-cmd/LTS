@@ -131,6 +131,15 @@ import {
   CompositionJ,
 } from '../../design-system';
 import {
+  ImageLargeFeature,
+  ImageOverlappingText,
+  ImageAsymmetricPair,
+  ImageEditorialMosaic,
+  ImageHorizontalRow,
+  ImageHorizontalRowList,
+  ImageFullBleed,
+  ImageStack,
+  ImageNumberSplit,
   FeatureImage,
   ProjectImage,
   ServiceImage,
@@ -1803,163 +1812,252 @@ export const DesignSystemShowcase: React.FC<DesignSystemShowcaseProps> = ({ onNa
           </section>
 
           {/* Section 6: The 6 Standard Image-First Visual Patterns */}
+          {/* Section 6: Master Image-First Editorial System (Types 01 — 08) */}
           <section className="space-y-8 pt-8 border-t border-black/10">
             <Container variant="wide">
               <SectionHeading
-                eyebrow="LEVEL 06 — IMAGE-FIRST VISUAL SYSTEM"
-                title="The 6 Standard Visual Patterns"
-                description="Strictly standardized image patterns where imagery carries the visual and emotional weight: Feature Image, Project Image, Service Image, Editorial Image, Full-width Image, and Image Mosaic. All feature 1.02 hover zoom and 3–5px arrow translation."
+                eyebrow="LEVEL 06 — MASTER IMAGE-FIRST EDITORIAL SYSTEM"
+                title="The 8 Image Composition Types"
+                description="Strictly standardized editorial compositions inspired by senior architectural publications. Photography is the primary carrier of narrative and structural weight, with varied aspect ratios (16:9, 4:3, 3:2, portrait, full bleed), zero repetitive cards, and intelligent object cropping."
               />
 
-              <div className="space-y-12 pt-8">
+              <div className="space-y-16 pt-8 text-left">
                 
-                {/* 1. Feature Image */}
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs font-bold text-[#173C62] uppercase tracking-wider">
-                      Pattern 01 · Feature Image (Large Rounded Focal Point)
+                {/* TYPE 01: Large Feature */}
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between pb-2 border-b border-slate-200">
+                    <span className="text-xs font-semibold text-[#173C62] uppercase tracking-[0.14em]">
+                      Type 01 · Large Feature (Monumental Focal Image)
                     </span>
-                    <span className="text-[11px] font-mono text-[#999999]">20px Radius &bull; Minimal Text &bull; Optional Metadata</span>
+                    <span className="text-[11px] text-[#999999] font-medium">16:10 / 21:9 &bull; 75–80% Image Weight &bull; Quiet Scrim</span>
                   </div>
-                  <FeatureImage
-                    title="Utility-Grade Shams Dubai Solar PV EPC & Substation Synchronization"
-                    imageSrc="/assets/images/solar-epc.jpg"
-                    imageAlt="Solar PV Substation Synchronization"
-                    eyebrow="DIVISION 01 &bull; SOLAR EPC"
-                    description="Turnkey rooftop and carport solar photovoltaic systems engineered for peak continuous generation under intense ambient temperatures."
-                    metadata="DEWA Shams Dubai Certified &bull; 2.4 MWp"
-                    badge="COMMISSIONED"
-                    ctaText="Explore Solar Scope"
+                  <ImageLargeFeature
+                    title="Commercial High-Rise Electromechanical Infrastructure (3,200 TR)"
+                    imageSrc="/assets/images/project-highrise.jpg"
+                    imageAlt="Commercial High-Rise Electromechanical Infrastructure"
+                    category="MEP CONTRACTING"
+                    metadata="DOWNTOWN DUBAI &bull; 48 FLOORS &bull; 11kV SUBSTATION INTERFACE"
+                    description="Turnkey electromechanical contracting across a 48-floor commercial tower including centralized district cooling hydronics, dual-busbar electrical risers, and life-safety smoke management."
+                    href="/projects/commercial-high-rise-mep"
                     aspectRatio="21/9"
                   />
                 </div>
 
-                {/* 2 & 3. Project Image (70-80% weight) & Service Image (1 short line max) */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                  
-                  {/* Pattern 02: Project Image */}
-                  <div className="lg:col-span-7 space-y-3">
-                    <div className="flex items-center justify-between">
-                      <span className="font-mono text-xs font-bold text-[#173C62] uppercase tracking-wider">
-                        Pattern 02 · Project Image (70–80% Image Weight)
-                      </span>
-                      <span className="text-[11px] font-mono text-[#999999]">75% Visual Weight &bull; 25% Metadata</span>
-                    </div>
-                    <ProjectImage
-                      id="proj-highrise"
-                      title="Commercial High-Rise Electromechanical Infrastructure"
-                      category="MEP CONTRACTING"
-                      location="Downtown Dubai, UAE"
-                      descriptor="Turnkey chilled water risers, vertical busway reticulation, and certified smoke extract."
-                      imageSrc="/assets/images/project-highrise.jpg"
-                      aspectRatio="landscape"
-                    />
-                  </div>
-
-                  {/* Pattern 03: Service Image */}
-                  <div className="lg:col-span-5 space-y-3">
-                    <div className="flex items-center justify-between">
-                      <span className="font-mono text-xs font-bold text-[#173C62] uppercase tracking-wider">
-                        Pattern 03 · Service Image (Image + Title + Arrow)
-                      </span>
-                      <span className="text-[11px] font-mono text-[#999999]">1 Short Line Maximum</span>
-                    </div>
-                    <div className="space-y-4">
-                      <ServiceImage
-                        id="srv-chiller"
-                        numeral="01"
-                        title="Central Chiller Plant Reliability"
-                        shortLine="Continuous delta-T optimization, vibration diagnostics, and tube eddy-current testing."
-                        imageSrc="/assets/images/project-chiller.jpg"
-                        href="/facilities-management/hvac"
-                      />
-                      <ServiceImage
-                        id="srv-switchgear"
-                        numeral="02"
-                        title="Low-Voltage Switchgear Assembly"
-                        shortLine="Form-4 type-tested assemblies up to 65kA fault level with integrated ATS."
-                        imageSrc="/assets/images/industry-logistics.jpg"
-                        href="/engineering-construction/control-switchgear"
-                      />
-                    </div>
-                  </div>
-
-                </div>
-
-                {/* 4. Editorial Image */}
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs font-bold text-[#173C62] uppercase tracking-wider">
-                      Pattern 04 · Editorial Image (Architectural Storytelling)
+                {/* TYPE 02: Image + Overlapping Text */}
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between pb-2 border-b border-slate-200">
+                    <span className="text-xs font-semibold text-[#173C62] uppercase tracking-[0.14em]">
+                      Type 02 · Image + Overlapping Text
                     </span>
-                    <span className="text-[11px] font-mono text-[#999999]">Standalone Visual &bull; Technical Figure Annotation</span>
+                    <span className="text-[11px] text-[#999999] font-medium">4:3 Ratio &bull; Restrained Surface Card Overlap</span>
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <EditorialImage
-                      imageSrc="/assets/images/mep-construction.jpg"
-                      caption="Primary high-density vertical busbar riser shaft in 52-story commercial tower."
-                      figureNumber="FIG. 01"
-                      location="Business Bay, Dubai"
-                      aspectRatio="16/10"
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                    <ImageOverlappingText
+                      title="Hospitality District Central Chiller Plant (1,800 TR)"
+                      imageSrc="/assets/images/project-chiller.jpg"
+                      imageAlt="Central Chiller Plant Reliability"
+                      category="CRITICAL FACILITIES"
+                      metadata="DUBAI CREEK HARBOUR"
+                      description="Continuous delta-T optimization, vibration diagnostics, and tube eddy-current testing for critical hospitality assets."
+                      href="/projects/hospitality-district-chiller-plant"
+                      aspectRatio="4/3"
+                      overlapPosition="bottom-left"
                     />
-                    <EditorialImage
-                      imageSrc="/assets/images/trading-components.jpg"
-                      caption="Variable frequency drive test bench and MID Class-2 ultrasonic heat meter telemetry."
-                      figureNumber="FIG. 02"
-                      location="Dubai Logistics City"
-                      aspectRatio="16/10"
+                    <ImageOverlappingText
+                      title="Industrial Motor Control Center & Switchgear"
+                      imageSrc="/assets/images/industry-logistics.jpg"
+                      imageAlt="Control Switchgear Assembly"
+                      category="EQUIPMENT ENGINEERING"
+                      metadata="DUBAI LOGISTICS CITY"
+                      description="Form-4 type-tested low-voltage distribution boards engineered up to 65kA fault level with integrated telemetry."
+                      href="/engineering-construction/control-switchgear"
+                      aspectRatio="4/3"
+                      overlapPosition="bottom-right"
                     />
                   </div>
                 </div>
 
-                {/* 5. Full-Width Image */}
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs font-bold text-[#173C62] uppercase tracking-wider">
-                      Pattern 05 · Full-Width Image (Panoramic Viewport)
+                {/* TYPE 03: Asymmetric Pair */}
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between pb-2 border-b border-slate-200">
+                    <span className="text-xs font-semibold text-[#173C62] uppercase tracking-[0.14em]">
+                      Type 03 · Asymmetric Pair
                     </span>
-                    <span className="text-[11px] font-mono text-[#999999]">21:9 Presence &bull; Quiet Lower Anchors</span>
+                    <span className="text-[11px] text-[#999999] font-medium">7/5 Grid &bull; Dominant Landscape + Complementary Technical Image</span>
                   </div>
-                  <FullWidthImage
-                    imageSrc="/assets/images/hero-building.jpg"
-                    subtitle="BUILT ASSET STEWARDSHIP"
-                    title="Mission-Critical Electromechanical Reliability Across the UAE"
-                    statusBadge="ACTIVE STATUTORY MONITORING"
-                    metaRight="DUBAI &bull; UAE &bull; DEWA CLASS 1"
-                    ctaText="Review Verified Capabilities"
-                    ctaHref="/about-us"
+                  <ImageAsymmetricPair
+                    title="Logistics Rooftop Solar PV & Grid Interconnection"
+                    category="ENGINEERING &bull; SOLAR EPC"
+                    eyebrow="DEWA SHAMS DUBAI COMMISSIONED"
+                    description="Turnkey 2.4 MWp rooftop photovoltaic installation across 18,000 sqm of warehouse roofing synchronized under DEWA net-metering regulations."
+                    primaryImage="/assets/images/solar-epc.jpg"
+                    primaryImageAlt="Rooftop Solar PV Array"
+                    primaryCaption="2.4 MWp UTILITY-SYNCHRONIZED ARRAY"
+                    secondaryImage="/assets/images/mep-construction.jpg"
+                    secondaryImageAlt="Substation Busduct Interface"
+                    secondaryCaption="11kV SUBSTATION INTERCONNECTION"
+                    specs={[
+                      { label: 'Generation Capacity', value: '2.4 MWp Peak DC' },
+                      { label: 'Annual Yield', value: '3,850 MWh / Year' },
+                      { label: 'Array Area', value: '18,000 sqm Continuous' },
+                      { label: 'Governing Scheme', value: 'DEWA Shams Dubai' },
+                    ]}
+                    href="/projects/logistics-facility-solar-pv"
                   />
                 </div>
 
-                {/* 6. Image Mosaic */}
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs font-bold text-[#173C62] uppercase tracking-wider">
-                      Pattern 06 · Image Mosaic (1 Large + 2 Smaller Supporting Images)
+                {/* TYPE 04: Editorial Mosaic */}
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between pb-2 border-b border-slate-200">
+                    <span className="text-xs font-semibold text-[#173C62] uppercase tracking-[0.14em]">
+                      Type 04 · Editorial Mosaic (Differing Image Ratios)
                     </span>
-                    <span className="text-[11px] font-mono text-[#999999]">Asymmetric 7/5 Composition &bull; 18–20px Radii</span>
+                    <span className="text-[11px] text-[#999999] font-medium">1 Dominant (16:10) + 2 Stacked Supporting (4:3) &bull; Monograph Plates</span>
                   </div>
-                  <VisualPatternMosaic
-                    primaryImage={{
+                  <ImageEditorialMosaic
+                    title="Heavy Electromechanical Execution & Plant Infrastructure"
+                    eyebrow="FIELD EXECUTION ARCHIVES"
+                    description="Turnkey mechanical, electrical, and plumbing engineering executed across capital build environments in Dubai."
+                    dominantImage={{
                       src: '/assets/images/mep-construction.jpg',
                       alt: 'Turnkey Electromechanical Infrastructure',
-                      tag: 'CAPITAL EXECUTION',
-                      caption: 'Turnkey 11kV substation coordination and central district cooling hydronics.',
+                      plateNumber: 'PLATE 01',
+                      caption: 'Primary high-density vertical busbar riser shaft in commercial tower.',
                     }}
-                    supportingImages={[
+                    supportingImage1={{
+                      src: '/assets/images/project-solar.jpg',
+                      alt: 'Commercial Solar PV Arrays',
+                      plateNumber: 'PLATE 02',
+                      caption: 'Utility-scale rooftop photovoltaic generation.',
+                    }}
+                    supportingImage2={{
+                      src: '/assets/images/trading-components.jpg',
+                      alt: 'Factory Component Telemetry',
+                      plateNumber: 'PLATE 03',
+                      caption: 'Variable frequency drive calibration bench.',
+                    }}
+                    href="/projects"
+                  />
+                </div>
+
+                {/* TYPE 05: Horizontal Project Row */}
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between pb-2 border-b border-slate-200">
+                    <span className="text-xs font-semibold text-[#173C62] uppercase tracking-[0.14em]">
+                      Type 05 · Horizontal Project Row
+                    </span>
+                    <span className="text-[11px] text-[#999999] font-medium">Ledger Rows &bull; Thumbnail + Title + Location + Category + Arrow</span>
+                  </div>
+                  <ImageHorizontalRowList
+                    projects={[
                       {
-                        src: '/assets/images/project-solar.jpg',
-                        alt: 'Commercial Solar PV Arrays',
-                        tag: 'SHAMS DUBAI EPC',
-                        caption: '2.4 MWp rooftop photovoltaic generation synchronized to utility grid.',
+                        id: 'proj-1',
+                        title: 'Commercial High-Rise MEP Installation',
+                        location: 'Business Bay, Dubai',
+                        category: 'Commercial MEP',
+                        thumbnail: '/assets/images/project-highrise.jpg',
+                        specSummary: '3,200 TR Connected Load • 48 Floors • DEWA & DCD Approved',
+                        href: '/projects/commercial-high-rise-mep',
                       },
                       {
-                        src: '/assets/images/project-chiller.jpg',
-                        alt: 'Thermodynamic Plant Stewardship',
-                        tag: 'CONTINUOUS RELIABILITY',
-                        caption: 'Precision central chiller overhauls and water hygiene compliance.',
+                        id: 'proj-2',
+                        title: 'Logistics Facility Photovoltaic Rooftop Plant',
+                        location: 'Dubai Industrial City',
+                        category: 'Solar PV EPC',
+                        thumbnail: '/assets/images/project-solar.jpg',
+                        specSummary: '2.4 MWp Connected Capacity • 18,000 sqm • Shams Dubai',
+                        href: '/projects/logistics-facility-solar-pv',
+                      },
+                      {
+                        id: 'proj-3',
+                        title: 'Hospitality District Central Chiller Plant',
+                        location: 'Dubai Creek Harbour',
+                        category: 'Hard Services',
+                        thumbnail: '/assets/images/project-chiller.jpg',
+                        specSummary: '1,800 TR Centrifugal Chillers • 99.8% Reliability SLA',
+                        href: '/projects/hospitality-district-chiller-plant',
+                      },
+                      {
+                        id: 'proj-4',
+                        title: 'Industrial Motor Control Center & Switchgear Assembly',
+                        location: 'Jebel Ali Industrial Area',
+                        category: 'Control Switchgear',
+                        thumbnail: '/assets/images/industry-logistics.jpg',
+                        specSummary: 'Form-4 Type-Tested • 65kA Fault Level • IEC 61439',
+                        href: '/engineering-construction/control-switchgear',
                       },
                     ]}
+                  />
+                </div>
+
+                {/* TYPE 06: Full-Bleed Image */}
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between pb-2 border-b border-slate-200">
+                    <span className="text-xs font-semibold text-[#173C62] uppercase tracking-[0.14em]">
+                      Type 06 · Full-Bleed Image
+                    </span>
+                    <span className="text-[11px] text-[#999999] font-medium">Container Break &bull; Negative Photographic Space Typography</span>
+                  </div>
+                  <ImageFullBleed
+                    title="Mission-Critical Electromechanical Reliability Across the UAE"
+                    eyebrow="BUILT ASSET STEWARDSHIP • 100% STATUTORY CLEARANCE"
+                    subtitle="CAPITAL EXECUTION TO LIFECYCLE STEWARDSHIP"
+                    description="Delivering turnkey engineering, round-the-clock facilities management, and factory-certified equipment distribution across Dubai and the UAE built environment."
+                    imageSrc="/assets/images/hero-building.jpg"
+                    locationDatum="DUBAI • UNITED ARAB EMIRATES"
+                    statusBadge="AUDITED OPERATING STANDARD"
+                    href="/about-us"
+                    heightClass="min-h-[45vh] sm:min-h-[55vh]"
+                  />
+                </div>
+
+                {/* TYPE 07: Image Stack */}
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between pb-2 border-b border-slate-200">
+                    <span className="text-xs font-semibold text-[#173C62] uppercase tracking-[0.14em]">
+                      Type 07 · Image Stack
+                    </span>
+                    <span className="text-[11px] text-[#999999] font-medium">Macro Foundation (16:10) + Vertically Offset Micro Plate (3:4)</span>
+                  </div>
+                  <ImageStack
+                    title="Multi-Floor Chiller Plant & Vertical Hydronic Risers"
+                    category="MEP CONTRACTING &bull; HYDRONIC BALANCING"
+                    eyebrow="DISTRICT COOLING INTEGRATION"
+                    description="Coordinated 3D BIM modelling, pre-fabricated modular riser spools, and primary/secondary variable-speed hydronic pumping skids."
+                    macroImage="/assets/images/project-highrise.jpg"
+                    macroCaption="MACRO ENVELOPE • 48 FLOORS"
+                    microImage="/assets/images/mep-construction.jpg"
+                    microCaption="RISER SPOOL PREFABRICATION"
+                    specs={[
+                      { label: 'Cooling Capacity', value: '3,200 TR Chilled Water' },
+                      { label: 'Riser Busway Amperage', value: 'Dual 3,200A Copper' },
+                      { label: 'Pumping Velocity', value: 'Variable Frequency Delta-P' },
+                      { label: 'Approval Status', value: '100% DEWA & DCD Passed' },
+                    ]}
+                    href="/engineering-construction/mep"
+                  />
+                </div>
+
+                {/* TYPE 08: Image + Number */}
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between pb-2 border-b border-slate-200">
+                    <span className="text-xs font-semibold text-[#173C62] uppercase tracking-[0.14em]">
+                      Type 08 · Image + Number
+                    </span>
+                    <span className="text-[11px] text-[#999999] font-medium">Monumental Verified Statistic + Authoritative Architectural Photo</span>
+                  </div>
+                  <ImageNumberSplit
+                    title="Central Chiller Plant Thermodynamic Efficiency"
+                    category="FACILITIES STEWARDSHIP"
+                    eyebrow="FORENSIC EVIDENCE &bull; SLA"
+                    imageSrc="/assets/images/project-chiller.jpg"
+                    imageCaption="PRIMARY HOSPITALITY CHILLER SKID"
+                    metricValue="99.8%"
+                    metricLabel="Continuous Uptime Service Level Agreement"
+                    metricSubtext="Audited mechanical availability across 1,800 TR central chiller infrastructure."
+                    description="LTSGROUP maintains computerized telemetry, delta-T monitoring, and vibration diagnostics to safeguard mission-critical thermal environments against unpredicted downtime."
+                    citation="AUDITED COMMISSIONING DOSSIER • DUBAI CREEK HARBOUR"
+                    href="/facilities-management/hvac"
                   />
                 </div>
 

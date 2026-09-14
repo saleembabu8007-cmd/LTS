@@ -4,6 +4,11 @@ import { Container } from '../../design-system/structures/Container';
 import { Button } from '../../design-system/atoms/Button';
 import { Tag } from '../../design-system/atoms/Tag';
 import { FullBleedHero, UnboxedIndex, UnboxedIndexItem } from '../../design-system';
+import {
+  ImageStack,
+  ImageOverlappingText,
+  ImageAsymmetricPair,
+} from '../../design-system/visual-patterns';
 import { PROJECTS_DATA } from '../../data/projectsData';
 import { CORPORATE_INFO } from '../../data/corporateData';
 
@@ -154,149 +159,80 @@ export const MepPage: React.FC<MepPageProps> = ({ onNavigate }) => {
       ========================================================================= */}
       <section id="commercial-residential" className="py-16 lg:py-24 bg-[#F8FAFC]">
         <Container>
-          <div className="space-y-10">
-            <div>
-              <span className="font-mono text-xs font-semibold tracking-[0.2em] text-[#173C62] uppercase block">
-                SECTOR SPECIALIZATION
-              </span>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#0B1320] tracking-tight mt-2">
-                Commercial &amp; Residential MEP
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-              {/* Media Frame (7 cols): 8px architectural radius */}
-              <div className="lg:col-span-7">
-                <div className="relative overflow-hidden rounded-[8px] bg-[#173C62] aspect-[16/10]">
-                  <img
-                    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
-                    alt="Commercial High-Rise MEP Installation in Dubai"
-                    className="w-full h-full object-cover filter brightness-[0.88]"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/30 via-transparent to-transparent pointer-events-none" />
-                </div>
-              </div>
-
-              {/* Technical Scope (5 cols) */}
-              <div className="lg:col-span-5 space-y-6">
-                <div className="space-y-3">
-                  <h3 className="text-xl sm:text-2xl font-medium text-[#0B1320] leading-snug">
-                    Engineered for Spatial Density, Acoustic Comfort &amp; Tenant Reliability
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#4A5568] leading-relaxed">
-                    In high-density commercial and residential developments, MEP systems must operate with zero acoustic intrusion, optimized shaft footprints, and reliable sub-metering accuracy.
-                  </p>
-                </div>
-
-                <div className="space-y-2.5 pt-2 border-t border-[#E5E7EB] text-xs text-[#334155]">
-                  <div className="flex items-start gap-2.5">
-                    <Check className="w-4 h-4 text-[#173C62] shrink-0 mt-0.5" />
-                    <span>Centralized chilled water heat exchangers &amp; variable primary pumping</span>
-                  </div>
-                  <div className="flex items-start gap-2.5">
-                    <Check className="w-4 h-4 text-[#173C62] shrink-0 mt-0.5" />
-                    <span>Dual-redundant 3200A low-impedance copper busway risers with tap-off units</span>
-                  </div>
-                  <div className="flex items-start gap-2.5">
-                    <Check className="w-4 h-4 text-[#173C62] shrink-0 mt-0.5" />
-                    <span>Multi-tenant ultrasonic BTU heat sub-metering linked directly to billing BMS</span>
-                  </div>
-                  <div className="flex items-start gap-2.5">
-                    <Check className="w-4 h-4 text-[#173C62] shrink-0 mt-0.5" />
-                    <span>Stairwell smoke pressurization &amp; basement CO monitoring with variable speed fans</span>
-                  </div>
-                </div>
-
-                <div className="pt-2">
-                  <Button
-                    variant="primary"
-                    size="md"
-                    shape="rounded"
-                    onClick={() => onNavigate('/contact?tab=rfp&service=commercial')}
-                    className="text-xs px-6 py-3"
-                    iconTrailing={<ArrowRight className="w-3.5 h-3.5" />}
-                  >
-                    Request Commercial MEP Spec
-                  </Button>
-                </div>
-              </div>
-            </div>
+          <div className="space-y-6">
+            <ImageStack
+              title="Commercial & Residential High-Rise MEP"
+              category="SECTOR SPECIALIZATION"
+              eyebrow="HIGH-DENSITY ELECTROMECHANICAL ENVELOPE"
+              description="Engineered for spatial density, acoustic comfort, and tenant reliability. Coordinated 3D BIM clash detection, off-site pre-fabricated riser spools, dual-redundant 3200A low-impedance copper busways, and certified stairwell smoke pressurization tested to strict Civil Defense standards."
+              macroImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
+              macroCaption="48-FLOOR COMMERCIAL TOWER ENVELOPE"
+              microImage="/assets/images/mep-construction.jpg"
+              microCaption="PREFABRICATED RISER SPOOL DETAIL"
+              specs={[
+                { label: 'Cooling Capacity', value: '3,200 TR District Hydronics' },
+                { label: 'Electrical Risers', value: 'Dual 3,200A Busducts' },
+                { label: 'Sub-Metering', value: 'Ultrasonic BTU Heat Billing' },
+                { label: 'Life-Safety', value: '100% Civil Defense Approved' },
+              ]}
+              href="/engineering-construction/mep/commercial-residential"
+              ctaText="Explore Commercial & Residential Scope"
+              onNavigate={onNavigate}
+            />
           </div>
         </Container>
       </section>
 
       {/* =========================================================================
-          04 — INFRASTRUCTURE & HEAVY UTILITIES (ASYMMETRIC 5/7 SPLIT)
+          04 — INFRASTRUCTURE & HEAVY UTILITIES (TYPE 02 — IMAGE + OVERLAPPING TEXT)
       ========================================================================= */}
-      <section id="infrastructure" className="py-16 lg:py-24 bg-white">
+      <section id="infrastructure" className="py-16 lg:py-24 bg-white border-t border-[#E5E7EB]">
         <Container>
-          <div className="space-y-10">
-            <div>
-              <span className="font-mono text-xs font-semibold tracking-[0.2em] text-[#173C62] uppercase block">
-                CIVIL &amp; INDUSTRIAL SCALE
-              </span>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#0B1320] tracking-tight mt-2">
-                Infrastructure &amp; Utility Networks
-              </h2>
+          <div className="space-y-12">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+              <div>
+                <span className="text-xs font-semibold tracking-[0.2em] text-[#173C62] uppercase block">
+                  CIVIL &amp; INDUSTRIAL SCALE
+                </span>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#0B1320] tracking-tight mt-2">
+                  Infrastructure &amp; Utility Networks
+                </h2>
+              </div>
+              <p className="text-xs sm:text-sm text-[#4A5568] max-w-md leading-relaxed">
+                Municipal pumping stations, district cooling energy transfer stations (ETS), and electrical sub-transmission engineered for peak civil resilience.
+              </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-              {/* Technical Scope (5 cols) */}
-              <div className="lg:col-span-5 space-y-6 order-2 lg:order-1">
-                <div className="space-y-3">
-                  <h3 className="text-xl sm:text-2xl font-medium text-[#0B1320] leading-snug">
-                    Resilient Plant Architecture for High-Demand Civil Assets
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#4A5568] leading-relaxed">
-                    Municipal pumping stations, district cooling energy transfer stations (ETS), and electrical sub-transmission require heavy-gauge materials and fail-safe automation.
-                  </p>
-                </div>
+            <ImageOverlappingText
+              title="District Cooling & Heavy Utility Infrastructure"
+              category="CIVIL NETWORKS & ETS PLANTS"
+              metadata="HIGH-CAPACITY CHILLED WATER & POWER TRANSMISSION"
+              description="Engineered with large-diameter carbon steel headers, Form-4 switchboards, and Class-A Civil Defense pumping stations."
+              imageSrc="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1600&q=80"
+              imageAlt="District Cooling Plant & Infrastructure MEP Manifold in Dubai"
+              aspectRatio="16/9"
+              overlapPosition="bottom-left"
+              href="/engineering-construction/mep/infrastructure"
+              onNavigate={onNavigate}
+            />
 
-                <div className="space-y-2.5 pt-2 border-t border-[#E5E7EB] text-xs text-[#334155]">
-                  <div className="flex items-start gap-2.5">
-                    <Check className="w-4 h-4 text-[#173C62] shrink-0 mt-0.5" />
-                    <span>Large-diameter carbon steel chilled water headers &amp; motorized control valves</span>
-                  </div>
-                  <div className="flex items-start gap-2.5">
-                    <Check className="w-4 h-4 text-[#173C62] shrink-0 mt-0.5" />
-                    <span>Form-4 type-tested low voltage switchboards with motor control centers (MCC)</span>
-                  </div>
-                  <div className="flex items-start gap-2.5">
-                    <Check className="w-4 h-4 text-[#173C62] shrink-0 mt-0.5" />
-                    <span>Class-A Dubai Civil Defense fire pump sets with diesel backup drivers</span>
-                  </div>
-                  <div className="flex items-start gap-2.5">
-                    <Check className="w-4 h-4 text-[#173C62] shrink-0 mt-0.5" />
-                    <span>SCADA and PLC integration for automated fault detection and remote monitoring</span>
-                  </div>
-                </div>
-
-                <div className="pt-2">
-                  <Button
-                    variant="primary"
-                    size="md"
-                    shape="rounded"
-                    onClick={() => onNavigate('/contact?tab=rfp&service=infrastructure')}
-                    className="text-xs px-6 py-3"
-                    iconTrailing={<ArrowRight className="w-3.5 h-3.5" />}
-                  >
-                    Submit Infrastructure Tender
-                  </Button>
-                </div>
+            {/* Technical Verification Highlights */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-6 border-t border-[#E5E7EB]">
+              <div className="space-y-1.5">
+                <span className="text-[11px] font-semibold text-[#173C62] uppercase tracking-wider block">Hydronic Manifolds</span>
+                <p className="text-xs text-[#4A5568] leading-relaxed">Large-diameter carbon steel chilled water headers &amp; motorized valves.</p>
               </div>
-
-              {/* Media Frame (7 cols): 8px architectural radius */}
-              <div className="lg:col-span-7 order-1 lg:order-2">
-                <div className="relative overflow-hidden rounded-[8px] bg-[#173C62] aspect-[16/10]">
-                  <img
-                    src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1200&q=80"
-                    alt="District Cooling Plant & Infrastructure MEP Manifold in Dubai"
-                    className="w-full h-full object-cover filter brightness-[0.88]"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/30 via-transparent to-transparent pointer-events-none" />
-                </div>
+              <div className="space-y-1.5">
+                <span className="text-[11px] font-semibold text-[#173C62] uppercase tracking-wider block">Form-4 Power</span>
+                <p className="text-xs text-[#4A5568] leading-relaxed">Type-tested low voltage switchboards with motor control centers (MCC).</p>
+              </div>
+              <div className="space-y-1.5">
+                <span className="text-[11px] font-semibold text-[#173C62] uppercase tracking-wider block">Life-Safety Hydraulic</span>
+                <p className="text-xs text-[#4A5568] leading-relaxed">Class-A Dubai Civil Defense fire pump sets with diesel backup drivers.</p>
+              </div>
+              <div className="space-y-1.5">
+                <span className="text-[11px] font-semibold text-[#173C62] uppercase tracking-wider block">SCADA &amp; Telemetry</span>
+                <p className="text-xs text-[#4A5568] leading-relaxed">PLC integration for automated fault detection and remote central monitoring.</p>
               </div>
             </div>
           </div>
@@ -422,14 +358,14 @@ export const MepPage: React.FC<MepPageProps> = ({ onNavigate }) => {
       </section>
 
       {/* =========================================================================
-          06 — DELIVERED PROJECTS SHOWCASE
+          06 — DELIVERED PROJECTS SHOWCASE (TYPE 03 — ASYMMETRIC PAIR)
       ========================================================================= */}
       <section id="section-projects" className="py-16 lg:py-24 bg-[#F8FAFC]">
         <Container>
           <div className="space-y-10">
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
               <div>
-                <span className="font-mono text-xs font-semibold tracking-[0.2em] text-[#173C62] uppercase block">
+                <span className="text-xs font-semibold tracking-[0.2em] text-[#173C62] uppercase block">
                   PROVEN PERFORMANCE
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-light text-[#0B1320] tracking-tight mt-2">
@@ -446,81 +382,28 @@ export const MepPage: React.FC<MepPageProps> = ({ onNavigate }) => {
               </button>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-              {/* Project 1 */}
-              <div
-                onClick={() => onNavigate(`/projects/${highRiseProject.slug}`)}
-                className="group bg-white rounded-[8px] overflow-hidden cursor-pointer flex flex-col justify-between"
-              >
-                <div className="h-[260px] overflow-hidden relative bg-[#173C62]">
-                  <img
-                    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
-                    alt={highRiseProject.title}
-                    className="w-full h-full object-cover filter brightness-[0.88] group-hover:scale-[1.025] transition-transform duration-300"
-                    loading="lazy"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <Tag label="3,200 TR District Cooling" variant="inverse" shape="pill" className="bg-[#173C62] text-[10px]" />
-                  </div>
-                </div>
-
-                <div className="p-6 sm:p-8 space-y-3">
-                  <span className="text-[11px] font-mono text-[#173C62] font-semibold uppercase block">
-                    Commercial High-Rise MEP • Dubai Marina
-                  </span>
-                  <h3 className="text-xl sm:text-2xl font-light text-[#0B1320] group-hover:text-[#173C62] transition-colors leading-snug">
-                    {highRiseProject.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#4A5568] leading-relaxed">
-                    {highRiseProject.scopeOverview}
-                  </p>
-                  <div className="pt-2 flex items-center justify-between text-xs font-mono">
-                    <span className="text-slate-500">DEWA Class 1 • 48 Floors</span>
-                    <span className="font-semibold text-[#173C62] flex items-center gap-1">
-                      <span>Case Study</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Project 2 */}
-              <div
-                onClick={() => onNavigate(`/projects/${chillerPlantProject.slug}`)}
-                className="group bg-white rounded-[8px] overflow-hidden cursor-pointer flex flex-col justify-between"
-              >
-                <div className="h-[260px] overflow-hidden relative bg-[#173C62]">
-                  <img
-                    src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80"
-                    alt={chillerPlantProject.title}
-                    className="w-full h-full object-cover filter brightness-[0.88] group-hover:scale-[1.025] transition-transform duration-300"
-                    loading="lazy"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <Tag label="1,800 TR Chiller Plant" variant="inverse" shape="pill" className="bg-[#173C62] text-[10px]" />
-                  </div>
-                </div>
-
-                <div className="p-6 sm:p-8 space-y-3">
-                  <span className="text-[11px] font-mono text-[#173C62] font-semibold uppercase block">
-                    Hospitality Chilled Water • Dubai
-                  </span>
-                  <h3 className="text-xl sm:text-2xl font-light text-[#0B1320] group-hover:text-[#173C62] transition-colors leading-snug">
-                    {chillerPlantProject.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#4A5568] leading-relaxed">
-                    {chillerPlantProject.scopeOverview}
-                  </p>
-                  <div className="pt-2 flex items-center justify-between text-xs font-mono">
-                    <span className="text-slate-500">Variable Speed Chilled Hydronics</span>
-                    <span className="font-semibold text-[#173C62] flex items-center gap-1">
-                      <span>Case Study</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <ImageAsymmetricPair
+              title={highRiseProject.title}
+              category="COMMERCIAL & HOSPITALITY MEP • DUBAI"
+              eyebrow="PROVEN PERFORMANCE"
+              description={`${highRiseProject.scopeOverview} Executed alongside hydronic system balancing for the ${chillerPlantProject.title}.`}
+              primaryImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=80"
+              primaryImageAlt={highRiseProject.title}
+              primaryCaption="COMMERCIAL TOWER • 3,200 TR DISTRICT COOLING & DEWA CLASS 1 SUBSTATION"
+              secondaryImage="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80"
+              secondaryImageAlt={chillerPlantProject.title}
+              secondaryCaption="1,800 TR HOSPITALITY CHILLER PLANT HYDRONICS"
+              specs={[
+                { label: 'Cooling Capacity', value: '3,200 TR District Hydronics' },
+                { label: 'Electrical Riser', value: 'Dual 3,200A Sandwich Busways' },
+                { label: 'Compliance', value: 'DEWA Class 1 • DCD Approved' },
+                { label: 'Hydronic Efficiency', value: 'Automated Variable Primary Flow' },
+              ]}
+              href={`/projects/${highRiseProject.slug}`}
+              ctaText="Examine Marina Tower Case Study"
+              onNavigate={onNavigate}
+              layout="primary-left"
+            />
           </div>
         </Container>
       </section>
@@ -532,7 +415,7 @@ export const MepPage: React.FC<MepPageProps> = ({ onNavigate }) => {
         <Container>
           <div className="space-y-12">
             <div>
-              <span className="font-mono text-xs font-semibold tracking-[0.2em] text-[#173C62] uppercase block">
+              <span className="text-xs font-semibold tracking-[0.2em] text-[#173C62] uppercase block">
                 SECTORS SERVED
               </span>
               <h2 className="text-2xl sm:text-3xl font-light text-[#0B1320] tracking-tight mt-2">
@@ -584,7 +467,7 @@ export const MepPage: React.FC<MepPageProps> = ({ onNavigate }) => {
         <Container>
           <div className="border-t-2 border-[#173C62] pt-12 sm:pt-16 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
             <div className="max-w-2xl space-y-3">
-              <span className="font-mono text-xs font-semibold tracking-[0.2em] text-[#173C62] uppercase block">
+              <span className="text-xs font-semibold tracking-[0.2em] text-[#173C62] uppercase block">
                 COMMERCIAL MEP COLLABORATION
               </span>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#0B1320] tracking-tight">

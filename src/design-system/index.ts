@@ -112,3 +112,6 @@ export type { ContactFormProps } from './components/ContactForm';
 export { Form } from './components/Form';
 export type { FormProps } from './components/Form';
 export { Input, Checkbox } from './components/FormControls';
+
+// Master LTS Image-First Editorial Design System (Types 01 — 08)
+export * from './visual-patterns';
