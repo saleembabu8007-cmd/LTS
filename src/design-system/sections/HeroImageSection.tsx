@@ -60,7 +60,7 @@ export const HeroImageSection: React.FC<HeroImageSectionProps> = ({
   };
 
   return (
-    <header className={`relative w-full overflow-hidden bg-[#0B1C2F] text-white flex items-end ${heightStyles} ${className}`}>
+    <header className={`relative w-full overflow-hidden bg-[#173C62] text-white flex items-end ${heightStyles} ${className}`}>
       {/* Background Photography */}
       <img
         src={imageUrl}
@@ -70,8 +70,8 @@ export const HeroImageSection: React.FC<HeroImageSectionProps> = ({
       />
 
       {/* Cinematic Gradient Scrim */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0B1C2F] via-[#0B1C2F]/65 to-[#0B1C2F]/30" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0B1C2F]/80 via-[#0B1C2F]/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#173C62] via-[#173C62]/70 to-[#173C62]/30" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#173C62]/85 via-[#173C62]/45 to-transparent" />
 
       {/* Content Container */}
       <div className="relative z-10 w-full max-w-[1360px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 pb-12 sm:pb-16 pt-36">

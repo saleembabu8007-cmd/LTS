@@ -63,7 +63,7 @@ export const Video: React.FC<VideoProps> = ({
 
   return (
     <div
-      className={`relative w-full overflow-hidden bg-[#0B1C2F] ${currentRadius} ${aspectClasses[aspectRatio]} ${className}`}
+      className={`relative w-full overflow-hidden bg-[#173C62] ${currentRadius} ${aspectClasses[aspectRatio]} ${className}`}
     >
       <video
         ref={videoRef}

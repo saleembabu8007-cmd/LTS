@@ -46,7 +46,7 @@ export const Accordion: React.FC<AccordionProps> = ({
     ? `divide-y ${isDark ? 'divide-white/10' : 'divide-[#E5E7EB]'}`
     : `divide-y ${
         isDark
-          ? 'divide-white/10 border border-white/10 bg-[#0B1C2F]'
+          ? 'divide-white/15 border border-white/15 bg-[#173C62]'
           : 'divide-[#E5E7EB] border border-[#E5E7EB] bg-white'
       } rounded-[16px] overflow-hidden`;
 

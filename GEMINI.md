@@ -7,6 +7,80 @@ Your responsibility is not merely to make the website functional.
 Your responsibility is to produce a premium, human-designed, production-ready corporate website that can survive direct client review.
 
 ==================================================
+00 — LTS BRAND BOOK AUTHORITY & PALETTE
+==================================================
+
+The supplied LTS brand book is the absolute source of visual identity.
+
+Primary Brand Color:
+#173C62 (LTS Architectural Blue)
+
+Secondary Brand Color:
+#999999 (Brand Grey)
+
+Canvas:
+#FFFFFF (Crisp White) and #F8FAFC (Subtle Architectural Stone)
+
+Brand gradients may be used sparingly.
+
+The website must immediately feel like LTS.
+
+Do NOT use the generic dark navy palette (#0B1C2F) as the dominant brand color.
+
+Replace unrelated dark navy tones with the approved LTS blue where appropriate.
+
+==================================================
+00B — WEBSITE TYPOGRAPHY (POPPINS)
+==================================================
+
+Use Poppins for all website typography.
+
+Do not attempt to recreate the customized LTS wordmark using a regular web font.
+
+The customized Neo Sans treatment is strictly reserved for the official LTS logo/wordmark.
+
+Typography must rely on:
+- size
+- spacing
+- hierarchy
+- line-height
+- composition
+
+rather than excessive heavy font weights.
+
+==================================================
+00C — VISUAL PRIORITY & CONTENT REDUCTION
+==================================================
+
+Priority order:
+1. Photography
+2. Layout
+3. Typography
+4. White space
+5. Brand color
+6. Small UI details
+7. Icons
+
+Never allow text to dominate when a strong image can communicate the idea.
+
+Whenever appropriate:
+IMAGE > PARAGRAPH
+
+Content reduction rule:
+Aggressively reduce content by 50%.
+Preferred format:
+Eyebrow + short headline + 1–2 lines + CTA
+
+Every section must justify its existence:
+1. Does this help the user?
+2. Does this communicate something important?
+3. Can the same information be communicated visually?
+4. Can this be reduced by 50%?
+5. Is this repeating information already shown elsewhere?
+
+If a section does not pass this test: REMOVE IT.
+
+==================================================
 01 — DESIGN QUALITY STANDARD
 ==================================================
 
@@ -680,20 +754,21 @@ Retrofits / Refurbishment
 4. VISUAL FOUNDATION
 ==================================================
 
-Preserve the current LTSGROUP visual direction.
+Preserve and elevate the authentic LTSGROUP visual direction from the LTS brand book.
 
 Primary visual characteristics:
 
-- deep navy hero/footer
-- white and warm-neutral content surfaces
-- architectural blue
+- approved LTS architectural blue (#173C62)
+- secondary brand grey (#999999)
+- white (#FFFFFF) and warm-neutral content surfaces (#F8FAFC)
+- generic midnight navy (#0B1C2F) dominance is strictly prohibited
 - restrained accent colors
-- thin borders
-- soft intentional corners
-- editorial typography
-- large photography
-- strong grid
-- asymmetric compositions where useful
+- thin borders (1px hairlines)
+- soft intentional corners (8–20px scale)
+- editorial Poppins typography
+- large photography leading the narrative
+- strong architectural grid
+- asymmetric compositions (60/40, 70/30)
 - generous whitespace
 - compact technical metadata
 - restrained capsule controls
@@ -721,10 +796,10 @@ Do not create one-off values inside individual components unless genuinely neces
 
 Centralize:
 
-- colors
-- typography
+- colors (#173C62 primary, #999999 secondary, #FFFFFF white)
+- typography (Poppins font family)
 - spacing
-- radii
+- radii (8–20px)
 - borders
 - container widths
 - breakpoints
@@ -736,21 +811,22 @@ The current atomic design specification should remain the foundation.
 
 Important visual rules from the current system:
 
-- large feature media: approximately 32–36px radius
-- standard image: approximately 28px
-- content surface: approximately 24px
-- buttons/small UI: approximately 12–16px
+- large feature media: approximately 18–20px radius
+- standard image: approximately 16–18px radius
+- content surface: approximately 16px radius
+- buttons/small UI: approximately 10–12px radius, 9999px for capsule variants
 - restrained capsule controls
 - zero or extremely subtle shadows
-- depth primarily through photography, spacing and borders
+- depth primarily through photography, spacing, and tonal contrast
 
 ==================================================
 6. TYPOGRAPHY
 ==================================================
 
-Typography must feel architectural and editorial.
+Typography must feel architectural, restrained, and editorial.
 
-Use the existing project typography system.
+Use Poppins exclusively for website typography.
+The customized Neo Sans treatment is strictly reserved for the official LTS wordmark/logo.
 
 Do not introduce many font families.
 
@@ -765,6 +841,7 @@ Display
 → Eyebrow / technical label
 
 Headings should be strong but not oversized.
+Rely on size, line-height, letter-spacing, and architectural composition rather than heavy font weights.
 
 Avoid:
 

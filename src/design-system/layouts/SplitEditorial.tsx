@@ -69,7 +69,7 @@ export const SplitEditorial: React.FC<SplitEditorialProps> = ({
 
           {/* Large Architectural Image Column (6 cols) */}
           <div className={`${reverse ? 'lg:col-span-6 lg:col-start-1' : 'lg:col-span-6'}`}>
-            <div className="relative aspect-[4/3] overflow-hidden bg-[#0B1C2F] border border-[#E5E7EB] shadow-xs">
+            <div className="relative aspect-[4/3] overflow-hidden bg-[#173C62] border border-[#E5E7EB] shadow-xs">
               <img
                 src={imageSrc}
                 alt={imageAlt}
@@ -77,7 +77,7 @@ export const SplitEditorial: React.FC<SplitEditorialProps> = ({
                 loading="lazy"
               />
               {imageCaption && (
-                <div className="absolute bottom-0 inset-x-0 bg-[#0B1C2F]/85 p-4 text-white text-xs backdrop-blur-xs flex items-center justify-between border-t border-white/10">
+                <div className="absolute bottom-0 inset-x-0 bg-[#173C62]/90 p-4 text-white text-xs backdrop-blur-xs flex items-center justify-between border-t border-white/10">
                   <span className="text-[11px] uppercase tracking-wider text-[#999999]">
                     {imageCaption}
                   </span>

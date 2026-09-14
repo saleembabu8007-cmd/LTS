@@ -46,14 +46,14 @@ export const FeaturedProject: React.FC<FeaturedProjectProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Large Architectural Framing (7 cols) */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="relative aspect-[16/10] overflow-hidden bg-[#0B1C2F] border border-[#E5E7EB] shadow-xs">
+            <div className="relative aspect-[16/10] overflow-hidden bg-[#173C62] border border-[#E5E7EB] shadow-xs">
               <img
                 src={imageSrc}
                 alt={imageAlt}
                 className="w-full h-full object-cover object-center"
                 loading="lazy"
               />
-              <div className="absolute top-4 left-4 bg-[#0B1C2F]/90 px-3 py-1 text-xs uppercase tracking-wider text-white font-medium">
+              <div className="absolute top-4 left-4 bg-[#173C62]/90 px-3 py-1 text-xs uppercase tracking-wider text-white font-medium">
                 {category}
               </div>
             </div>

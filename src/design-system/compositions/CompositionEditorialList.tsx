@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from '../structures/Container';
 import { Section, SectionSpacing, SectionTone } from '../structures/Section';
-import { ArrowRight } from 'lucide-react';
+import { IconArrow } from '../icons';
 
 export interface EditorialListRowItem {
   id: string;
@@ -131,7 +131,7 @@ export const CompositionEditorialList: React.FC<CompositionEditorialListProps> =
                 <div className="lg:col-span-2 flex justify-start lg:justify-end items-center pt-1 lg:pt-0 min-h-[44px]">
                   <div className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold uppercase tracking-wider text-[#173C62] group-hover:text-[#0B1320] transition-colors">
                     <span>{actionLabel}</span>
-                    <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
+                    <IconArrow size="sm" color="inherit" interactive />
                   </div>
                 </div>
               </ContentWrapper>

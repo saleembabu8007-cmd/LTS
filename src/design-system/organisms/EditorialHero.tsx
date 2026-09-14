@@ -35,7 +35,7 @@ export const EditorialHero: React.FC<EditorialHeroProps> = ({
   lightCanvas = true,
   className = '',
 }) => {
-  const bgClass = lightCanvas ? 'bg-white text-[#0B1320]' : 'bg-[#0B1C2F] text-white';
+  const bgClass = lightCanvas ? 'bg-white text-[#0B1320]' : 'bg-[#173C62] text-white';
   const textClass = lightCanvas ? 'text-[#0B1320]' : 'text-white';
   const leadClass = lightCanvas ? 'text-[#4A5568]' : 'text-slate-300';
 

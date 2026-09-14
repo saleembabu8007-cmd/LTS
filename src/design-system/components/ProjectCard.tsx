@@ -46,7 +46,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             loading="lazy"
           />
           {/* Category Tag */}
-          <div className="absolute top-3 left-3 bg-[#0B1C2F]/90 backdrop-blur-xs px-2.5 py-1 text-[9.5px] uppercase font-mono tracking-[0.14em] text-white rounded-[1px] border border-white/10">
+          <div className="absolute top-3 left-3 bg-[#173C62]/90 backdrop-blur-xs px-2.5 py-1 text-[9.5px] uppercase font-mono tracking-[0.14em] text-white rounded-[1px] border border-white/10">
             {category}
           </div>
 

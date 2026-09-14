@@ -35,7 +35,7 @@ export const Section: React.FC<SectionProps> = ({
     white: 'bg-white text-[#0B1320]',
     subtle: 'bg-[#F8FAFC] text-[#0B1320]',
     offwhite: 'bg-[#FAFAFA] text-[#0B1320]',
-    dark: 'bg-[#0B1C2F] text-white',
+    dark: 'bg-[#173C62] text-white',
   };
 
   const isDark = tone === 'dark';

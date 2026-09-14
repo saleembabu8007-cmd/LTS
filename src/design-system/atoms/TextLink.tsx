@@ -23,7 +23,7 @@ export const TextLink: React.FC<TextLinkProps> = ({
 }) => {
   const baseColor = light
     ? 'text-white hover:text-slate-200'
-    : 'text-[#173C62] hover:text-[#102B47]';
+    : 'text-[#173C62] hover:text-[#12304F]';
   const sizeClass = size === 'sm' ? 'text-xs' : 'text-xs sm:text-[13px]';
 
   const content = (

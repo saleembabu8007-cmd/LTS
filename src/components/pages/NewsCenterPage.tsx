@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { ArrowRight, ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { IconArrow, IconArrowLeft, IconArrowUpRight } from '../../design-system/icons/LTSIcons';
 import { NEWS_DATA, NewsArticleData } from '../../data/newsData';
 
 interface NewsCenterPageProps {
@@ -64,9 +64,9 @@ export const NewsCenterPage: React.FC<NewsCenterPageProps> = ({ onNavigate }) =>
       {/* =========================================================================
           01 — HERO
           Full-bleed architectural / engineering image (~76vh).
-          Intentional lower-left typography.
+          LTS Brand Blue authority: #173C62
       ========================================================================= */}
-      <section className="relative w-full h-[76vh] min-h-[540px] max-h-[860px] bg-[#0B1C2F] overflow-hidden">
+      <section className="relative w-full h-[76vh] min-h-[540px] max-h-[860px] bg-[#173C62] overflow-hidden">
         <img
           src="/assets/images/engineering-intro.jpg"
           alt="LTSGROUP Engineering Publications and Technical Bulletins"
@@ -79,12 +79,12 @@ export const NewsCenterPage: React.FC<NewsCenterPageProps> = ({ onNavigate }) =>
         />
 
         {/* Directional gradient scrim */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B1320]/85 via-[#0B1320]/30 to-[#0B1320]/40 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#173C62] via-[#173C62]/65 to-[#173C62]/25 pointer-events-none" />
 
         {/* Hero Content Positioned Lower-Left */}
         <div className="absolute bottom-10 sm:bottom-16 md:bottom-20 left-0 right-0 z-10">
           <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
-            <div className="max-w-4xl space-y-4">
+            <div className="max-w-3xl space-y-4">
               <span className="font-mono text-xs uppercase tracking-[0.24em] text-[#93C5FD] block font-semibold">
                 Technical Publications &bull; Engineering Bulletins
               </span>
@@ -93,8 +93,8 @@ export const NewsCenterPage: React.FC<NewsCenterPageProps> = ({ onNavigate }) =>
                 News Center
               </h1>
 
-              <p className="text-base sm:text-xl text-white/90 font-normal leading-relaxed max-w-2xl pt-1">
-                Practitioner briefings on DEWA utility standards, district cooling hydronics, switchgear arc containment, and built-environment compliance authored by the LTSGROUP engineering desk.
+              <p className="text-base sm:text-lg text-white/90 font-normal leading-relaxed max-w-xl pt-1">
+                Engineering intelligence, statutory utility updates, and built-environment technical briefings from LTSGROUP practitioners.
               </p>
             </div>
           </div>
@@ -126,7 +126,7 @@ export const NewsCenterPage: React.FC<NewsCenterPageProps> = ({ onNavigate }) =>
             aria-label={`Read featured article: ${featuredArticle.title}`}
           >
             {/* Large Featured Image (20-24px radius) */}
-            <div className="relative aspect-[16/9] sm:aspect-[21/10] w-full overflow-hidden rounded-[20px] sm:rounded-[28px] bg-[#0B1C2F]">
+            <div className="relative aspect-[16/9] sm:aspect-[21/10] w-full overflow-hidden rounded-[20px] sm:rounded-[28px] bg-[#173C62]">
               <img
                 src={featuredArticle.image}
                 alt={featuredArticle.title}
@@ -137,7 +137,7 @@ export const NewsCenterPage: React.FC<NewsCenterPageProps> = ({ onNavigate }) =>
                     'https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=1920&q=80';
                 }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0B1320]/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
             </div>
 
             {/* Featured Article Content */}
@@ -157,7 +157,7 @@ export const NewsCenterPage: React.FC<NewsCenterPageProps> = ({ onNavigate }) =>
               {/* Action */}
               <div className="pt-2 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#173C62] transition-transform duration-200 ease-out group-hover:translate-x-1.5">
                 <span>Read Full Technical Bulletin</span>
-                <ArrowRight className="w-4 h-4" />
+                <IconArrow className="w-4 h-4" />
               </div>
             </div>
           </a>
@@ -165,55 +165,50 @@ export const NewsCenterPage: React.FC<NewsCenterPageProps> = ({ onNavigate }) =>
       </section>
 
       {/* =========================================================================
-          03 — CATEGORY / FILTER
-          Restrained capsule filters. Editorial styling, zero SaaS clutter.
+          03 — MINIMAL LISTING & ARCHIVE (WITH CATEGORY FILTERS & EDITORIAL ROWS)
+          Combined streamlined listing with category filter pills and editorial rows.
       ========================================================================= */}
-      <section className="pt-12 sm:pt-16 pb-4 border-b border-[#E5E7EB] bg-[#F8FAFC]">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div className="space-y-1">
-              <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
-                Engineering Monographs Archive
+      <section className="py-14 sm:py-20 bg-[#F8FAFC]">
+        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 space-y-10">
+          {/* Header & Filter Controls */}
+          <div className="space-y-6 pb-4 border-b border-[#E5E7EB]">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div className="space-y-1">
+                <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
+                  Engineering Monographs Archive
+                </span>
+                <h3 className="text-2xl sm:text-3xl font-light text-[#0B1320] tracking-tight">
+                  Bulletins &amp; Compliance Notes
+                </h3>
+              </div>
+
+              <span className="font-mono text-xs text-[#64748B]">
+                Showing {filteredArticles.length} Technical {filteredArticles.length === 1 ? 'Record' : 'Records'}
               </span>
-              <h3 className="text-2xl sm:text-3xl font-light text-[#0B1320] tracking-tight">
-                Bulletins &amp; Compliance Notes
-              </h3>
             </div>
 
-            <span className="font-mono text-xs text-[#64748B]">
-              Showing {filteredArticles.length} Technical {filteredArticles.length === 1 ? 'Record' : 'Records'}
-            </span>
+            {/* Category Filter Controls */}
+            <div className="flex flex-wrap items-center gap-2 pt-2">
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  type="button"
+                  onClick={() => handleCategorySelect(cat)}
+                  className={`px-4 py-2.5 rounded-[10px] text-xs font-medium uppercase tracking-wider transition-colors cursor-pointer border ${
+                    selectedCategory === cat
+                      ? 'bg-[#173C62] text-white border-[#173C62]'
+                      : 'bg-white text-[#4A5568] border-[#E5E7EB] hover:border-[#173C62] hover:text-[#0B1320]'
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
           </div>
 
-          {/* Filter Pills */}
-          <div className="flex flex-wrap items-center gap-2 pb-6">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                type="button"
-                onClick={() => handleCategorySelect(cat)}
-                className={`px-4 py-2 rounded-full text-xs font-medium transition-colors cursor-pointer ${
-                  selectedCategory === cat
-                    ? 'bg-[#173C62] text-white'
-                    : 'bg-white text-[#4A5568] border border-[#E5E7EB] hover:border-[#173C62] hover:text-[#0B1320]'
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================================================
-          04 — NEWS LISTING (EDITORIAL ROWS)
-          Vertical editorial rows with photography, metadata, headline, summary.
-          No bordered SaaS cards or tables.
-      ========================================================================= */}
-      <section className="py-12 sm:py-16 md:py-20">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
+          {/* Minimal Editorial Rows */}
           {paginatedArticles.length > 0 ? (
-            <div className="divide-y divide-[#E5E7EB] border-t border-b border-[#E5E7EB]">
+            <div className="divide-y divide-[#E5E7EB] bg-white rounded-[20px] border border-[#E5E7EB] px-6 sm:px-10">
               {paginatedArticles.map((art) => (
                 <a
                   key={art.id}
@@ -222,13 +217,13 @@ export const NewsCenterPage: React.FC<NewsCenterPageProps> = ({ onNavigate }) =>
                     e.preventDefault();
                     onNavigate(`/news/${art.slug}`);
                   }}
-                  className="py-10 sm:py-12 md:py-14 group block select-none transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] rounded-[18px]"
+                  className="py-8 sm:py-10 group block select-none transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] rounded-[18px]"
                   aria-label={`Read article: ${art.title}`}
                 >
-                  <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-center">
+                  <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 lg:gap-10 items-center">
                     {/* Left: Article Image (Soft 16-18px radius) */}
                     <div className="md:col-span-4 lg:col-span-4">
-                      <div className="relative overflow-hidden rounded-[16px] sm:rounded-[18px] bg-[#0B1C2F] aspect-[16/10]">
+                      <div className="relative overflow-hidden rounded-[16px] sm:rounded-[18px] bg-[#173C62] aspect-[16/10]">
                         <img
                           src={art.image}
                           alt={art.title}
@@ -243,7 +238,7 @@ export const NewsCenterPage: React.FC<NewsCenterPageProps> = ({ onNavigate }) =>
                     </div>
 
                     {/* Right: Article Details */}
-                    <div className="md:col-span-8 lg:col-span-8 space-y-3 transition-transform duration-200 ease-out group-hover:-translate-y-0.5">
+                    <div className="md:col-span-8 lg:col-span-8 space-y-2.5 transition-transform duration-200 ease-out group-hover:-translate-y-0.5">
                       <div className="flex items-center gap-3">
                         <span className="font-mono text-xs uppercase tracking-[0.16em] text-[#173C62] font-semibold">
                           {art.category}
@@ -258,12 +253,12 @@ export const NewsCenterPage: React.FC<NewsCenterPageProps> = ({ onNavigate }) =>
                         {art.title}
                       </h3>
 
-                      <p className="text-sm sm:text-base text-[#4A5568] leading-relaxed font-normal line-clamp-2 max-w-3xl">
+                      <p className="text-sm text-[#4A5568] leading-relaxed font-normal line-clamp-2 max-w-3xl">
                         {art.summary}
                       </p>
 
                       <div className="pt-2 flex items-center justify-between">
-                        <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#173C62] group-hover:text-[#11253E] transition-colors">
+                        <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#173C62] group-hover:text-[#12304F] transition-colors">
                           <span>Read technical analysis</span>
                           <span className="transition-transform duration-200 group-hover:translate-x-1.5">&rarr;</span>
                         </span>
@@ -272,7 +267,7 @@ export const NewsCenterPage: React.FC<NewsCenterPageProps> = ({ onNavigate }) =>
                           className="text-[#173C62] transition-transform duration-200 ease-out group-hover:translate-x-1.5"
                           aria-hidden="true"
                         >
-                          <ArrowUpRight className="w-5 h-5" />
+                          <IconArrowUpRight className="w-4 h-4" />
                         </div>
                       </div>
                     </div>
@@ -281,17 +276,14 @@ export const NewsCenterPage: React.FC<NewsCenterPageProps> = ({ onNavigate }) =>
               ))}
             </div>
           ) : (
-            <div className="py-16 text-center text-[#64748B] text-sm">
+            <div className="py-16 text-center text-[#64748B] text-sm bg-white rounded-[20px] border border-[#E5E7EB]">
               No technical bulletins match this category selection.
             </div>
           )}
 
-          {/* =====================================================================
-              05 — PAGINATION
-              Clean, restrained editorial controls.
-          ===================================================================== */}
+          {/* Pagination */}
           {totalPages > 1 && (
-            <div className="pt-10 sm:pt-14 flex items-center justify-between border-t border-[#E5E7EB]">
+            <div className="pt-6 flex items-center justify-between">
               <span className="font-mono text-xs text-[#64748B]">
                 Page {currentPage} of {totalPages}
               </span>
@@ -301,10 +293,10 @@ export const NewsCenterPage: React.FC<NewsCenterPageProps> = ({ onNavigate }) =>
                   type="button"
                   disabled={currentPage === 1}
                   onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-                  className="p-2.5 rounded-[8px] border border-[#E5E7EB] text-[#0B1320] hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                  className="p-2.5 rounded-[8px] border border-[#E5E7EB] bg-white text-[#0B1320] hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer"
                   aria-label="Previous Page"
                 >
-                  <ChevronLeft className="w-4 h-4" />
+                  <IconArrowLeft className="w-4 h-4" />
                 </button>
 
                 {Array.from({ length: totalPages }).map((_, idx) => {
@@ -314,10 +306,10 @@ export const NewsCenterPage: React.FC<NewsCenterPageProps> = ({ onNavigate }) =>
                       key={pageNum}
                       type="button"
                       onClick={() => setCurrentPage(pageNum)}
-                      className={`w-9 h-9 rounded-[8px] text-xs font-mono font-medium transition-colors ${
+                      className={`w-9 h-9 rounded-[8px] text-xs font-mono font-medium transition-colors cursor-pointer ${
                         currentPage === pageNum
                           ? 'bg-[#173C62] text-white'
-                          : 'border border-[#E5E7EB] text-[#0B1320] hover:bg-slate-50'
+                          : 'border border-[#E5E7EB] bg-white text-[#0B1320] hover:bg-slate-50'
                       }`}
                     >
                       {pageNum}
@@ -329,10 +321,10 @@ export const NewsCenterPage: React.FC<NewsCenterPageProps> = ({ onNavigate }) =>
                   type="button"
                   disabled={currentPage === totalPages}
                   onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
-                  className="p-2.5 rounded-[8px] border border-[#E5E7EB] text-[#0B1320] hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                  className="p-2.5 rounded-[8px] border border-[#E5E7EB] bg-white text-[#0B1320] hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer"
                   aria-label="Next Page"
                 >
-                  <ChevronRight className="w-4 h-4" />
+                  <IconArrow className="w-4 h-4" />
                 </button>
               </div>
             </div>
@@ -341,10 +333,10 @@ export const NewsCenterPage: React.FC<NewsCenterPageProps> = ({ onNavigate }) =>
       </section>
 
       {/* =========================================================================
-          06 — CTA
+          04 — CTA
           Technical advisory & practitioner enquiry block.
       ========================================================================= */}
-      <section className="py-20 sm:py-28 bg-[#F8FAFC] border-t border-[#E5E7EB]">
+      <section className="py-20 sm:py-28 bg-white border-t border-[#E5E7EB]">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
           <div className="max-w-3xl space-y-6">
             <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
@@ -366,10 +358,10 @@ export const NewsCenterPage: React.FC<NewsCenterPageProps> = ({ onNavigate }) =>
                   e.preventDefault();
                   onNavigate('/contact');
                 }}
-                className="min-h-[44px] inline-flex items-center gap-2 px-7 py-3.5 rounded-[12px] bg-[#173C62] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#11253E] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] cursor-pointer"
+                className="min-h-[44px] inline-flex items-center gap-2 px-7 py-3.5 rounded-[12px] bg-[#173C62] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#12304F] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] cursor-pointer"
               >
                 <span>Submit Technical Query</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <IconArrow className="w-3.5 h-3.5" />
               </a>
 
               <a
@@ -378,7 +370,7 @@ export const NewsCenterPage: React.FC<NewsCenterPageProps> = ({ onNavigate }) =>
                   e.preventDefault();
                   onNavigate('/projects');
                 }}
-                className="min-h-[44px] inline-flex items-center gap-2 px-7 py-3.5 rounded-[12px] border border-[#CBD5E1] text-[#0B1320] text-xs font-semibold uppercase tracking-wider hover:bg-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] cursor-pointer"
+                className="min-h-[44px] inline-flex items-center gap-2 px-7 py-3.5 rounded-[12px] border border-[#CBD5E1] text-[#0B1320] text-xs font-semibold uppercase tracking-wider hover:bg-slate-50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] cursor-pointer"
               >
                 <span>Inspect Delivered Works</span>
               </a>

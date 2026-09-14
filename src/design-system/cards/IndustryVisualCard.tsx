@@ -56,7 +56,7 @@ export const IndustryImageCard: React.FC<IndustryCardProps> = ({
       <a
         href={href}
         onClick={handleClick}
-        className={`group relative block w-full select-none text-left overflow-hidden rounded-[20px] bg-[#0B1C2F] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:ring-offset-4 ${className}`}
+        className={`group relative block w-full select-none text-left overflow-hidden rounded-[20px] bg-[#173C62] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:ring-offset-4 ${className}`}
         aria-label={`View sector capabilities for ${title}`}
       >
         <div className={`relative w-full overflow-hidden ${aspectClass}`}>
@@ -110,7 +110,7 @@ export const IndustryImageCard: React.FC<IndustryCardProps> = ({
       className={`group block select-none text-left rounded-[18px] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:ring-offset-4 ${className}`}
       aria-label={`View sector capabilities for ${title}`}
     >
-      <div className={`relative w-full overflow-hidden rounded-[16px] sm:rounded-[18px] bg-[#0B1C2F] ${aspectClass}`}>
+      <div className={`relative w-full overflow-hidden rounded-[16px] sm:rounded-[18px] bg-[#173C62] ${aspectClass}`}>
         <img
           src={imageUrl}
           alt={imageAlt || title}

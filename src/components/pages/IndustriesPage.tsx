@@ -1,213 +1,138 @@
-import React, { useState } from 'react';
-import { ArrowRight, ArrowUpRight, Check, Layers, Cpu, ShieldCheck } from 'lucide-react';
-import { PROJECTS_DATA, ProjectDetailData } from '../../data/projectsData';
+import React from 'react';
+import {
+  IconArrow,
+  IconArrowUpRight,
+  IconCheck,
+  IconHVAC,
+  IconElectrical,
+  IconSolar,
+  IconSwitchgear,
+  IconBMS,
+} from '../../design-system/icons';
+import { PROJECTS_DATA } from '../../data/projectsData';
 
 interface IndustriesPageProps {
   onNavigate: (slug: string) => void;
 }
 
 interface IndustryItem {
-  id: string;
+  num: string;
   name: string;
   sentence: string;
   image: string;
   fallbackImage: string;
-  aspectClass: string;
   projectSlug: string;
-  capabilities: {
-    title: string;
-    slug: string;
-    division: string;
-  }[];
 }
 
+/**
+ * IndustriesPage — LTSGROUP Sector Monograph
+ * Conforms strictly to the 5-stage minimal-content architecture:
+ * 01 Hero &rarr; 02 Industry Visual Grid (6 Sectors) &rarr; 03 Relevant Solutions &rarr; 04 Delivered Projects &rarr; 05 CTA.
+ */
 export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate }) => {
-  const [activeIndustryId, setActiveIndustryId] = useState<string>('commercial');
-
   // 6 Verified Industries conforming to approved business data
   const industries: IndustryItem[] = [
     {
-      id: 'commercial',
+      num: '01',
       name: 'Commercial Towers & Real Estate',
       sentence:
         'High-density vertical electromechanical infrastructure, centralized district cooling hydronics, and certified life-safety smoke management.',
       image: '/assets/images/industry-commercial.jpg',
       fallbackImage: '/assets/images/project-highrise.jpg',
-      aspectClass: 'aspect-[16/10] lg:aspect-[16/11]',
       projectSlug: 'commercial-high-rise-mep',
-      capabilities: [
-        {
-          title: 'Turnkey MEP Contracting',
-          slug: '/engineering-construction/mep',
-          division: 'Engineering & Construction',
-        },
-        {
-          title: 'Form-4 Low-Voltage Switchgear',
-          slug: '/engineering-construction/control-switchgear',
-          division: 'Engineering & Construction',
-        },
-        {
-          title: 'Static Ultrasonic BTU Metering',
-          slug: '/trading/metering-accessories',
-          division: 'Trading',
-        },
-      ],
     },
     {
-      id: 'healthcare',
-      name: 'Healthcare & Specialized Facilities',
+      num: '02',
+      name: 'Healthcare & Clinical Facilities',
       sentence:
         'Continuous central chiller uptime, HTM 03-01 hospital cleanroom ventilation, and 24/7 critical plant stewardship.',
       image: '/assets/images/industry-healthcare.jpg',
       fallbackImage: '/assets/images/project-chiller.jpg',
-      aspectClass: 'aspect-[4/3] sm:aspect-[16/10]',
       projectSlug: 'healthcare-facility-hard-services',
-      capabilities: [
-        {
-          title: 'Hard Facilities Stewardship & 24/7 PPM',
-          slug: '/facilities-management/hard-services',
-          division: 'Facilities Management',
-        },
-        {
-          title: 'Central Chiller Operations & Vibration Analysis',
-          slug: '/facilities-management/hvac',
-          division: 'Facilities Management',
-        },
-        {
-          title: 'Direct Digital BMS Telemetry',
-          slug: '/trading/controls-vfds',
-          division: 'Trading',
-        },
-      ],
     },
     {
-      id: 'industrial',
+      num: '03',
       name: 'Logistics & Industrial Manufacturing',
       sentence:
         'Turnkey rooftop solar PV arrays, live-plant chiller retrofits, and Form-4 motor control centers with zero production downtime.',
       image: '/assets/images/industry-logistics.jpg',
       fallbackImage: '/assets/images/project-solar.jpg',
-      aspectClass: 'aspect-[4/3] sm:aspect-[16/10]',
       projectSlug: 'logistics-facility-solar-pv',
-      capabilities: [
-        {
-          title: 'Solar Photovoltaic EPC (DEWA Shams Dubai)',
-          slug: '/engineering-construction/solar',
-          division: 'Engineering & Construction',
-        },
-        {
-          title: 'Plant Retrofits & Refurbishment',
-          slug: '/facilities-management/retrofits-refurbishment',
-          division: 'Facilities Management',
-        },
-        {
-          title: 'Form-4 Motor Control Centers (MCC)',
-          slug: '/engineering-construction/control-switchgear',
-          division: 'Engineering & Construction',
-        },
-      ],
     },
     {
-      id: 'utilities',
+      num: '04',
       name: 'District Cooling & Utilities Infrastructure',
       sentence:
         'Revenue-grade static ultrasonic BTU thermal energy metering, automated telemetry, and municipal hydraulic distribution networks.',
       image: '/assets/images/hero-building.jpg',
       fallbackImage: '/assets/images/engineering-intro.jpg',
-      aspectClass: 'aspect-[16/9] lg:aspect-[21/9]',
       projectSlug: 'district-cooling-metering-rollout',
-      capabilities: [
-        {
-          title: 'Revenue-Grade Ultrasonic BTU Metering',
-          slug: '/trading/metering-accessories',
-          division: 'Trading',
-        },
-        {
-          title: 'Variable Frequency Drives & Energy Controls',
-          slug: '/trading/controls-vfds',
-          division: 'Trading',
-        },
-        {
-          title: 'Infrastructure MEP Contracting',
-          slug: '/engineering-construction/mep',
-          division: 'Engineering & Construction',
-        },
-      ],
     },
     {
-      id: 'residential',
-      name: 'Residential Master Communities',
+      num: '05',
+      name: 'Educational & Institutional Campuses',
       sentence:
-        'Quad-pump variable-speed booster stations, community stormwater drainage, and certified aquatic amenity maintenance.',
-      image: '/assets/images/industry-hospitality.jpg',
-      fallbackImage: '/assets/images/hero-building.jpg',
-      aspectClass: 'aspect-[16/10]',
-      projectSlug: 'residential-community-water-networks',
-      capabilities: [
-        {
-          title: 'Commercial Swimming Pool Care & Water Quality',
-          slug: '/facilities-management/swimming-pool-maintenance',
-          division: 'Facilities Management',
-        },
-        {
-          title: 'Plumbing & Hydraulic Networks',
-          slug: '/facilities-management/plumbing',
-          division: 'Facilities Management',
-        },
-        {
-          title: 'Sub-Metering & Multi-Jet Telemetry',
-          slug: '/trading/metering-accessories',
-          division: 'Trading',
-        },
-      ],
+        'Multi-facility planned preventive maintenance, central plant energy optimization, and life-safety compliance.',
+      image: '/assets/images/engineering-intro.jpg',
+      fallbackImage: '/assets/images/mep-construction.jpg',
+      projectSlug: 'institutional-campus-facilities',
     },
     {
-      id: 'hospitality',
-      name: 'Hospitality & Commercial Destinations',
+      num: '06',
+      name: 'Hospitality & Commercial Aquatic Centers',
       sentence:
-        'Silent thermal comfort, off-peak central chiller servicing, and automated recreational aquatic disinfection for luxury resorts.',
+        'Turnkey heat-pump climate control, automated chemical water balancing, and municipal health hygiene certification.',
       image: '/assets/images/project-chiller.jpg',
-      fallbackImage: '/assets/images/industry-hospitality.jpg',
-      aspectClass: 'aspect-[4/3] sm:aspect-[16/10]',
-      projectSlug: 'industrial-chiller-retrofit',
-      capabilities: [
-        {
-          title: 'Hard Facilities Stewardship & Central Plant',
-          slug: '/facilities-management/hard-services',
-          division: 'Facilities Management',
-        },
-        {
-          title: 'Aquatic Amenities & Disinfection',
-          slug: '/facilities-management/swimming-pool-maintenance',
-          division: 'Facilities Management',
-        },
-        {
-          title: 'Architectural & Emergency Lighting',
-          slug: '/trading/lights',
-          division: 'Trading',
-        },
-      ],
+      fallbackImage: '/assets/images/industry-healthcare.jpg',
+      projectSlug: 'luxury-resort-aquatic-systems',
     },
   ];
 
-  // Verified Real Projects Selected
-  const selectedProjectReferences: ProjectDetailData[] = [
-    PROJECTS_DATA[0], // Commercial High-Rise MEP
-    PROJECTS_DATA[2], // Healthcare Facility Hard Services
-    PROJECTS_DATA[1], // Logistics Solar PV
-    PROJECTS_DATA[6], // District Cooling BTU Metering Rollout
-  ].filter(Boolean);
+  // Cross-sector solutions mapping
+  const solutions = [
+    {
+      title: 'Turnkey MEP Contracting',
+      desc: 'BIM-coordinated hydronic piping, electrical busways, and certified life-safety systems.',
+      icon: IconElectrical,
+      slug: '/engineering-construction/mep',
+    },
+    {
+      title: 'Solar Photovoltaic EPC',
+      desc: 'Commercial rooftop PV and carport arrays under the DEWA Shams Dubai framework.',
+      icon: IconSolar,
+      slug: '/engineering-construction/solar',
+    },
+    {
+      title: 'Hard Facilities Stewardship',
+      desc: '24/7 central chiller plant maintenance, vibration diagnostics, and CAFM telemetry.',
+      icon: IconHVAC,
+      slug: '/facilities-management',
+    },
+    {
+      title: 'Control Switchgear',
+      desc: 'Form-4 type-tested low-voltage switchboards up to 65kA and Motor Control Centers (MCC).',
+      icon: IconSwitchgear,
+      slug: '/engineering-construction/control-switchgear',
+    },
+    {
+      title: 'BTU Metering & Controls',
+      desc: 'Ultrasonic thermal energy meters, low-harmonic VFDs, and automated building sensors.',
+      icon: IconBMS,
+      slug: '/trading',
+    },
+  ];
 
-  const activeIndustry = industries.find((i) => i.id === activeIndustryId) || industries[0];
+  // Curated 2-case study projects
+  const relevantProjects = [PROJECTS_DATA[0], PROJECTS_DATA[2]].filter(Boolean);
 
   return (
     <div className="bg-white text-[#0B1320] selection:bg-[#173C62] selection:text-white antialiased">
       {/* =========================================================================
           01 — HERO
           Full-bleed architectural hero (~76vh).
-          Intentional lower-left typography.
+          LTS Brand Blue authority: #173C62
       ========================================================================= */}
-      <section className="relative w-full h-[76vh] min-h-[540px] max-h-[860px] bg-[#0B1C2F] overflow-hidden">
+      <section className="relative w-full h-[72vh] sm:h-[76vh] min-h-[520px] max-h-[840px] bg-[#173C62] overflow-hidden">
         <img
           src="/assets/images/hero-building.jpg"
           alt="LTSGROUP Operating Industries and Sector Infrastructure"
@@ -219,13 +144,11 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate }) =>
           }}
         />
 
-        {/* Directional gradient scrim */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B1320]/85 via-[#0B1320]/30 to-[#0B1320]/40 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#173C62] via-[#173C62]/65 to-[#173C62]/25 pointer-events-none" />
 
-        {/* Hero Content Positioned Lower-Left */}
         <div className="absolute bottom-10 sm:bottom-16 md:bottom-20 left-0 right-0 z-10">
           <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
-            <div className="max-w-4xl space-y-4">
+            <div className="max-w-3xl space-y-4">
               <span className="font-mono text-xs uppercase tracking-[0.24em] text-[#93C5FD] block font-semibold">
                 Sectors &amp; Operating Environments
               </span>
@@ -243,426 +166,207 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate }) =>
       </section>
 
       {/* =========================================================================
-          02 — SHORT INTRODUCTION
-          Editorial two-column narrative.
-      ========================================================================= */}
-      <section className="py-16 sm:py-24 md:py-28 border-b border-[#E5E7EB]">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-            {/* Left: Section Marker */}
-            <div className="lg:col-span-4 space-y-3">
-              <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
-                01 &bull; Sector Specifics
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-light text-[#0B1320] tracking-tight">
-                Engineered for sector-specific regulatory realities.
-              </h2>
-            </div>
-
-            {/* Right: Narrative */}
-            <div className="lg:col-span-8 space-y-6 text-base sm:text-lg text-[#4A5568] leading-relaxed font-normal">
-              <p className="text-xl sm:text-2xl lg:text-3xl font-light text-[#0B1320] leading-snug tracking-tight">
-                Every operating environment in the UAE imposes distinct physical constraints—from vertical riser hydronics in 48-floor commercial towers to continuous 24/7 chiller plant uptime in acute healthcare.
-              </p>
-              <p>
-                LTSGROUP configures its core engineering, facilities management, and component supply disciplines around these exact statutory codes (DEWA, Dubai Civil Defense, Dubai Municipality) and high-ambient thermal operating envelopes.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================================================
-          03 — INDUSTRY LIST / GRID
+          02 — INDUSTRY VISUAL GRID
           Asymmetric visual index of the 6 verified sectors.
       ========================================================================= */}
-      <section className="py-16 sm:py-24 md:py-28 border-b border-[#E5E7EB]">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 space-y-16">
+      <section className="py-16 sm:py-24 border-b border-[#E5E7EB]">
+        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 space-y-12 sm:space-y-16">
           <div className="max-w-3xl space-y-3">
             <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
-              02 &bull; Sector Portfolio
+              01 &bull; Sector Portfolio
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#0B1320] tracking-tight">
               Operating Sectors &amp; Environments
             </h2>
             <p className="text-base sm:text-lg text-[#4A5568] leading-relaxed">
-              Six established commercial, institutional, and infrastructure domains where LTSGROUP provides capital execution and ongoing stewardship.
+              Six established commercial, institutional, and infrastructure domains where LTSGROUP delivers capital execution and continuous reliability.
             </p>
           </div>
 
-          {/* Block 1: Large Commercial (7 cols) + Two Supporting (5 cols) */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-            {/* 01 Commercial */}
-            <div className="lg:col-span-7">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+            {industries.map((item) => (
               <div
-                onClick={() => setActiveIndustryId(industries[0].id)}
-                className={`group cursor-pointer block text-left w-full select-none rounded-[20px] transition-all p-2 ${
-                  activeIndustryId === industries[0].id ? 'bg-slate-50 ring-2 ring-[#173C62]' : 'hover:bg-slate-50/60'
-                }`}
+                key={item.num}
+                onClick={() => onNavigate(`/projects/${item.projectSlug}`)}
+                className="group cursor-pointer block text-left transition-all"
               >
-                <div className={`relative overflow-hidden rounded-[18px] bg-[#0B1C2F] ${industries[0].aspectClass}`}>
+                <div className="relative overflow-hidden rounded-[18px] bg-[#173C62] aspect-[16/10] mb-5 border border-[#E5E7EB]">
                   <img
-                    src={industries[0].image}
-                    alt={industries[0].name}
+                    src={item.image}
+                    alt={item.name}
                     loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
                     onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).src = industries[0].fallbackImage;
+                      (e.currentTarget as HTMLImageElement).src = item.fallbackImage;
                     }}
                   />
-                </div>
-                <div className="mt-4 p-2 space-y-2">
-                  <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs text-[#173C62] font-semibold uppercase tracking-wider">
-                      Sector 01
-                    </span>
-                    <span className="font-mono text-xs text-[#64748B]">Active Sector</span>
+                  <div className="absolute bottom-3 left-3 font-mono text-[10px] uppercase tracking-wider text-white bg-[#173C62]/90 backdrop-blur-xs px-2.5 py-1 rounded-[6px] border border-white/15">
+                    Sector {item.num}
                   </div>
-                  <h3 className="text-2xl font-light text-[#0B1320] group-hover:text-[#173C62] transition-colors">
-                    {industries[0].name}
-                  </h3>
-                  <p className="text-sm text-[#4A5568] leading-relaxed">
-                    {industries[0].sentence}
-                  </p>
                 </div>
-              </div>
-            </div>
 
-            {/* Supporting 02 (Healthcare) & 03 (Logistics) */}
-            <div className="lg:col-span-5 space-y-8">
-              {/* Healthcare */}
-              <div
-                onClick={() => setActiveIndustryId(industries[1].id)}
-                className={`group cursor-pointer block text-left w-full select-none rounded-[20px] transition-all p-2 ${
-                  activeIndustryId === industries[1].id ? 'bg-slate-50 ring-2 ring-[#173C62]' : 'hover:bg-slate-50/60'
-                }`}
-              >
-                <div className={`relative overflow-hidden rounded-[16px] bg-[#0B1C2F] ${industries[1].aspectClass}`}>
-                  <img
-                    src={industries[1].image}
-                    alt={industries[1].name}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                    onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).src = industries[1].fallbackImage;
-                    }}
-                  />
-                </div>
-                <div className="mt-3 p-2 space-y-1">
-                  <span className="font-mono text-[11px] text-[#173C62] font-semibold uppercase tracking-wider block">
-                    Sector 02
-                  </span>
-                  <h3 className="text-xl font-light text-[#0B1320] group-hover:text-[#173C62] transition-colors">
-                    {industries[1].name}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#4A5568] leading-relaxed">
-                    {industries[1].sentence}
-                  </p>
-                </div>
-              </div>
-
-              {/* Industrial */}
-              <div
-                onClick={() => setActiveIndustryId(industries[2].id)}
-                className={`group cursor-pointer block text-left w-full select-none rounded-[20px] transition-all p-2 ${
-                  activeIndustryId === industries[2].id ? 'bg-slate-50 ring-2 ring-[#173C62]' : 'hover:bg-slate-50/60'
-                }`}
-              >
-                <div className={`relative overflow-hidden rounded-[16px] bg-[#0B1C2F] ${industries[2].aspectClass}`}>
-                  <img
-                    src={industries[2].image}
-                    alt={industries[2].name}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                    onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).src = industries[2].fallbackImage;
-                    }}
-                  />
-                </div>
-                <div className="mt-3 p-2 space-y-1">
-                  <span className="font-mono text-[11px] text-[#173C62] font-semibold uppercase tracking-wider block">
-                    Sector 03
-                  </span>
-                  <h3 className="text-xl font-light text-[#0B1320] group-hover:text-[#173C62] transition-colors">
-                    {industries[2].name}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#4A5568] leading-relaxed">
-                    {industries[2].sentence}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Block 2: Wide District Cooling (12 cols) */}
-          <div
-            onClick={() => setActiveIndustryId(industries[3].id)}
-            className={`group cursor-pointer block text-left w-full select-none rounded-[24px] transition-all p-3 ${
-              activeIndustryId === industries[3].id ? 'bg-slate-50 ring-2 ring-[#173C62]' : 'hover:bg-slate-50/60'
-            }`}
-          >
-            <div className={`relative overflow-hidden rounded-[20px] bg-[#0B1C2F] ${industries[3].aspectClass}`}>
-              <img
-                src={industries[3].image}
-                alt={industries[3].name}
-                loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.015]"
-                onError={(e) => {
-                  (e.currentTarget as HTMLImageElement).src = industries[3].fallbackImage;
-                }}
-              />
-            </div>
-            <div className="mt-4 p-2 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
-              <div className="space-y-1 max-w-3xl">
-                <span className="font-mono text-xs text-[#173C62] font-semibold uppercase tracking-wider block">
-                  Sector 04 &bull; Utilities
-                </span>
-                <h3 className="text-2xl font-light text-[#0B1320] group-hover:text-[#173C62] transition-colors">
-                  {industries[3].name}
-                </h3>
-                <p className="text-sm text-[#4A5568] leading-relaxed">
-                  {industries[3].sentence}
-                </p>
-              </div>
-              <div className="shrink-0 font-mono text-xs text-[#173C62] flex items-center gap-1">
-                <span>Select Sector</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </div>
-            </div>
-          </div>
-
-          {/* Block 3: Two Supporting (Residential & Hospitality) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-            {/* Residential */}
-            <div
-              onClick={() => setActiveIndustryId(industries[4].id)}
-              className={`group cursor-pointer block text-left w-full select-none rounded-[20px] transition-all p-2 ${
-                activeIndustryId === industries[4].id ? 'bg-slate-50 ring-2 ring-[#173C62]' : 'hover:bg-slate-50/60'
-              }`}
-            >
-              <div className={`relative overflow-hidden rounded-[18px] bg-[#0B1C2F] ${industries[4].aspectClass}`}>
-                <img
-                  src={industries[4].image}
-                  alt={industries[4].name}
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                  onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).src = industries[4].fallbackImage;
-                  }}
-                />
-              </div>
-              <div className="mt-3 p-2 space-y-1">
-                <span className="font-mono text-xs text-[#173C62] font-semibold uppercase tracking-wider block">
-                  Sector 05
-                </span>
-                <h3 className="text-xl font-light text-[#0B1320] group-hover:text-[#173C62] transition-colors">
-                  {industries[4].name}
-                </h3>
-                <p className="text-xs sm:text-sm text-[#4A5568] leading-relaxed">
-                  {industries[4].sentence}
-                </p>
-              </div>
-            </div>
-
-            {/* Hospitality */}
-            <div
-              onClick={() => setActiveIndustryId(industries[5].id)}
-              className={`group cursor-pointer block text-left w-full select-none rounded-[20px] transition-all p-2 ${
-                activeIndustryId === industries[5].id ? 'bg-slate-50 ring-2 ring-[#173C62]' : 'hover:bg-slate-50/60'
-              }`}
-            >
-              <div className={`relative overflow-hidden rounded-[18px] bg-[#0B1C2F] ${industries[5].aspectClass}`}>
-                <img
-                  src={industries[5].image}
-                  alt={industries[5].name}
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                  onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).src = industries[5].fallbackImage;
-                  }}
-                />
-              </div>
-              <div className="mt-3 p-2 space-y-1">
-                <span className="font-mono text-xs text-[#173C62] font-semibold uppercase tracking-wider block">
-                  Sector 06
-                </span>
-                <h3 className="text-xl font-light text-[#0B1320] group-hover:text-[#173C62] transition-colors">
-                  {industries[5].name}
-                </h3>
-                <p className="text-xs sm:text-sm text-[#4A5568] leading-relaxed">
-                  {industries[5].sentence}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================================================
-          04 — RELEVANT CAPABILITIES
-          Visible, elegant capability matrix for the active sector across all 3 divisions.
-      ========================================================================= */}
-      <section className="py-16 sm:py-24 md:py-28 bg-[#F8FAFC] border-b border-[#E5E7EB]">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 space-y-12">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-            <div className="max-w-3xl space-y-2">
-              <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
-                03 &bull; Disciplines In Action
-              </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#0B1320] tracking-tight">
-                Relevant Capabilities: {activeIndustry.name}
-              </h2>
-              <p className="text-base text-[#4A5568] leading-relaxed">
-                Direct electromechanical disciplines, facilities management operations, and component systems configured for this sector.
-              </p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {activeIndustry.capabilities.map((cap, cIdx) => (
-              <a
-                key={cIdx}
-                href={cap.slug}
-                onClick={(e) => {
-                  e.preventDefault();
-                  onNavigate(cap.slug);
-                }}
-                className="bg-white p-7 rounded-[20px] border border-[#E5E7EB] hover:border-[#173C62] transition-all flex flex-col justify-between group min-h-[140px]"
-              >
                 <div className="space-y-2">
-                  <span className="font-mono text-[10px] uppercase tracking-wider text-[#173C62] font-semibold block">
-                    {cap.division}
-                  </span>
-                  <h3 className="text-lg font-medium text-[#0B1320] group-hover:text-[#173C62] transition-colors leading-snug">
-                    {cap.title}
+                  <h3 className="text-xl font-light text-[#0B1320] group-hover:text-[#173C62] transition-colors leading-snug">
+                    {item.name}
                   </h3>
+                  <p className="text-sm text-[#4A5568] leading-relaxed font-normal">
+                    {item.sentence}
+                  </p>
+                  <div className="pt-2 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#173C62]">
+                    <span>Inspect Sector Monograph</span>
+                    <IconArrowUpRight size="sm" color="primary" interactive />
+                  </div>
                 </div>
-                <div className="pt-4 flex items-center justify-between text-xs font-semibold text-[#173C62]">
-                  <span>Explore Discipline</span>
-                  <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </div>
-              </a>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* =========================================================================
-          05 — SELECTED PROJECTS
-          Curated project monographs demonstrating sector execution.
+          03 — RELEVANT SOLUTIONS
+          Concise cross-sector engineering solutions matrix.
       ========================================================================= */}
-      <section className="py-16 sm:py-24 md:py-28 border-b border-[#E5E7EB]">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 space-y-12 sm:space-y-16">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-            <div className="max-w-3xl space-y-3">
-              <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
-                04 &bull; Sector References
-              </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#0B1320] tracking-tight">
-                Selected Projects
-              </h2>
-              <p className="text-base sm:text-lg text-[#4A5568] leading-relaxed">
-                Real electromechanical contracting, solar PV EPC, and facilities management projects delivered across Dubai sectors.
-              </p>
-            </div>
-
-            <a
-              href="/projects"
-              onClick={(e) => {
-                e.preventDefault();
-                onNavigate('/projects');
-              }}
-              className="min-h-[44px] inline-flex items-center gap-1.5 text-xs font-semibold text-[#173C62] hover:underline uppercase tracking-wider shrink-0"
-            >
-              <span>View Full Project Archive</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </a>
+      <section className="py-16 sm:py-24 bg-[#F8FAFC] border-b border-[#E5E7EB]">
+        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 space-y-12">
+          <div className="max-w-3xl space-y-3">
+            <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
+              02 &bull; Cross-Sector Delivery
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-light text-[#0B1320] tracking-tight">
+              Core Engineering Solutions
+            </h2>
+            <p className="text-base text-[#4A5568] leading-relaxed">
+              Standardized engineering packages deployed across commercial towers, healthcare complexes, and industrial logistics parks.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            {selectedProjectReferences.map((ref) => (
-              <a
-                key={ref.id}
-                href={`/projects/${ref.slug}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  onNavigate(`/projects/${ref.slug}`);
-                }}
-                className="group block select-none bg-[#F8FAFC] p-4 rounded-[20px] transition-all hover:bg-slate-100/80"
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            {solutions.map((sol, sIdx) => {
+              const IconComp = sol.icon;
+              return (
+                <button
+                  key={sIdx}
+                  onClick={() => onNavigate(sol.slug)}
+                  className="text-left group p-6 rounded-2xl bg-white border border-[#E5E7EB] hover:border-[#173C62] transition-all flex flex-col justify-between cursor-pointer"
+                >
+                  <div className="space-y-3">
+                    <div className="w-10 h-10 rounded-xl bg-[#173C62]/5 text-[#173C62] flex items-center justify-center">
+                      <IconComp size="md" color="primary" />
+                    </div>
+                    <h4 className="text-base font-medium text-[#173C62] leading-snug">
+                      {sol.title}
+                    </h4>
+                    <p className="text-xs text-[#999999] leading-relaxed">
+                      {sol.desc}
+                    </p>
+                  </div>
+                  <div className="pt-4 mt-4 border-t border-[#E5E7EB] flex items-center justify-between text-xs font-medium text-[#173C62]">
+                    <span>Scope Details</span>
+                    <IconArrow size="sm" color="primary" interactive />
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================================
+          04 — DELIVERED PROJECTS PROOF
+          Curated case study evidence by sector.
+      ========================================================================= */}
+      <section className="py-16 sm:py-24 bg-white border-b border-[#E5E7EB]">
+        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 space-y-8">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+            <div>
+              <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block mb-2 font-semibold">
+                03 &bull; Field Verification
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-light text-[#0B1320] tracking-tight">
+                Delivered Sector Proof
+              </h2>
+            </div>
+            <button
+              onClick={() => onNavigate('/projects')}
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#173C62] hover:underline uppercase tracking-wider cursor-pointer"
+            >
+              <span>View All Project Records</span>
+              <IconArrow size="sm" color="primary" interactive />
+            </button>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+            {relevantProjects.map((proj) => (
+              <div
+                key={proj.id}
+                onClick={() => onNavigate(`/projects/${proj.slug}`)}
+                className="group cursor-pointer bg-[#F8FAFC] rounded-[20px] p-6 sm:p-8 border border-[#E5E7EB] hover:border-[#173C62]/40 transition-all"
               >
-                <div className="relative overflow-hidden rounded-[14px] bg-[#0B1C2F] aspect-[16/10]">
+                <div className="aspect-[16/10] rounded-[16px] overflow-hidden mb-5 bg-[#173C62] border border-[#E5E7EB]">
                   <img
-                    src={ref.image}
-                    alt={ref.title}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.025]"
+                    src={proj.image}
+                    alt={proj.title}
+                    className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
                   />
                 </div>
-
-                <div className="mt-4 space-y-1.5">
-                  <span className="font-mono text-[11px] uppercase tracking-wider text-[#64748B] block">
-                    {ref.categoryLabel} &bull; {ref.location.split(',')[0]}
-                  </span>
-                  <h3 className="text-base font-medium text-[#0B1320] group-hover:text-[#173C62] transition-colors leading-snug line-clamp-2">
-                    {ref.title}
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between font-mono text-xs text-[#64748B]">
+                    <span>{proj.industry}</span>
+                    <span>{proj.location.split(',')[0]}</span>
+                  </div>
+                  <h3 className="text-xl font-light text-[#0B1320] group-hover:text-[#173C62] transition-colors">
+                    {proj.title}
                   </h3>
                   <div className="pt-2 flex items-center gap-1 text-xs font-semibold text-[#173C62]">
                     <span>Read Monograph</span>
-                    <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <IconArrow size="sm" color="primary" interactive />
                   </div>
                 </div>
-              </a>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* =========================================================================
-          06 — CTA
-          High-impact closing call to action.
+          05 — CTA
+          Commercial engagement & specification intake.
       ========================================================================= */}
-      <section className="py-20 sm:py-28 bg-[#F8FAFC]">
+      <section className="py-16 sm:py-24 bg-[#F8FAFC]">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
-          <div className="max-w-3xl space-y-6">
-            <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
-              Sector Technical Advisory
-            </span>
+          <div className="bg-[#173C62] text-white rounded-[24px] p-8 sm:p-14 lg:p-16 relative overflow-hidden">
+            <div className="relative z-10 max-w-3xl space-y-5">
+              <span className="font-mono text-xs uppercase tracking-[0.24em] text-white/70 block">
+                04 &bull; COMMERCIAL ENGAGEMENT
+              </span>
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-light tracking-tight leading-tight">
+                Engineer your next sector facility with LTSGROUP.
+              </h2>
+              <p className="text-sm sm:text-base text-white/80 font-normal leading-relaxed max-w-2xl">
+                Submit project drawings, RFP schedules, or facility maintenance requirements directly to our engineering directors in Dubai.
+              </p>
 
-            <h2 className="text-3xl sm:text-5xl font-light text-[#0B1320] tracking-tight leading-[1.08]">
-              Consult with Our Sector Engineering Teams
-            </h2>
-
-            <p className="text-base sm:text-lg text-[#4A5568] leading-relaxed">
-              Whether you are preparing a commercial tower MEP tender, evaluating live-chiller retrofit feasibility, or seeking DEWA Shams Dubai solar certification, our estimating directors are available to assist.
-            </p>
-
-            <div className="pt-2 flex flex-wrap items-center gap-4">
-              <a
-                href="/contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  onNavigate('/contact');
-                }}
-                className="min-h-[44px] inline-flex items-center gap-2 px-7 py-3.5 rounded-[12px] bg-[#173C62] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#11253E] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] cursor-pointer"
-              >
-                <span>Initiate Sector Enquiry</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </a>
-
-              <a
-                href="/projects"
-                onClick={(e) => {
-                  e.preventDefault();
-                  onNavigate('/projects');
-                }}
-                className="min-h-[44px] inline-flex items-center gap-2 px-7 py-3.5 rounded-[12px] border border-[#CBD5E1] text-[#0B1320] text-xs font-semibold uppercase tracking-wider hover:bg-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] cursor-pointer"
-              >
-                <span>Browse All Delivered Works</span>
-              </a>
+              <div className="flex flex-wrap items-center gap-4 pt-2">
+                <button
+                  onClick={() => onNavigate('/contact?tab=rfp')}
+                  className="inline-flex items-center gap-2 bg-white text-[#173C62] hover:bg-white/95 text-xs sm:text-sm font-semibold uppercase tracking-wider px-8 py-4 rounded-[12px] transition-all duration-200 cursor-pointer"
+                >
+                  <span>Submit Project Scope</span>
+                  <IconArrow size="sm" color="primary" interactive />
+                </button>
+                <button
+                  onClick={() => onNavigate('/contact')}
+                  className="inline-flex items-center gap-2 bg-transparent hover:bg-white/10 text-white border border-white/20 text-xs sm:text-sm font-semibold uppercase tracking-wider px-7 py-4 rounded-[12px] transition-all duration-200 cursor-pointer"
+                >
+                  <span>Contact Engineering Desk</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </section>
+
     </div>
   );
 };

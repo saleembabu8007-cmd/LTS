@@ -40,7 +40,7 @@ export const Badge: React.FC<BadgeProps> = ({
     // Verified compliance / success
     success: 'bg-emerald-50 text-emerald-800 border border-emerald-200 font-medium uppercase',
     // Navy brand
-    navy: 'bg-[#11253E] text-white border border-[#11253E] font-medium uppercase',
+    navy: 'bg-[#173C62] text-white border border-[#173C62] font-medium uppercase',
   };
 
   return (

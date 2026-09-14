@@ -54,15 +54,14 @@ export const ServiceImageCard: React.FC<ServiceCardProps> = ({
     >
       {/* Editorial Image Header (16–18px radius, NO dark overlay) */}
       {imageUrl && (
-        <div className="relative aspect-[16/10] overflow-hidden rounded-[16px] bg-[#0B1C2F] mb-4">
+        <div className="relative aspect-[16/10] overflow-hidden rounded-[16px] bg-[#173C62] mb-4">
           <img
             src={imageUrl}
             alt={imageAlt || title}
             loading="lazy"
-            className="w-full h-full object-cover object-center transition-transform duration-[450ms] cubic-bezier(0.16, 1, 0.3, 1) group-hover:scale-[1.025]"
+            className="w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.02]"
             onError={(e) => {
-              (e.currentTarget as HTMLImageElement).src =
-                'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80';
+              (e.currentTarget as HTMLImageElement).src = '/assets/images/mep-construction.jpg';
             }}
           />
         </div>

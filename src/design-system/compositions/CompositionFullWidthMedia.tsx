@@ -49,7 +49,7 @@ export const CompositionFullWidthMedia: React.FC<CompositionFullWidthMediaProps>
   const mediaContent = (
     <div className="relative group">
       <div
-        className={`relative w-full overflow-hidden ${containerRadius} bg-[#0B1C2F] ${aspectClass} border ${
+        className={`relative w-full overflow-hidden ${containerRadius} bg-[#173C62] ${aspectClass} border ${
           bleed ? 'border-none' : 'border-[#E5E7EB]'
         }`}
       >

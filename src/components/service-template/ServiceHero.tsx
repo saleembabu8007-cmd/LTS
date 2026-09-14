@@ -49,7 +49,7 @@ export const ServiceHero: React.FC<ServiceHeroProps> = ({ data, onNavigate }) =>
   return (
     <section
       aria-label={`${title} Service Hero`}
-      className="relative min-h-[72vh] lg:min-h-[78vh] flex items-end overflow-hidden bg-[#0B1C2F]"
+      className="relative min-h-[72vh] lg:min-h-[78vh] flex items-end overflow-hidden bg-[#173C62]"
     >
       {/* Full-Bleed Service Imagery */}
       <div className="absolute inset-0 z-0">
@@ -59,8 +59,8 @@ export const ServiceHero: React.FC<ServiceHeroProps> = ({ data, onNavigate }) =>
           className="w-full h-full object-cover object-center"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B1C2F] via-[#0B1C2F]/60 to-[#0B1C2F]/20" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0B1C2F]/80 via-[#0B1C2F]/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#173C62] via-[#173C62]/70 to-[#173C62]/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#173C62]/80 via-[#173C62]/40 to-transparent" />
       </div>
 
       {/* Quiet Lower-Left Content Anchor */}

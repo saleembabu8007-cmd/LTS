@@ -60,15 +60,14 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       aria-label={`View project details for ${title}`}
     >
       {/* 18px Architectural Image Container (NO dark overlay) */}
-      <div className={`relative overflow-hidden rounded-[18px] bg-[#0B1C2F] ${aspectStyles}`}>
+      <div className={`relative overflow-hidden rounded-[18px] bg-[#173C62] ${aspectStyles}`}>
         <img
           src={imageUrl}
           alt={imageAlt || title}
           loading="lazy"
-          className="w-full h-full object-cover object-center transition-transform duration-[450ms] cubic-bezier(0.16, 1, 0.3, 1) group-hover:scale-[1.025]"
+          className="w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.02]"
           onError={(e) => {
-            (e.currentTarget as HTMLImageElement).src =
-              'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80';
+            (e.currentTarget as HTMLImageElement).src = '/assets/images/project-highrise.jpg';
           }}
         />
       </div>

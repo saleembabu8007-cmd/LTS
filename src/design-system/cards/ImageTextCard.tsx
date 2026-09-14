@@ -45,7 +45,7 @@ export const ImageTextCard: React.FC<ImageTextCardProps> = ({
         className={`grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-center text-left ${className}`}
       >
         <div className={`md:col-span-6 ${reverse ? 'md:order-2' : 'md:order-1'}`}>
-          <div className="relative aspect-[16/11] overflow-hidden rounded-[18px] bg-[#0B1C2F]">
+          <div className="relative aspect-[16/11] overflow-hidden rounded-[18px] bg-[#173C62]">
             <img
               src={imageUrl}
               alt={imageAlt || title}
@@ -71,7 +71,7 @@ export const ImageTextCard: React.FC<ImageTextCardProps> = ({
             <a
               href={href}
               onClick={handleClick}
-              className="group mt-4 inline-flex items-center gap-2 text-[13px] font-semibold text-[#173C62] hover:text-[#102B47] uppercase tracking-[0.06em]"
+              className="group mt-4 inline-flex items-center gap-2 text-[13px] font-semibold text-[#173C62] hover:text-[#12304F] uppercase tracking-[0.06em]"
             >
               <span>{ctaText}</span>
               <span className="transition-transform duration-180 ease-out group-hover:translate-x-[3px]" aria-hidden="true">
@@ -87,7 +87,7 @@ export const ImageTextCard: React.FC<ImageTextCardProps> = ({
   // Stacked layout
   return (
     <div className={`text-left ${className}`}>
-      <div className="relative aspect-[16/10] overflow-hidden rounded-[18px] bg-[#0B1C2F]">
+      <div className="relative aspect-[16/10] overflow-hidden rounded-[18px] bg-[#173C62]">
         <img
           src={imageUrl}
           alt={imageAlt || title}
@@ -112,7 +112,7 @@ export const ImageTextCard: React.FC<ImageTextCardProps> = ({
           <a
             href={href}
             onClick={handleClick}
-            className="group mt-3 inline-flex items-center gap-2 text-[13px] font-semibold text-[#173C62] hover:text-[#102B47] uppercase tracking-[0.06em]"
+            className="group mt-3 inline-flex items-center gap-2 text-[13px] font-semibold text-[#173C62] hover:text-[#12304F] uppercase tracking-[0.06em]"
           >
             <span>{ctaText}</span>
             <span className="transition-transform duration-180 ease-out group-hover:translate-x-[3px]" aria-hidden="true">

@@ -52,7 +52,7 @@ export const BusinessAreaTemplate: React.FC<BusinessAreaTemplateProps> = ({
       ===================================================================== */}
       <section
         aria-label={`${data.title} Hero`}
-        className="relative min-h-[76vh] lg:min-h-[82vh] flex items-end overflow-hidden bg-[#0B1C2F]"
+        className="relative min-h-[76vh] lg:min-h-[82vh] flex items-end overflow-hidden bg-[#173C62]"
       >
         {/* Full-Bleed Background Photography */}
         <div className="absolute inset-0 z-0">
@@ -62,8 +62,8 @@ export const BusinessAreaTemplate: React.FC<BusinessAreaTemplateProps> = ({
             className="w-full h-full object-cover object-center"
             loading="eager"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0B1C2F] via-[#0B1C2F]/60 to-[#0B1C2F]/20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B1C2F]/85 via-[#0B1C2F]/35 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#173C62] via-[#173C62]/75 to-[#173C62]/20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#173C62]/90 via-[#173C62]/45 to-transparent" />
         </div>
 
         {/* Lower-Left Quiet Content Anchor */}
@@ -83,7 +83,7 @@ export const BusinessAreaTemplate: React.FC<BusinessAreaTemplateProps> = ({
             </h1>
 
             {/* Short Introduction */}
-            <p className="mt-4 text-sm sm:text-base text-slate-300 font-normal leading-relaxed max-w-xl">
+            <p className="mt-4 text-sm sm:text-base text-slate-200 font-normal leading-relaxed max-w-xl">
               {data.hero.introduction}
             </p>
 
@@ -277,7 +277,7 @@ export const BusinessAreaTemplate: React.FC<BusinessAreaTemplateProps> = ({
           04 — FEATURED CAPABILITY
           - One strong image-led feature
           - Alternating direction: image-left or image-right
-          - Soft 18px radius on photography
+          - Soft 18px radius on photography in LTS Blue frame
       ===================================================================== */}
       <section
         aria-label="Featured Capability"
@@ -291,14 +291,14 @@ export const BusinessAreaTemplate: React.FC<BusinessAreaTemplateProps> = ({
                 isImageLeft ? 'order-2 lg:order-1' : 'order-2 lg:order-2'
               }`}
             >
-              <div className="relative aspect-[16/10] sm:aspect-[16/9] rounded-[18px] overflow-hidden bg-[#0B1C2F] shadow-[0_16px_40px_-16px_rgba(11,28,47,0.15)]">
+              <div className="relative aspect-[16/10] sm:aspect-[16/9] rounded-[18px] overflow-hidden bg-[#173C62] shadow-[0_16px_40px_-16px_rgba(23,60,98,0.18)]">
                 <img
                   src={data.featuredCapability.image}
                   alt={data.featuredCapability.title}
                   className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-[1.02]"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-tr from-[#0B1C2F]/50 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#173C62]/60 via-transparent to-transparent" />
               </div>
             </div>
 
@@ -353,28 +353,28 @@ export const BusinessAreaTemplate: React.FC<BusinessAreaTemplateProps> = ({
 
       {/* =====================================================================
           05 — PROOF / PROJECTS
-          - Deep navy architectural canvas (#0B1C2F)
+          - Clean architectural stone canvas (#F8FAFC)
           - 1 large dominant project + 2 supporting project cards
-          - Sourced from PROJECTS_DATA
+          - Sourced from PROJECTS_DATA with LTS Blue framing
       ===================================================================== */}
       <section
         aria-label="Verified Project Proof"
-        className="py-20 lg:py-28 bg-[#0B1C2F] text-white"
+        className="py-20 lg:py-28 bg-[#F8FAFC] text-[#0B1320]"
       >
         <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12 text-left">
             <div>
-              <span className="text-[11px] font-mono text-[#CBD5E1] uppercase tracking-[0.2em] font-semibold block mb-2">
+              <span className="text-[11px] font-mono text-[#173C62] uppercase tracking-[0.2em] font-semibold block mb-2">
                 {data.proof.sectionEyebrow}
               </span>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-white tracking-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#0B1320] tracking-tight">
                 {data.proof.headline}
               </h2>
             </div>
             <a
               href={data.proof.allProjectsSlug}
               onClick={(e) => handleLink(e, data.proof.allProjectsSlug)}
-              className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white py-2 min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#93C5FD] rounded-[4px]"
+              className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#173C62] hover:text-[#0B1320] py-2 min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] rounded-[4px]"
             >
               <span>Explore all projects</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
@@ -387,7 +387,7 @@ export const BusinessAreaTemplate: React.FC<BusinessAreaTemplateProps> = ({
             <a
               href={`/projects/${data.proof.featuredProject.slug}`}
               onClick={(e) => handleLink(e, `/projects/${data.proof.featuredProject.slug}`)}
-              className="lg:col-span-7 group relative rounded-[18px] overflow-hidden block min-h-[380px] sm:min-h-[480px] bg-[#0B1320] flex flex-col justify-end p-7 sm:p-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#93C5FD]"
+              className="lg:col-span-7 group relative rounded-[18px] overflow-hidden block min-h-[380px] sm:min-h-[480px] bg-[#173C62] flex flex-col justify-end p-7 sm:p-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
             >
               <img
                 src={data.proof.featuredProject.image}
@@ -395,7 +395,7 @@ export const BusinessAreaTemplate: React.FC<BusinessAreaTemplateProps> = ({
                 className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0B1320]/95 via-[#0B1320]/45 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/95 via-[#173C62]/45 to-transparent" />
 
               <div className="relative z-10 text-left text-white max-w-lg">
                 <span className="text-[10.5px] font-mono uppercase tracking-[0.2em] text-[#CBD5E1] block mb-1">
@@ -404,11 +404,8 @@ export const BusinessAreaTemplate: React.FC<BusinessAreaTemplateProps> = ({
                 <h3 className="text-2xl sm:text-3xl font-light text-white tracking-tight">
                   {data.proof.featuredProject.title}
                 </h3>
-                <p className="mt-2 text-xs sm:text-sm text-slate-300 font-normal leading-relaxed">
-                  {data.proof.featuredProject.scopeOverview}
-                </p>
                 <div className="mt-4 inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-white group-hover:text-slate-200">
-                  <span>View case details</span>
+                  <span>View case record</span>
                   <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
                 </div>
               </div>
@@ -421,7 +418,7 @@ export const BusinessAreaTemplate: React.FC<BusinessAreaTemplateProps> = ({
                   key={project.id}
                   href={`/projects/${project.slug}`}
                   onClick={(e) => handleLink(e, `/projects/${project.slug}`)}
-                  className="group relative rounded-[18px] overflow-hidden block flex-1 min-h-[220px] bg-[#0B1320] flex flex-col justify-end p-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#93C5FD]"
+                  className="group relative rounded-[18px] overflow-hidden block flex-1 min-h-[220px] bg-[#173C62] flex flex-col justify-end p-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
                 >
                   <img
                     src={project.image}
@@ -429,7 +426,7 @@ export const BusinessAreaTemplate: React.FC<BusinessAreaTemplateProps> = ({
                     className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.025]"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1320]/95 via-[#0B1320]/45 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/95 via-[#173C62]/45 to-transparent" />
 
                   <div className="relative z-10 text-left text-white">
                     <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#CBD5E1] block mb-1">
@@ -458,7 +455,7 @@ export const BusinessAreaTemplate: React.FC<BusinessAreaTemplateProps> = ({
       {data.relatedIndustries && (
         <section
           aria-label="Related Industries"
-          className="py-20 lg:py-28 bg-[#F8FAFC]"
+          className="py-20 lg:py-28 bg-white"
         >
           <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12 text-left">
@@ -486,7 +483,7 @@ export const BusinessAreaTemplate: React.FC<BusinessAreaTemplateProps> = ({
                   key={sector.title}
                   href={sector.slug}
                   onClick={(e) => handleLink(e, sector.slug)}
-                  className="group p-6 rounded-[14px] bg-white border border-[#E5E7EB] hover:border-[#173C62] transition-colors flex flex-col justify-between focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
+                  className="group p-6 rounded-[14px] bg-[#F8FAFC] border border-[#E5E7EB] hover:border-[#173C62] transition-colors flex flex-col justify-between focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
                 >
                   <div>
                     <span className="text-[10px] font-mono text-[#64748B] uppercase tracking-[0.18em] block mb-2">
@@ -499,7 +496,7 @@ export const BusinessAreaTemplate: React.FC<BusinessAreaTemplateProps> = ({
                       {sector.scope}
                     </p>
                   </div>
-                  <div className="mt-4 pt-3 border-t border-[#F1F5F9] flex items-center justify-between text-[11.5px] font-semibold text-[#173C62]">
+                  <div className="mt-4 pt-3 border-t border-[#E5E7EB] flex items-center justify-between text-[11.5px] font-semibold text-[#173C62]">
                     <span>Sector Scope</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                   </div>
@@ -512,22 +509,22 @@ export const BusinessAreaTemplate: React.FC<BusinessAreaTemplateProps> = ({
 
       {/* =====================================================================
           07 — FINAL CTA
-          - Established dark architectural closing section (#0B1C2F)
+          - Approved LTS Blue closing section (#173C62)
           - Division-specific enquiry headline & action
           - Direct telephone & email dispatch
       ===================================================================== */}
       <section
         aria-label="Division Consultation"
-        className="relative py-24 lg:py-32 bg-[#0B1C2F] text-white overflow-hidden"
+        className="relative py-24 lg:py-32 bg-[#173C62] text-white overflow-hidden"
       >
         <div className="absolute inset-0 z-0">
           <img
             src={data.finalCta.backgroundImage || data.hero.backgroundImage}
             alt={data.title}
-            className="w-full h-full object-cover object-center opacity-25"
+            className="w-full h-full object-cover object-center opacity-20"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0B1C2F] via-[#0B1C2F]/85 to-[#0B1C2F]/70" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#173C62] via-[#173C62]/85 to-[#173C62]/70" />
         </div>
 
         <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 text-left">
@@ -540,7 +537,7 @@ export const BusinessAreaTemplate: React.FC<BusinessAreaTemplateProps> = ({
               {data.finalCta.headline}
             </h2>
 
-            <p className="mt-4 text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+            <p className="mt-4 text-sm sm:text-base text-slate-200 leading-relaxed font-normal">
               {data.finalCta.description}
             </p>
 
@@ -559,7 +556,7 @@ export const BusinessAreaTemplate: React.FC<BusinessAreaTemplateProps> = ({
             {/* Direct Official Communication Channels */}
             <div className="mt-12 pt-8 border-t border-white/15 flex flex-wrap gap-8 text-xs font-mono text-slate-300">
               <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-slate-400" aria-hidden="true" />
+                <Phone className="w-4 h-4 text-slate-300" aria-hidden="true" />
                 <a
                   href={`tel:${data.finalCta.telephone.replace(/\s+/g, '')}`}
                   className="hover:text-white transition-colors py-1 min-h-[44px] flex items-center"
@@ -569,7 +566,7 @@ export const BusinessAreaTemplate: React.FC<BusinessAreaTemplateProps> = ({
               </div>
 
               <div className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-slate-400" aria-hidden="true" />
+                <Mail className="w-4 h-4 text-slate-300" aria-hidden="true" />
                 <a
                   href={`mailto:${data.finalCta.email}`}
                   className="hover:text-white transition-colors py-1 min-h-[44px] flex items-center"

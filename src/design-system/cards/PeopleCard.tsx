@@ -25,14 +25,14 @@ export const PeopleCard: React.FC<PeopleCardProps> = ({
 }) => {
   return (
     <div className={`group block text-left ${className}`}>
-      <div className="relative aspect-[4/5] overflow-hidden rounded-[18px] bg-[#0B1C2F]">
+      <div className="relative aspect-[4/5] overflow-hidden rounded-[18px] bg-[#173C62]">
         <img
           src={imageUrl}
           alt={name}
           loading="lazy"
           className="w-full h-full object-cover object-top transition-transform duration-[400ms] cubic-bezier(0.16, 1, 0.3, 1) group-hover:scale-[1.025]"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B1C2F]/70 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/75 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
       </div>
 
       <div className="mt-3.5">

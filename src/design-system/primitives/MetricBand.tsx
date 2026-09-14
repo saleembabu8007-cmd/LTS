@@ -24,11 +24,11 @@ export const MetricBand: React.FC<MetricBandProps> = ({
   const toneClasses = {
     white: 'bg-white text-[#0B1320]',
     subtle: 'bg-[#F8FAFC] text-[#0B1320]',
-    dark: 'bg-[#0B1C2F] text-white',
+    dark: 'bg-[#173C62] text-white',
   };
 
   const isDark = tone === 'dark';
-  const borderColor = isDark ? 'border-white/10' : 'border-[#E5E7EB]';
+  const borderColor = isDark ? 'border-white/15' : 'border-[#E5E7EB]';
 
   return (
     <section

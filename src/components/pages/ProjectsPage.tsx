@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { ArrowRight, ChevronDown } from 'lucide-react';
+import { IconArrow } from '../../design-system/icons';
 import { PROJECTS_DATA, ProjectDetailData } from '../../data/projectsData';
 
 interface ProjectsPageProps {
@@ -45,7 +45,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       <article className="space-y-4">
         {/* Dominant Contextual Image (Soft 18-20px radius, NO borders, NO AI tags) */}
         <div
-          className={`relative overflow-hidden rounded-[18px] sm:rounded-[20px] bg-[#0B1C2F] ${aspectClass}`}
+          className={`relative overflow-hidden rounded-[18px] sm:rounded-[20px] bg-[#173C62] ${aspectClass}`}
         >
           <img
             src={project.image}
@@ -57,7 +57,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80';
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0B1320]/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
         </div>
 
         {/* Card Info: Category + Project title + Short metadata + View project */}
@@ -84,22 +84,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             {project.title}
           </h3>
 
-          {/* Short Metadata / Scope overview */}
-          <p
-            className={`text-[#4A5568] font-normal leading-relaxed ${
-              isFeatured
-                ? 'text-sm sm:text-base line-clamp-2 max-w-3xl'
-                : 'text-xs sm:text-sm line-clamp-2'
-            }`}
-          >
-            {project.scopeOverview}
-          </p>
-
           {/* Explicit "View project" action with micro arrow shift */}
-          <div className="pt-2">
-            <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#173C62] group-hover:text-[#102B47] transition-colors">
+          <div className="pt-1">
+            <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#173C62] group-hover:text-[#12304F] transition-colors">
               <span className="group-hover:underline underline-offset-4">View project case record</span>
-              <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 ease-out group-hover:translate-x-1" />
+              <IconArrow size="sm" color="primary" interactive className="w-3.5 h-3.5" />
             </span>
           </div>
         </div>
@@ -233,7 +222,9 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
                   ))}
                 </select>
                 <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3.5 text-[#64748B]">
-                  <ChevronDown className="w-4 h-4" />
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
                 </div>
               </div>
             </div>
@@ -336,9 +327,10 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
             <div className="pt-4 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
               <button
                 onClick={() => onNavigate('/contact?tab=rfp')}
-                className="inline-flex items-center justify-center px-6 py-3 min-h-[44px] rounded-[12px] bg-[#173C62] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#11253E] transition-colors cursor-pointer w-full sm:w-auto"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 min-h-[44px] rounded-[12px] bg-[#173C62] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#12304F] transition-colors cursor-pointer w-full sm:w-auto"
               >
-                Submit Project Specification &rarr;
+                <span>Submit Project Specification</span>
+                <IconArrow size="sm" color="white" interactive />
               </button>
               <button
                 onClick={() => onNavigate('/contact')}

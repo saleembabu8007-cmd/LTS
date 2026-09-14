@@ -58,7 +58,7 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({
         exit={{ opacity: 0 }}
         transition={{ duration: 0.15 }}
         onClick={onClose}
-        className="fixed inset-0 top-[68px] bg-[#0B1C2F]/20 backdrop-blur-[1px] z-40"
+        className="fixed inset-0 top-[68px] bg-[#173C62]/20 backdrop-blur-[1px] z-40"
         aria-hidden="true"
       />
 
@@ -69,7 +69,7 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({
         animate={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
         exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -4 }}
         transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
-        className="absolute top-full left-0 w-full bg-white border-b border-[#E5E7EB] z-50 overflow-hidden shadow-[0_20px_40px_-15px_rgba(11,28,47,0.08)]"
+        className="absolute top-full left-0 w-full bg-white border-b border-[#E5E7EB] z-50 overflow-hidden shadow-[0_20px_40px_-15px_rgba(23,60,98,0.08)]"
         role="region"
         aria-label={`${data.divisionTitle} Capability Directory`}
       >
@@ -98,7 +98,7 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({
                 <a
                   href={data.overviewCta.slug}
                   onClick={(e) => handleSelect(e, data.overviewCta.slug)}
-                  className="group inline-flex items-center gap-2 text-[12px] text-[#173C62] hover:text-[#0B1C2F] font-semibold tracking-[0.08em] uppercase cursor-pointer focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:outline-none rounded-[4px] py-1 px-1 -ml-1 transition-colors"
+                  className="group inline-flex items-center gap-2 text-[12px] text-[#173C62] hover:text-[#12304F] font-semibold tracking-[0.08em] uppercase cursor-pointer focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:outline-none rounded-[4px] py-1 px-1 -ml-1 transition-colors"
                 >
                   <span>{data.overviewCta.label}</span>
                   <ArrowRight className="w-3.5 h-3.5 transition-transform duration-180 ease-out group-hover:translate-x-1" />
@@ -178,14 +178,14 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({
                 onClick={(e) => handleSelect(e, data.visualFeature.slug)}
                 className="group block w-full text-left focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:outline-none rounded-[16px] cursor-pointer"
               >
-                <div className="relative aspect-[16/10] overflow-hidden rounded-[16px] bg-[#0B1C2F]">
+                <div className="relative aspect-[16/10] overflow-hidden rounded-[16px] bg-[#173C62]">
                   <img
                     src={data.visualFeature.image}
                     alt={data.visualFeature.title}
                     loading="lazy"
                     className="w-full h-full object-cover object-center transition-transform duration-[400ms] cubic-bezier(0.16, 1, 0.3, 1) group-hover:scale-[1.025]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1C2F]/90 via-[#0B1C2F]/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/95 via-[#173C62]/30 to-transparent" />
 
                   <div className="absolute bottom-0 inset-x-0 p-5 text-white">
                     <span className="text-[10.5px] font-mono uppercase tracking-[0.16em] text-[#CBD5E1] block">

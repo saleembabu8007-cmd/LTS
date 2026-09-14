@@ -58,7 +58,7 @@ export const ProjectRailLayout: React.FC<ProjectRailLayoutProps> = ({
           {viewAllHref && (
             <a
               href={viewAllHref}
-              className="mr-2 text-[12px] font-semibold text-[#173C62] uppercase tracking-[0.08em] hover:text-[#102B47] transition-colors"
+              className="mr-2 text-[12px] font-semibold text-[#173C62] uppercase tracking-[0.08em] hover:text-[#12304F] transition-colors"
             >
               View all portfolio →
             </a>

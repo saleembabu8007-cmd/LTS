@@ -37,14 +37,14 @@ export const IconButton: React.FC<IconButtonProps> = ({
   };
 
   const focusRing = light
-    ? 'focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B1C2F]'
+    ? 'focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#173C62]'
     : 'focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:ring-offset-2';
 
   const variantStyles: Record<IconButtonVariant, string> = {
     default:
       'bg-white text-[#0B1320] border border-[#E5E7EB] hover:border-[#173C62] hover:text-[#173C62] active:bg-[#F8FAFC]',
     primary:
-      'bg-[#173C62] text-white border border-[#173C62] hover:bg-[#102B47] active:bg-[#0B1C2F]',
+      'bg-[#173C62] text-white border border-[#173C62] hover:bg-[#12304F] active:bg-[#0F263E]',
     secondary:
       'bg-transparent text-[#0B1320] border border-[#CBD5E1] hover:border-[#173C62] hover:bg-[#F8FAFC] active:bg-[#EDF3F9]',
     outline:

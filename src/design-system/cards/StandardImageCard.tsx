@@ -89,7 +89,7 @@ export const StandardImageCard: React.FC<StandardImageCardProps> = ({
       } ${className}`}
     >
       {/* Photo Frame (16–18px radius, NO dark overlay) */}
-      <div className={`relative w-full overflow-hidden rounded-[14px] sm:rounded-[16px] bg-[#0B1C2F] ${aspectClass}`}>
+      <div className={`relative w-full overflow-hidden rounded-[14px] sm:rounded-[16px] bg-[#173C62] ${aspectClass}`}>
         <img
           src={finalImage}
           alt={imageAlt || title}

@@ -47,7 +47,7 @@ export const ProjectFeature: React.FC<ProjectFeatureProps> = ({
             <a
               href={`/projects/${id}`}
               onClick={handleNavigate}
-              className="group block relative aspect-[16/11] overflow-hidden rounded-[18px] bg-[#0B1C2F] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
+              className="group block relative aspect-[16/11] overflow-hidden rounded-[18px] bg-[#173C62] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
             >
               <img
                 src={imageUrl}

@@ -28,8 +28,8 @@ export type { QuoteFeatureProps } from './QuoteFeature';
 export { MetricBand } from './MetricBand';
 export type { MetricBandProps } from './MetricBand';
 
-export { ImageMosaic } from './ImageMosaic';
-export type { ImageMosaicProps } from './ImageMosaic';
+export { ImageMosaic as StructuralImageMosaic } from './ImageMosaic';
+export type { ImageMosaicProps as StructuralImageMosaicProps } from './ImageMosaic';
 
 export { ProjectFeaturePrimitive } from './ProjectFeaturePrimitive';
 export type { ProjectFeaturePrimitiveProps } from './ProjectFeaturePrimitive';

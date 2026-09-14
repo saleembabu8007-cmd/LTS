@@ -79,7 +79,7 @@ export const ContactFeature: React.FC<ContactFeatureProps> = ({
                 <div className="mt-1">
                   <a
                     href={`tel:${phone.replace(/\s+/g, '')}`}
-                    className="text-[16px] font-medium text-[#173C62] hover:text-[#102B47] transition-colors"
+                    className="text-[16px] font-medium text-[#173C62] hover:text-[#12304F] transition-colors"
                   >
                     {phone}
                   </a>
@@ -93,7 +93,7 @@ export const ContactFeature: React.FC<ContactFeatureProps> = ({
                 <div className="mt-1">
                   <a
                     href={`mailto:${email}`}
-                    className="text-[16px] font-medium text-[#173C62] hover:text-[#102B47] transition-colors"
+                    className="text-[16px] font-medium text-[#173C62] hover:text-[#12304F] transition-colors"
                   >
                     {email}
                   </a>

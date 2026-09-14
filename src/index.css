@@ -1,29 +1,35 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
   
-  /* Primary LTS Architectural Palette */
+  /* Primary LTS Architectural Palette (LTS Brand Book Authority) */
   --color-primary: #173C62;
-  --color-primary-hover: #102B47;
-  --color-primary-dark: #0B1C2F;
+  --color-primary-hover: #12304F;
+  --color-primary-dark: #173C62;
   --color-primary-tint: #EDF3F9;
   --color-primary-subtle: #F2F6FA;
+
+  /* Secondary Brand Palette */
+  --color-secondary: #999999;
+  --color-secondary-hover: #777777;
+  --color-secondary-light: #E2E8F0;
 
   /* Editorial Ink & Typography */
   --color-ink: #0B1320;
   --color-text: #334155;
   --color-text-secondary: #4A5568;
   --color-muted: #64748B;
-  --color-subtle: #94A3B8;
+  --color-subtle: #999999;
   --color-inverse: #FFFFFF;
 
   /* Architectural Canvas */
   --color-surface: #FFFFFF;
   --color-surface-subtle: #F8FAFC;
   --color-surface-warm: #F1F5F9;
-  --color-surface-dark: #0B1C2F;
+  --color-surface-dark: #173C62;
+  --color-surface-dark-elevated: #143353;
 
   /* Structural Hairline Borders */
   --color-border: #E5E7EB;
@@ -490,7 +496,7 @@
   position: relative;
   overflow: hidden;
   border-radius: 18px;
-  background-color: #0B1C2F;
+  background-color: #173C62;
 }
 
 /* Feature media & panoramic banners: 20px */
@@ -498,14 +504,14 @@
   position: relative;
   overflow: hidden;
   border-radius: 20px;
-  background-color: #0B1C2F;
+  background-color: #173C62;
 }
 
 .editorial-feature-media {
   position: relative;
   overflow: hidden;
   border-radius: 20px;
-  background-color: #0B1C2F;
+  background-color: #173C62;
 }
 
 /* Selected content surfaces where necessary: 16px */

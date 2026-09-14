@@ -96,7 +96,7 @@ export const PageHero: React.FC<PageHeroProps> = ({
   // Dark monumental architectural hero
   return (
     <section
-      className={`relative min-h-[60vh] sm:min-h-[70vh] lg:min-h-[78vh] flex flex-col justify-between bg-[#0B1C2F] text-white overflow-hidden ${className}`}
+      className={`relative min-h-[60vh] sm:min-h-[70vh] lg:min-h-[78vh] flex flex-col justify-between bg-[#173C62] text-white overflow-hidden ${className}`}
     >
       {/* Background Engineering Image with Contrast-Controlled Overlay */}
       {image && (
@@ -107,7 +107,7 @@ export const PageHero: React.FC<PageHeroProps> = ({
             className="w-full h-full object-cover object-center filter brightness-[0.62] contrast-[1.08] will-change-transform"
             loading="eager"
           />
-          <div className="absolute inset-0 bg-[#0B1C2F]/50" />
+          <div className="absolute inset-0 bg-[#173C62]/50" />
         </div>
       )}
 
@@ -183,7 +183,7 @@ export const PageHero: React.FC<PageHeroProps> = ({
 
       {/* Architectural Datum Footer */}
       {metadataDatum && (
-        <div className="relative z-10 border-t border-white/15 py-3.5 bg-[#0B1C2F]/70 backdrop-blur-xs">
+        <div className="relative z-10 border-t border-white/15 py-3.5 bg-[#173C62]/90 backdrop-blur-xs">
           <div className="lts-container flex items-center justify-between gap-4 typography-caption text-slate-300 text-[11px]">
             <div>{metadataDatum.leftText}</div>
             <div>{metadataDatum.rightText}</div>

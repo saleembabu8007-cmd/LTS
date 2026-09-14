@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import {
-  Phone,
-  Mail,
-  MapPin,
-  Clock,
-  ArrowRight,
-  CheckCircle2,
-  Loader2,
-  ShieldCheck,
-  Building2,
-  AlertCircle,
-} from 'lucide-react';
+  IconPhone,
+  IconEmail,
+  IconLocation,
+  IconClock,
+  IconArrow,
+  IconCheck,
+  IconShieldCheck,
+} from '../../design-system/icons';
 import { CORPORATE_INFO } from '../../data/corporateData';
 
 interface ContactPageProps {
@@ -35,13 +32,14 @@ export const ContactPage: React.FC<ContactPageProps> = ({
   // Resolve starting business area if initialScopeKey or initialTab provided
   const getInitialBusinessArea = () => {
     if (initialScopeKey) {
-      if (initialScopeKey.toLowerCase().includes('solar') || initialScopeKey.toLowerCase().includes('mep') || initialScopeKey.toLowerCase().includes('switchgear')) {
+      const lower = initialScopeKey.toLowerCase();
+      if (lower.includes('solar') || lower.includes('mep') || lower.includes('switchgear') || lower.includes('engineering')) {
         return businessAreas[0];
       }
-      if (initialScopeKey.toLowerCase().includes('facility') || initialScopeKey.toLowerCase().includes('chiller') || initialScopeKey.toLowerCase().includes('pool')) {
+      if (lower.includes('facility') || lower.includes('chiller') || lower.includes('pool') || lower.includes('hvac')) {
         return businessAreas[1];
       }
-      if (initialScopeKey.toLowerCase().includes('trading') || initialScopeKey.toLowerCase().includes('meter') || initialScopeKey.toLowerCase().includes('part')) {
+      if (lower.includes('trading') || lower.includes('meter') || lower.includes('part') || lower.includes('vfd')) {
         return businessAreas[2];
       }
     }
@@ -116,7 +114,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
 
     setTimeout(() => {
       setStatus('success');
-    }, 600);
+    }, 500);
   };
 
   const handleReset = () => {
@@ -135,93 +133,47 @@ export const ContactPage: React.FC<ContactPageProps> = ({
   return (
     <div className="bg-white text-[#0B1320] selection:bg-[#173C62] selection:text-white antialiased">
       {/* =========================================================================
-          01 — HERO
-          Full-screen architectural photography (~72vh).
-          Intentional lower-left typography.
+          01 — SHORT HEADING
+          Minimal architectural heading — no oversized 72vh hero or essay padding.
       ========================================================================= */}
-      <section className="relative w-full h-[72vh] min-h-[520px] max-h-[780px] bg-[#0B1C2F] overflow-hidden">
-        <img
-          src="/assets/images/hero-building.jpg"
-          alt="LTSGROUP Built Environment Architecture and Engineering"
-          className="w-full h-full object-cover filter brightness-[0.82] transition-transform duration-[1200ms] ease-out hover:scale-[1.01]"
-          loading="eager"
-          onError={(e) => {
-            (e.currentTarget as HTMLImageElement).src =
-              'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80';
-          }}
-        />
-
-        {/* Directional scrim for editorial legibility */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B1320]/90 via-[#0B1320]/35 to-transparent pointer-events-none" />
-
-        {/* Hero Content Lower-Left */}
-        <div className="absolute bottom-10 sm:bottom-16 md:bottom-20 left-0 right-0 z-10">
-          <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
-            <div className="max-w-3xl space-y-4">
-              <span className="font-mono text-xs uppercase tracking-[0.24em] text-[#93C5FD] block font-semibold">
-                Commercial &amp; Technical Engagement
-              </span>
-
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-light text-white tracking-tight leading-[0.98]">
-                Let&apos;s discuss your project.
-              </h1>
-
-              <p className="text-base sm:text-xl text-white/90 font-normal leading-relaxed max-w-2xl pt-1">
-                Direct dialogue with LTSGROUP engineering directors, estimating teams, and technical advisors across the UAE.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================================================
-          02 — CLEAR ENQUIRY MESSAGE
-          High-contrast editorial statement.
-      ========================================================================= */}
-      <section className="py-16 sm:py-20 bg-white border-b border-[#E5E7EB]">
+      <section className="pt-28 pb-10 sm:pt-32 sm:pb-14 border-b border-[#E5E7EB] bg-white">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
-            <div className="lg:col-span-4 space-y-2">
-              <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
-                01 &bull; Direct Access
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-light text-[#0B1320] tracking-tight">
-                Single Point of Contact for All Business Areas
-              </h2>
+          <div className="max-w-3xl space-y-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[6px] bg-[#173C62]/5 border border-[#173C62]/10 text-[11px] font-mono tracking-widest uppercase text-[#173C62]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#173C62]" />
+              CONTACT &bull; DUBAI CORPORATE DESK
             </div>
 
-            <div className="lg:col-span-8 space-y-4 text-base sm:text-lg text-[#4A5568] leading-relaxed">
-              <p className="text-xl sm:text-2xl font-light text-[#0B1320] leading-snug tracking-tight">
-                Whether you are submitting an electromechanical tender dossier, scheduling plant chiller diagnostics, or sourcing factory-direct components, your request is routed immediately to the responsible discipline lead.
-              </p>
-              <p>
-                All communications and tender drawings are handled under strict commercial confidentiality and UAE non-disclosure protocols.
-              </p>
-            </div>
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-light text-[#173C62] tracking-tight leading-[1.05]">
+              Let&apos;s discuss your project.
+            </h1>
+
+            <p className="text-base sm:text-lg text-[#999999] leading-relaxed pt-1 max-w-2xl font-normal">
+              Direct dialogue with LTSGROUP estimating engineers, facilities directors, and technical equipment advisors in Dubai.
+            </p>
           </div>
         </div>
       </section>
 
       {/* =========================================================================
-          03 — ENQUIRY FORM & CONTACT DETAILS
-          Simple, responsive two-column layout:
-          Left: Simple enquiry form (Business area, Name, Email, Phone, Company, Message, CTA)
-          Right: Contact details directory.
+          02 — CONTACT DETAILS & SIMPLE ENQUIRY FORM
+          Clean, responsive 2-column layout: Form on Left, Directory on Right.
       ========================================================================= */}
-      <section className="py-12 sm:py-20 lg:py-24 bg-[#F8FAFC]">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-12 sm:py-20 bg-[#F8FAFC]">
+        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
+            
             {/* Left Column: Simple Enquiry Form */}
-            <div className="lg:col-span-7 bg-white p-5 sm:p-8 lg:p-12 rounded-[20px] sm:rounded-[24px] border border-[#E5E7EB] shadow-xs">
+            <div className="lg:col-span-7 bg-white p-6 sm:p-10 rounded-[20px] sm:rounded-[24px] border border-[#E5E7EB]">
               {status === 'success' ? (
-                <div className="space-y-6 animate-fadeIn py-4">
+                <div className="space-y-6 py-4">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-[12px] bg-[#173C62] text-white flex items-center justify-center shrink-0">
-                      <CheckCircle2 className="w-6 h-6" />
+                      <IconCheck size="lg" color="white" />
                     </div>
                     <div className="space-y-1">
                       <span className="font-mono text-xs text-[#173C62] uppercase tracking-wider font-semibold">
-                        Transmission Logged &bull; Dubai Engineering Desk
+                        TRANSMISSION LOGGED &bull; DUBAI DESK
                       </span>
                       <h3 className="text-2xl sm:text-3xl font-light text-[#0B1320]">
                         Thank you. Your enquiry has been received.
@@ -232,16 +184,16 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                     </div>
                   </div>
 
-                  <div className="bg-slate-50 rounded-[12px] p-6 border border-slate-200 space-y-3 font-mono text-xs">
-                    <div className="flex flex-col sm:flex-row sm:justify-between py-1 border-b border-slate-200 gap-1">
+                  <div className="bg-[#F8FAFC] rounded-[12px] p-6 border border-[#E5E7EB] space-y-3 font-mono text-xs">
+                    <div className="flex flex-col sm:flex-row sm:justify-between py-1 border-b border-[#E5E7EB] gap-1">
                       <span className="text-[#64748B]">Reference:</span>
                       <span className="font-bold text-[#173C62] text-sm">{submissionReference}</span>
                     </div>
-                    <div className="flex flex-col sm:flex-row sm:justify-between py-1 border-b border-slate-200 gap-1">
+                    <div className="flex flex-col sm:flex-row sm:justify-between py-1 border-b border-[#E5E7EB] gap-1">
                       <span className="text-[#64748B]">Business Area:</span>
                       <span className="text-[#0B1320]">{form.businessArea}</span>
                     </div>
-                    <div className="flex flex-col sm:flex-row sm:justify-between py-1 border-b border-slate-200 gap-1">
+                    <div className="flex flex-col sm:flex-row sm:justify-between py-1 border-b border-[#E5E7EB] gap-1">
                       <span className="text-[#64748B]">Primary Contact:</span>
                       <span className="text-[#0B1320]">{form.email}</span>
                     </div>
@@ -258,11 +210,11 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                       className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#173C62] hover:underline cursor-pointer"
                     >
                       <span>Submit another enquiry</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
+                      <IconArrow size="sm" color="primary" interactive />
                     </button>
 
                     <div className="flex items-center gap-2 text-xs text-[#64748B]">
-                      <ShieldCheck className="w-4 h-4 text-[#173C62]" />
+                      <IconShieldCheck size="sm" color="primary" />
                       <span>Transmitted under LTSGROUP Commercial NDA Protocols</span>
                     </div>
                   </div>
@@ -271,10 +223,10 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                 <form onSubmit={handleSubmit} noValidate className="space-y-6">
                   <div className="space-y-1 pb-2 border-b border-[#E5E7EB]">
                     <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
-                      02 &bull; Enquiry Form
+                      Enquiry Form
                     </span>
                     <h3 className="text-2xl font-light text-[#0B1320]">
-                      Project &amp; Service Enquiry
+                      Project &amp; Service Intake
                     </h3>
                   </div>
 
@@ -322,9 +274,8 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                         } rounded-[10px] sm:rounded-[12px] transition-colors focus:border-[#173C62] focus:ring-1 focus:ring-[#173C62] outline-none`}
                       />
                       {errors.name && (
-                        <p className="text-xs text-rose-600 flex items-center gap-1 pt-0.5">
-                          <AlertCircle className="w-3.5 h-3.5" />
-                          <span>{errors.name}</span>
+                        <p className="text-xs text-rose-600 pt-0.5">
+                          {errors.name}
                         </p>
                       )}
                     </div>
@@ -348,9 +299,8 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                         } rounded-[10px] sm:rounded-[12px] transition-colors focus:border-[#173C62] focus:ring-1 focus:ring-[#173C62] outline-none`}
                       />
                       {errors.email && (
-                        <p className="text-xs text-rose-600 flex items-center gap-1 pt-0.5">
-                          <AlertCircle className="w-3.5 h-3.5" />
-                          <span>{errors.email}</span>
+                        <p className="text-xs text-rose-600 pt-0.5">
+                          {errors.email}
                         </p>
                       )}
                     </div>
@@ -377,9 +327,8 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                         } rounded-[10px] sm:rounded-[12px] transition-colors focus:border-[#173C62] focus:ring-1 focus:ring-[#173C62] outline-none`}
                       />
                       {errors.phone && (
-                        <p className="text-xs text-rose-600 flex items-center gap-1 pt-0.5">
-                          <AlertCircle className="w-3.5 h-3.5" />
-                          <span>{errors.phone}</span>
+                        <p className="text-xs text-rose-600 pt-0.5">
+                          {errors.phone}
                         </p>
                       )}
                     </div>
@@ -397,15 +346,14 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                         type="text"
                         value={form.company}
                         onChange={handleChange}
-                        placeholder="e.g. Al Futtaim Real Estate"
+                        placeholder="e.g. Real Estate Development"
                         className={`w-full min-h-[44px] px-4 py-3 text-base sm:text-sm text-[#0B1320] placeholder:text-[#94A3B8] bg-white border ${
                           errors.company ? 'border-rose-500 ring-1 ring-rose-500' : 'border-[#CBD5E1]'
                         } rounded-[10px] sm:rounded-[12px] transition-colors focus:border-[#173C62] focus:ring-1 focus:ring-[#173C62] outline-none`}
                       />
                       {errors.company && (
-                        <p className="text-xs text-rose-600 flex items-center gap-1 pt-0.5">
-                          <AlertCircle className="w-3.5 h-3.5" />
-                          <span>{errors.company}</span>
+                        <p className="text-xs text-rose-600 pt-0.5">
+                          {errors.company}
                         </p>
                       )}
                     </div>
@@ -417,12 +365,12 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                       htmlFor="message"
                       className="block text-xs font-semibold text-[#0B1320] uppercase tracking-wider"
                     >
-                      Project / Enquiry Message <span className="text-[#173C62]">*</span>
+                      Project / Scope Details <span className="text-[#173C62]">*</span>
                     </label>
                     <textarea
                       id="message"
                       name="message"
-                      rows={5}
+                      rows={4}
                       value={form.message}
                       onChange={handleChange}
                       placeholder="Please describe your requirements, project location, scope of work, or equipment inquiry..."
@@ -431,36 +379,32 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                       } rounded-[10px] sm:rounded-[12px] transition-colors focus:border-[#173C62] focus:ring-1 focus:ring-[#173C62] outline-none resize-y`}
                     />
                     {errors.message && (
-                      <p className="text-xs text-rose-600 flex items-center gap-1 pt-0.5">
-                        <AlertCircle className="w-3.5 h-3.5" />
-                        <span>{errors.message}</span>
+                      <p className="text-xs text-rose-600 pt-0.5">
+                        {errors.message}
                       </p>
                     )}
                   </div>
 
-                  {/* CTA Action */}
+                  {/* Submit Button */}
                   <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <button
                       type="submit"
                       disabled={status === 'loading'}
-                      className="inline-flex items-center justify-center gap-2 px-8 py-3.5 min-h-[44px] rounded-[12px] bg-[#173C62] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#11253E] disabled:opacity-50 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] w-full sm:w-auto"
+                      className="inline-flex items-center justify-center gap-2 px-8 py-3.5 min-h-[44px] rounded-[12px] bg-[#173C62] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#173C62]/90 disabled:opacity-50 transition-colors cursor-pointer w-full sm:w-auto"
                     >
                       {status === 'loading' ? (
-                        <>
-                          <Loader2 className="w-4 h-4 animate-spin" />
-                          <span>Transmitting Enquiry...</span>
-                        </>
+                        <span>Transmitting Enquiry...</span>
                       ) : (
                         <>
-                          <span>Submit Enquiry</span>
-                          <ArrowRight className="w-4 h-4" />
+                          <span>Transmit Project Scope</span>
+                          <IconArrow size="sm" color="white" interactive />
                         </>
                       )}
                     </button>
 
-                    <div className="flex items-center gap-2 text-xs text-[#64748B]">
-                      <ShieldCheck className="w-4 h-4 text-[#173C62]" />
-                      <span>Commercial confidentiality guaranteed</span>
+                    <div className="flex items-center gap-1.5 text-xs text-[#64748B]">
+                      <IconShieldCheck size="sm" color="primary" />
+                      <span>Commercial NDA Protected</span>
                     </div>
                   </div>
                 </form>
@@ -468,88 +412,62 @@ export const ContactPage: React.FC<ContactPageProps> = ({
             </div>
 
             {/* Right Column: Contact Details Directory */}
-            <div className="lg:col-span-5 space-y-8">
-              <div className="space-y-2">
-                <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
-                  03 &bull; Contact Details
-                </span>
-                <h3 className="text-2xl sm:text-3xl font-light text-[#0B1320] tracking-tight">
-                  Dubai Operational Desks
-                </h3>
-                <p className="text-sm text-[#4A5568] leading-relaxed">
-                  Direct communication channels for tenders, facility emergencies, and trade orders.
-                </p>
-              </div>
-
-              <div className="space-y-6 divide-y divide-[#E5E7EB]">
-                {/* 01 Headquarters */}
-                <div className="pt-6 first:pt-0 space-y-2">
+            <div className="lg:col-span-5 space-y-6">
+              <div className="bg-white p-6 sm:p-8 rounded-[20px] sm:rounded-[24px] border border-[#E5E7EB] space-y-6">
+                
+                {/* 01 Head Office */}
+                <div className="space-y-2 pb-6 border-b border-[#E5E7EB]">
                   <div className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-[#173C62]" />
+                    <IconLocation size="sm" color="primary" />
                     <span className="font-mono text-xs font-semibold text-[#173C62] uppercase tracking-wider">
-                      Headquarters
+                      Corporate Headquarters
                     </span>
                   </div>
                   <h4 className="text-base font-medium text-[#0B1320]">
-                    Dubai Operational Center
+                    {CORPORATE_INFO.contact.address.line1}
                   </h4>
-                  <p className="text-xs sm:text-sm text-[#4A5568] leading-relaxed">
-                    {CORPORATE_INFO.contact.address.line1}, {CORPORATE_INFO.contact.address.line2}, {CORPORATE_INFO.contact.address.emirate}, {CORPORATE_INFO.contact.address.country}
+                  <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed">
+                    {CORPORATE_INFO.contact.address.line2} &bull; {CORPORATE_INFO.contact.address.country}
                   </p>
                 </div>
 
-                {/* 02 Tenders & Estimating */}
-                <div className="pt-6 space-y-2">
+                {/* 02 Direct Telephone */}
+                <div className="space-y-2 pb-6 border-b border-[#E5E7EB]">
                   <div className="flex items-center gap-2">
-                    <Mail className="w-4 h-4 text-[#173C62]" />
+                    <IconPhone size="sm" color="primary" />
                     <span className="font-mono text-xs font-semibold text-[#173C62] uppercase tracking-wider">
-                      Tenders &amp; Estimating
+                      Direct Telephone
                     </span>
                   </div>
                   <h4 className="text-base font-medium text-[#0B1320]">
-                    Direct Submittals Desk
+                    <a
+                      href={`tel:${CORPORATE_INFO.contact.telephone}`}
+                      className="hover:text-[#173C62] transition-colors"
+                    >
+                      {CORPORATE_INFO.contact.telephone}
+                    </a>
                   </h4>
-                  <div className="text-xs sm:text-sm text-[#4A5568] space-y-1">
-                    <p>
-                      Email:{' '}
-                      <a
-                        href={`mailto:${CORPORATE_INFO.contact.emailTenders}`}
-                        className="font-mono text-[#173C62] font-semibold hover:underline"
-                      >
-                        {CORPORATE_INFO.contact.emailTenders}
-                      </a>
-                    </p>
-                    <p>
-                      Phone:{' '}
-                      <a
-                        href={`tel:${CORPORATE_INFO.contact.telephone}`}
-                        className="text-[#0B1320] hover:underline"
-                      >
-                        {CORPORATE_INFO.contact.telephone}
-                      </a>
-                    </p>
-                  </div>
+                  <p className="text-xs text-[#64748B]">
+                    Central estimating switchboard (GST working hours)
+                  </p>
                 </div>
 
-                {/* 03 Commercial Desks */}
-                <div className="pt-6 space-y-2">
+                {/* 03 Departmental Inquiries */}
+                <div className="space-y-2 pb-6 border-b border-[#E5E7EB]">
                   <div className="flex items-center gap-2">
-                    <Building2 className="w-4 h-4 text-[#173C62]" />
+                    <IconEmail size="sm" color="primary" />
                     <span className="font-mono text-xs font-semibold text-[#173C62] uppercase tracking-wider">
-                      Commercial Desks
+                      Division Email Desks
                     </span>
                   </div>
-                  <h4 className="text-base font-medium text-[#0B1320]">
-                    Divisional Contacts
-                  </h4>
-                  <div className="text-xs sm:text-sm text-[#4A5568] space-y-1.5 pt-1">
+                  <div className="space-y-2 text-xs">
                     <div className="flex justify-between items-center py-0.5">
-                      <span className="text-[#64748B]">General Inquiries:</span>
+                      <span className="text-[#64748B]">Engineering Tenders:</span>
                       <a
-                        href={`mailto:${CORPORATE_INFO.contact.emailGeneral}`}
+                        href={`mailto:${CORPORATE_INFO.contact.emailTenders}`}
                         className="font-mono text-[#173C62] hover:underline"
                       >
-                        {CORPORATE_INFO.contact.emailGeneral}
+                        {CORPORATE_INFO.contact.emailTenders}
                       </a>
                     </div>
                     <div className="flex justify-between items-center py-0.5">
@@ -574,49 +492,42 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                 </div>
 
                 {/* 04 Hours & Emergency Dispatch */}
-                <div className="pt-6 space-y-2">
+                <div className="space-y-2">
                   <div className="flex items-center gap-2">
-                    <Clock className="w-4 h-4 text-[#173C62]" />
+                    <IconClock size="sm" color="primary" />
                     <span className="font-mono text-xs font-semibold text-[#173C62] uppercase tracking-wider">
                       Operating Schedule
                     </span>
                   </div>
-                  <h4 className="text-base font-medium text-[#0B1320]">
-                    Standard Hours &amp; 24/7 Dispatch
+                  <h4 className="text-sm font-medium text-[#0B1320]">
+                    {CORPORATE_INFO.contact.hours} (GST)
                   </h4>
-                  <div className="text-xs sm:text-sm text-[#4A5568] space-y-1">
-                    <p>{CORPORATE_INFO.contact.hours} (GST)</p>
-                    <p className="text-[11px] font-mono text-[#173C62] font-semibold pt-1">
-                      24/7 EMERGENCY DISPATCH FOR CONTRACTED PROPERTIES
-                    </p>
-                  </div>
+                  <p className="text-[11px] font-mono text-[#173C62] font-semibold pt-1">
+                    24/7 EMERGENCY DISPATCH FOR CONTRACTED PROPERTIES
+                  </p>
                 </div>
+
               </div>
             </div>
+
           </div>
         </div>
       </section>
 
       {/* =========================================================================
-          04 — SUPPORTING ARCHITECTURAL FINISH
-          Full-width engineering photography plate with quiet caption.
+          03 — ARCHITECTURAL FINISH PLATE
+          Full-width engineering photography plate with quiet coordinate caption.
       ========================================================================= */}
-      <section className="relative w-full h-[380px] sm:h-[460px] bg-[#0B1C2F] overflow-hidden">
+      <section className="relative w-full h-[320px] sm:h-[400px] bg-[#173C62] overflow-hidden">
         <img
           src="/assets/images/engineering-intro.jpg"
           alt="LTSGROUP Plant and Electromechanical Infrastructure"
-          className="w-full h-full object-cover filter brightness-[0.80] transition-transform duration-[1200ms] ease-out hover:scale-[1.01]"
+          className="w-full h-full object-cover filter brightness-[0.80]"
           loading="lazy"
-          onError={(e) => {
-            (e.currentTarget as HTMLImageElement).src =
-              'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2000&q=80';
-          }}
         />
 
-        {/* Scrim */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B1320]/80 via-transparent to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/85 via-transparent to-transparent pointer-events-none" />
 
-        {/* Caption */}
         <div className="absolute bottom-8 left-0 right-0 z-10">
           <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="space-y-1">

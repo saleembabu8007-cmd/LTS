@@ -79,4 +79,5 @@ export type { RadioProps } from './Radio';
 export { StatusIndicator } from './StatusIndicator';
 export type { StatusIndicatorProps, StatusTone } from './StatusIndicator';
 
-
+// Master LTSGROUP Unified Iconography System
+export * from '../icons';

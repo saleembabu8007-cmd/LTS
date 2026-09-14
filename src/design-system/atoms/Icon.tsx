@@ -26,9 +26,9 @@ export const Icon: React.FC<IconProps> = ({
   };
 
   const colorClasses: Record<IconColor, string> = {
-    default: 'text-[#0B1320]',
+    default: 'text-[#173C62]',
     brand: 'text-[#173C62]',
-    muted: 'text-[#64748B]',
+    muted: 'text-[#999999]',
     inverse: 'text-white',
     inherit: 'text-inherit',
   };
@@ -42,7 +42,7 @@ export const Icon: React.FC<IconProps> = ({
     >
       <IconComponent
         size={sizeMap[size]}
-        strokeWidth={1.75}
+        strokeWidth={1.5}
         className="transition-colors"
       />
     </span>

@@ -73,7 +73,7 @@ export const CompactImageCard: React.FC<CompactImageCardProps> = ({
       className={`group flex items-center gap-3 sm:gap-4 p-2.5 sm:p-4 rounded-[14px] bg-white border border-[#E5E7EB] hover:border-[#173C62] text-left select-none transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] cursor-pointer ${className}`}
     >
       {/* Thumbnail Frame (10–12px radius, NO overlay) */}
-      <div className="relative w-16 h-14 sm:w-24 sm:h-20 shrink-0 overflow-hidden rounded-[10px] bg-[#0B1C2F]">
+      <div className="relative w-16 h-14 sm:w-24 sm:h-20 shrink-0 overflow-hidden rounded-[10px] bg-[#173C62]">
         <img
           src={finalImage}
           alt={imageAlt || title}

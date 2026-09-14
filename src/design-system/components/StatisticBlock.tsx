@@ -25,7 +25,7 @@ export const StatisticBlock: React.FC<StatisticBlockProps> = ({
 
   const containerClasses = isCard
     ? isDark
-      ? 'p-6 sm:p-7 bg-[#0B1C2F] border border-white/10 rounded-[16px]'
+      ? 'p-6 sm:p-7 bg-[#173C62] border border-white/15 rounded-[16px]'
       : 'p-6 sm:p-7 bg-white border border-[#E5E7EB] rounded-[16px]'
     : 'py-2';
 

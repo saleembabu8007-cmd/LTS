@@ -69,14 +69,14 @@ export const HorizontalProjectStrip: React.FC<HorizontalProjectStripProps> = ({
               className="group cursor-pointer space-y-4"
             >
               {/* Wide Aspect Visual */}
-              <div className="relative aspect-[16/10] overflow-hidden bg-[#0B1C2F] border border-[#E5E7EB]">
+              <div className="relative aspect-[16/10] overflow-hidden bg-[#173C62] border border-[#E5E7EB]">
                 <img
                   src={item.image}
                   alt={item.title}
                   className="w-full h-full object-cover object-center group-hover:scale-[1.025] transition-transform duration-[400ms] ease-out"
                   loading="lazy"
                 />
-                <div className="absolute top-3 left-3 bg-[#0B1C2F]/90 px-2.5 py-1 text-[10px] uppercase tracking-wider text-white font-medium">
+                <div className="absolute top-3 left-3 bg-[#173C62]/90 px-2.5 py-1 text-[10px] uppercase tracking-wider text-white font-medium">
                   {item.category}
                 </div>
               </div>

@@ -22,6 +22,29 @@ import {
   Caption,
   Arrow,
   Icon,
+  LTSIcon,
+  IconHVAC,
+  IconElectrical,
+  IconPlumbing,
+  IconBMS,
+  IconCivil,
+  IconSolar,
+  IconSwitchgear,
+  IconControls,
+  IconLighting,
+  IconEVCharging,
+  IconFacilities,
+  IconTrading,
+  IconProjects,
+  IconIndustries,
+  IconContact,
+  IconLocation,
+  IconPhone,
+  IconEmail,
+  IconArrow,
+  IconArrowUpRight,
+  IconShieldCheck,
+  IconCheck,
   Divider,
   Button,
   TextLink,
@@ -108,6 +131,19 @@ import {
   CompositionJ,
 } from '../../design-system';
 import {
+  FeatureImage,
+  ProjectImage,
+  ServiceImage,
+  EditorialImage,
+  FullWidthImage,
+  ImageMosaic as VisualPatternMosaic,
+} from '../../design-system/visual-patterns';
+import {
+  ProofStrip,
+  ProofSplit,
+  ProofDominant,
+} from '../../design-system/proof';
+import {
   Shield,
   Zap,
   Compass,
@@ -137,13 +173,13 @@ export const DesignSystemShowcase: React.FC<DesignSystemShowcaseProps> = ({ onNa
   const isWarm = canvasTone === 'warm';
 
   const canvasBackground = isDark
-    ? 'bg-[#0B1C2F] text-white'
+    ? 'bg-[#173C62] text-white'
     : isWarm
     ? 'bg-[#F8FAFC] text-[#0B1320]'
     : 'bg-white text-[#0B1320]';
 
   const panelBg = isDark
-    ? 'bg-[#11253E] border-white/10'
+    ? 'bg-[#143353] border-white/15'
     : isWarm
     ? 'bg-white border-[#E2E8F0]'
     : 'bg-[#F8FAFC] border-[#E5E7EB]';
@@ -157,7 +193,7 @@ export const DesignSystemShowcase: React.FC<DesignSystemShowcaseProps> = ({ onNa
       {/* =========================================================================
           TEST LABORATORY HEADER & CANVAS TONE SWITCHER
       ========================================================================= */}
-      <header className="border-b border-[#E5E7EB] bg-[#0B1C2F] text-white py-10 lg:py-14">
+      <header className="border-b border-[#E5E7EB] bg-[#173C62] text-white py-10 lg:py-14">
         <Container>
           <div className="space-y-6">
             <div className="flex flex-wrap items-center justify-between gap-4">
@@ -210,7 +246,7 @@ export const DesignSystemShowcase: React.FC<DesignSystemShowcaseProps> = ({ onNa
                     onClick={() => setActiveTab(tab.id as any)}
                     className={`px-4 py-2 text-xs font-mono font-semibold uppercase tracking-wider transition-all cursor-pointer border rounded-full ${
                       activeTab === tab.id
-                        ? 'bg-white text-[#0B1C2F] border-white'
+                        ? 'bg-white text-[#173C62] border-white'
                         : 'bg-transparent text-slate-300 border-white/20 hover:border-white hover:text-white'
                     }`}
                   >
@@ -228,7 +264,7 @@ export const DesignSystemShowcase: React.FC<DesignSystemShowcaseProps> = ({ onNa
                   type="button"
                   onClick={() => setCanvasTone('white')}
                   className={`px-3 py-1 text-xs font-mono rounded-full transition-colors cursor-pointer ${
-                    canvasTone === 'white' ? 'bg-white text-[#0B1C2F] font-bold' : 'text-slate-300 hover:text-white'
+                    canvasTone === 'white' ? 'bg-white text-[#173C62] font-bold' : 'text-slate-300 hover:text-white'
                   }`}
                 >
                   White
@@ -385,7 +421,7 @@ export const DesignSystemShowcase: React.FC<DesignSystemShowcaseProps> = ({ onNa
                   <div className="p-3 bg-white border border-[#E5E7EB] rounded-[14px]">
                     <BrandLogo variant="dark" withTagline />
                   </div>
-                  <div className="p-3 bg-[#0B1C2F] rounded-[14px] flex items-center gap-4">
+                  <div className="p-3 bg-[#173C62] rounded-[14px] flex items-center gap-4">
                     <BrandLogo variant="light" />
                     <BrandLogo variant="monogram" />
                   </div>
@@ -445,19 +481,95 @@ export const DesignSystemShowcase: React.FC<DesignSystemShowcaseProps> = ({ onNa
                 </div>
               </div>
 
-              {/* Atom 08 & 09: Arrow & Icon */}
-              <div className={`p-6 rounded-[24px] border ${panelBg} space-y-4`}>
-                <div className="flex items-center justify-between border-b border-[#CBD5E1] pb-2">
-                  <span className="font-mono text-xs font-bold text-[#173C62]">Atoms 08 &amp; 09: Arrow &amp; Icon</span>
-                  <span className="text-[11px] font-mono text-[#64748B]">Standardized Stroke &bull; Directional</span>
+              {/* Atom 08 & 09: Master LTS Iconography System */}
+              <div className={`p-6 sm:p-8 rounded-[24px] border ${panelBg} space-y-6 col-span-full`}>
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-[#CBD5E1] pb-3 gap-2">
+                  <div>
+                    <span className="font-mono text-xs font-bold text-[#173C62]">Atoms 08 &amp; 09: Master LTS Iconography System</span>
+                    <p className="text-xs text-[#64748B] mt-0.5">1.5px Hairline Stroke &bull; Architectural Precision &bull; Monochrome &bull; Subtle 3–5px Micro-interaction</p>
+                  </div>
+                  <span className="text-[11px] font-mono text-[#173C62] px-2.5 py-1 rounded-full bg-[#173C62]/5 font-semibold">
+                    10 Service Mappings + 12 Utilities
+                  </span>
                 </div>
-                <div className="flex items-center gap-6 pt-2">
-                  <div className="flex items-center gap-2"><Arrow direction="right" /> <span className="text-xs font-mono">right</span></div>
-                  <div className="flex items-center gap-2"><Arrow direction="up-right" /> <span className="text-xs font-mono">up-right</span></div>
-                  <Icon icon={Shield} color="brand" size="md" />
-                  <Icon icon={Zap} color="brand" size="md" />
-                  <Icon icon={Compass} color="default" size="md" />
+
+                {/* 10 Core Service Icons */}
+                <div className="space-y-3">
+                  <span className="text-[10.5px] font-mono uppercase tracking-wider text-[#999999] block">
+                    01 / Core Electromechanical &amp; Facility Service Mappings
+                  </span>
+                  <div className="grid grid-cols-2 sm:grid-cols-5 lg:grid-cols-10 gap-3">
+                    {[
+                      { name: 'hvac', label: 'HVAC', comp: <IconHVAC /> },
+                      { name: 'electrical', label: 'Electrical', comp: <IconElectrical /> },
+                      { name: 'plumbing', label: 'Plumbing', comp: <IconPlumbing /> },
+                      { name: 'bms', label: 'BMS', comp: <IconBMS /> },
+                      { name: 'civil', label: 'Civil Works', comp: <IconCivil /> },
+                      { name: 'solar', label: 'Solar EPC', comp: <IconSolar /> },
+                      { name: 'switchgear', label: 'Switchgear', comp: <IconSwitchgear /> },
+                      { name: 'controls', label: 'Controls', comp: <IconControls /> },
+                      { name: 'lighting', label: 'Lighting', comp: <IconLighting /> },
+                      { name: 'ev-charging', label: 'EV Charging', comp: <IconEVCharging /> },
+                    ].map((item) => (
+                      <div key={item.name} className="flex flex-col items-center justify-center p-3 rounded-xl border border-[#E5E7EB] bg-white text-center hover:border-[#173C62] transition-colors group">
+                        <div className="p-2.5 rounded-lg bg-[#173C62]/5 mb-1.5 text-[#173C62] group-hover:scale-110 transition-transform duration-200">
+                          {item.comp}
+                        </div>
+                        <span className="text-[11px] font-medium text-[#173C62] leading-tight">{item.label}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
+
+                {/* Functional & Utility Icons */}
+                <div className="space-y-3 pt-4 border-t border-[#E5E7EB]">
+                  <span className="text-[10.5px] font-mono uppercase tracking-wider text-[#999999] block">
+                    02 / Functional Navigation &amp; Authority Utilities
+                  </span>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
+                    {[
+                      { label: 'Facilities', comp: <IconFacilities /> },
+                      { label: 'Trading', comp: <IconTrading /> },
+                      { label: 'Projects', comp: <IconProjects /> },
+                      { label: 'Industries', comp: <IconIndustries /> },
+                      { label: 'Location', comp: <IconLocation /> },
+                      { label: 'Phone', comp: <IconPhone /> },
+                      { label: 'Email', comp: <IconEmail /> },
+                      { label: 'Governance', comp: <IconShieldCheck /> },
+                    ].map((item, idx) => (
+                      <div key={idx} className="flex items-center gap-3 p-3 rounded-xl border border-[#E5E7EB] bg-white hover:border-[#173C62] transition-colors">
+                        <div className="text-[#173C62] shrink-0">{item.comp}</div>
+                        <span className="text-xs font-medium text-[#173C62] truncate">{item.label}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Interactive Directional Arrows (Subtle 3-5px hover movement) */}
+                <div className="space-y-3 pt-4 border-t border-[#E5E7EB]">
+                  <span className="text-[10.5px] font-mono uppercase tracking-wider text-[#999999] block">
+                    03 / Interaction &amp; Color Variants (Subtle 3–5px Motion)
+                  </span>
+                  <div className="flex flex-wrap items-center gap-4">
+                    <button className="group inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-[#173C62]/20 bg-white text-xs font-medium text-[#173C62] hover:border-[#173C62] transition-all">
+                      <span>Interactive Link Action</span>
+                      <IconArrow interactive className="w-3.5 h-3.5 text-[#173C62]" />
+                    </button>
+                    <button className="group inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-[#173C62]/20 bg-white text-xs font-medium text-[#173C62] hover:border-[#173C62] transition-all">
+                      <span>External Case Record</span>
+                      <IconArrowUpRight interactive className="w-3.5 h-3.5 text-[#173C62]" />
+                    </button>
+                    <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-[#173C62] text-white text-xs font-medium">
+                      <span>Monochrome White on Dark</span>
+                      <IconArrow color="white" className="w-3.5 h-3.5" />
+                    </div>
+                    <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-[#F8FAFC] border border-[#E5E7EB] text-[#999999] text-xs font-medium">
+                      <span>Secondary Brand Grey</span>
+                      <IconHVAC color="secondary" size="sm" />
+                    </div>
+                  </div>
+                </div>
+
               </div>
 
               {/* Atom 10: Divider */}
@@ -1138,13 +1250,13 @@ export const DesignSystemShowcase: React.FC<DesignSystemShowcaseProps> = ({ onNa
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* 1.025x Scale Frame */}
                 <div className="group cursor-pointer space-y-3">
-                  <div className="relative aspect-[16/10] rounded-[28px] overflow-hidden bg-[#0B1C2F]">
+                  <div className="relative aspect-[16/10] rounded-[28px] overflow-hidden bg-[#173C62]">
                     <img
                       src="/assets/images/hero-building.jpg"
                       alt="1.025x Scale Test"
                       className="w-full h-full object-cover filter brightness-[0.9] group-hover:scale-[1.025] transition-transform duration-[400ms] ease-out"
                     />
-                    <div className="absolute top-3 left-3 bg-[#0B1C2F]/80 text-white text-[10px] font-mono px-2.5 py-1 rounded-full border border-white/10">
+                    <div className="absolute top-3 left-3 bg-[#173C62]/85 text-white text-[10px] font-mono px-2.5 py-1 rounded-full border border-white/10">
                       Hover: scale-[1.025] • 400ms ease-out
                     </div>
                   </div>
@@ -1156,13 +1268,13 @@ export const DesignSystemShowcase: React.FC<DesignSystemShowcaseProps> = ({ onNa
 
                 {/* 1.03x Scale Feature Frame */}
                 <div className="group cursor-pointer space-y-3">
-                  <div className="relative aspect-[16/10] rounded-[32px] overflow-hidden bg-[#0B1C2F]">
+                  <div className="relative aspect-[16/10] rounded-[32px] overflow-hidden bg-[#173C62]">
                     <img
                       src="/assets/images/project-chiller.jpg"
                       alt="1.03x Scale Test"
                       className="w-full h-full object-cover filter brightness-[0.9] group-hover:scale-[1.03] transition-transform duration-[400ms] ease-out"
                     />
-                    <div className="absolute top-3 left-3 bg-[#0B1C2F]/80 text-white text-[10px] font-mono px-2.5 py-1 rounded-full border border-white/10">
+                    <div className="absolute top-3 left-3 bg-[#173C62]/85 text-white text-[10px] font-mono px-2.5 py-1 rounded-full border border-white/10">
                       Hover: scale-[1.03] • 400ms ease-out
                     </div>
                   </div>
@@ -1258,7 +1370,7 @@ export const DesignSystemShowcase: React.FC<DesignSystemShowcaseProps> = ({ onNa
                 </p>
               </div>
 
-              <div className="p-6 rounded-[20px] bg-[#0B1C2F] text-white space-y-3 font-mono text-xs">
+              <div className="p-6 rounded-[20px] bg-[#173C62] text-white space-y-3 font-mono text-xs">
                 <div className="text-[#94A3B8] uppercase tracking-wider text-[11px]">
                   ACTIVE CSS SPECIFICATION IN `src/index.css`
                 </div>
@@ -1689,6 +1801,296 @@ export const DesignSystemShowcase: React.FC<DesignSystemShowcaseProps> = ({ onNa
               </div>
             </Container>
           </section>
+
+          {/* Section 6: The 6 Standard Image-First Visual Patterns */}
+          <section className="space-y-8 pt-8 border-t border-black/10">
+            <Container variant="wide">
+              <SectionHeading
+                eyebrow="LEVEL 06 — IMAGE-FIRST VISUAL SYSTEM"
+                title="The 6 Standard Visual Patterns"
+                description="Strictly standardized image patterns where imagery carries the visual and emotional weight: Feature Image, Project Image, Service Image, Editorial Image, Full-width Image, and Image Mosaic. All feature 1.02 hover zoom and 3–5px arrow translation."
+              />
+
+              <div className="space-y-12 pt-8">
+                
+                {/* 1. Feature Image */}
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-xs font-bold text-[#173C62] uppercase tracking-wider">
+                      Pattern 01 · Feature Image (Large Rounded Focal Point)
+                    </span>
+                    <span className="text-[11px] font-mono text-[#999999]">20px Radius &bull; Minimal Text &bull; Optional Metadata</span>
+                  </div>
+                  <FeatureImage
+                    title="Utility-Grade Shams Dubai Solar PV EPC & Substation Synchronization"
+                    imageSrc="/assets/images/solar-epc.jpg"
+                    imageAlt="Solar PV Substation Synchronization"
+                    eyebrow="DIVISION 01 &bull; SOLAR EPC"
+                    description="Turnkey rooftop and carport solar photovoltaic systems engineered for peak continuous generation under intense ambient temperatures."
+                    metadata="DEWA Shams Dubai Certified // 2.4 MWp"
+                    badge="COMMISSIONED"
+                    ctaText="Explore Solar Scope"
+                    aspectRatio="21/9"
+                  />
+                </div>
+
+                {/* 2 & 3. Project Image (70-80% weight) & Service Image (1 short line max) */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                  
+                  {/* Pattern 02: Project Image */}
+                  <div className="lg:col-span-7 space-y-3">
+                    <div className="flex items-center justify-between">
+                      <span className="font-mono text-xs font-bold text-[#173C62] uppercase tracking-wider">
+                        Pattern 02 · Project Image (70–80% Image Weight)
+                      </span>
+                      <span className="text-[11px] font-mono text-[#999999]">75% Visual Weight &bull; 25% Metadata</span>
+                    </div>
+                    <ProjectImage
+                      id="proj-highrise"
+                      title="Commercial High-Rise Electromechanical Infrastructure"
+                      category="MEP CONTRACTING"
+                      location="Downtown Dubai, UAE"
+                      descriptor="Turnkey chilled water risers, vertical busway reticulation, and certified smoke extract."
+                      imageSrc="/assets/images/project-highrise.jpg"
+                      aspectRatio="landscape"
+                    />
+                  </div>
+
+                  {/* Pattern 03: Service Image */}
+                  <div className="lg:col-span-5 space-y-3">
+                    <div className="flex items-center justify-between">
+                      <span className="font-mono text-xs font-bold text-[#173C62] uppercase tracking-wider">
+                        Pattern 03 · Service Image (Image + Title + Arrow)
+                      </span>
+                      <span className="text-[11px] font-mono text-[#999999]">1 Short Line Maximum</span>
+                    </div>
+                    <div className="space-y-4">
+                      <ServiceImage
+                        id="srv-chiller"
+                        numeral="01"
+                        title="Central Chiller Plant Reliability"
+                        shortLine="Continuous delta-T optimization, vibration diagnostics, and tube eddy-current testing."
+                        imageSrc="/assets/images/project-chiller.jpg"
+                        href="/facilities-management/hvac"
+                      />
+                      <ServiceImage
+                        id="srv-switchgear"
+                        numeral="02"
+                        title="Low-Voltage Switchgear Assembly"
+                        shortLine="Form-4 type-tested assemblies up to 65kA fault level with integrated ATS."
+                        imageSrc="/assets/images/industry-logistics.jpg"
+                        href="/engineering-construction/control-switchgear"
+                      />
+                    </div>
+                  </div>
+
+                </div>
+
+                {/* 4. Editorial Image */}
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-xs font-bold text-[#173C62] uppercase tracking-wider">
+                      Pattern 04 · Editorial Image (Architectural Storytelling)
+                    </span>
+                    <span className="text-[11px] font-mono text-[#999999]">Standalone Visual &bull; Technical Figure Annotation</span>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <EditorialImage
+                      imageSrc="/assets/images/mep-construction.jpg"
+                      caption="Primary high-density vertical busbar riser shaft in 52-story commercial tower."
+                      figureNumber="FIG. 01"
+                      location="Business Bay, Dubai"
+                      aspectRatio="16/10"
+                    />
+                    <EditorialImage
+                      imageSrc="/assets/images/trading-components.jpg"
+                      caption="Variable frequency drive test bench and MID Class-2 ultrasonic heat meter telemetry."
+                      figureNumber="FIG. 02"
+                      location="Dubai Logistics City"
+                      aspectRatio="16/10"
+                    />
+                  </div>
+                </div>
+
+                {/* 5. Full-Width Image */}
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-xs font-bold text-[#173C62] uppercase tracking-wider">
+                      Pattern 05 · Full-Width Image (Panoramic Viewport)
+                    </span>
+                    <span className="text-[11px] font-mono text-[#999999]">21:9 Presence &bull; Quiet Lower Anchors</span>
+                  </div>
+                  <FullWidthImage
+                    imageSrc="/assets/images/hero-building.jpg"
+                    subtitle="BUILT ASSET STEWARDSHIP"
+                    title="Mission-Critical Electromechanical Reliability Across the UAE"
+                    statusBadge="ACTIVE STATUTORY MONITORING"
+                    metaRight="DUBAI &bull; UAE // DEWA CLASS 1"
+                    ctaText="Review Verified Capabilities"
+                    ctaHref="/about-us"
+                  />
+                </div>
+
+                {/* 6. Image Mosaic */}
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-xs font-bold text-[#173C62] uppercase tracking-wider">
+                      Pattern 06 · Image Mosaic (1 Large + 2 Smaller Supporting Images)
+                    </span>
+                    <span className="text-[11px] font-mono text-[#999999]">Asymmetric 7/5 Composition &bull; 18–20px Radii</span>
+                  </div>
+                  <VisualPatternMosaic
+                    primaryImage={{
+                      src: '/assets/images/mep-construction.jpg',
+                      alt: 'Turnkey Electromechanical Infrastructure',
+                      tag: 'CAPITAL EXECUTION',
+                      caption: 'Turnkey 11kV substation coordination and central district cooling hydronics.',
+                    }}
+                    supportingImages={[
+                      {
+                        src: '/assets/images/project-solar.jpg',
+                        alt: 'Commercial Solar PV Arrays',
+                        tag: 'SHAMS DUBAI EPC',
+                        caption: '2.4 MWp rooftop photovoltaic generation synchronized to utility grid.',
+                      },
+                      {
+                        src: '/assets/images/project-chiller.jpg',
+                        alt: 'Thermodynamic Plant Stewardship',
+                        tag: 'CONTINUOUS RELIABILITY',
+                        caption: 'Precision central chiller overhauls and water hygiene compliance.',
+                      },
+                    ]}
+                  />
+                </div>
+
+              </div>
+            </Container>
+          </section>
+
+          {/* Section 7: Numbers & Proof Architecture (Options A, B, C) */}
+          <section className="space-y-8 pt-8 border-t border-black/10">
+            <Container variant="wide">
+              <SectionHeading
+                eyebrow="LEVEL 07 — NUMBERS &amp; PROOF ARCHITECTURE"
+                title="Verified Numerical Evidence Systems"
+                description="Forensic editorial evidence replacing repetitive card boxes. Employs large font-mono numerals, delicate hairlines, and generous negative space with zero invented statistics."
+              />
+
+              <div className="space-y-16 pt-8">
+                
+                {/* 1. Option A: ProofStrip */}
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-xs font-bold text-[#173C62] uppercase tracking-wider">
+                      Option A · ProofStrip (Horizontal Editorial Evidence Strip)
+                    </span>
+                    <span className="text-[11px] font-mono text-[#999999]">
+                      2–4 Verified Items &bull; Delicate Hairlines &bull; Zero Boxed Cards
+                    </span>
+                  </div>
+                  <ProofStrip
+                    eyebrow="AUDITED OPERATIONAL DATA"
+                    title="UAE Engineering &amp; Contracting Metrics"
+                    tone="subtle"
+                    separators="vertical"
+                    items={[
+                      {
+                        index: '01',
+                        value: '03',
+                        label: 'Business Divisions',
+                        subtext: 'Engineering & Construction, Facilities Management, Wholesale Trading',
+                      },
+                      {
+                        index: '02',
+                        value: '09',
+                        label: 'Specialized Disciplines',
+                        subtext: 'Single-source electromechanical accountability across the built lifecycle',
+                      },
+                      {
+                        index: '03',
+                        value: '24/7',
+                        label: 'Operational Dispatch',
+                        subtext: 'Continuous facilities response and emergency escalation center in Dubai',
+                      },
+                      {
+                        index: '04',
+                        value: '100%',
+                        label: 'Statutory Clearances',
+                        subtext: 'Verified compliance across DEWA, Dubai Civil Defense, and Dubai Municipality',
+                      },
+                    ]}
+                  />
+                </div>
+
+                {/* 2. Option B: ProofSplit */}
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-xs font-bold text-[#173C62] uppercase tracking-wider">
+                      Option B · ProofSplit (Asymmetric Number on Left + Editorial Right)
+                    </span>
+                    <span className="text-[11px] font-mono text-[#999999]">
+                      5/7 Asymmetric Split &bull; Monumental Typography &bull; Single-Source Context
+                    </span>
+                  </div>
+                  <ProofSplit
+                    eyebrow="MISSION-CRITICAL AVAILABILITY"
+                    primaryNumber={{
+                      index: '01',
+                      value: '24/7',
+                      label: 'Emergency Technical Dispatch',
+                      subtext: 'Dubai Operations Command Center',
+                    }}
+                    editorial={{
+                      headline: 'Uninterrupted operational continuity for UAE built assets.',
+                      explanation: 'LTSGROUP maintains continuous 24/7 emergency dispatch and computerized maintenance tracking, safeguarding central chiller plants, high-voltage busways, and critical plumbing networks against unpredicted downtime.',
+                      citation: 'CAFM Telemetry // 15-Minute Critical Response SLA',
+                      ctaText: 'Review Facilities Scope',
+                      ctaHref: '/facilities-management',
+                    }}
+                    tone="white"
+                  />
+                </div>
+
+                {/* 3. Option C: ProofDominant */}
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-xs font-bold text-[#173C62] uppercase tracking-wider">
+                      Option C · ProofDominant (1 Huge Anchor + 2 Supporting Metrics)
+                    </span>
+                    <span className="text-[11px] font-mono text-[#999999]">
+                      Monumental Scale &bull; Strict Factual Integrity &bull; Zero Synthetic Padding
+                    </span>
+                  </div>
+                  <ProofDominant
+                    eyebrow="ENTERPRISE BENCHMARKS"
+                    title="Single-Source Electromechanical Accountability"
+                    tone="subtle"
+                    dominantItem={{
+                      index: '01',
+                      value: '03',
+                      label: 'Core Operating Pillars',
+                      subtext: 'Capital Engineering & Construction, Facilities Stewardship, and Wholesale Trading unified under single-source institutional governance.',
+                    }}
+                    supportingItems={[
+                      {
+                        index: '02',
+                        value: '03',
+                        label: 'Certified Management Systems',
+                        subtext: 'ISO 9001:2015 Quality, ISO 14001:2015 Environmental, and ISO 45001:2018 Safety.',
+                      },
+                      {
+                        index: '03',
+                        value: '100%',
+                        label: 'Statutory Clearances',
+                        subtext: 'Unconditional utility approvals across DEWA Shams Dubai, Civil Defense, and Municipality.',
+                      },
+                    ]}
+                  />
+                </div>
+
+              </div>
+            </Container>
+          </section>
         </div>
       )}
 
@@ -1698,7 +2100,7 @@ export const DesignSystemShowcase: React.FC<DesignSystemShowcaseProps> = ({ onNa
           {/* Header Banner */}
           <section>
             <Container variant="wide">
-              <div className="p-8 sm:p-10 rounded-[20px] bg-[#0B1C2F] text-white space-y-4 border border-white/10">
+              <div className="p-8 sm:p-10 rounded-[20px] bg-[#173C62] text-white space-y-4 border border-white/10">
                 <div className="flex items-center gap-3">
                   <span className="px-2.5 py-1 bg-[#173C62] text-xs font-mono font-semibold rounded-full uppercase tracking-wider text-[#93C5FD]">
                     ARCHITECTURAL RHYTHM CONSTITUTION

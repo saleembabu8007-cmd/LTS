@@ -45,7 +45,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
               className="w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.02]"
             />
             {division && (
-              <div className="absolute top-3 left-3 bg-[#0B1C2F]/90 backdrop-blur-xs px-2.5 py-1 text-[9.5px] uppercase font-mono tracking-[0.14em] text-white rounded-[1px]">
+              <div className="absolute top-3 left-3 bg-[#173C62]/90 backdrop-blur-xs px-2.5 py-1 text-[9.5px] uppercase font-mono tracking-[0.14em] text-white rounded-[1px]">
                 {division}
               </div>
             )}

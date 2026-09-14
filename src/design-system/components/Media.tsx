@@ -89,7 +89,7 @@ export const Media: React.FC<MediaProps> = ({
   return (
     <figure className={`w-full ${className}`} {...props}>
       <div
-        className={`relative w-full overflow-hidden bg-[#0B1C2F]/5 ${actualRadiusClass} ${aspectMap[aspectRatio]} ${containerClassName}`}
+        className={`relative w-full overflow-hidden bg-[#173C62]/5 ${actualRadiusClass} ${aspectMap[aspectRatio]} ${containerClassName}`}
       >
         {/* Core Media Photography */}
         <img
@@ -106,7 +106,7 @@ export const Media: React.FC<MediaProps> = ({
         {(variant === 'image-overlay' || overlayTitle) && (
           <>
             {/* Directional Gradient Scrim */}
-            <div className={`absolute inset-0 bg-gradient-to-t from-[#0B1C2F]/90 via-[#0B1C2F]/40 to-transparent pointer-events-none ${actualRadiusClass}`} />
+            <div className={`absolute inset-0 bg-gradient-to-t from-[#173C62]/95 via-[#173C62]/45 to-transparent pointer-events-none ${actualRadiusClass}`} />
 
             <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 flex flex-col justify-end text-left z-10">
               {overlayBadge && (
@@ -141,7 +141,7 @@ export const Media: React.FC<MediaProps> = ({
             </button>
 
             {videoDuration && (
-              <span className="absolute bottom-4 right-4 px-2.5 py-1 bg-[#0B1C2F]/90 text-white text-[11px] font-mono tracking-wider rounded-[6px] backdrop-blur-sm">
+              <span className="absolute bottom-4 right-4 px-2.5 py-1 bg-[#173C62]/90 text-white text-[11px] font-mono tracking-wider rounded-[6px] backdrop-blur-sm">
                 {videoDuration}
               </span>
             )}

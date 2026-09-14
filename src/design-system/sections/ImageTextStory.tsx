@@ -52,7 +52,7 @@ export const ImageTextStory: React.FC<ImageTextStoryProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
           {/* Dominant Image (7 cols) */}
           <div className={`lg:col-span-7 ${reverse ? 'lg:order-2' : 'lg:order-1'}`}>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-[18px] bg-[#0B1C2F]">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-[18px] bg-[#173C62]">
               <img
                 src={imageUrl}
                 alt={imageAlt || title}

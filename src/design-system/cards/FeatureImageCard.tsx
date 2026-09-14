@@ -41,7 +41,7 @@ export const FeatureImageCard: React.FC<FeatureImageCardProps> = ({
   onClick,
   className = '',
 }) => {
-  const finalImage = imageUrl || imageSrc || 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80';
+  const finalImage = imageUrl || imageSrc || '/assets/images/hero-building.jpg';
 
   const aspectClass = {
     '16/9': 'aspect-[4/3] sm:aspect-[16/9] min-h-[300px] sm:min-h-0',
@@ -78,7 +78,7 @@ export const FeatureImageCard: React.FC<FeatureImageCardProps> = ({
   return (
     <CardWrapper
       {...(wrapperProps as any)}
-      className={`group relative block w-full select-none overflow-hidden rounded-[20px] sm:rounded-[24px] bg-[#0B1C2F] text-left transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:ring-offset-4 ${className}`}
+      className={`group relative block w-full select-none overflow-hidden rounded-[20px] sm:rounded-[24px] bg-[#173C62] text-left transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:ring-offset-4 ${className}`}
     >
       {/* Media Container */}
       <div className={`relative w-full overflow-hidden ${aspectClass}`}>
@@ -86,10 +86,9 @@ export const FeatureImageCard: React.FC<FeatureImageCardProps> = ({
           src={finalImage}
           alt={imageAlt || title}
           loading="lazy"
-          className="w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.025]"
+          className="w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.02]"
           onError={(e) => {
-            (e.currentTarget as HTMLImageElement).src =
-              'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80';
+            (e.currentTarget as HTMLImageElement).src = '/assets/images/hero-building.jpg';
           }}
         />
 

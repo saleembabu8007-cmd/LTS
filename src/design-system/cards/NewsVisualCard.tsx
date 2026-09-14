@@ -60,7 +60,7 @@ export const EditorialStoryCard: React.FC<EditorialStoryCardProps> = ({
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-center">
             {imageUrl && (
               <div className="md:col-span-4 lg:col-span-4">
-                <div className="relative aspect-[16/10] overflow-hidden rounded-[16px] bg-[#0B1C2F]">
+                <div className="relative aspect-[16/10] overflow-hidden rounded-[16px] bg-[#173C62]">
                   <img
                     src={imageUrl}
                     alt={imageAlt || title}
@@ -96,7 +96,7 @@ export const EditorialStoryCard: React.FC<EditorialStoryCardProps> = ({
                 {excerpt}
               </p>
 
-              <div className="pt-2 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#173C62] group-hover:text-[#11253E] transition-colors">
+              <div className="pt-2 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#173C62] group-hover:text-[#12304F] transition-colors">
                 <span>Read technical analysis</span>
                 <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
               </div>
@@ -117,7 +117,7 @@ export const EditorialStoryCard: React.FC<EditorialStoryCardProps> = ({
         aria-label={`Read article: ${title}`}
       >
         {imageUrl && (
-          <div className="relative aspect-[16/10] overflow-hidden rounded-[16px] bg-[#0B1C2F] mb-4">
+          <div className="relative aspect-[16/10] overflow-hidden rounded-[16px] bg-[#173C62] mb-4">
             <img
               src={imageUrl}
               alt={imageAlt || title}
@@ -151,7 +151,7 @@ export const EditorialStoryCard: React.FC<EditorialStoryCardProps> = ({
           {excerpt}
         </p>
 
-        <div className="mt-3 inline-flex items-center gap-1.5 text-[12px] font-semibold text-[#173C62] group-hover:text-[#102B47]">
+        <div className="mt-3 inline-flex items-center gap-1.5 text-[12px] font-semibold text-[#173C62] group-hover:text-[#12304F]">
           <span>Read briefing</span>
           <span className="transition-transform duration-180 ease-out group-hover:translate-x-[3px]" aria-hidden="true">
             &rarr;

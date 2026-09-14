@@ -25,7 +25,7 @@ export const ServiceCtaModule: React.FC<ServiceCtaModuleProps> = ({ data, onNavi
   return (
     <section
       aria-label="Service Consultation Closing"
-      className="relative py-20 lg:py-28 bg-[#0B1C2F] text-white overflow-hidden text-left"
+      className="relative py-20 lg:py-28 bg-[#173C62] text-white overflow-hidden text-left"
     >
       {/* Quiet Architectural Image Background */}
       <div className="absolute inset-0 z-0">
@@ -35,7 +35,7 @@ export const ServiceCtaModule: React.FC<ServiceCtaModuleProps> = ({ data, onNavi
           className="w-full h-full object-cover object-center opacity-25"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B1C2F] via-[#0B1C2F]/85 to-[#0B1C2F]/70" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#173C62] via-[#173C62]/85 to-[#173C62]/70" />
       </div>
 
       <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">

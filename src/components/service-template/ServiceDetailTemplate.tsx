@@ -5,9 +5,7 @@ import { BreadcrumbItem } from '../../types/navigation';
 import { ServiceHero } from './ServiceHero';
 import { ServiceDescriptionModule } from './ServiceDescriptionModule';
 import { MainCapabilityModule } from './MainCapabilityModule';
-import { ApplicationsModule } from './ApplicationsModule';
 import { ServiceProjectProofModule } from './ServiceProjectProofModule';
-import { RelatedServicesModule } from './RelatedServicesModule';
 import { ServiceCtaModule } from './ServiceCtaModule';
 
 interface ServiceDetailTemplateProps {
@@ -18,15 +16,13 @@ interface ServiceDetailTemplateProps {
 /**
  * ServiceDetailTemplate
  * Universal canonical template for all LTSGROUP service detail pages.
- * Conforms strictly to the master 8-stage page structure:
- * - 01 Breadcrumb (Dedicated accessible navigation datum above the hero)
- * - 02 Hero (Small eyebrow, service title, short description, capsule CTA, large image)
- * - 03 Service overview (Short editorial section, asymmetric 2-column, no cards)
- * - 04 Capabilities (Structured list, clean dividers, minimal icons)
- * - 05 Applications / scope (Conditionally rendered only when supported by content)
- * - 06 Related projects (Image-led verified project reference)
- * - 07 Related services (Simple, elegant typographic links)
- * - 08 CTA (Quiet image-led corporate consultation closing)
+ * Conforms strictly to the minimal-content 6-stage page structure:
+ * - 01 Hero (Breadcrumb datum + eyebrow + title + short statement + image + CTA)
+ * - 02 Short description (Asymmetric editorial overview)
+ * - 03 Image (High-resolution architectural installation field visual)
+ * - 04 Key capabilities (Structured list with clean dividers)
+ * - 05 Related projects (Image-led verified project reference)
+ * - 06 CTA (Quiet corporate consultation closing)
  */
 export const ServiceDetailTemplate: React.FC<ServiceDetailTemplateProps> = ({
   data,
@@ -68,25 +64,19 @@ export const ServiceDetailTemplate: React.FC<ServiceDetailTemplateProps> = ({
         </div>
       </div>
 
-      {/* 02 — Hero */}
+      {/* 01 — Hero */}
       <ServiceHero data={data} onNavigate={onNavigate} />
 
-      {/* 03 — Service Overview */}
+      {/* 02 — Short Description */}
       <ServiceDescriptionModule data={data} />
 
-      {/* 04 — Capabilities (Structured List) */}
+      {/* 03 & 04 — Key Capabilities (Structured List with Visual Anchors) */}
       <MainCapabilityModule data={data} />
 
-      {/* 05 — Applications / Scope (Only when supported by content) */}
-      <ApplicationsModule data={data} />
-
-      {/* 06 — Related Projects (Image-Led) */}
+      {/* 05 — Related Projects (Image-Led Reference) */}
       <ServiceProjectProofModule data={data} onNavigate={onNavigate} />
 
-      {/* 07 — Related Services (Simple Links) */}
-      <RelatedServicesModule data={data} onNavigate={onNavigate} />
-
-      {/* 08 — CTA */}
+      {/* 06 — CTA */}
       <ServiceCtaModule data={data} onNavigate={onNavigate} />
     </article>
   );

@@ -24,7 +24,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, hidePreFooter = fals
   };
 
   return (
-    <footer className="bg-[#0B1C2F] text-slate-300 border-t border-white/10 selection:bg-[#173C62] selection:text-white">
+    <footer className="bg-[#173C62] text-slate-300 border-t border-white/10 selection:bg-white selection:text-[#173C62]">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* =====================================================================
             TIER 1 — COMPACT COMMERCIAL PRE-FOOTER INVITATION
@@ -92,7 +92,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, hidePreFooter = fals
               <div className="pt-1 space-y-2">
                 <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-[10.5px] font-mono text-slate-300">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#93C5FD]" />
-                  <span>ISO 9001 &bull; 14001 &bull; 45001 Governance</span>
+                  <span>DEWA &bull; DCD &bull; DM Statutory Governance</span>
                 </div>
                 <p className="text-[11px] text-slate-400 font-mono">
                   Dubai Commercial License: {CORPORATE_INFO.legal.licenseNumber}

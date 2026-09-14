@@ -51,14 +51,14 @@ export const ProjectFeature: React.FC<ProjectFeatureProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           {/* Architectural Imagery (7 cols) */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="relative aspect-[16/10] overflow-hidden bg-[#0B1C2F] border border-[#E5E7EB] rounded-[18px]">
+            <div className="relative aspect-[16/10] overflow-hidden bg-[#173C62] border border-[#E5E7EB] rounded-[18px]">
               <img
                 src={imageSrc}
                 alt={imageAlt || title}
                 className="w-full h-full object-cover object-center"
                 loading="lazy"
               />
-              <div className="absolute top-4 left-4 bg-[#0B1C2F]/90 backdrop-blur-xs px-3 py-1 text-xs uppercase tracking-[0.14em] text-white font-medium rounded-[6px]">
+              <div className="absolute top-4 left-4 bg-[#173C62]/90 backdrop-blur-xs px-3 py-1 text-xs uppercase tracking-[0.14em] text-white font-medium rounded-[6px]">
                 {category}
               </div>
             </div>

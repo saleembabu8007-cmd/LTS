@@ -40,7 +40,7 @@ export const Button: React.FC<ButtonProps> = ({
 
   // Standard soft-radius 12px, never sharp 2px
   const baseClasses = isTextLink
-    ? 'inline-flex items-center gap-1.5 font-semibold typography-btn text-[#173C62] hover:text-[#102B47] transition-colors select-none group focus:outline-none'
+    ? 'inline-flex items-center gap-1.5 font-semibold typography-btn text-[#173C62] hover:text-[#12304F] transition-colors select-none group focus:outline-none'
     : 'inline-flex items-center justify-center font-semibold typography-btn rounded-[12px] transition-colors duration-[180ms] ease-out select-none cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:ring-offset-2 shadow-none';
 
   const sizeClasses: Record<ButtonSize, string> = isTextLink
@@ -57,11 +57,11 @@ export const Button: React.FC<ButtonProps> = ({
 
   const variantClasses: Record<ButtonVariant, string> = {
     primary:
-      'bg-[#173C62] text-white hover:bg-[#102B47] active:bg-[#0B1C2F] border border-[#173C62] shadow-xs',
+      'bg-[#173C62] text-white hover:bg-[#12304F] active:bg-[#0F263E] border border-[#173C62] shadow-xs',
     secondary:
       'bg-[#F8FAFC] text-[#0B1320] border border-[#E5E7EB] hover:border-[#173C62] hover:text-[#173C62]',
     outline:
-      'bg-transparent text-[#173C62] border border-[#173C62] hover:bg-[#173C62] hover:text-white active:bg-[#102B47]',
+      'bg-transparent text-[#173C62] border border-[#173C62] hover:bg-[#173C62] hover:text-white active:bg-[#0F263E]',
     textLink:
       'bg-transparent border-0 p-0 shadow-none hover:underline underline-offset-4',
     darkPrimary:
@@ -152,7 +152,7 @@ export const TextLink: React.FC<TextLinkProps> = ({
 }) => {
   const textColor = light
     ? 'text-white hover:text-slate-300'
-    : 'text-[#173C62] hover:text-[#102B47]';
+    : 'text-[#173C62] hover:text-[#12304F]';
 
   const content = (
     <>

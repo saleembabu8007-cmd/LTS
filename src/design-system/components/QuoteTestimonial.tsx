@@ -30,7 +30,7 @@ export const QuoteTestimonial: React.FC<QuoteTestimonialProps> = ({
       <div
         className={`py-12 lg:py-16 border-y ${
           isDark
-            ? 'bg-[#0B1C2F] text-white border-white/10'
+            ? 'bg-[#173C62] text-white border-white/15'
             : 'bg-[#FAFAFA] text-[#0B1320] border-[#E5E7EB]'
         } ${className}`}
       >
@@ -107,7 +107,7 @@ export const QuoteTestimonial: React.FC<QuoteTestimonialProps> = ({
     <div
       className={`p-6 sm:p-8 rounded-[16px] border ${
         isDark
-          ? 'bg-[#0B1C2F] text-white border-white/10'
+          ? 'bg-[#173C62] text-white border-white/15'
           : 'bg-white text-[#0B1320] border-[#E5E7EB]'
       } space-y-5 ${className}`}
     >

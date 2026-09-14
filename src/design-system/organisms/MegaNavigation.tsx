@@ -117,7 +117,7 @@ export const MegaNavigation: React.FC<MegaNavigationProps> = ({
                     className="w-full h-full object-cover object-center rounded-[20px] transition-transform duration-[400ms] ease-out group-hover:scale-[1.025]"
                   />
                   {featuredProject.metric && (
-                    <div className="absolute bottom-2.5 left-2.5 bg-[#0B1C2F]/90 text-white text-[10px] font-mono px-2 py-0.5 rounded-full">
+                    <div className="absolute bottom-2.5 left-2.5 bg-[#173C62]/90 text-white text-[10px] font-mono px-2 py-0.5 rounded-full">
                       {featuredProject.metric}
                     </div>
                   )}

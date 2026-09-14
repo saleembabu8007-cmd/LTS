@@ -25,7 +25,7 @@ export const QuoteFeature: React.FC<QuoteFeatureProps> = ({
 }) => {
   const bgStyles = {
     stone: 'bg-[#F8FAFC] text-[#0B1320]',
-    navy: 'bg-[#0B1C2F] text-white',
+    navy: 'bg-[#173C62] text-white',
     white: 'bg-white text-[#0B1320]',
   }[background];
 

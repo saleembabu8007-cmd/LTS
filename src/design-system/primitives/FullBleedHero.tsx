@@ -60,7 +60,7 @@ export const FullBleedHero: React.FC<FullBleedHeroProps> = ({
 
   return (
     <section
-      className={`relative ${minHeight} flex flex-col justify-between bg-[#0B1C2F] text-white overflow-hidden ${className}`}
+      className={`relative ${minHeight} flex flex-col justify-between bg-[#173C62] text-white overflow-hidden ${className}`}
     >
       {/* 1. Full-Bleed Background Media */}
       <div className="absolute inset-0 z-0 overflow-hidden">
@@ -158,7 +158,7 @@ export const FullBleedHero: React.FC<FullBleedHeroProps> = ({
 
       {/* 4. Bottom Architectural Statutory Datum Strip */}
       {datumStrip && (
-        <div className="relative z-10 border-t border-white/15 py-3.5 sm:py-4 bg-[#0B1C2F]/80 backdrop-blur-sm">
+        <div className="relative z-10 border-t border-white/15 py-3.5 sm:py-4 bg-[#173C62]/90 backdrop-blur-sm">
           <div className="lts-container flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5 sm:gap-4 font-mono text-[10.5px] sm:text-[11px] text-slate-300">
             <div className="flex items-center gap-3">
               <span className="w-2 h-2 rounded-full bg-emerald-400 shrink-0" />

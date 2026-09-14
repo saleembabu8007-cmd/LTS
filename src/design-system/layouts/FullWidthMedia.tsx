@@ -37,7 +37,7 @@ export const FullWidthMedia: React.FC<FullWidthMediaProps> = ({
 
   return (
     <figure className={`relative w-full ${className}`}>
-      <div className={`relative w-full overflow-hidden ${containerRadius} bg-[#0B1C2F] ${aspectStyles}`}>
+      <div className={`relative w-full overflow-hidden ${containerRadius} bg-[#173C62] ${aspectStyles}`}>
         <img
           src={imageUrl}
           alt={imageAlt || overlayTitle || 'LTSGROUP Engineering Infrastructure'}
@@ -46,7 +46,7 @@ export const FullWidthMedia: React.FC<FullWidthMediaProps> = ({
         />
 
         {(overlayTitle || overlaySubtitle) && (
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0B1C2F]/85 via-[#0B1C2F]/25 to-transparent flex items-end p-6 sm:p-10 md:p-14">
+          <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/90 via-[#173C62]/30 to-transparent flex items-end p-6 sm:p-10 md:p-14">
             <div className="max-w-2xl text-left">
               {overlaySubtitle && (
                 <span className="text-[11px] font-mono uppercase tracking-[0.18em] text-[#CBD5E1]">

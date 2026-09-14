@@ -53,7 +53,7 @@ export const ServiceProjectProofModule: React.FC<ServiceProjectProofModuleProps>
 
           <button
             onClick={() => onNavigate('/projects')}
-            className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#173C62] hover:text-[#102B47] cursor-pointer"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[#173C62] hover:text-[#12304F] cursor-pointer"
           >
             <span>Explore all projects</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -67,14 +67,14 @@ export const ServiceProjectProofModule: React.FC<ServiceProjectProofModuleProps>
             onClick={() => onNavigate(projectSlug)}
             className="lg:col-span-7 group cursor-pointer"
           >
-            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[18px] bg-[#0B1C2F]">
+            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[18px] bg-[#173C62]">
               <img
                 src={projectImage}
                 alt={projectTitle}
                 className="w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.025]"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#0B1C2F]/25 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#173C62]/25 via-transparent to-transparent" />
             </div>
             <div className="pt-3 flex items-center justify-between text-xs text-[#64748B]">
               <span className="font-mono uppercase tracking-wider text-[11px] text-[#173C62] font-semibold">
@@ -106,7 +106,7 @@ export const ServiceProjectProofModule: React.FC<ServiceProjectProofModuleProps>
             <div className="pt-4 border-t border-[#E5E7EB]">
               <button
                 onClick={() => onNavigate(projectSlug)}
-                className="group inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-[#173C62] hover:text-[#102B47] cursor-pointer"
+                className="group inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-[#173C62] hover:text-[#12304F] cursor-pointer"
               >
                 <span>View project case record</span>
                 <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />

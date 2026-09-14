@@ -58,7 +58,7 @@ export const NumberedMandateRow: React.FC<NumberedMandateRowProps> = ({
               <button
                 type="button"
                 onClick={onAction}
-                className="inline-flex items-center gap-2 text-xs font-sans font-semibold uppercase tracking-wider text-[#173C62] hover:text-[#102B47] cursor-pointer group/link"
+                className="inline-flex items-center gap-2 text-xs font-sans font-semibold uppercase tracking-wider text-[#173C62] hover:text-[#12304F] cursor-pointer group/link"
               >
                 <span>{actionLabel}</span>
                 <span className="transition-transform group-hover/link:translate-x-1">

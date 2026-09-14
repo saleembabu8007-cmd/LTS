@@ -23,13 +23,13 @@ export const TestimonialOrganism: React.FC<TestimonialOrganismProps> = ({
   light = false,
   className = '',
 }) => {
-  const bgClass = light ? 'bg-[#0B1C2F]' : 'bg-white';
+  const bgClass = light ? 'bg-[#173C62]' : 'bg-white';
 
   return (
     <section className={`py-16 sm:py-24 ${bgClass} ${className}`}>
       <Container>
         <div className="max-w-4xl mx-auto space-y-8">
-          <span className="font-mono text-xs text-[#173C62] uppercase tracking-[0.2em] font-semibold block text-center">
+          <span className={`font-mono text-xs ${light ? 'text-slate-300' : 'text-[#173C62]'} uppercase tracking-[0.2em] font-semibold block text-center`}>
             {eyebrow}
           </span>
 

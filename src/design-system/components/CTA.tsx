@@ -33,7 +33,7 @@ export const CTA: React.FC<CTAProps> = ({
     <section
       className={`editorial-section ${
         isDark
-          ? 'bg-[#0B1C2F] text-white border-y border-white/10'
+          ? 'bg-[#173C62] text-white border-y border-white/15'
           : 'bg-[#FAFAFA] text-[#0B1320] border-y border-[#E5E7EB]'
       } ${className}`}
     >

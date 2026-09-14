@@ -129,7 +129,7 @@ export const MobileNavDrawer: React.FC<MobileNavDrawerProps> = ({
             exit={{ opacity: 0 }}
             transition={{ duration: 0.18, ease: 'easeOut' }}
             onClick={onClose}
-            className="fixed inset-0 bg-[#0B1C2F]/50 backdrop-blur-[2px]"
+            className="fixed inset-0 bg-[#173C62]/50 backdrop-blur-[2px]"
             aria-hidden="true"
           />
 
@@ -273,7 +273,7 @@ export const MobileNavDrawer: React.FC<MobileNavDrawerProps> = ({
                 <a
                   href="/contact"
                   onClick={(e) => handleSelect(e, '/contact')}
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-[#173C62] hover:bg-[#102B47] text-white text-[12.5px] font-semibold uppercase tracking-wider rounded-[12px] min-h-[48px] transition-colors focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:outline-none text-center shadow-none"
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-[#173C62] hover:bg-[#12304F] text-white text-[12.5px] font-semibold uppercase tracking-wider rounded-[12px] min-h-[48px] transition-colors focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:outline-none text-center shadow-none"
                 >
                   <span>Contact / Enquire</span>
                   <ArrowRight className="w-4 h-4" />

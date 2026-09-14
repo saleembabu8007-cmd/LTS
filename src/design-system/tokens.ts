@@ -10,25 +10,30 @@
  *   - 9999px: Capsule buttons and pills
  * - Zero random or extreme radius values
  * - Universal box-shadow: none (Depth created via contrast, tone, overlap, whitespace, hairlines)
- * - Restrained Palette: White/near-white canvas, LTS Blue (#173C62) brand accent, midnight navy (#0B1C2F)
+ * - Restrained Palette: White/near-white canvas (#FFFFFF / #F8FAFC), LTS Blue (#173C62) brand primary, Brand Grey (#999999)
  * - 1360px Max Content Grid with disciplined responsive padding and spacing scale
  */
 
 export const COLOR_TOKENS = {
-  // Brand
+  // Brand (LTS Brand Book Authority)
   primary: '#173C62',         // LTS Architectural Blue (Exact Brand Specification)
-  primaryHover: '#102B47',    // Deep Blue Hover
-  primaryDark: '#0B1C2F',     // Midnight Navy Statement Tone
+  primaryHover: '#12304F',    // Deep Architectural Blue Hover
+  primaryDark: '#173C62',     // Approved LTS Brand Blue
   primaryLight: '#23578C',    // Architectural Accent Tint
   primaryTint: '#EDF3F9',     // Subtle Background Tint
   primarySubtle: '#F2F6FA',   // Micro Tint
+
+  // Secondary Brand Palette
+  secondary: '#999999',       // Approved Brand Grey
+  secondaryHover: '#777777',  // Deeper Grey Hover
+  secondaryLight: '#E2E8F0',  // Light Grey Boundary
 
   // Editorial Ink & Typography
   ink: '#0B1320',             // Deep Architectural Black-Navy for Primary Headings
   text: '#334155',            // Primary Body Text (Optimal Editorial Contrast)
   textSecondary: '#4A5568',   // Secondary Explanatory Copy
   muted: '#64748B',           // Metadata, Labels, Numbered Indexes (WCAG AA)
-  subtle: '#94A3B8',          // Subdued Supplementary Annotations
+  subtle: '#999999',          // Subdued Supplementary Annotations (Aligned with Brand Grey)
   inverse: '#FFFFFF',         // Crisp White on Dark Statements
   inverseSecondary: '#CBD5E1',// Soft Grey on Dark Statements
   inverseMuted: '#94A3B8',    // Muted Metadata on Dark Statements
@@ -37,8 +42,8 @@ export const COLOR_TOKENS = {
   surface: '#FFFFFF',         // Pure White Base Canvas
   surfaceSubtle: '#F8FAFC',   // Architectural Neutral Stone / Alternate Band
   surfaceWarm: '#F1F5F9',     // Warm Neutral Canvas Band
-  surfaceDark: '#0B1C2F',     // Deep Midnight Navy for Selected Impact Areas
-  surfaceDarkElevated: '#11253E', // Secondary Dark Tone
+  surfaceDark: '#173C62',     // Approved LTS Architectural Blue Canvas
+  surfaceDarkElevated: '#173C62', // Approved LTS Brand Blue Elevate Tone
 
   // Structural Hairline Borders
   border: '#E5E7EB',          // Standard 1px Neutral Hairline Divider
@@ -102,7 +107,7 @@ export const SPACING_TOKENS = {
 } as const;
 
 export const TYPOGRAPHY_TOKENS = {
-  fontFamily: "'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+  fontFamily: "'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
   fontFamilyMono: "'JetBrains Mono', 'Fira Code', monospace",
   scale: {
     displayXXL: {
@@ -353,7 +358,7 @@ export const Z_INDEX_TOKENS = {
 
 export const INTERACTIVE_TOKENS = {
   focusRing: 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:ring-offset-2',
-  focusRingDark: 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B1C2F]',
+  focusRingDark: 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#173C62]',
   disabled: 'disabled:opacity-40 disabled:pointer-events-none disabled:cursor-not-allowed',
   transition: 'transition-all duration-200 ease-out',
 } as const;

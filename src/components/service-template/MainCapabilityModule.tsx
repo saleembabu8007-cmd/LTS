@@ -1,12 +1,12 @@
 import React from 'react';
 import {
-  CheckCircle2,
-  Wrench,
-  ShieldCheck,
-  Cpu,
-  Zap,
-  Sliders,
-} from 'lucide-react';
+  IconCheck,
+  IconShieldCheck,
+  IconHVAC,
+  IconElectrical,
+  IconControls,
+  IconTrading,
+} from '../../design-system/icons';
 import { ServicePageData } from '../../types/serviceTemplate';
 
 interface MainCapabilityModuleProps {
@@ -45,8 +45,8 @@ export const MainCapabilityModule: React.FC<MainCapabilityModuleProps> = ({ data
 
   const imageSrc = getCapabilityImage();
 
-  // Distinct minimal icons for points
-  const icons = [CheckCircle2, Wrench, ShieldCheck, Cpu, Zap, Sliders];
+  // Distinct minimal icons for points from LTS design system
+  const icons = [IconCheck, IconShieldCheck, IconHVAC, IconElectrical, IconControls, IconTrading];
 
   return (
     <section
@@ -57,14 +57,14 @@ export const MainCapabilityModule: React.FC<MainCapabilityModuleProps> = ({ data
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Large Image: Visual Storytelling (7 cols ~60%) */}
           <div className="lg:col-span-7 order-2 lg:order-1">
-            <div className="relative aspect-[16/10] rounded-[20px] overflow-hidden bg-[#0B1C2F]">
+            <div className="relative aspect-[16/10] rounded-[20px] overflow-hidden bg-[#173C62]">
               <img
                 src={imageSrc}
                 alt={capabilities.sectionTitle || `${data.title} Capability Execution`}
                 className="w-full h-full object-cover object-center"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#0B1C2F]/35 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#173C62]/35 via-transparent to-transparent" />
             </div>
           </div>
 
@@ -85,7 +85,7 @@ export const MainCapabilityModule: React.FC<MainCapabilityModuleProps> = ({ data
                 const IconComponent = icons[idx % icons.length];
                 return (
                   <div key={idx} className="flex items-start gap-3.5 pb-4 border-b border-[#E5E7EB] last:border-b-0 last:pb-0">
-                    <IconComponent className="w-4 h-4 text-[#173C62] mt-0.5 shrink-0" />
+                    <IconComponent size="sm" color="primary" className="mt-0.5 shrink-0" />
                     <div>
                       <h3 className="text-[15px] font-medium text-[#0B1320] leading-snug">
                         {item.title}

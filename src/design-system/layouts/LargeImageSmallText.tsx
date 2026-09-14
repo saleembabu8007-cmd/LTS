@@ -27,7 +27,7 @@ export const LargeImageSmallText: React.FC<LargeImageSmallTextProps> = ({
     <section className={`editorial-section bg-[#FAFAFA] border-b border-[#E5E7EB] ${className}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         {/* Dominant Monumental Image */}
-        <div className="relative aspect-[16/9] lg:aspect-[21/10] overflow-hidden bg-[#0B1C2F] border border-[#E5E7EB]">
+        <div className="relative aspect-[16/9] lg:aspect-[21/10] overflow-hidden bg-[#173C62] border border-[#E5E7EB]">
           <img
             src={imageSrc}
             alt={imageAlt}
@@ -69,7 +69,7 @@ export const LargeImageSmallText: React.FC<LargeImageSmallTextProps> = ({
             {actionLabel && onAction && (
               <button
                 onClick={onAction}
-                className="px-5 py-2.5 text-xs font-semibold uppercase tracking-wider bg-[#173C62] text-white hover:bg-[#102B47] transition-colors"
+                className="px-5 py-2.5 text-xs font-semibold uppercase tracking-wider bg-[#173C62] text-white hover:bg-[#12304F] rounded-[10px] transition-colors"
               >
                 {actionLabel}
               </button>

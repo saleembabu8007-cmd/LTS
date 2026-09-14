@@ -26,7 +26,7 @@ export const FullBleedImage: React.FC<FullBleedImageProps> = ({
   };
 
   return (
-    <figure className={`relative w-full overflow-hidden bg-[#0B1C2F] ${aspectClasses[aspectRatio]} ${className}`}>
+    <figure className={`relative w-full overflow-hidden bg-[#173C62] ${aspectClasses[aspectRatio]} ${className}`}>
       <img
         src={src}
         alt={alt}
@@ -35,7 +35,7 @@ export const FullBleedImage: React.FC<FullBleedImageProps> = ({
       />
       {/* Subtle cinematic gradient for typography legibility */}
       {(eyebrow || headline || caption) && (
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B1C2F]/90 via-[#0B1C2F]/20 to-transparent flex flex-col justify-end p-8 sm:p-12 lg:p-16">
+        <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/95 via-[#173C62]/30 to-transparent flex flex-col justify-end p-8 sm:p-12 lg:p-16">
           <div className="max-w-4xl space-y-3 text-white">
             {eyebrow && (
               <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#999999] block">

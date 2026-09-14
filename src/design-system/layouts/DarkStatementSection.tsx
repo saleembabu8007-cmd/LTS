@@ -24,7 +24,7 @@ export const DarkStatementSection: React.FC<DarkStatementSectionProps> = ({
   className = '',
 }) => {
   return (
-    <section className={`py-24 lg:py-36 bg-[#0B1C2F] text-white border-b border-white/10 ${className}`}>
+    <section className={`py-24 lg:py-36 bg-[#173C62] text-white border-b border-white/15 ${className}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         <div className="max-w-4xl space-y-6">
           {eyebrow && (

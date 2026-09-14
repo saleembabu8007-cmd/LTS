@@ -44,26 +44,26 @@ export const Card: React.FC<CardProps> = ({
     // 1. Feature Card: Large prominence, generous breathing room, 20px radius
     feature:
       tone === 'dark'
-        ? 'bg-[#0B1C2F] border border-white/10 text-white p-8 sm:p-10 rounded-[20px]'
+        ? 'bg-[#173C62] border border-white/15 text-white p-8 sm:p-10 rounded-[20px]'
         : 'bg-[#F8FAFC] border border-[#CBD5E1] text-[#0B1320] p-8 sm:p-10 rounded-[20px]',
 
     // 2. Standard Card: Structured 1px hairline card, 16px radius
     standard:
       tone === 'dark'
-        ? 'bg-[#11253E] border border-white/10 text-white p-6 sm:p-8 rounded-[16px]'
+        ? 'bg-[#173C62] border border-white/15 text-white p-6 sm:p-8 rounded-[16px]'
         : 'bg-white border border-[#E5E7EB] text-[#0B1320] p-6 sm:p-8 rounded-[16px]',
 
     // 3. Compact Card: Dense metadata or quick index item, 12px radius
     compact:
       tone === 'dark'
-        ? 'bg-[#0B1C2F]/80 border border-white/10 text-white p-4 sm:p-5 rounded-[12px]'
+        ? 'bg-[#173C62]/90 border border-white/15 text-white p-4 sm:p-5 rounded-[12px]'
         : 'bg-[#F8FAFC] border border-[#E5E7EB] text-[#0B1320] p-4 sm:p-5 rounded-[12px]',
 
     // Backward-compatible aliases
     minimal: 'bg-transparent text-[#0B1320] p-0',
     hairline: 'bg-white border border-[#E5E7EB] text-[#0B1320] p-6 rounded-[16px]',
-    darkSurface: 'bg-[#0B1C2F] border border-white/10 text-white p-6 rounded-[16px]',
-    photoTile: 'relative overflow-hidden bg-[#0B1C2F] text-white rounded-[18px]',
+    darkSurface: 'bg-[#173C62] border border-white/15 text-white p-6 rounded-[16px]',
+    photoTile: 'relative overflow-hidden bg-[#173C62] text-white rounded-[18px]',
   };
 
   const interactiveClasses = interactive

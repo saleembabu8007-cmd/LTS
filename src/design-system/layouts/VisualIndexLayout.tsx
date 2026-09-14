@@ -97,14 +97,14 @@ export const VisualIndexLayout: React.FC<VisualIndexLayoutProps> = ({
         {/* Dynamic Architectural Visual Preview (5 cols) */}
         <div className="lg:col-span-5 hidden lg:block">
           {activeEntry?.imageUrl && (
-            <div className="relative aspect-[4/3] overflow-hidden rounded-[18px] bg-[#0B1C2F] shadow-elevated">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-[18px] bg-[#173C62] shadow-elevated">
               <img
                 key={activeEntry.id}
                 src={activeEntry.imageUrl}
                 alt={activeEntry.title}
                 className="w-full h-full object-cover object-center transition-all duration-500 ease-out"
               />
-              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#0B1C2F]/90 p-5 text-white">
+              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#173C62]/95 p-5 text-white">
                 <span className="text-[11px] font-mono uppercase tracking-wider text-[#CBD5E1]">
                   {activeEntry.numeral}
                 </span>

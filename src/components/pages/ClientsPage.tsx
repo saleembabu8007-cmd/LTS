@@ -1,120 +1,47 @@
-import React from 'react';
-import { ArrowRight, ArrowUpRight, ShieldCheck, Lock, Building2, Hospital, Factory, Warehouse, Compass } from 'lucide-react';
-import { PROJECTS_DATA, ProjectDetailData } from '../../data/projectsData';
+import { IconShieldCheck, IconArrow, IconDocument } from '../../design-system/icons';
 
 interface ClientsPageProps {
   onNavigate: (slug: string) => void;
 }
 
 export const ClientsPage: React.FC<ClientsPageProps> = ({ onNavigate }) => {
-  // Verified UAE Statutory Authorities
+  // Verified UAE Statutory Authorities & Standards
   const statutoryAuthorities = [
     {
       code: 'DEWA',
       name: 'Dubai Electricity & Water Authority',
       role: 'Approved Electrical Contractor & Shams Dubai Solar PV EPC',
-      scope:
-        'Certified for 11kV substation coordination, low-impedance copper busduct risers, Form-4 switchgear submittals, and Shams Dubai net-metered solar photovoltaic grid synchronizations.',
+      scope: '11kV substation coordination, busduct risers, Form-4 switchboards, and Shams Dubai net-metered solar PV grid synchronization.',
     },
     {
       code: 'DCD',
       name: 'Dubai Civil Defense',
-      role: 'Approved Fire Life-Safety & Smoke Management Systems',
-      scope:
-        'Licensed for high-rise stairwell smoke pressurization, basement smoke extract fans, fire-rated ductwork coordination, and certified life-safety compliance inspections.',
+      role: 'Approved Fire Life-Safety & Smoke Management',
+      scope: 'Stairwell smoke pressurization, extract ventilation, fire-rated ductwork, and certified life-safety compliance inspections.',
     },
     {
       code: 'DM',
       name: 'Dubai Municipality',
       role: 'Public Health, Building Drainage & Water Hydraulics',
-      scope:
-        'Compliant with municipal potable water storage codes, quad-pump variable-speed booster systems, stormwater lift infrastructure, and commercial aquatic hygiene standards.',
+      scope: 'Potable water booster skids, stormwater lift infrastructure, building drainage, and commercial aquatic hygiene certification.',
     },
     {
-      code: 'STANDARDS',
-      name: 'Governing Technical Codes',
-      role: 'IEC, ASHRAE, AHRI & HTM Standards Compliance',
-      scope:
-        'Rigorous adherence to IEC 61439-1/2 (low-voltage switchboards), ASHRAE 90.1 (energy conservation), AHRI 550/590 (chiller efficiency), and HTM 03-01 (hospital cleanroom air hygiene).',
+      code: 'ISO / IEC',
+      name: 'International Management & Engineering Standards',
+      role: 'ISO 9001, 14001, 45001 & IEC 61439-1/2 Compliance',
+      scope: 'Type-tested switchboards up to 65kA withstand, ASHRAE 90.1 energy guidelines, and ISO certified quality & safety management.',
     },
   ];
-
-  // Approved Institutional Client Sectors & Relationships (Strict Rule: Zero invented company names)
-  const clientSectors = [
-    {
-      icon: Building2,
-      sector: 'Commercial Real Estate Funds & Developers',
-      focus: 'High-rise MEP delivery, tenant BTU sub-metering, and ongoing hard FM stewardship.',
-    },
-    {
-      icon: Hospital,
-      sector: 'Healthcare Networks & Specialized Clinics',
-      focus: '24/7 mission-critical chiller uptime, cleanroom ventilation, and medical gas pipeline support.',
-    },
-    {
-      icon: Factory,
-      sector: 'Industrial Manufacturers & Processing Plants',
-      focus: 'Heavy motor control centers (MCC), live-plant chiller retrofits, and solar PV self-consumption.',
-    },
-    {
-      icon: Warehouse,
-      sector: 'Logistics Parks & Distribution Hubs',
-      focus: 'Megawatt-scale rooftop solar PV EPC under DEWA Shams Dubai and DC fleet rapid charging.',
-    },
-    {
-      icon: Compass,
-      sector: 'Master Planned Residential Communities',
-      focus: 'Hydraulic booster stations, community stormwater networks, and commercial aquatic facilities.',
-    },
-  ];
-
-  // 4 Clearances & Verification Milestones
-  const clearanceMilestones = [
-    {
-      step: '01',
-      title: 'Statutory Authority Submittals & NOCs',
-      detail:
-        'Direct permit applications, electrical single-line diagram approvals, and civil defense life-safety reviews cleared prior to on-site breaking of ground.',
-    },
-    {
-      step: '02',
-      title: 'Factory Acceptance Testing (FAT) Dossiers',
-      detail:
-        'Comprehensive factory testing for low-voltage switchboards (up to 65kA short-circuit withstand) and packaged booster pump skids before site mobilization.',
-    },
-    {
-      step: '03',
-      title: 'Independent Third-Party Testing & Balancing',
-      detail:
-        'Dynamic primary and secondary hydronic balancing, acoustic attenuation checks, and thermal imaging diagnostics verified by certified testing agencies.',
-    },
-    {
-      step: '04',
-      title: 'Statutory Handover & Lifecycle Commissioning',
-      detail:
-        'Final utility meter energization under DEWA, Dubai Civil Defense operational clearance certification, and handover into structured facility maintenance PPM regimes.',
-    },
-  ];
-
-  // Verified Project Monograph References
-  const verifiedReferences: ProjectDetailData[] = [
-    PROJECTS_DATA[0], // Commercial High-Rise MEP
-    PROJECTS_DATA[2], // Healthcare Facility Hard Services
-    PROJECTS_DATA[1], // Logistics Solar PV
-    PROJECTS_DATA[6], // District Cooling BTU Metering
-  ].filter(Boolean);
 
   return (
     <div className="bg-white text-[#0B1320] selection:bg-[#173C62] selection:text-white antialiased">
       {/* =========================================================================
           01 — HERO
-          Full-bleed architectural image (~75-80vh).
-          H1: Credentials & Client Clearances
-          Short statement.
-          No two-column hero.
+          Full-bleed architectural image (~76vh).
+          H1: Clients & Clearances
+          LTS Brand Blue authority: #173C62
       ========================================================================= */}
-      <section className="relative w-full h-[76vh] min-h-[540px] max-h-[860px] bg-[#0B1C2F] overflow-hidden">
-        {/* Full-bleed photography */}
+      <section className="relative w-full h-[72vh] sm:h-[76vh] min-h-[520px] max-h-[820px] bg-[#173C62] overflow-hidden">
         <img
           src="/assets/images/project-highrise.jpg"
           alt="LTSGROUP Built Asset Infrastructure and Institutional Trust"
@@ -126,13 +53,11 @@ export const ClientsPage: React.FC<ClientsPageProps> = ({ onNavigate }) => {
           }}
         />
 
-        {/* Directional gradient scrim */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B1320]/85 via-[#0B1320]/30 to-[#0B1320]/40 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#173C62] via-[#173C62]/65 to-[#173C62]/25 pointer-events-none" />
 
-        {/* Hero Content Positioned Intentionally in Lower-Left */}
         <div className="absolute bottom-10 sm:bottom-16 md:bottom-20 left-0 right-0 z-10">
           <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
-            <div className="max-w-4xl space-y-4">
+            <div className="max-w-3xl space-y-4">
               <span className="font-mono text-xs uppercase tracking-[0.24em] text-[#93C5FD] block font-semibold">
                 Trust &amp; Verification
               </span>
@@ -150,313 +75,132 @@ export const ClientsPage: React.FC<ClientsPageProps> = ({ onNavigate }) => {
       </section>
 
       {/* =========================================================================
-          02 — SHORT EDITORIAL INTRODUCTION
-          High-contrast editorial statement establishing trust, confidentiality,
-          and why verified dossiers take precedence over fake logo grids.
+          02 — LOGO WALL & STATUTORY AUTHORITY CLEARANCES
+          Clean architectural grid of governing utility and regulatory bodies.
       ========================================================================= */}
-      <section className="py-16 sm:py-24 md:py-28 border-b border-[#E5E7EB]">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-            {/* Left Column: Section Marker */}
-            <div className="lg:col-span-4 space-y-3">
-              <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
-                01 &bull; Institutional Baseline
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-light text-[#0B1320] tracking-tight">
-                Trust is earned through verified physical compliance.
-              </h2>
-            </div>
+      <section className="py-16 sm:py-24 bg-[#F8FAFC] border-b border-[#E5E7EB]">
+        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 space-y-12 sm:space-y-16">
+          <div className="max-w-3xl space-y-3">
+            <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
+              01 &bull; Statutory Authority Licensure
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#0B1320] tracking-tight">
+              Regulator &amp; Code Clearances
+            </h2>
+            <p className="text-base sm:text-lg text-[#4A5568] leading-relaxed">
+              Operating under formal pre-qualification frameworks governed by Dubai utility directors, municipal civil defense authorities, and international engineering bodies.
+            </p>
+          </div>
 
-            {/* Right Column: Narrative & Confidentiality Framework */}
-            <div className="lg:col-span-8 space-y-8">
-              <p className="text-xl sm:text-2xl lg:text-3xl font-light text-[#0B1320] leading-snug tracking-tight">
-                In capital engineering and mission-critical facilities, credibility is demonstrated through statutory authority approvals, zero unplanned plant downtime, and transparent commissioning data.
-              </p>
-
-              <div className="space-y-6 text-base sm:text-lg text-[#4A5568] leading-relaxed font-normal max-w-[70ch]">
-                <p>
-                  LTSGROUP operates under strict commercial non-disclosure agreements (NDAs) protecting developer blueprints, security matrices, and critical infrastructure layouts. Rather than displaying unverified logo placeholders, we substantiate our track record through verified statutory pre-qualification dossiers and audited engineering monographs.
-                </p>
-              </div>
-
-              {/* Commercial NDA Protocol Card */}
-              <div className="p-6 sm:p-7 rounded-[20px] bg-[#F8FAFC] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-[#173C62]/10 text-[#173C62] flex items-center justify-center shrink-0 mt-0.5">
-                    <Lock className="w-5 h-5" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+            {statutoryAuthorities.map((auth, aIdx) => (
+              <div
+                key={aIdx}
+                className="border-t-2 border-[#173C62] pt-6 flex flex-col justify-between space-y-6 text-left"
+              >
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-xl font-semibold text-[#173C62] tracking-tight">
+                      {auth.code}
+                    </span>
+                    <IconShieldCheck size="sm" color="primary" />
                   </div>
-                  <div className="space-y-1">
-                    <h3 className="text-sm font-semibold text-[#0B1320] font-mono uppercase">
-                      Commercial Non-Disclosure Protocol
-                    </h3>
-                    <p className="text-xs sm:text-sm text-[#4A5568] leading-relaxed">
-                      Detailed client reference letters, electrical single-line diagrams, and completion certificates are shared under formal pre-qualification dossiers for active tenders.
-                    </p>
-                  </div>
+
+                  <h3 className="text-base font-medium text-[#0B1320] leading-snug">
+                    {auth.name}
+                  </h3>
+
+                  <p className="text-xs font-mono text-[#173C62] leading-snug">
+                    {auth.role}
+                  </p>
+
+                  <p className="text-xs sm:text-sm text-[#4A5568] leading-relaxed font-normal pt-1">
+                    {auth.scope}
+                  </p>
                 </div>
 
+                <div className="pt-4 border-t border-[#E5E7EB] text-[11px] font-mono text-[#64748B] uppercase tracking-wider">
+                  STATUTORY CLEARANCE &bull; VERIFIED
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================================
+          03 — OPTIONAL SHORT STATEMENT (CONFIDENTIALITY & PREQUALIFICATION)
+          Concise institutional statement with 50% content reduction.
+      ========================================================================= */}
+      <section className="py-14 sm:py-20 bg-white border-b border-[#E5E7EB]">
+        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+            <div className="lg:col-span-4 border-l-2 border-[#173C62] pl-6 sm:pl-8">
+              <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block mb-2 font-semibold">
+                02 &bull; Commercial Governance
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-light text-[#0B1320] tracking-tight">
+                Institutional Confidentiality
+              </h3>
+            </div>
+
+            <div className="lg:col-span-8 space-y-4">
+              <p className="text-lg sm:text-xl font-light text-[#0B1320] leading-snug">
+                LTSGROUP operates under strict commercial non-disclosure agreements. Complete prequalification dossiers, trade licenses, and references are provided directly for verified tenders.
+              </p>
+              <div className="flex items-center gap-2 text-xs font-mono text-[#64748B]">
+                <IconDocument size="sm" color="secondary" />
+                <span>NDA PROTECTED // OFFICIAL PRE-QUALIFICATION PACKS SHARED UPON INQUIRY</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================================
+          04 — PREQUALIFICATION CTA
+          Direct action consultation and vendor enrollment intake.
+      ========================================================================= */}
+      <section className="py-16 sm:py-24 bg-[#F8FAFC]">
+        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
+          <div className="bg-[#173C62] text-white rounded-[24px] p-8 sm:p-14 lg:p-16 relative overflow-hidden">
+            <div className="relative z-10 max-w-3xl space-y-6">
+              <span className="font-mono text-xs uppercase tracking-[0.24em] text-white/70 block">
+                03 &bull; VENDOR ENROLLMENT &amp; PRE-QUALIFICATION
+              </span>
+
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-light text-white tracking-tight leading-[1.08]">
+                Request Complete Statutory Pre-Qualification Dossier
+              </h2>
+
+              <p className="text-sm sm:text-base text-white/80 leading-relaxed max-w-2xl font-normal">
+                Direct dispatch of verified commercial trade licensing, DEWA electrical contractor registrations, Dubai Civil Defense permits, and ISO management systems accreditation.
+              </p>
+
+              <div className="pt-2 flex flex-wrap items-center gap-4">
                 <a
                   href="/contact"
                   onClick={(e) => {
                     e.preventDefault();
                     onNavigate('/contact');
                   }}
-                  className="min-h-[44px] inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#173C62] hover:text-[#11253E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] rounded-[4px] cursor-pointer whitespace-nowrap"
+                  className="min-h-[44px] inline-flex items-center gap-2 px-8 py-4 rounded-[12px] bg-white text-[#173C62] text-xs sm:text-sm font-semibold uppercase tracking-wider hover:bg-white/95 transition-colors"
                 >
-                  <span>Request Tender Dossier</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <span>Request Pre-Qualification Pack</span>
+                  <IconArrow size="sm" color="primary" interactive />
                 </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* =========================================================================
-          03 — APPROVED CLIENT CONTENT & STATUTORY AUTHORITY FRAMEWORKS
-          Verified UAE statutory authority frameworks (DEWA, DCD, DM, Standards)
-          along with verified institutional client sectors.
-      ========================================================================= */}
-      <section className="py-16 sm:py-24 md:py-28 bg-[#F8FAFC] border-b border-[#E5E7EB]">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 space-y-16">
-          {/* Statutory Licensure */}
-          <div className="space-y-10 sm:space-y-12">
-            <div className="max-w-3xl space-y-3">
-              <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
-                02 &bull; Statutory Authority Licensure
-              </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#0B1320] tracking-tight">
-                Regulator &amp; Code Clearances
-              </h2>
-              <p className="text-base sm:text-lg text-[#4A5568] leading-relaxed">
-                Operating under formal pre-qualification frameworks governed by Dubai utility directors, municipal civil defense authorities, and international engineering bodies.
-              </p>
-            </div>
-
-            {/* 4 Clean Editorial Compliance Columns */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {statutoryAuthorities.map((auth, aIdx) => (
-                <div
-                  key={aIdx}
-                  className="bg-white p-6 sm:p-7 rounded-[20px] space-y-4 flex flex-col justify-between"
-                >
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between">
-                      <span className="font-mono text-xs font-semibold text-[#173C62] uppercase tracking-wider">
-                        {auth.code}
-                      </span>
-                      <ShieldCheck className="w-4 h-4 text-[#173C62]" />
-                    </div>
-
-                    <h3 className="text-lg font-medium text-[#0B1320] leading-snug">
-                      {auth.name}
-                    </h3>
-
-                    <p className="text-xs font-mono text-[#173C62] leading-snug">
-                      {auth.role}
-                    </p>
-
-                    <p className="text-xs sm:text-sm text-[#4A5568] leading-relaxed font-normal pt-1">
-                      {auth.scope}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Approved Institutional Client Sectors Grid */}
-          <div className="pt-8 border-t border-[#E5E7EB] space-y-8">
-            <div className="max-w-3xl space-y-2">
-              <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
-                Institutional Client Segments
-              </span>
-              <h3 className="text-2xl sm:text-3xl font-light text-[#0B1320] tracking-tight">
-                Operating Relationships Across Sectors
-              </h3>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {clientSectors.map((sect, sIdx) => {
-                const IconComponent = sect.icon;
-                return (
-                  <div
-                    key={sIdx}
-                    className="p-6 rounded-[18px] bg-white border border-[#E5E7EB] space-y-3"
-                  >
-                    <div className="w-9 h-9 rounded-full bg-[#173C62]/10 text-[#173C62] flex items-center justify-center">
-                      <IconComponent className="w-4 h-4" />
-                    </div>
-                    <h4 className="text-base font-medium text-[#0B1320] leading-snug">
-                      {sect.sector}
-                    </h4>
-                    <p className="text-xs sm:text-sm text-[#4A5568] leading-relaxed">
-                      {sect.focus}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================================================
-          04 — CLEARANCE & VERIFICATION PROCEDURES
-          Dignified presentation of operational clearances from permit to handover.
-      ========================================================================= */}
-      <section className="py-16 sm:py-24 md:py-28 border-b border-[#E5E7EB]">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
-          <div className="space-y-12 sm:space-y-16">
-            <div className="max-w-3xl space-y-3">
-              <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
-                03 &bull; Quality &amp; Verification Milestones
-              </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#0B1320] tracking-tight">
-                Clearance &amp; Verification Procedures
-              </h2>
-              <p className="text-base sm:text-lg text-[#4A5568] leading-relaxed">
-                Every electromechanical package and facility contract follows an audited 4-stage clearance workflow ensuring risk-free handover.
-              </p>
-            </div>
-
-            {/* Clearances Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {clearanceMilestones.map((milestone, mIdx) => (
-                <div key={mIdx} className="space-y-3 pt-4 border-t-2 border-[#173C62]">
-                  <span className="font-mono text-xs text-[#173C62] font-semibold block">
-                    STAGE {milestone.step}
-                  </span>
-                  <h3 className="text-base sm:text-lg font-medium text-[#0B1320] leading-snug">
-                    {milestone.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#4A5568] leading-relaxed">
-                    {milestone.detail}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================================================
-          05 — OPTIONAL SELECTED PROJECT RELATIONSHIPS
-          Connects trust directly to verified built works (PROJECTS_DATA).
-          Builds confidence without fake logos.
-      ========================================================================= */}
-      <section className="py-16 sm:py-24 md:py-28 bg-[#F8FAFC] border-b border-[#E5E7EB]">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
-          <div className="space-y-12 sm:space-y-16">
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-              <div className="max-w-3xl space-y-3">
-                <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
-                  04 &bull; Selected Project Relationships
-                </span>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#0B1320] tracking-tight">
-                  Field Execution as Primary Proof
-                </h2>
-                <p className="text-base sm:text-lg text-[#4A5568] leading-relaxed">
-                  Real electromechanical installations, commercial rooftop solar plants, and continuous hospital facility operations delivered across Dubai.
-                </p>
-              </div>
-
-              <a
-                href="/projects"
-                onClick={(e) => {
-                  e.preventDefault();
-                  onNavigate('/projects');
-                }}
-                className="min-h-[44px] inline-flex items-center gap-1.5 text-xs font-semibold text-[#173C62] hover:underline uppercase tracking-wider shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] rounded-[4px] cursor-pointer"
-              >
-                <span>View Full Monograph Archive</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </a>
-            </div>
-
-            {/* 4-Project Monograph Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-              {verifiedReferences.map((ref) => (
                 <a
-                  key={ref.id}
-                  href={`/projects/${ref.slug}`}
+                  href="/projects"
                   onClick={(e) => {
                     e.preventDefault();
-                    onNavigate(`/projects/${ref.slug}`);
+                    onNavigate('/projects');
                   }}
-                  className="group block select-none bg-white p-4 rounded-[20px] transition-all hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
-                  aria-label={`Inspect case study: ${ref.title}`}
+                  className="min-h-[44px] inline-flex items-center gap-2 px-7 py-4 rounded-[12px] border border-white/20 text-white text-xs sm:text-sm font-semibold uppercase tracking-wider hover:bg-white/10 transition-colors"
                 >
-                  <div className="relative overflow-hidden rounded-[14px] bg-[#0B1C2F] aspect-[16/10]">
-                    <img
-                      src={ref.image}
-                      alt={ref.title}
-                      loading="lazy"
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.025]"
-                    />
-                  </div>
-
-                  <div className="mt-4 space-y-1.5">
-                    <span className="font-mono text-[11px] uppercase tracking-wider text-[#64748B] block">
-                      {ref.categoryLabel} &bull; {ref.location.split(',')[0]}
-                    </span>
-                    <h3 className="text-base font-medium text-[#0B1320] group-hover:text-[#173C62] transition-colors leading-snug line-clamp-2">
-                      {ref.title}
-                    </h3>
-                    <div className="pt-2 flex items-center gap-1 text-xs font-semibold text-[#173C62]">
-                      <span>Read Monograph</span>
-                      <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                    </div>
-                  </div>
+                  <span>Inspect Projects Archive</span>
                 </a>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================================================
-          06 — PREQUALIFICATION CTA
-          Tender dossier and vendor pre-qualification intake.
-      ========================================================================= */}
-      <section className="py-20 sm:py-28 bg-white">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
-          <div className="max-w-3xl space-y-6">
-            <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
-              Vendor Enrollment &amp; Pre-Qualification
-            </span>
-
-            <h2 className="text-3xl sm:text-5xl font-light text-[#0B1320] tracking-tight leading-[1.08]">
-              Request Complete Statutory Pre-Qualification Dossier
-            </h2>
-
-            <p className="text-base sm:text-lg text-[#4A5568] leading-relaxed">
-              Direct dispatch of verified commercial trade licensing, DEWA electrical contractor registrations, Dubai Civil Defense permits, and audited project handover letters for commercial developers and consultants.
-            </p>
-
-            <div className="pt-2 flex flex-wrap items-center gap-4">
-              <a
-                href="/contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  onNavigate('/contact');
-                }}
-                className="min-h-[44px] inline-flex items-center gap-2 px-7 py-3.5 rounded-[12px] bg-[#173C62] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#11253E] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] cursor-pointer"
-              >
-                <span>Request Pre-Qualification Pack</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </a>
-
-              <a
-                href="/projects"
-                onClick={(e) => {
-                  e.preventDefault();
-                  onNavigate('/projects');
-                }}
-                className="min-h-[44px] inline-flex items-center gap-2 px-7 py-3.5 rounded-[12px] border border-[#CBD5E1] text-[#0B1320] text-xs font-semibold uppercase tracking-wider hover:bg-[#F8FAFC] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] cursor-pointer"
-              >
-                <span>Inspect Projects Archive</span>
-              </a>
+              </div>
             </div>
           </div>
         </div>

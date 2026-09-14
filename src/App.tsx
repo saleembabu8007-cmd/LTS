@@ -395,7 +395,7 @@ export default function App() {
   const sectionNavData = !isServiceDetailPage && normalizedPath !== '/' ? getSectionTabs(normalizedPath) : null;
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-slate-900 antialiased selection:bg-[#11253E] selection:text-white">
+    <div className="min-h-screen flex flex-col bg-white text-slate-900 antialiased selection:bg-[#173C62] selection:text-white">
       {/* 1. Top Utility Bar */}
       <TopUtilityBar onNavigate={handleNavigate} />
 

@@ -49,7 +49,7 @@ export const NewsFeature: React.FC<NewsFeatureProps> = ({
             <a
               href={viewAllHref}
               onClick={handleLink(viewAllHref)}
-              className="text-[12px] font-semibold text-[#173C62] uppercase tracking-[0.08em] hover:text-[#102B47] transition-colors shrink-0"
+              className="text-[12px] font-semibold text-[#173C62] uppercase tracking-[0.08em] hover:text-[#12304F] transition-colors shrink-0"
             >
               All technical briefings →
             </a>

@@ -12,6 +12,15 @@
 // 1. Tokens (Level 01)
 export * from './tokens';
 
+// 1B. Unified Professional Iconography (Level 01B)
+export * from './icons';
+
+// 1C. Image-First Visual Patterns (The 6 Standard Patterns)
+export * from './visual-patterns';
+
+// 1D. Verified Numbers & Proof System (Level 01D: Options A, B, C)
+export * from './proof';
+
 // 2. Atoms (Level 02: 23 Core Atoms)
 export * from './atoms';
 

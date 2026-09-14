@@ -37,7 +37,7 @@ export const ClientLogoBlock: React.FC<ClientLogoBlockProps> = ({
     <section
       className={`py-12 sm:py-16 ${
         isDark
-          ? 'bg-[#0B1C2F] text-white border-y border-white/10'
+          ? 'bg-[#173C62] text-white border-y border-white/15'
           : isMinimal
           ? 'bg-transparent text-[#0B1320]'
           : 'bg-[#FAFAFA] text-[#0B1320] border-y border-[#E5E7EB]'

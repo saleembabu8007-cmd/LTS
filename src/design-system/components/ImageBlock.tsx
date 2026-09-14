@@ -52,7 +52,7 @@ export const ImageBlock: React.FC<ImageBlockProps> = ({
       <div
         className={`relative w-full overflow-hidden rounded-[18px] border ${
           dark
-            ? 'border-white/10 bg-[#0B1C2F]'
+            ? 'border-white/10 bg-[#173C62]'
             : 'border-[#E5E7EB] bg-slate-100'
         } ${aspectClass} ${onClick ? 'cursor-pointer' : ''}`}
       >
@@ -67,7 +67,7 @@ export const ImageBlock: React.FC<ImageBlockProps> = ({
 
         {/* Technical Specification Badge */}
         {tag && (
-          <div className="absolute top-3 left-3 bg-[#0B1C2F]/90 backdrop-blur-xs px-2.5 py-1 text-[10px] uppercase font-mono tracking-[0.14em] text-white rounded-[1px] border border-white/10">
+          <div className="absolute top-3 left-3 bg-[#173C62]/90 backdrop-blur-xs px-2.5 py-1 text-[10px] uppercase font-mono tracking-[0.14em] text-white rounded-[1px] border border-white/10">
             {tag}
           </div>
         )}
