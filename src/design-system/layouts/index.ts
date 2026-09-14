@@ -19,4 +19,4 @@ export * from './ImageOverlap';
 export * from './ImageTrio';
 export * from './EditorialListLayout';
 export * from './VisualIndexLayout';
-
+export * from './EdgeToEdgeMedia';

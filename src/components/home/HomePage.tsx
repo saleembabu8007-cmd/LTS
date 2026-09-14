@@ -9,6 +9,7 @@ import {
 } from '../../design-system/icons';
 import { Button } from '../../design-system/atoms/Button';
 import { ProofStrip } from '../../design-system/proof';
+import { EdgeToEdgeMedia } from '../../design-system/layouts';
 import { PROJECTS_DATA } from '../../data/projectsData';
 import { NEWS_DATA } from '../../data/newsData';
 import { CORPORATE_INFO } from '../../data/corporateData';
@@ -198,35 +199,30 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       </section>
 
       {/* =====================================================================
-          02 WHO WE ARE
-          - Very minimal, editorial composition
-          - Large heading left: WHO WE ARE
-          - Small supporting copy right: one concise paragraph + READ MORE →
-          - No card, generous whitespace
+          02 WHO WE ARE (PERSPECTIVE)
+          - 5 / 7 Asymmetric Split
+          - Left (5 cols): 01 / PERSPECTIVE eyebrow, large heading, concise statement, CTA
+          - Right (7 cols): Editorial engineering photograph + coordinate caption
+          - Generous negative space (py-28 lg:py-36)
       ===================================================================== */}
       <section
         aria-label="Who We Are"
         className="py-24 lg:py-36 bg-white"
       >
         <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start text-left">
-            {/* Large Heading Left */}
-            <div className="lg:col-span-5 space-y-3">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center text-left">
+            {/* Left 5 Cols: Thesis & Title */}
+            <div className="lg:col-span-5 space-y-6">
               <span className="text-[11px] font-mono text-[#173C62] uppercase tracking-[0.22em] font-semibold block">
                 01 / PERSPECTIVE
               </span>
               <h2 className="text-3xl sm:text-5xl lg:text-6xl font-light text-[#0B1320] tracking-tight leading-[1.02]">
                 WHO WE ARE
               </h2>
-            </div>
-
-            {/* Small Supporting Copy Right */}
-            <div className="lg:col-span-7 space-y-6 lg:pt-3">
-              <p className="text-xl sm:text-2xl font-light text-[#0B1320] leading-snug tracking-tight max-w-2xl">
+              <p className="text-lg sm:text-xl font-light text-[#0B1320] leading-relaxed tracking-tight max-w-xl">
                 LTSGROUP unifies turnkey MEP contracting, facilities management, and OEM technical equipment supply under direct Dubai governance—ensuring built assets operate with unbroken reliability across decades.
               </p>
-
-              <div>
+              <div className="pt-2">
                 <a
                   href="/about-us"
                   onClick={(e) => handleLink(e, '/about-us')}
@@ -239,6 +235,23 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 </a>
               </div>
             </div>
+
+            {/* Right 7 Cols: Editorial Engineering Photographic Plate */}
+            <div className="lg:col-span-7">
+              <div className="relative aspect-[16/10] rounded-[8px] overflow-hidden bg-[#173C62]">
+                <img
+                  src="/assets/images/engineering-intro.jpg"
+                  alt="LTS Engineering Perspective"
+                  className="w-full h-full object-cover object-center filter brightness-[0.95] transition-transform duration-700 hover:scale-[1.02]"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/65 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-4 left-5 right-5 flex items-center justify-between text-[10px] font-mono text-white/90 tracking-widest uppercase pointer-events-none">
+                  <span>25.2048° N, 55.2708° E</span>
+                  <span>DUBAI UAE &bull; ELECTROMECHANICAL</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -246,7 +259,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       {/* =====================================================================
           03 WHAT WE DO (OPERATING DIVISIONS)
           - Three large visual business area panels: E&C, FM, Trading
-          - Asymmetric 12-column editorial layout (7 cols dominant + 5 cols stacked)
+          - Asymmetric 12-column editorial layout: 8 cols dominant + 4 cols stacked
           - Full photographic narrative with authentic LTS Blue scrims
       ===================================================================== */}
       <section
@@ -264,11 +277,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-            {/* Panel 1: Engineering & Construction (Dominant 7 Cols) */}
+            {/* Panel 1: Engineering & Construction (Dominant 8 Cols) */}
             <a
               href="/engineering-construction"
               onClick={(e) => handleLink(e, '/engineering-construction')}
-              className="lg:col-span-7 group relative rounded-[8px] overflow-hidden block min-h-[400px] sm:min-h-[500px] lg:min-h-[580px] bg-[#173C62] flex flex-col justify-end p-8 sm:p-12 transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
+              className="lg:col-span-8 group relative rounded-[8px] overflow-hidden block min-h-[420px] sm:min-h-[520px] lg:min-h-[600px] bg-[#173C62] flex flex-col justify-end p-8 sm:p-12 transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
             >
               <img
                 src="/assets/images/mep-construction.jpg"
@@ -278,7 +291,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/95 via-[#173C62]/50 to-transparent" />
 
-              <div className="relative z-10 text-white max-w-lg">
+              <div className="relative z-10 text-white max-w-xl">
                 <span className="text-[10.5px] font-mono uppercase tracking-[0.22em] text-[#93C5FD] block mb-2 font-semibold">
                   DIVISION 01 &bull; CAPITAL CONTRACTING
                 </span>
@@ -295,13 +308,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               </div>
             </a>
 
-            {/* Panels 2 & 3: Facilities Management & Trading (5 Cols Stacked) */}
-            <div className="lg:col-span-5 flex flex-col gap-8">
+            {/* Panels 2 & 3: Facilities Management & Trading (4 Cols Stacked) */}
+            <div className="lg:col-span-4 flex flex-col gap-8">
               {/* Panel 2 */}
               <a
                 href="/facilities-management"
                 onClick={(e) => handleLink(e, '/facilities-management')}
-                className="group relative rounded-[8px] overflow-hidden block flex-1 min-h-[240px] sm:min-h-[270px] bg-[#173C62] flex flex-col justify-end p-7 sm:p-9 transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
+                className="group relative rounded-[8px] overflow-hidden block flex-1 min-h-[250px] sm:min-h-[285px] bg-[#173C62] flex flex-col justify-end p-7 sm:p-8 transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
               >
                 <img
                   src="/assets/images/project-chiller.jpg"
@@ -332,7 +345,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               <a
                 href="/trading"
                 onClick={(e) => handleLink(e, '/trading')}
-                className="group relative rounded-[8px] overflow-hidden block flex-1 min-h-[240px] sm:min-h-[270px] bg-[#173C62] flex flex-col justify-end p-7 sm:p-9 transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
+                className="group relative rounded-[8px] overflow-hidden block flex-1 min-h-[250px] sm:min-h-[285px] bg-[#173C62] flex flex-col justify-end p-7 sm:p-8 transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
               >
                 <img
                   src="/assets/images/industry-logistics.jpg"
@@ -364,57 +377,73 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       </section>
 
       {/* =====================================================================
-          04 FEATURED CAPABILITY
-          - One visually dominant story
-          - Cinematic panoramic visual (~65% / 8 cols)
-          - Concise architectural narrative (~35% / 4 cols)
-          - Zero excessive shadows or card boxes
+          04 FULL-BLEED PHOTOGRAPHIC BREAK
+          - Container-breaking edge-to-edge media moment
+          - Visual pause calibrating engineering scale
+      ===================================================================== */}
+      <EdgeToEdgeMedia
+        src="/assets/images/solar-epc.jpg"
+        alt="Commercial Rooftop Solar Photovoltaic EPC Installation"
+        caption="DUBAI INDUSTRIAL ROOFTOP ARRAY • 1.8 MWp CAPTIVE GENERATION • DEWA SHAMS DUBAI GRID SYNCHRONIZATION"
+        coordinates="24.9857° N, 55.1412° E"
+        aspectRatio="cinematic"
+      />
+
+      {/* =====================================================================
+          05 CAPABILITY SPOTLIGHT (INVERTED 4/8 ASYMMETRY)
+          - Left (4 cols): Thesis, standard approvals, link
+          - Right (8 cols): Wide technical engineering plate
+          - Inverted composition breaks left-heavy flow
       ===================================================================== */}
       <section
-        aria-label="Featured Capability"
+        aria-label="Capability Spotlight"
         className="py-24 lg:py-32 bg-white"
       >
         <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center text-left">
-            {/* Cinematic Dominant Visual (8 cols) */}
-            <div className="lg:col-span-8">
-              <div className="relative aspect-[16/10] sm:aspect-[21/11] rounded-[8px] overflow-hidden bg-[#173C62]">
-                <img
-                  src="/assets/images/solar-epc.jpg"
-                  alt="Commercial Solar PV EPC and Infrastructure"
-                  className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-[1.02]"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/80 via-[#173C62]/20 to-transparent" />
-              </div>
-            </div>
-
-            {/* Minimal Text Area (4 cols) */}
+            {/* Minimal Technical Narrative Left (4 cols) */}
             <div className="lg:col-span-4 space-y-6">
               <div className="space-y-2">
                 <span className="text-[11px] font-mono text-[#173C62] uppercase tracking-[0.22em] font-semibold block">
                   03 / CAPABILITY SPOTLIGHT
                 </span>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#0B1320] tracking-tight leading-tight">
-                  Commercial Rooftop Solar Photovoltaics.
+                  Low-Voltage Switchgear &amp; Motor Automation.
                 </h2>
               </div>
 
               <p className="text-sm sm:text-base text-[#4A5568] leading-relaxed font-normal">
-                Turnkey EPC delivery under DEWA Shams Dubai, transforming industrial and commercial building envelopes into high-yield power generation assets with statutory grid synchronization.
+                Factory type-tested low-voltage switchboard assemblies engineered to IEC 61439 Form-4 standards, integrated with motor control centers and automated grid synchronization up to 65kA.
               </p>
 
               <div className="pt-2">
                 <a
-                  href="/engineering-construction/solar"
-                  onClick={(e) => handleLink(e, '/engineering-construction/solar')}
+                  href="/engineering-construction/control-switchgear"
+                  onClick={(e) => handleLink(e, '/engineering-construction/control-switchgear')}
                   className="group inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-[#173C62] hover:text-[#0B1320] py-2 min-h-[44px] focus-visible:outline-none"
                 >
                   <span className="border-b border-[#173C62] pb-0.5 group-hover:border-[#0B1320] transition-colors">
-                    EXPLORE CAPABILITIES
+                    EXPLORE SWITCHGEAR
                   </span>
                   <IconArrow size="sm" color="inherit" interactive />
                 </a>
+              </div>
+            </div>
+
+            {/* Dominant Technical Plate Right (8 cols) */}
+            <div className="lg:col-span-8">
+              <div className="relative aspect-[16/10] sm:aspect-[21/11] rounded-[8px] overflow-hidden bg-[#173C62]">
+                <img
+                  src="/assets/images/trading-components.jpg"
+                  alt="Type-tested switchgear and motor automation assembly"
+                  className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-[1.02]"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/75 via-[#173C62]/20 to-transparent pointer-events-none" />
+                <div className="absolute bottom-4 left-5 right-5 flex items-center justify-between text-[10px] font-mono text-white/90 tracking-widest uppercase pointer-events-none">
+                  <span>IEC 61439 FORM-4</span>
+                  <span>DUBAI UTILITY CLEARANCE</span>
+                </div>
               </div>
             </div>
           </div>
@@ -422,10 +451,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       </section>
 
       {/* =====================================================================
-          05 SOLUTIONS
-          - Clean editorial list (NOT a card grid)
-          - Discipline name + arrow with subtle separators
-          - Pure, dignified typography
+          06 SOLUTIONS (12-COLUMN EDITORIAL LEDGER)
+          - Clean editorial typographic ledger (NOT a card grid)
+          - Discipline index + name + category + arrow
+          - Pure architectural typography
       ===================================================================== */}
       <section
         aria-label="Solutions Directory"
@@ -442,20 +471,25 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           </div>
 
           <div className="divide-y divide-[#E5E7EB] border-t border-b border-[#E5E7EB]">
-            {solutions.map((sol) => (
+            {solutions.map((sol, idx) => (
               <a
                 key={sol.name}
                 href={sol.slug}
                 onClick={(e) => handleLink(e, sol.slug)}
                 className="group py-5 sm:py-6 flex items-center justify-between transition-all duration-200 hover:pl-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
               >
-                <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
-                  <h3 className="text-lg sm:text-2xl font-light text-[#0B1320] group-hover:text-[#173C62] transition-colors tracking-tight">
-                    {sol.name}
-                  </h3>
-                  <span className="text-[11px] font-mono uppercase tracking-wider text-[#64748B]">
-                    {sol.category}
+                <div className="flex items-baseline gap-4 sm:gap-8">
+                  <span className="font-mono text-xs text-[#94A3B8] group-hover:text-[#173C62] transition-colors">
+                    {String(idx + 1).padStart(2, '0')}
                   </span>
+                  <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
+                    <h3 className="text-lg sm:text-2xl font-light text-[#0B1320] group-hover:text-[#173C62] transition-colors tracking-tight">
+                      {sol.name}
+                    </h3>
+                    <span className="text-[11px] font-mono uppercase tracking-wider text-[#64748B]">
+                      {sol.category}
+                    </span>
+                  </div>
                 </div>
 
                 <div className="text-[#94A3B8] group-hover:text-[#173C62] transition-colors flex items-center gap-1">
@@ -468,11 +502,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       </section>
 
       {/* =====================================================================
-          06 PROJECTS
-          - Image-led portfolio moment
-          - One dominant project (7 cols) + Two supporting projects (5 cols)
-          - Varying image proportions
-          - Minimal project info: Title, Category, VIEW CASE RECORD →
+          07 SELECTED PROJECTS (12-COL MONOGRAPH + 6/6 TWO-UP PAIRING)
+          - Full 12-column hero monograph plate for flagship project
+          - Side-by-side 6 / 6 two-up pairing for supporting records
+          - Overlaid technical delivery parameters
       ===================================================================== */}
       <section
         aria-label="Selected Projects"
@@ -499,41 +532,57 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             </a>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-            {/* Dominant Project (7 cols, 16/10 ratio) */}
+          <div className="space-y-8">
+            {/* 12-Column Hero Monograph Plate (Project 01) */}
             <a
               href={`/projects/${featuredProject.slug}`}
               onClick={(e) => handleLink(e, `/projects/${featuredProject.slug}`)}
-              className="lg:col-span-7 group relative rounded-[8px] overflow-hidden block min-h-[380px] sm:min-h-[480px] bg-[#173C62] flex flex-col justify-end p-8 sm:p-12 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
+              className="group relative rounded-[8px] overflow-hidden block min-h-[420px] sm:min-h-[480px] lg:min-h-[540px] bg-[#173C62] flex flex-col justify-end p-8 sm:p-12 lg:p-14 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
             >
               <img
                 src={featuredProject.image}
                 alt={featuredProject.title}
-                className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.025]"
+                className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/95 via-[#173C62]/45 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/95 via-[#173C62]/50 to-[#173C62]/10" />
 
-              <div className="relative z-10 text-white max-w-lg">
-                <span className="text-[10.5px] font-mono uppercase tracking-[0.2em] text-[#CBD5E1] block mb-2">
-                  {featuredProject.categoryLabel} &bull; {featuredProject.location}
-                </span>
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-light text-white tracking-tight">
+              <div className="relative z-10 text-white max-w-2xl">
+                <div className="inline-flex items-center gap-2 mb-3">
+                  <span className="text-[10px] font-mono uppercase tracking-[0.22em] text-[#93C5FD] font-semibold">
+                    FEATURED RECORD &bull; {featuredProject.categoryLabel}
+                  </span>
+                  <span className="text-white/40">&bull;</span>
+                  <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#CBD5E1]">
+                    {featuredProject.location}
+                  </span>
+                </div>
+                <h3 className="text-2xl sm:text-4xl lg:text-5xl font-light text-white tracking-tight leading-[1.08]">
                   {featuredProject.title}
                 </h3>
+                <p className="mt-3 text-xs sm:text-sm text-slate-200 leading-relaxed max-w-xl line-clamp-2">
+                  {featuredProject.scopeOverview}
+                </p>
                 <div className="mt-6 inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-white group-hover:text-slate-200">
                   <span>View case record</span>
                   <IconArrow size="sm" color="white" interactive />
                 </div>
               </div>
+
+              {/* Overlaid Technical Delivery Parameters in Bottom-Right */}
+              <div className="hidden md:flex absolute bottom-8 sm:bottom-12 right-8 sm:right-12 z-10 flex-col items-end text-right text-xs font-mono text-white/80 space-y-1">
+                <span className="text-[11px] text-[#93C5FD] font-semibold">DELIVERY PARAMETERS</span>
+                <span>48 FLOORS &bull; 3,200 TR DISTRICT COOLING</span>
+                <span>100% FIRST-PASS CIVIL DEFENSE CLEARANCE</span>
+              </div>
             </a>
 
-            {/* Two Supporting Projects (5 cols stacked) */}
-            <div className="lg:col-span-5 flex flex-col gap-8">
+            {/* 6 / 6 Two-Up Pairing (Projects 02 & 03) */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
               <a
                 href={`/projects/${supportingProject1.slug}`}
                 onClick={(e) => handleLink(e, `/projects/${supportingProject1.slug}`)}
-                className="group relative rounded-[8px] overflow-hidden block flex-1 min-h-[220px] bg-[#173C62] flex flex-col justify-end p-7 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
+                className="lg:col-span-6 group relative rounded-[8px] overflow-hidden block min-h-[300px] sm:min-h-[360px] bg-[#173C62] flex flex-col justify-end p-8 sm:p-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
               >
                 <img
                   src={supportingProject1.image}
@@ -544,13 +593,16 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/95 via-[#173C62]/45 to-transparent" />
 
                 <div className="relative z-10 text-white">
-                  <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#CBD5E1] block mb-1">
-                    {supportingProject1.categoryLabel}
+                  <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#93C5FD] block mb-1.5 font-semibold">
+                    {supportingProject1.categoryLabel} &bull; {supportingProject1.location}
                   </span>
-                  <h4 className="text-lg sm:text-xl font-light text-white tracking-tight">
+                  <h4 className="text-xl sm:text-2xl font-light text-white tracking-tight">
                     {supportingProject1.title}
                   </h4>
-                  <div className="mt-3 inline-flex items-center gap-1 text-[11.5px] font-semibold uppercase text-white group-hover:text-slate-200">
+                  <p className="mt-2 text-xs text-slate-200 leading-relaxed line-clamp-2">
+                    {supportingProject1.scopeOverview}
+                  </p>
+                  <div className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold uppercase text-white group-hover:text-slate-200">
                     <span>View project</span>
                     <IconArrow size="sm" color="white" interactive />
                   </div>
@@ -560,7 +612,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               <a
                 href={`/projects/${supportingProject2.slug}`}
                 onClick={(e) => handleLink(e, `/projects/${supportingProject2.slug}`)}
-                className="group relative rounded-[8px] overflow-hidden block flex-1 min-h-[220px] bg-[#173C62] flex flex-col justify-end p-7 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
+                className="lg:col-span-6 group relative rounded-[8px] overflow-hidden block min-h-[300px] sm:min-h-[360px] bg-[#173C62] flex flex-col justify-end p-8 sm:p-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
               >
                 <img
                   src={supportingProject2.image}
@@ -571,13 +623,16 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/95 via-[#173C62]/45 to-transparent" />
 
                 <div className="relative z-10 text-white">
-                  <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#CBD5E1] block mb-1">
-                    {supportingProject2.categoryLabel}
+                  <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#93C5FD] block mb-1.5 font-semibold">
+                    {supportingProject2.categoryLabel} &bull; {supportingProject2.location}
                   </span>
-                  <h4 className="text-lg sm:text-xl font-light text-white tracking-tight">
+                  <h4 className="text-xl sm:text-2xl font-light text-white tracking-tight">
                     {supportingProject2.title}
                   </h4>
-                  <div className="mt-3 inline-flex items-center gap-1 text-[11.5px] font-semibold uppercase text-white group-hover:text-slate-200">
+                  <p className="mt-2 text-xs text-slate-200 leading-relaxed line-clamp-2">
+                    {supportingProject2.scopeOverview}
+                  </p>
+                  <div className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold uppercase text-white group-hover:text-slate-200">
                     <span>View project</span>
                     <IconArrow size="sm" color="white" interactive />
                   </div>
@@ -765,10 +820,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       </section>
 
       {/* =====================================================================
-          10 NEWS
-          - One large featured story (7 cols)
-          - Two smaller stories (5 cols)
-          - No large blog grid
+          11 NEWS & TECHNICAL BRIEFINGS (6 / 6 EDITORIAL SPLIT)
+          - Left (6 cols): Featured lead technical dispatch
+          - Right (6 cols): Two supporting briefings in balanced column
       ===================================================================== */}
       <section
         aria-label="News and Briefings"
@@ -796,11 +850,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-            {/* Featured Article (7 cols) */}
+            {/* Featured Lead Story (6 cols) */}
             <a
               href={`/news/${featuredArticle.slug}`}
               onClick={(e) => handleLink(e, `/news/${featuredArticle.slug}`)}
-              className="lg:col-span-7 group relative rounded-[8px] overflow-hidden block min-h-[360px] sm:min-h-[440px] bg-[#173C62] flex flex-col justify-end p-8 sm:p-12 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
+              className="lg:col-span-6 group relative rounded-[8px] overflow-hidden block min-h-[420px] sm:min-h-[500px] bg-[#173C62] flex flex-col justify-end p-8 sm:p-12 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
             >
               <img
                 src={featuredArticle.image}
@@ -811,12 +865,15 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/95 via-[#173C62]/45 to-transparent" />
 
               <div className="relative z-10 text-white max-w-lg">
-                <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#CBD5E1] block mb-2">
+                <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#93C5FD] block mb-2 font-semibold">
                   {featuredArticle.category} &bull; {featuredArticle.date}
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-light text-white tracking-tight leading-snug">
                   {featuredArticle.title}
                 </h3>
+                <p className="mt-2.5 text-xs sm:text-sm text-slate-200 leading-relaxed font-normal line-clamp-2">
+                  {featuredArticle.summary}
+                </p>
                 <div className="mt-6 inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase text-white group-hover:text-slate-200">
                   <span>Read technical briefing</span>
                   <IconArrow size="sm" color="white" interactive />
@@ -824,12 +881,12 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               </div>
             </a>
 
-            {/* Two Smaller Previews (5 cols) */}
-            <div className="lg:col-span-5 flex flex-col gap-8">
+            {/* Two Supporting Previews (6 cols stacked) */}
+            <div className="lg:col-span-6 flex flex-col gap-8">
               <a
                 href={`/news/${supportingArticle1.slug}`}
                 onClick={(e) => handleLink(e, `/news/${supportingArticle1.slug}`)}
-                className="group relative rounded-[8px] overflow-hidden block flex-1 min-h-[180px] bg-[#173C62] flex flex-col justify-end p-7 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
+                className="group relative rounded-[8px] overflow-hidden block flex-1 min-h-[220px] sm:min-h-[235px] bg-[#173C62] flex flex-col justify-end p-7 sm:p-8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
               >
                 <img
                   src={supportingArticle1.image}
@@ -840,7 +897,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/95 via-[#173C62]/45 to-transparent" />
 
                 <div className="relative z-10 text-white">
-                  <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#CBD5E1] block mb-1">
+                  <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#93C5FD] block mb-1 font-semibold">
                     {supportingArticle1.category} &bull; {supportingArticle1.date}
                   </span>
                   <h4 className="text-base sm:text-lg font-light text-white tracking-tight line-clamp-2">
@@ -856,7 +913,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               <a
                 href={`/news/${supportingArticle2.slug}`}
                 onClick={(e) => handleLink(e, `/news/${supportingArticle2.slug}`)}
-                className="group relative rounded-[8px] overflow-hidden block flex-1 min-h-[180px] bg-[#173C62] flex flex-col justify-end p-7 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
+                className="group relative rounded-[8px] overflow-hidden block flex-1 min-h-[220px] sm:min-h-[235px] bg-[#173C62] flex flex-col justify-end p-7 sm:p-8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
               >
                 <img
                   src={supportingArticle2.image}
@@ -867,7 +924,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/95 via-[#173C62]/45 to-transparent" />
 
                 <div className="relative z-10 text-white">
-                  <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#CBD5E1] block mb-1">
+                  <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#93C5FD] block mb-1 font-semibold">
                     {supportingArticle2.category} &bull; {supportingArticle2.date}
                   </span>
                   <h4 className="text-base sm:text-lg font-light text-white tracking-tight line-clamp-2">

@@ -13,6 +13,7 @@ import {
   CompositionSplitEditorial,
   ProofSplit,
 } from '../../design-system/compositions';
+import { EdgeToEdgeMedia } from '../../design-system/layouts';
 import { CORPORATE_INFO } from '../../data/corporateData';
 
 export interface FacilitiesManagementPageProps {
@@ -344,36 +345,16 @@ export const FacilitiesManagementPage: React.FC<FacilitiesManagementPageProps> =
       </section>
 
       {/* =========================================================================
-          04 / FULL-WIDTH FEATURE IMAGE (Composition 01 — Visual Resting Moment)
-          Panoramic visual demonstrating plant telemetry & critical chiller operations.
+          04 / FULL-BLEED CHILLER BREAK (EdgeToEdgeMedia)
+          Container-breaking edge-to-edge media moment demonstrating plant scale.
       ========================================================================= */}
-      <section className="py-12 sm:py-16 bg-white">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
-          <div className="relative rounded-[8px] overflow-hidden aspect-[16/9] sm:aspect-[21/9] bg-[#173C62] max-h-[560px]">
-            <img
-              src="/assets/images/project-chiller.jpg"
-              alt="LTSGROUP Central Chiller Plant Reliability & Hard FM Operations"
-              className="w-full h-full object-cover filter brightness-[0.88]"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/80 via-transparent to-transparent pointer-events-none" />
-
-            <div className="absolute bottom-6 left-6 sm:bottom-8 sm:left-8 right-6 flex flex-wrap items-end justify-between gap-4 text-white">
-              <div className="space-y-1 text-left">
-                <span className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] text-[#93C5FD] block">
-                  PLANT TELEMETRY // 24/7 SLA DISPATCH
-                </span>
-                <p className="text-base sm:text-xl font-light tracking-tight">
-                  Central chiller plant optimization and critical asset reliability stewardship.
-                </p>
-              </div>
-              <span className="text-[11px] font-mono text-white/90 uppercase tracking-widest bg-white/15 backdrop-blur-md px-3.5 py-1.5 rounded-[8px] border border-white/20 font-medium">
-                15-MINUTE ESCALATION SLA
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
+      <EdgeToEdgeMedia
+        src="/assets/images/project-chiller.jpg"
+        alt="LTSGROUP Central Chiller Plant Reliability & Hard FM Operations"
+        caption="CENTRAL CHILLER PLANT HYDRONIC OPTIMIZATION • 24/7 SLA EMERGENCY DISPATCH • 15-MINUTE ESCALATION PROTOCOL"
+        coordinates="25.2048° N, 55.2708° E"
+        aspectRatio="panoramic"
+      />
 
       {/* =========================================================================
           05 / OPERATIONAL PROOF (Composition 06 — ProofSplit: Option B)

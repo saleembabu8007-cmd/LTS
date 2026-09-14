@@ -101,8 +101,8 @@ export const EngineeringConstructionPage: React.FC<EngineeringConstructionPagePr
       />
 
       {/* =========================================================================
-          03 / CAPABILITIES (Asymmetric 7/5 Layout)
-          Dominant 7-col MEP visual feature + 5-col stacked Solar & Switchgear rails.
+          03 / CAPABILITIES (Asymmetric 8/4 Layout)
+          Dominant 8-col MEP visual feature + 4-col stacked Solar & Switchgear rails.
           Strictly replaces the formulaic 3-column bordered grid.
       ========================================================================= */}
       <section className="py-20 sm:py-28 bg-[#F8FAFC]">
@@ -124,8 +124,8 @@ export const EngineeringConstructionPage: React.FC<EngineeringConstructionPagePr
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
             
-            {/* Left: Dominant MEP Feature (7 cols) */}
-            <div className="lg:col-span-7 bg-white rounded-[8px] p-6 sm:p-10 flex flex-col justify-between space-y-6">
+            {/* Left: Dominant MEP Feature (8 cols) */}
+            <div className="lg:col-span-8 bg-white rounded-[8px] p-6 sm:p-10 flex flex-col justify-between space-y-6">
               <div className="space-y-5 text-left">
                 <div className="flex items-center justify-between pb-4 border-b border-[#E5E7EB]">
                   <span className="font-mono text-xs font-semibold text-[#173C62] tracking-wider uppercase">
@@ -193,8 +193,8 @@ export const EngineeringConstructionPage: React.FC<EngineeringConstructionPagePr
               </div>
             </div>
 
-            {/* Right: Stacked Capability Rails (5 cols) */}
-            <div className="lg:col-span-5 flex flex-col justify-between gap-8">
+            {/* Right: Stacked Capability Rails (4 cols) */}
+            <div className="lg:col-span-4 flex flex-col justify-between gap-8">
               
               {/* Discipline 02: Solar EPC */}
               <div className="bg-white rounded-[8px] p-6 sm:p-8 space-y-4 text-left flex-1 flex flex-col justify-between">

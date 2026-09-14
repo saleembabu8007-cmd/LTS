@@ -2,6 +2,7 @@ import React from 'react';
 import { IconArrow, IconArrowUpRight } from '../../design-system/icons';
 import { ProofDominant } from '../../design-system/proof';
 import { CompositionSplitEditorial } from '../../design-system/compositions';
+import { EdgeToEdgeMedia } from '../../design-system/layouts';
 
 interface AboutUsPageProps {
   onNavigate: (slug: string) => void;
@@ -60,14 +61,14 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onNavigate }) => {
       </section>
 
       {/* =========================================================================
-          02 — SHORT COMPANY INTRODUCTION
+          02 — SHORT COMPANY INTRODUCTION (5/7 Asymmetric Split)
           Single question: Who are you?
           1 strong headline + 1 concise sentence.
       ========================================================================= */}
       <section className="py-16 sm:py-24">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-            <div className="lg:col-span-4 space-y-2">
+            <div className="lg:col-span-5 space-y-2 text-left">
               <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
                 01 &bull; Corporate Overview
               </span>
@@ -76,7 +77,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onNavigate }) => {
               </h2>
             </div>
 
-            <div className="lg:col-span-8 space-y-4">
+            <div className="lg:col-span-7 space-y-4 text-left">
               <p className="text-xl sm:text-2xl font-light text-[#0B1320] leading-snug tracking-tight">
                 LTSGROUP unites electromechanical contracting, critical facilities operations, and OEM component supply under one corporate standard.
               </p>
@@ -292,35 +293,16 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onNavigate }) => {
       </section>
 
       {/* =========================================================================
-          06 — FEATURE IMAGE
-          Large editorial architectural photography plate resting moment.
+          06 — FULL-BLEED ARCHITECTURAL BREAK (EdgeToEdgeMedia)
+          Container-breaking edge-to-edge media moment calibrating institutional scale.
       ========================================================================= */}
-      <section className="py-12 sm:py-16 bg-white">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
-          <div className="relative rounded-[8px] overflow-hidden aspect-[16/9] sm:aspect-[21/9] bg-[#173C62] max-h-[560px]">
-            <img
-              src="/assets/images/project-highrise.jpg"
-              alt="LTSGROUP Built Works & Engineering Delivery"
-              className="w-full h-full object-cover filter brightness-[0.92]"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/60 via-transparent to-transparent pointer-events-none" />
-            <div className="absolute bottom-6 left-6 sm:bottom-8 sm:left-8 right-6 flex flex-wrap items-end justify-between gap-4 text-white">
-              <div>
-                <span className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.2em] text-[#93C5FD] block mb-1">
-                  BUILT ASSET EXECUTION
-                </span>
-                <p className="text-base sm:text-xl font-light tracking-tight">
-                  Single-source accountability across commercial and infrastructure built environments.
-                </p>
-              </div>
-              <span className="text-[11px] font-mono text-white/75 uppercase tracking-widest bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-[8px] border border-white/20">
-                DUBAI &bull; UAE
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
+      <EdgeToEdgeMedia
+        src="/assets/images/project-highrise.jpg"
+        alt="LTSGROUP Built Works & Commercial Infrastructure Delivery"
+        caption="SINGLE-SOURCE ACCOUNTABILITY ACROSS COMMERCIAL AND INFRASTRUCTURE BUILT ENVIRONMENTS"
+        coordinates="25.2048° N, 55.2708° E • DUBAI UAE"
+        aspectRatio="panoramic"
+      />
 
       {/* =========================================================================
           07 — CTA

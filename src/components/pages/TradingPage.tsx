@@ -232,15 +232,15 @@ export const TradingPage: React.FC<TradingPageProps> = ({
       </section>
 
       {/* =========================================================================
-          04 / LARGE PRODUCT FOCAL SHOWCASE + DYNAMIC SPECS (Composition 02)
+          04 / LARGE PRODUCT FOCAL SHOWCASE + DYNAMIC SPECS (Asymmetric 8/4 Layout)
       ========================================================================= */}
       <section className="py-16 sm:py-24 bg-white">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center text-left">
             
-            {/* Large Product Photographic Focal Point (7 cols) */}
-            <div className="lg:col-span-7">
+            {/* Large Product Photographic Focal Point (8 cols) */}
+            <div className="lg:col-span-8">
               <div className="relative rounded-[8px] overflow-hidden bg-[#173C62] aspect-[16/10]">
                 <img
                   src="/assets/images/trading-components.jpg"
@@ -252,8 +252,8 @@ export const TradingPage: React.FC<TradingPageProps> = ({
               </div>
             </div>
 
-            {/* Dynamic Specification Column (5 cols) */}
-            <div className="lg:col-span-5 space-y-6">
+            {/* Dynamic Specification Column (4 cols) */}
+            <div className="lg:col-span-4 space-y-6">
               <div>
                 <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] font-semibold block mb-2">
                   CATEGORY {activeFamilyData.num} // SPECIFICATION MATRIX
