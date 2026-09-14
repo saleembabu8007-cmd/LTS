@@ -110,14 +110,14 @@ export const MegaNavigation: React.FC<MegaNavigationProps> = ({
                 }}
                 className="group block cursor-pointer space-y-2.5"
               >
-                <div className="relative aspect-[16/10] overflow-hidden rounded-[20px] bg-slate-100">
+                <div className="relative aspect-[16/10] overflow-hidden rounded-[8px] bg-slate-100">
                   <img
                     src={featuredProject.imageSrc}
                     alt={featuredProject.title}
-                    className="w-full h-full object-cover object-center rounded-[20px] transition-transform duration-[400ms] ease-out group-hover:scale-[1.025]"
+                    className="w-full h-full object-cover object-center rounded-[8px] transition-transform duration-[400ms] ease-out group-hover:scale-[1.025]"
                   />
                   {featuredProject.metric && (
-                    <div className="absolute bottom-2.5 left-2.5 bg-[#173C62]/90 text-white text-[10px] font-mono px-2 py-0.5 rounded-full">
+                    <div className="absolute bottom-2.5 left-2.5 bg-[#173C62]/90 text-white text-[10px] font-mono px-2 py-0.5 rounded-[4px]">
                       {featuredProject.metric}
                     </div>
                   )}

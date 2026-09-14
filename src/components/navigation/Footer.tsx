@@ -48,7 +48,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, hidePreFooter = fals
                 <a
                   href="/contact?tab=rfp"
                   onClick={(e) => handleLinkClick(e, '/contact?tab=rfp')}
-                  className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-white hover:bg-slate-100 text-[#0B1320] text-xs font-semibold uppercase tracking-wider rounded-[10px] transition-colors focus-visible:ring-2 focus-visible:ring-[#93C5FD] focus-visible:outline-none min-h-[44px]"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-white hover:bg-slate-100 text-[#0B1320] text-xs font-semibold uppercase tracking-wider rounded-[8px] transition-colors focus-visible:ring-2 focus-visible:ring-[#93C5FD] focus-visible:outline-none min-h-[44px]"
                 >
                   <span>Initiate Tender / Project Discussion</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -56,7 +56,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, hidePreFooter = fals
 
                 <a
                   href={`tel:${CORPORATE_INFO.contact.telephone.replace(/\s+/g, '')}`}
-                  className="inline-flex items-center justify-center gap-2 px-4 py-3 border border-white/20 hover:border-white/40 text-white text-xs font-semibold uppercase tracking-wider rounded-[10px] transition-colors focus-visible:ring-2 focus-visible:ring-[#93C5FD] focus-visible:outline-none min-h-[44px]"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-3 border border-white/20 hover:border-white/40 text-white text-xs font-semibold uppercase tracking-wider rounded-[8px] transition-colors focus-visible:ring-2 focus-visible:ring-[#93C5FD] focus-visible:outline-none min-h-[44px]"
                 >
                   <Phone className="w-3.5 h-3.5 text-[#93C5FD]" />
                   <span>{CORPORATE_INFO.contact.telephone}</span>
@@ -89,11 +89,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, hidePreFooter = fals
                 Integrated electromechanical contracting, life-cycle facility engineering, and specialized technical component distribution across the United Arab Emirates.
               </p>
 
-              <div className="pt-1 space-y-2">
-                <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-[10.5px] font-mono text-slate-300">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#93C5FD]" />
-                  <span>DEWA &bull; DCD &bull; DM Statutory Governance</span>
-                </div>
+              <div className="pt-1 space-y-1.5">
+                <p className="text-[11px] font-mono uppercase tracking-wider text-slate-300">
+                  DEWA &bull; DCD &bull; DM Statutory Governance
+                </p>
                 <p className="text-[11px] text-slate-400 font-mono">
                   Dubai Commercial License: {CORPORATE_INFO.legal.licenseNumber}
                 </p>

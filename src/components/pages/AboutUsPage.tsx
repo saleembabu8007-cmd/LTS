@@ -64,7 +64,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onNavigate }) => {
           Single question: Who are you?
           1 strong headline + 1 concise sentence.
       ========================================================================= */}
-      <section className="py-16 sm:py-24 border-b border-[#E5E7EB]">
+      <section className="py-16 sm:py-24">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
             <div className="lg:col-span-4 space-y-2">
@@ -147,7 +147,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onNavigate }) => {
           Approved LTSGROUP operational hierarchy: E&C, FM, Trading.
           Clean diagram with sub-disciplines, zero marketing fluff.
       ========================================================================= */}
-      <section className="py-16 sm:py-24 bg-[#F8FAFC] border-b border-[#E5E7EB]">
+      <section className="py-16 sm:py-24 bg-[#F8FAFC]">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 space-y-12 sm:space-y-16">
           <div className="max-w-3xl space-y-3 text-left">
             <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
@@ -195,7 +195,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onNavigate }) => {
                   </h3>
                 </div>
 
-                <div className="space-y-3 pl-4 border-l border-[#CBD5E1] text-xs text-[#4A5568]">
+                <div className="space-y-3 text-xs text-[#4A5568]">
                   <div>
                     <h4 className="font-medium text-[#0B1320] text-sm">MEP Contracting</h4>
                     <p className="text-[#64748B]">Commercial, residential, and infrastructure contracting.</p>
@@ -233,7 +233,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onNavigate }) => {
                   </h3>
                 </div>
 
-                <div className="space-y-3 pl-4 border-l border-[#CBD5E1] text-xs text-[#4A5568]">
+                <div className="space-y-3 text-xs text-[#4A5568]">
                   <div>
                     <h4 className="font-medium text-[#0B1320] text-sm">Hard Services</h4>
                     <p className="text-[#64748B]">Central chillers, electrical, plumbing, and BMS maintenance.</p>
@@ -271,7 +271,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onNavigate }) => {
                   </h3>
                 </div>
 
-                <div className="space-y-3 pl-4 border-l border-[#CBD5E1] text-xs text-[#4A5568]">
+                <div className="space-y-3 text-xs text-[#4A5568]">
                   <div>
                     <h4 className="font-medium text-[#0B1320] text-sm">HVAC Spare Parts</h4>
                     <p className="text-[#64748B]">OEM compressors, coils, valves, and hardware.</p>
@@ -295,9 +295,9 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onNavigate }) => {
           06 — FEATURE IMAGE
           Large editorial architectural photography plate resting moment.
       ========================================================================= */}
-      <section className="py-12 sm:py-16 bg-white border-b border-[#E5E7EB]">
+      <section className="py-12 sm:py-16 bg-white">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
-          <div className="relative rounded-[20px] overflow-hidden aspect-[16/9] sm:aspect-[21/9] bg-[#173C62] max-h-[560px]">
+          <div className="relative rounded-[8px] overflow-hidden aspect-[16/9] sm:aspect-[21/9] bg-[#173C62] max-h-[560px]">
             <img
               src="/assets/images/project-highrise.jpg"
               alt="LTSGROUP Built Works & Engineering Delivery"
@@ -355,7 +355,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onNavigate }) => {
                   e.preventDefault();
                   onNavigate('/contact');
                 }}
-                className="inline-flex items-center gap-2 px-6 py-3.5 min-h-[44px] rounded-[12px] bg-white text-[#173C62] text-xs font-semibold uppercase tracking-wider hover:bg-slate-100 transition-colors focus-visible:outline-none"
+                className="inline-flex items-center gap-2 px-6 py-3.5 min-h-[44px] rounded-[8px] bg-white text-[#173C62] text-xs font-semibold uppercase tracking-wider hover:bg-slate-100 transition-colors focus-visible:outline-none"
               >
                 <span>Contact / Enquire</span>
                 <IconArrow size="sm" color="inherit" interactive />
@@ -367,7 +367,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onNavigate }) => {
                   e.preventDefault();
                   onNavigate('/projects');
                 }}
-                className="inline-flex items-center gap-2 px-6 py-3.5 min-h-[44px] rounded-[12px] bg-white/10 hover:bg-white/20 text-white text-xs font-semibold uppercase tracking-wider backdrop-blur-md border border-white/20 transition-colors focus-visible:outline-none"
+                className="inline-flex items-center gap-2 px-6 py-3.5 min-h-[44px] rounded-[8px] bg-white/10 hover:bg-white/20 text-white text-xs font-semibold uppercase tracking-wider backdrop-blur-md border border-white/20 transition-colors focus-visible:outline-none"
               >
                 <span>View Projects Archive</span>
               </a>

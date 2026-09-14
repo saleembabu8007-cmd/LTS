@@ -74,7 +74,7 @@ export const CompositionFeaturedStory: React.FC<CompositionFeaturedStoryProps> =
         {isStacked ? (
           /* Stacked Layout: Large full-width image followed by editorial story headline */
           <div className="space-y-8">
-            <div className="relative aspect-[21/9] sm:aspect-[2.2/1] overflow-hidden rounded-[20px] sm:rounded-[24px] border border-[#E5E7EB] bg-[#0B1320] group">
+            <div className="relative aspect-[21/9] sm:aspect-[2.2/1] overflow-hidden rounded-[8px] bg-[#0B1320] group">
               <img
                 src={imageSrc}
                 alt={imageAlt || headline}
@@ -91,7 +91,7 @@ export const CompositionFeaturedStory: React.FC<CompositionFeaturedStoryProps> =
 
             <div className="max-w-4xl space-y-4">
               <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-[#64748B]">
-                <span className="px-2.5 py-0.5 bg-[#EDF3F9] text-[#173C62] font-semibold rounded-full uppercase tracking-wider">
+                <span className="px-2.5 py-0.5 bg-[#EDF3F9] text-[#173C62] font-semibold rounded-[4px] uppercase tracking-wider">
                   {category}
                 </span>
                 {date && (
@@ -134,7 +134,7 @@ export const CompositionFeaturedStory: React.FC<CompositionFeaturedStoryProps> =
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             {/* Image (7 cols) */}
             <div className="lg:col-span-7">
-              <div className="relative aspect-[16/10] overflow-hidden rounded-[20px] sm:rounded-[24px] border border-[#E5E7EB] bg-[#0B1320] group">
+              <div className="relative aspect-[16/10] overflow-hidden rounded-[8px] bg-[#0B1320] group">
                 <img
                   src={imageSrc}
                   alt={imageAlt || headline}

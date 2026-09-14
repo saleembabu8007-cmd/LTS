@@ -37,7 +37,7 @@ export const EditorialImage: React.FC<EditorialImageProps> = ({
 
   return (
     <figure className={`group space-y-3 ${className}`}>
-      <div className={`relative overflow-hidden rounded-[20px] bg-[#173C62] border border-[#E5E7EB] shadow-sm ${aspectClass}`}>
+      <div className={`relative overflow-hidden rounded-[8px] bg-[#173C62] ${aspectClass}`}>
         <img
           src={imageSrc}
           alt={imageAlt || caption || 'Editorial architectural visual'}

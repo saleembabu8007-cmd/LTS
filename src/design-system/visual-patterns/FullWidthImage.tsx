@@ -46,7 +46,7 @@ export const FullWidthImage: React.FC<FullWidthImageProps> = ({
 
   return (
     <div
-      className={`group relative overflow-hidden rounded-3xl border border-[#E5E7EB] bg-[#173C62] shadow-sm flex flex-col justify-between p-6 sm:p-10 lg:p-12 ${minHeight} ${className}`}
+      className={`group relative overflow-hidden rounded-[8px] bg-[#173C62] flex flex-col justify-between p-6 sm:p-10 lg:p-12 ${minHeight} ${className}`}
     >
       {/* Background Image with 1.02 subtle scale on container hover */}
       <img
@@ -65,7 +65,7 @@ export const FullWidthImage: React.FC<FullWidthImageProps> = ({
       {/* Top Status Indicators */}
       <div className="relative z-10 flex flex-wrap items-center justify-between gap-4 text-white">
         {statusBadge ? (
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/20 text-xs font-mono tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[4px] bg-[#173C62]/90 text-xs font-mono tracking-wider text-white">
             <IconCheck size="sm" color="white" />
             <span>{statusBadge}</span>
           </div>

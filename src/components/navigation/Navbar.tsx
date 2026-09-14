@@ -229,9 +229,9 @@ export const Navbar: React.FC<HeaderProps> = ({ currentPath, onNavigate }) => {
             <Button
               variant="primary"
               size="sm"
-              shape="capsule"
+              shape="rounded"
               onClick={() => handleItemClick('/contact')}
-              className="whitespace-nowrap shrink-0 text-[11px] xl:text-[11.5px] tracking-[0.06em] px-3.5 xl:px-4 py-2 min-h-[38px]"
+              className="whitespace-nowrap shrink-0 text-[11px] xl:text-[11.5px] tracking-[0.06em] px-3.5 xl:px-4 py-2 min-h-[38px] rounded-[8px]"
             >
               <span className="hidden xl:inline">Contact / Enquire</span>
               <span className="xl:hidden">Enquire</span>
@@ -245,16 +245,16 @@ export const Navbar: React.FC<HeaderProps> = ({ currentPath, onNavigate }) => {
             <Button
               variant="primary"
               size="sm"
-              shape="capsule"
+              shape="rounded"
               onClick={() => handleItemClick('/contact')}
-              className="whitespace-nowrap shrink-0 text-xs px-3.5 sm:px-4 py-2 min-h-[44px]"
+              className="whitespace-nowrap shrink-0 text-xs px-3.5 sm:px-4 py-2 min-h-[44px] rounded-[8px]"
             >
               Enquire
             </Button>
 
             <button
               onClick={() => setIsMobileOpen(true)}
-              className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-[10px] border border-[#E5E7EB] text-[#334155] hover:text-[#173C62] hover:bg-[#F8FAFC] transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] shadow-none"
+              className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-[8px] border border-[#E5E7EB] text-[#334155] hover:text-[#173C62] hover:bg-[#F8FAFC] transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] shadow-none"
               aria-label="Open Navigation Menu"
             >
               <Menu className="w-5 h-5" />

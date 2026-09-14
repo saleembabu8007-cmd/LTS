@@ -33,7 +33,7 @@ export const FullWidthMedia: React.FC<FullWidthMediaProps> = ({
     banner: 'aspect-[2.4/1]',
   }[aspectRatio];
 
-  const containerRadius = bleed ? 'rounded-none' : 'rounded-[20px]';
+  const containerRadius = bleed ? 'rounded-none' : 'rounded-[8px]';
 
   return (
     <figure className={`relative w-full ${className}`}>

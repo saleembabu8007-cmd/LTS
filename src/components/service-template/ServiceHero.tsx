@@ -89,7 +89,7 @@ export const ServiceHero: React.FC<ServiceHeroProps> = ({ data, onNavigate }) =>
             <Button
               variant="white"
               size="md"
-              shape="capsule"
+              shape="rounded"
               onClick={() => onNavigate(ctaSlug)}
               className="text-[12px] tracking-[0.06em]"
             >

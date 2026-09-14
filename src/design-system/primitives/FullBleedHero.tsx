@@ -161,7 +161,6 @@ export const FullBleedHero: React.FC<FullBleedHeroProps> = ({
         <div className="relative z-10 border-t border-white/15 py-3.5 sm:py-4 bg-[#173C62]/90 backdrop-blur-sm">
           <div className="lts-container flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5 sm:gap-4 font-mono text-[10.5px] sm:text-[11px] text-slate-300">
             <div className="flex items-center gap-3">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 shrink-0" />
               <span>{datumStrip.leftText}</span>
             </div>
             {datumStrip.rightText && (

@@ -19,7 +19,7 @@ export const Section: React.FC<SectionProps> = ({
   spacing = 'standard',
   tone = 'white',
   hairlineTop = false,
-  hairlineBottom = true,
+  hairlineBottom = false,
   id,
   className = '',
   as: Component = 'section',

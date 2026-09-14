@@ -88,11 +88,11 @@ export const NewsDetailPage: React.FC<NewsDetailPageProps> = ({ slug, onNavigate
 
       {/* =========================================================================
           02 — LARGE HERO IMAGE
-          Commanding high-resolution photograph (20-28px radius, pure photography)
+          Commanding high-resolution photograph (Restrained 8px radius, pure photography)
       ========================================================================= */}
       <section className="pb-14 sm:pb-20 bg-white">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
-          <div className="relative aspect-[16/9] sm:aspect-[21/10] w-full overflow-hidden rounded-[20px] sm:rounded-[28px] bg-[#173C62]">
+          <div className="relative aspect-[16/9] sm:aspect-[21/10] w-full overflow-hidden rounded-[8px] bg-[#173C62]">
             <img
               src={article.image}
               alt={article.title}
@@ -103,9 +103,6 @@ export const NewsDetailPage: React.FC<NewsDetailPageProps> = ({ slug, onNavigate
                   'https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=1920&q=80';
               }}
             />
-            <div className="absolute bottom-4 left-4 font-mono text-xs text-white/90 bg-[#173C62]/85 backdrop-blur-xs px-3.5 py-1.5 rounded-[8px] border border-white/10">
-              Technical Briefing &bull; Field Verification
-            </div>
           </div>
         </div>
       </section>
@@ -114,7 +111,7 @@ export const NewsDetailPage: React.FC<NewsDetailPageProps> = ({ slug, onNavigate
           03 — ARTICLE BODY: EXCELLENT TYPOGRAPHY & TECHNICAL COPY
           Preserves 100% of verified technical analysis, background, and key takeaways.
       ========================================================================= */}
-      <section className="pb-20 sm:pb-28 bg-white border-b border-[#E5E7EB]">
+      <section className="pb-20 sm:pb-28 bg-white">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
           <div className="max-w-3xl mx-auto space-y-12 sm:space-y-16">
             {/* Technical Executive Summary — Unboxed Editorial Callout */}
@@ -149,16 +146,13 @@ export const NewsDetailPage: React.FC<NewsDetailPageProps> = ({ slug, onNavigate
             </div>
 
             {/* Supporting Imagery (Field Installation Monograph Plate) */}
-            <div className="relative overflow-hidden rounded-[20px] bg-[#173C62] aspect-[16/10]">
+            <div className="relative overflow-hidden rounded-[8px] bg-[#173C62] aspect-[16/10]">
               <img
                 src={article.image}
                 alt={`${article.title} technical execution`}
                 loading="lazy"
                 className="w-full h-full object-cover filter brightness-[0.92]"
               />
-              <div className="absolute bottom-4 left-4 font-mono text-xs text-white/90 bg-[#173C62]/85 backdrop-blur-xs px-3.5 py-1.5 rounded-[8px] border border-white/10">
-                Plate Monograph &bull; Electromechanical Installation
-              </div>
             </div>
 
             {/* Deep Technical Analysis */}
@@ -177,7 +171,7 @@ export const NewsDetailPage: React.FC<NewsDetailPageProps> = ({ slug, onNavigate
             </div>
 
             {/* Key Practitioner Takeaways */}
-            <div className="space-y-4 bg-[#F8FAFC] p-6 sm:p-8 rounded-[20px]">
+            <div className="space-y-4 bg-[#F8FAFC] p-6 sm:p-8 rounded-[8px]">
               <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] font-semibold block">
                 Key Practitioner Takeaways
               </span>
@@ -204,7 +198,7 @@ export const NewsDetailPage: React.FC<NewsDetailPageProps> = ({ slug, onNavigate
                 {article.governingStandards.map((std, sIdx) => (
                   <span
                     key={sIdx}
-                    className="inline-flex items-center gap-1.5 text-xs font-mono text-[#0B1320] bg-[#F8FAFC] border border-[#E5E7EB] px-3.5 py-2 rounded-[8px]"
+                    className="inline-flex items-center gap-1.5 text-xs font-mono text-[#0B1320] bg-[#F8FAFC] border border-[#E5E7EB] px-3.5 py-2 rounded-[6px]"
                   >
                     <IconShieldCheck className="w-3.5 h-3.5 text-[#173C62]" />
                     <span>{std}</span>
@@ -216,7 +210,7 @@ export const NewsDetailPage: React.FC<NewsDetailPageProps> = ({ slug, onNavigate
             {/* Related Service Capability Bridge */}
             {article.relatedService && (
               <div className="pt-6 border-t border-[#E5E7EB]">
-                <div className="p-6 sm:p-8 rounded-[20px] bg-white border border-[#E5E7EB] flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+                <div className="p-6 sm:p-8 rounded-[8px] bg-[#F8FAFC] flex flex-col sm:flex-row sm:items-center justify-between gap-6">
                   <div className="space-y-1 max-w-xl">
                     <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] font-semibold block">
                       Delivering Discipline
@@ -235,7 +229,7 @@ export const NewsDetailPage: React.FC<NewsDetailPageProps> = ({ slug, onNavigate
                       e.preventDefault();
                       onNavigate(article.relatedService.slug);
                     }}
-                    className="min-h-[44px] inline-flex items-center gap-2 px-5 py-3 rounded-[10px] bg-[#173C62] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#12304F] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] cursor-pointer shrink-0 whitespace-nowrap"
+                    className="min-h-[44px] inline-flex items-center gap-2 px-5 py-3 rounded-[8px] bg-[#173C62] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#12304F] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] cursor-pointer shrink-0 whitespace-nowrap"
                   >
                     <span>Inspect Scope</span>
                     <IconArrow className="w-3.5 h-3.5" />
@@ -254,7 +248,7 @@ export const NewsDetailPage: React.FC<NewsDetailPageProps> = ({ slug, onNavigate
       <section className="py-16 sm:py-24 bg-[#F8FAFC]">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
           <div className="space-y-12">
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-6 border-b border-[#E5E7EB]">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4">
               <div>
                 <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block mb-2 font-semibold">
                   Technical Briefings Archive
@@ -287,10 +281,10 @@ export const NewsDetailPage: React.FC<NewsDetailPageProps> = ({ slug, onNavigate
                     e.preventDefault();
                     onNavigate(`/news/${rel.slug}`);
                   }}
-                  className="group block select-none space-y-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] rounded-[20px]"
+                  className="group block select-none space-y-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] rounded-[8px]"
                   aria-label={`Read article: ${rel.title}`}
                 >
-                  <div className="relative overflow-hidden rounded-[18px] sm:rounded-[20px] bg-[#173C62] aspect-[16/10]">
+                  <div className="relative overflow-hidden rounded-[8px] bg-[#173C62] aspect-[16/10]">
                     <img
                       src={rel.image}
                       alt={rel.title}

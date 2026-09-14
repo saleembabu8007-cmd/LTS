@@ -78,7 +78,7 @@ export const ClientsPage: React.FC<ClientsPageProps> = ({ onNavigate }) => {
           02 — LOGO WALL & STATUTORY AUTHORITY CLEARANCES
           Clean architectural grid of governing utility and regulatory bodies.
       ========================================================================= */}
-      <section className="py-16 sm:py-24 bg-[#F8FAFC] border-b border-[#E5E7EB]">
+      <section className="py-16 sm:py-24 bg-[#F8FAFC]">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 space-y-12 sm:space-y-16">
           <div className="max-w-3xl space-y-3">
             <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
@@ -132,7 +132,7 @@ export const ClientsPage: React.FC<ClientsPageProps> = ({ onNavigate }) => {
           03 — OPTIONAL SHORT STATEMENT (CONFIDENTIALITY & PREQUALIFICATION)
           Concise institutional statement with 50% content reduction.
       ========================================================================= */}
-      <section className="py-14 sm:py-20 bg-white border-b border-[#E5E7EB]">
+      <section className="py-14 sm:py-20 bg-white">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
             <div className="lg:col-span-4 border-l-2 border-[#173C62] pl-6 sm:pl-8">
@@ -163,7 +163,7 @@ export const ClientsPage: React.FC<ClientsPageProps> = ({ onNavigate }) => {
       ========================================================================= */}
       <section className="py-16 sm:py-24 bg-[#F8FAFC]">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
-          <div className="bg-[#173C62] text-white rounded-[24px] p-8 sm:p-14 lg:p-16 relative overflow-hidden">
+          <div className="bg-[#173C62] text-white rounded-[8px] p-8 sm:p-14 lg:p-16 relative overflow-hidden">
             <div className="relative z-10 max-w-3xl space-y-6">
               <span className="font-mono text-xs uppercase tracking-[0.24em] text-white/70 block">
                 03 &bull; VENDOR ENROLLMENT &amp; PRE-QUALIFICATION
@@ -184,7 +184,7 @@ export const ClientsPage: React.FC<ClientsPageProps> = ({ onNavigate }) => {
                     e.preventDefault();
                     onNavigate('/contact');
                   }}
-                  className="min-h-[44px] inline-flex items-center gap-2 px-8 py-4 rounded-[12px] bg-white text-[#173C62] text-xs sm:text-sm font-semibold uppercase tracking-wider hover:bg-white/95 transition-colors"
+                  className="min-h-[44px] inline-flex items-center gap-2 px-8 py-4 rounded-[8px] bg-white text-[#173C62] text-xs sm:text-sm font-semibold uppercase tracking-wider hover:bg-white/95 transition-colors"
                 >
                   <span>Request Pre-Qualification Pack</span>
                   <IconArrow size="sm" color="primary" interactive />
@@ -196,7 +196,7 @@ export const ClientsPage: React.FC<ClientsPageProps> = ({ onNavigate }) => {
                     e.preventDefault();
                     onNavigate('/projects');
                   }}
-                  className="min-h-[44px] inline-flex items-center gap-2 px-7 py-4 rounded-[12px] border border-white/20 text-white text-xs sm:text-sm font-semibold uppercase tracking-wider hover:bg-white/10 transition-colors"
+                  className="min-h-[44px] inline-flex items-center gap-2 px-7 py-4 rounded-[8px] border border-white/20 text-white text-xs sm:text-sm font-semibold uppercase tracking-wider hover:bg-white/10 transition-colors"
                 >
                   <span>Inspect Projects Archive</span>
                 </a>

@@ -30,40 +30,40 @@ export const Card: React.FC<CardProps> = ({
 }) => {
   const baseClasses = 'transition-all duration-200 ease-out overflow-hidden';
 
-  // Explicit soft-radius mappings
+  // Restrained architectural radius mappings
   const radiusMap = {
     none: 'rounded-none',
-    sm: 'rounded-[8px]',
-    md: 'rounded-[12px]',
-    lg: 'rounded-[16px]',
-    xl: 'rounded-[20px]',
+    sm: 'rounded-[4px]',
+    md: 'rounded-[6px]',
+    lg: 'rounded-[8px]',
+    xl: 'rounded-[10px]',
   };
 
-  // Canonical Card Archetypes
+  // Canonical Card Archetypes (Unboxed, relying on background tone & whitespace)
   const variantClasses: Record<CardVariant, string> = {
-    // 1. Feature Card: Large prominence, generous breathing room, 20px radius
+    // 1. Feature Card: Generous breathing room, 8px radius
     feature:
       tone === 'dark'
-        ? 'bg-[#173C62] border border-white/15 text-white p-8 sm:p-10 rounded-[20px]'
-        : 'bg-[#F8FAFC] border border-[#CBD5E1] text-[#0B1320] p-8 sm:p-10 rounded-[20px]',
+        ? 'bg-[#173C62] text-white p-8 sm:p-10 rounded-[8px]'
+        : 'bg-[#F8FAFC] text-[#0B1320] p-8 sm:p-10 rounded-[8px]',
 
-    // 2. Standard Card: Structured 1px hairline card, 16px radius
+    // 2. Standard Card: Clean editorial surface, 8px radius
     standard:
       tone === 'dark'
-        ? 'bg-[#173C62] border border-white/15 text-white p-6 sm:p-8 rounded-[16px]'
-        : 'bg-white border border-[#E5E7EB] text-[#0B1320] p-6 sm:p-8 rounded-[16px]',
+        ? 'bg-[#173C62] text-white p-6 sm:p-8 rounded-[8px]'
+        : 'bg-white text-[#0B1320] p-6 sm:p-8 rounded-[8px]',
 
-    // 3. Compact Card: Dense metadata or quick index item, 12px radius
+    // 3. Compact Card: Dense metadata or quick index item, 6px radius
     compact:
       tone === 'dark'
-        ? 'bg-[#173C62]/90 border border-white/15 text-white p-4 sm:p-5 rounded-[12px]'
-        : 'bg-[#F8FAFC] border border-[#E5E7EB] text-[#0B1320] p-4 sm:p-5 rounded-[12px]',
+        ? 'bg-[#173C62] text-white p-4 sm:p-5 rounded-[6px]'
+        : 'bg-[#F8FAFC] text-[#0B1320] p-4 sm:p-5 rounded-[6px]',
 
     // Backward-compatible aliases
     minimal: 'bg-transparent text-[#0B1320] p-0',
-    hairline: 'bg-white border border-[#E5E7EB] text-[#0B1320] p-6 rounded-[16px]',
-    darkSurface: 'bg-[#173C62] border border-white/15 text-white p-6 rounded-[16px]',
-    photoTile: 'relative overflow-hidden bg-[#173C62] text-white rounded-[18px]',
+    hairline: 'bg-white text-[#0B1320] p-6 rounded-[8px]',
+    darkSurface: 'bg-[#173C62] text-white p-6 rounded-[8px]',
+    photoTile: 'relative overflow-hidden bg-[#173C62] text-white rounded-[8px]',
   };
 
   const interactiveClasses = interactive

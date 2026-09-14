@@ -78,7 +78,7 @@ export const FeatureImageCard: React.FC<FeatureImageCardProps> = ({
   return (
     <CardWrapper
       {...(wrapperProps as any)}
-      className={`group relative block w-full select-none overflow-hidden rounded-[20px] sm:rounded-[24px] bg-[#173C62] text-left transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:ring-offset-4 ${className}`}
+      className={`group relative block w-full select-none overflow-hidden rounded-[8px] bg-[#173C62] text-left transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:ring-offset-4 ${className}`}
     >
       {/* Media Container */}
       <div className={`relative w-full overflow-hidden ${aspectClass}`}>

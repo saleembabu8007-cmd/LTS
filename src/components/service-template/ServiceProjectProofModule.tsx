@@ -67,7 +67,7 @@ export const ServiceProjectProofModule: React.FC<ServiceProjectProofModuleProps>
             onClick={() => onNavigate(projectSlug)}
             className="lg:col-span-7 group cursor-pointer"
           >
-            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[18px] bg-[#173C62]">
+            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[8px] bg-[#173C62]">
               <img
                 src={projectImage}
                 alt={projectTitle}

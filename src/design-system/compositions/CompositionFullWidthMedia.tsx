@@ -44,14 +44,12 @@ export const CompositionFullWidthMedia: React.FC<CompositionFullWidthMediaProps>
     banner: 'aspect-[16/10] sm:aspect-[2/1] lg:aspect-[2.4/1] min-h-[260px] sm:min-h-0',
   }[aspectRatio];
 
-  const containerRadius = bleed ? 'rounded-none' : 'rounded-[20px] sm:rounded-[24px]';
+  const containerRadius = bleed ? 'rounded-none' : 'rounded-[8px]';
 
   const mediaContent = (
     <div className="relative group">
       <div
-        className={`relative w-full overflow-hidden ${containerRadius} bg-[#173C62] ${aspectClass} border ${
-          bleed ? 'border-none' : 'border-[#E5E7EB]'
-        }`}
+        className={`relative w-full overflow-hidden ${containerRadius} bg-[#173C62] ${aspectClass}`}
       >
         <img
           src={imageSrc}

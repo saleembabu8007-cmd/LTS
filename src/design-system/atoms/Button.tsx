@@ -20,7 +20,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       children,
       variant = 'primary',
       size = 'md',
-      shape = 'capsule',
+      shape = 'rounded',
       iconLeading,
       iconTrailing,
       fullWidth = false,
@@ -32,10 +32,10 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref
   ) => {
-    // Soft intentional radius: capsule (rounded-full) or 12px soft radius
+    // Restrained architectural radius: rounded (8px) or capsule (rounded-full) for metadata/filters
     const shapeStyles: Record<ButtonShape, string> = {
       capsule: 'rounded-full',
-      rounded: 'rounded-[12px]',
+      rounded: 'rounded-[8px]',
     };
 
     const focusRingStyle = light

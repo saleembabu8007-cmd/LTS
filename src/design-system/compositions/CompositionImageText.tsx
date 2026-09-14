@@ -57,7 +57,7 @@ export const CompositionImageText: React.FC<CompositionImageTextProps> = ({
           <div className="lg:col-span-7 order-2 lg:order-1">
             <div className="group relative">
               <div
-                className={`relative w-full ${aspectClass} overflow-hidden rounded-[20px] sm:rounded-[24px] border border-[#E5E7EB] bg-[#0B1320]`}
+                className={`relative w-full ${aspectClass} overflow-hidden rounded-[8px] bg-[#0B1320]`}
               >
                 <img
                   src={imageSrc}

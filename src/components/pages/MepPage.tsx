@@ -123,7 +123,7 @@ export const MepPage: React.FC<MepPageProps> = ({ onNavigate }) => {
           02 — CAPABILITY LEDGER (UNBOXED TYPOGRAPHIC INDEX — RULE 07 & 08)
           Replaces previous 3 bordered cards with clean architectural ledger.
       ========================================================================= */}
-      <section id="section-disciplines" className="py-16 lg:py-24 border-b border-[#E5E7EB] bg-white">
+      <section id="section-disciplines" className="py-16 lg:py-24 bg-white">
         <Container>
           <div className="space-y-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
@@ -152,7 +152,7 @@ export const MepPage: React.FC<MepPageProps> = ({ onNavigate }) => {
       {/* =========================================================================
           03 — COMMERCIAL & RESIDENTIAL CHAPTER (ASYMMETRIC 7/5 SPLIT)
       ========================================================================= */}
-      <section id="commercial-residential" className="py-16 lg:py-24 border-b border-[#E5E7EB] bg-[#F8FAFC]">
+      <section id="commercial-residential" className="py-16 lg:py-24 bg-[#F8FAFC]">
         <Container>
           <div className="space-y-10">
             <div>
@@ -165,19 +165,16 @@ export const MepPage: React.FC<MepPageProps> = ({ onNavigate }) => {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-              {/* Media Frame (7 cols): 18px soft radius */}
+              {/* Media Frame (7 cols): 8px architectural radius */}
               <div className="lg:col-span-7">
-                <div className="relative overflow-hidden rounded-[18px] bg-[#173C62] aspect-[16/10]">
+                <div className="relative overflow-hidden rounded-[8px] bg-[#173C62] aspect-[16/10]">
                   <img
                     src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
                     alt="Commercial High-Rise MEP Installation in Dubai"
                     className="w-full h-full object-cover filter brightness-[0.88]"
                     loading="lazy"
                   />
-                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-[11px] font-mono text-white/90 bg-[#173C62]/85 backdrop-blur-xs px-3.5 py-1.5 rounded-[10px] border border-white/10">
-                    <span>Business Bay 48-Floor Tower</span>
-                    <span className="text-[#93C5FD]">3,200 TR District Hydronics</span>
-                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/30 via-transparent to-transparent pointer-events-none" />
                 </div>
               </div>
 
@@ -215,7 +212,7 @@ export const MepPage: React.FC<MepPageProps> = ({ onNavigate }) => {
                   <Button
                     variant="primary"
                     size="md"
-                    shape="capsule"
+                    shape="rounded"
                     onClick={() => onNavigate('/contact?tab=rfp&service=commercial')}
                     className="text-xs px-6 py-3"
                     iconTrailing={<ArrowRight className="w-3.5 h-3.5" />}
@@ -232,7 +229,7 @@ export const MepPage: React.FC<MepPageProps> = ({ onNavigate }) => {
       {/* =========================================================================
           04 — INFRASTRUCTURE & HEAVY UTILITIES (ASYMMETRIC 5/7 SPLIT)
       ========================================================================= */}
-      <section id="infrastructure" className="py-16 lg:py-24 border-b border-[#E5E7EB] bg-white">
+      <section id="infrastructure" className="py-16 lg:py-24 bg-white">
         <Container>
           <div className="space-y-10">
             <div>
@@ -279,7 +276,7 @@ export const MepPage: React.FC<MepPageProps> = ({ onNavigate }) => {
                   <Button
                     variant="primary"
                     size="md"
-                    shape="capsule"
+                    shape="rounded"
                     onClick={() => onNavigate('/contact?tab=rfp&service=infrastructure')}
                     className="text-xs px-6 py-3"
                     iconTrailing={<ArrowRight className="w-3.5 h-3.5" />}
@@ -289,19 +286,16 @@ export const MepPage: React.FC<MepPageProps> = ({ onNavigate }) => {
                 </div>
               </div>
 
-              {/* Media Frame (7 cols): 18px soft radius */}
+              {/* Media Frame (7 cols): 8px architectural radius */}
               <div className="lg:col-span-7 order-1 lg:order-2">
-                <div className="relative overflow-hidden rounded-[18px] bg-[#173C62] aspect-[16/10]">
+                <div className="relative overflow-hidden rounded-[8px] bg-[#173C62] aspect-[16/10]">
                   <img
                     src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1200&q=80"
                     alt="District Cooling Plant & Infrastructure MEP Manifold in Dubai"
                     className="w-full h-full object-cover filter brightness-[0.88]"
                     loading="lazy"
                   />
-                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-[11px] font-mono text-white/90 bg-[#173C62]/85 backdrop-blur-xs px-3.5 py-1.5 rounded-[10px] border border-white/10">
-                    <span>Central Utility Manifold</span>
-                    <span className="text-[#93C5FD]">Variable Primary Flow</span>
-                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/30 via-transparent to-transparent pointer-events-none" />
                 </div>
               </div>
             </div>
@@ -313,7 +307,7 @@ export const MepPage: React.FC<MepPageProps> = ({ onNavigate }) => {
           05 — STRUCTURED MEP SYSTEMS MATRIX (ARCHITECTURAL FLOW)
           LTS Brand Blue authority: #173C62
       ========================================================================= */}
-      <section id="section-systems" className="py-16 lg:py-24 border-b border-[#E5E7EB] bg-[#173C62] text-white">
+      <section id="section-systems" className="py-16 lg:py-24 bg-[#173C62] text-white">
         <Container>
           <div className="space-y-12 sm:space-y-16">
             <div className="max-w-2xl space-y-2">
@@ -430,7 +424,7 @@ export const MepPage: React.FC<MepPageProps> = ({ onNavigate }) => {
       {/* =========================================================================
           06 — DELIVERED PROJECTS SHOWCASE
       ========================================================================= */}
-      <section id="section-projects" className="py-16 lg:py-24 border-b border-[#E5E7EB] bg-[#F8FAFC]">
+      <section id="section-projects" className="py-16 lg:py-24 bg-[#F8FAFC]">
         <Container>
           <div className="space-y-10">
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
@@ -456,7 +450,7 @@ export const MepPage: React.FC<MepPageProps> = ({ onNavigate }) => {
               {/* Project 1 */}
               <div
                 onClick={() => onNavigate(`/projects/${highRiseProject.slug}`)}
-                className="group bg-white rounded-[18px] border border-[#E5E7EB] overflow-hidden cursor-pointer flex flex-col justify-between"
+                className="group bg-white rounded-[8px] overflow-hidden cursor-pointer flex flex-col justify-between"
               >
                 <div className="h-[260px] overflow-hidden relative bg-[#173C62]">
                   <img
@@ -493,7 +487,7 @@ export const MepPage: React.FC<MepPageProps> = ({ onNavigate }) => {
               {/* Project 2 */}
               <div
                 onClick={() => onNavigate(`/projects/${chillerPlantProject.slug}`)}
-                className="group bg-white rounded-[18px] border border-[#E5E7EB] overflow-hidden cursor-pointer flex flex-col justify-between"
+                className="group bg-white rounded-[8px] overflow-hidden cursor-pointer flex flex-col justify-between"
               >
                 <div className="h-[260px] overflow-hidden relative bg-[#173C62]">
                   <img
@@ -534,7 +528,7 @@ export const MepPage: React.FC<MepPageProps> = ({ onNavigate }) => {
       {/* =========================================================================
           07 — SECTORS SERVED (UNBOXED ARCHITECTURAL MONOGRAPHS)
       ========================================================================= */}
-      <section id="section-industries" className="py-16 lg:py-24 border-b border-[#E5E7EB] bg-white">
+      <section id="section-industries" className="py-16 lg:py-24 bg-white">
         <Container>
           <div className="space-y-12">
             <div>
@@ -554,7 +548,7 @@ export const MepPage: React.FC<MepPageProps> = ({ onNavigate }) => {
                   className="group cursor-pointer flex flex-col justify-between space-y-4"
                 >
                   <div className="space-y-4">
-                    <div className="relative aspect-[16/10] overflow-hidden rounded-[16px] bg-slate-100">
+                    <div className="relative aspect-[16/10] overflow-hidden rounded-[8px] bg-slate-100">
                       <img
                         src={ind.imageSrc}
                         alt={ind.title}
@@ -605,15 +599,15 @@ export const MepPage: React.FC<MepPageProps> = ({ onNavigate }) => {
               <Button
                 variant="primary"
                 size="md"
-                shape="soft"
+                shape="rounded"
                 onClick={() => onNavigate('/contact?tab=rfp&service=mep')}
-                className="text-xs px-6 py-3 rounded-[10px]"
+                className="text-xs px-6 py-3 rounded-[8px]"
               >
                 Submit Tender / RFP
               </Button>
               <a
                 href={`tel:${CORPORATE_INFO.contact.telephone.replace(/\s+/g, '')}`}
-                className="inline-flex items-center justify-center text-xs font-semibold text-[#0B1320] border border-[#CBD5E1] rounded-[10px] px-5 py-3 hover:bg-white hover:border-[#173C62] transition-colors"
+                className="inline-flex items-center justify-center text-xs font-semibold text-[#0B1320] border border-[#CBD5E1] rounded-[8px] px-5 py-3 hover:bg-white hover:border-[#173C62] transition-colors"
               >
                 Direct Line: {CORPORATE_INFO.contact.telephone}
               </a>

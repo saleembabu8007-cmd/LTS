@@ -199,7 +199,7 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate }) =>
           Image-first portrait cards with bottom gradient & crisp typography.
           Left / Right smooth scroll navigation controls.
       ========================================================================= */}
-      <section className="py-20 lg:py-28 bg-white border-b border-[#E5E7EB]">
+      <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 text-left">
           
           {/* Header & Horizontal Scroll Controls */}
@@ -220,7 +220,7 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate }) =>
                 onClick={() => handleScroll('left')}
                 disabled={!canScrollLeft}
                 aria-label="Scroll left"
-                className="w-11 h-11 rounded-[10px] border border-[#CBD5E1] bg-white text-[#173C62] flex items-center justify-center transition-all duration-200 hover:border-[#173C62] hover:bg-[#F8FAFC] disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
+                className="w-11 h-11 rounded-[8px] border border-[#CBD5E1] bg-white text-[#173C62] flex items-center justify-center transition-all duration-200 hover:border-[#173C62] hover:bg-[#F8FAFC] disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
               >
                 <IconArrowLeft size="sm" color="inherit" />
               </button>
@@ -230,7 +230,7 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate }) =>
                 onClick={() => handleScroll('right')}
                 disabled={!canScrollRight}
                 aria-label="Scroll right"
-                className="w-11 h-11 rounded-[10px] border border-[#CBD5E1] bg-white text-[#173C62] flex items-center justify-center transition-all duration-200 hover:border-[#173C62] hover:bg-[#F8FAFC] disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
+                className="w-11 h-11 rounded-[8px] border border-[#CBD5E1] bg-white text-[#173C62] flex items-center justify-center transition-all duration-200 hover:border-[#173C62] hover:bg-[#F8FAFC] disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
               >
                 <IconArrow size="sm" color="inherit" />
               </button>
@@ -247,7 +247,7 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate }) =>
               <div
                 key={item.num}
                 onClick={() => onNavigate(`/projects/${item.projectSlug}`)}
-                className="group relative cursor-pointer flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[340px] aspect-[3/4] rounded-[20px] overflow-hidden bg-[#173C62] border border-[#E5E7EB] select-none transition-all duration-300 hover:border-[#173C62]/40"
+                className="group relative cursor-pointer flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[340px] aspect-[3/4] rounded-[8px] overflow-hidden bg-[#173C62] select-none transition-all duration-300"
               >
                 {/* Full-bleed Photography */}
                 <img
@@ -288,7 +288,7 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate }) =>
           03 — CROSS-SECTOR DELIVERY (Architectural Typographic Split List)
           Replaces generic 5-card grid with a clean, editorial typographic layout.
       ========================================================================= */}
-      <section className="py-20 lg:py-28 bg-[#F8FAFC] border-b border-[#E5E7EB]">
+      <section className="py-20 lg:py-28 bg-[#F8FAFC]">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             
@@ -322,7 +322,7 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate }) =>
                   key={sol.num}
                   type="button"
                   onClick={() => onNavigate(sol.slug)}
-                  className="w-full py-6 sm:py-7 flex items-start justify-between gap-6 group text-left cursor-pointer transition-colors hover:bg-white/60 -mx-4 px-4 rounded-[10px]"
+                  className="w-full py-6 sm:py-7 flex items-start justify-between gap-6 group text-left cursor-pointer transition-colors hover:bg-white/60 -mx-4 px-4 rounded-[6px]"
                 >
                   <div className="flex items-start gap-5 sm:gap-8 max-w-xl">
                     <span className="font-mono text-xs sm:text-sm text-[#999999] tracking-wider pt-0.5 shrink-0">
@@ -353,7 +353,7 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate }) =>
           04 — DELIVERED PROJECTS PROOF
           Curated case study evidence by sector.
       ========================================================================= */}
-      <section className="py-16 sm:py-24 bg-white border-b border-[#E5E7EB]">
+      <section className="py-16 sm:py-24 bg-white">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 space-y-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
@@ -378,9 +378,9 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate }) =>
               <div
                 key={proj.id}
                 onClick={() => onNavigate(`/projects/${proj.slug}`)}
-                className="group cursor-pointer bg-[#F8FAFC] rounded-[20px] p-6 sm:p-8 border border-[#E5E7EB] hover:border-[#173C62]/40 transition-all"
+                className="group cursor-pointer bg-[#F8FAFC] rounded-[8px] p-6 sm:p-8 transition-all"
               >
-                <div className="aspect-[16/10] rounded-[16px] overflow-hidden mb-5 bg-[#173C62] border border-[#E5E7EB]">
+                <div className="aspect-[16/10] rounded-[8px] overflow-hidden mb-5 bg-[#173C62]">
                   <img
                     src={proj.image}
                     alt={proj.title}
@@ -412,7 +412,7 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate }) =>
       ========================================================================= */}
       <section className="py-16 sm:py-24 bg-[#F8FAFC]">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
-          <div className="bg-[#173C62] text-white rounded-[24px] p-8 sm:p-14 lg:p-16 relative overflow-hidden">
+          <div className="bg-[#173C62] text-white rounded-[8px] p-8 sm:p-14 lg:p-16 relative overflow-hidden">
             <div className="relative z-10 max-w-3xl space-y-5">
               <span className="font-mono text-xs uppercase tracking-[0.24em] text-white/70 block">
                 04 &bull; COMMERCIAL ENGAGEMENT
@@ -427,14 +427,14 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onNavigate }) =>
               <div className="flex flex-wrap items-center gap-4 pt-2">
                 <button
                   onClick={() => onNavigate('/contact?tab=rfp')}
-                  className="inline-flex items-center gap-2 bg-white text-[#173C62] hover:bg-white/95 text-xs sm:text-sm font-semibold uppercase tracking-wider px-8 py-4 rounded-[12px] transition-all duration-200 cursor-pointer"
+                  className="inline-flex items-center gap-2 bg-white text-[#173C62] hover:bg-white/95 text-xs sm:text-sm font-semibold uppercase tracking-wider px-8 py-4 rounded-[8px] transition-all duration-200 cursor-pointer"
                 >
                   <span>Submit Project Scope</span>
                   <IconArrow size="sm" color="primary" interactive />
                 </button>
                 <button
                   onClick={() => onNavigate('/contact')}
-                  className="inline-flex items-center gap-2 bg-transparent hover:bg-white/10 text-white border border-white/20 text-xs sm:text-sm font-semibold uppercase tracking-wider px-7 py-4 rounded-[12px] transition-all duration-200 cursor-pointer"
+                  className="inline-flex items-center gap-2 bg-transparent hover:bg-white/10 text-white border border-white/20 text-xs sm:text-sm font-semibold uppercase tracking-wider px-7 py-4 rounded-[8px] transition-all duration-200 cursor-pointer"
                 >
                   <span>Contact Engineering Desk</span>
                 </button>

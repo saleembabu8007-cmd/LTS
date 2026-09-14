@@ -136,7 +136,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
           01 — SHORT HEADING
           Minimal architectural heading — no oversized 72vh hero or essay padding.
       ========================================================================= */}
-      <section className="pt-28 pb-10 sm:pt-32 sm:pb-14 border-b border-[#E5E7EB] bg-white">
+      <section className="pt-28 pb-10 sm:pt-32 sm:pb-14 bg-white">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 text-left">
           <div className="max-w-3xl space-y-3">
             <span className="font-mono text-xs uppercase tracking-[0.22em] text-[#173C62] font-semibold block mb-2">
@@ -163,11 +163,11 @@ export const ContactPage: React.FC<ContactPageProps> = ({
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start text-left">
             
             {/* Left Column: Architectural Intake Form */}
-            <div className="lg:col-span-7 bg-white p-8 sm:p-12 rounded-[20px]">
+            <div className="lg:col-span-7 bg-white p-8 sm:p-12 rounded-[8px]">
               {status === 'success' ? (
                 <div className="space-y-6 py-4">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-[12px] bg-[#173C62] text-white flex items-center justify-center shrink-0">
+                    <div className="w-12 h-12 rounded-[8px] bg-[#173C62] text-white flex items-center justify-center shrink-0">
                       <IconCheck size="lg" color="white" />
                     </div>
                     <div className="space-y-1">
@@ -183,7 +183,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                     </div>
                   </div>
 
-                  <div className="bg-[#F8FAFC] rounded-[12px] p-6 border border-[#E5E7EB] space-y-3 font-mono text-xs">
+                  <div className="bg-[#F8FAFC] rounded-[8px] p-6 border border-[#E5E7EB] space-y-3 font-mono text-xs">
                     <div className="flex flex-col sm:flex-row sm:justify-between py-1 border-b border-[#E5E7EB] gap-1">
                       <span className="text-[#64748B]">Reference:</span>
                       <span className="font-bold text-[#173C62] text-sm">{submissionReference}</span>
@@ -243,7 +243,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                         name="businessArea"
                         value={form.businessArea}
                         onChange={handleChange}
-                        className="w-full min-h-[44px] px-4 py-3 text-base sm:text-sm text-[#0B1320] bg-[#F8FAFC] border border-[#CBD5E1] rounded-[10px] sm:rounded-[12px] transition-colors focus:border-[#173C62] focus:ring-1 focus:ring-[#173C62] outline-none cursor-pointer"
+                        className="w-full min-h-[44px] px-4 py-3 text-base sm:text-sm text-[#0B1320] bg-[#F8FAFC] border border-[#CBD5E1] rounded-[8px] transition-colors focus:border-[#173C62] focus:ring-1 focus:ring-[#173C62] outline-none cursor-pointer"
                       >
                         {businessAreas.map((area) => (
                           <option key={area} value={area}>
@@ -272,7 +272,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                         placeholder="e.g. Tariq Al Mansoori"
                         className={`w-full min-h-[44px] px-4 py-3 text-base sm:text-sm text-[#0B1320] placeholder:text-[#94A3B8] bg-[#F8FAFC] border ${
                           errors.name ? 'border-rose-500 ring-1 ring-rose-500' : 'border-[#CBD5E1]'
-                        } rounded-[10px] sm:rounded-[12px] transition-colors focus:border-[#173C62] focus:ring-1 focus:ring-[#173C62] outline-none`}
+                        } rounded-[8px] transition-colors focus:border-[#173C62] focus:ring-1 focus:ring-[#173C62] outline-none`}
                       />
                       {errors.name && (
                         <p className="text-xs text-rose-600 pt-0.5">
@@ -297,7 +297,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                         placeholder="name@company.ae"
                         className={`w-full min-h-[44px] px-4 py-3 text-base sm:text-sm text-[#0B1320] placeholder:text-[#94A3B8] bg-[#F8FAFC] border ${
                           errors.email ? 'border-rose-500 ring-1 ring-rose-500' : 'border-[#CBD5E1]'
-                        } rounded-[10px] sm:rounded-[12px] transition-colors focus:border-[#173C62] focus:ring-1 focus:ring-[#173C62] outline-none`}
+                        } rounded-[8px] transition-colors focus:border-[#173C62] focus:ring-1 focus:ring-[#173C62] outline-none`}
                       />
                       {errors.email && (
                         <p className="text-xs text-rose-600 pt-0.5">
@@ -325,7 +325,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                         placeholder="+971 50 000 0000"
                         className={`w-full min-h-[44px] px-4 py-3 text-base sm:text-sm text-[#0B1320] placeholder:text-[#94A3B8] bg-[#F8FAFC] border ${
                           errors.phone ? 'border-rose-500 ring-1 ring-rose-500' : 'border-[#CBD5E1]'
-                        } rounded-[10px] sm:rounded-[12px] transition-colors focus:border-[#173C62] focus:ring-1 focus:ring-[#173C62] outline-none`}
+                        } rounded-[8px] transition-colors focus:border-[#173C62] focus:ring-1 focus:ring-[#173C62] outline-none`}
                       />
                       {errors.phone && (
                         <p className="text-xs text-rose-600 pt-0.5">
@@ -350,7 +350,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                         placeholder="e.g. Real Estate Development"
                         className={`w-full min-h-[44px] px-4 py-3 text-base sm:text-sm text-[#0B1320] placeholder:text-[#94A3B8] bg-[#F8FAFC] border ${
                           errors.company ? 'border-rose-500 ring-1 ring-rose-500' : 'border-[#CBD5E1]'
-                        } rounded-[10px] sm:rounded-[12px] transition-colors focus:border-[#173C62] focus:ring-1 focus:ring-[#173C62] outline-none`}
+                        } rounded-[8px] transition-colors focus:border-[#173C62] focus:ring-1 focus:ring-[#173C62] outline-none`}
                       />
                       {errors.company && (
                         <p className="text-xs text-rose-600 pt-0.5">
@@ -377,7 +377,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                       placeholder="Please describe your requirements, project location, scope of work, or equipment inquiry..."
                       className={`w-full px-4 py-3 text-base sm:text-sm text-[#0B1320] placeholder:text-[#94A3B8] bg-[#F8FAFC] border ${
                         errors.message ? 'border-rose-500 ring-1 ring-rose-500' : 'border-[#CBD5E1]'
-                      } rounded-[10px] sm:rounded-[12px] transition-colors focus:border-[#173C62] focus:ring-1 focus:ring-[#173C62] outline-none resize-y`}
+                      } rounded-[8px] transition-colors focus:border-[#173C62] focus:ring-1 focus:ring-[#173C62] outline-none resize-y`}
                     />
                     {errors.message && (
                       <p className="text-xs text-rose-600 pt-0.5">
@@ -391,7 +391,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                     <button
                       type="submit"
                       disabled={status === 'loading'}
-                      className="inline-flex items-center justify-center gap-2 px-8 py-3.5 min-h-[44px] rounded-[12px] bg-[#173C62] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#173C62]/90 disabled:opacity-50 transition-colors cursor-pointer w-full sm:w-auto"
+                      className="inline-flex items-center justify-center gap-2 px-8 py-3.5 min-h-[44px] rounded-[8px] bg-[#173C62] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#173C62]/90 disabled:opacity-50 transition-colors cursor-pointer w-full sm:w-auto"
                     >
                       {status === 'loading' ? (
                         <span>Transmitting Enquiry...</span>
@@ -414,7 +414,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
 
             {/* Right Column: Contact Details Directory (Architectural Hairlines) */}
             <div className="lg:col-span-5 space-y-6">
-              <div className="bg-white p-8 sm:p-10 rounded-[20px] space-y-8 border-t-2 border-[#173C62]">
+              <div className="bg-white p-8 sm:p-10 rounded-[8px] space-y-8 border-t-2 border-[#173C62]">
                 
                 {/* 01 Head Office */}
                 <div className="space-y-2 pb-6 border-b border-[#E5E7EB]">

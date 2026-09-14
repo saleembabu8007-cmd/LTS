@@ -57,7 +57,7 @@ export const MainCapabilityModule: React.FC<MainCapabilityModuleProps> = ({ data
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Large Image: Visual Storytelling (7 cols ~60%) */}
           <div className="lg:col-span-7 order-2 lg:order-1">
-            <div className="relative aspect-[16/10] rounded-[20px] overflow-hidden bg-[#173C62]">
+            <div className="relative aspect-[16/10] rounded-[8px] overflow-hidden bg-[#173C62]">
               <img
                 src={imageSrc}
                 alt={capabilities.sectionTitle || `${data.title} Capability Execution`}

@@ -55,7 +55,7 @@ export const FeatureImage: React.FC<FeatureImageProps> = ({
     <a
       href={href || '#'}
       onClick={handleClick}
-      className={`group relative block overflow-hidden rounded-[20px] border border-[#E5E7EB] bg-[#173C62] shadow-sm select-none ${aspectClass} ${className}`}
+      className={`group relative block overflow-hidden rounded-[8px] bg-[#173C62] select-none ${aspectClass} ${className}`}
       aria-label={`Explore feature: ${title}`}
     >
       {/* 1.02 Hover Scale on Large Image */}
@@ -75,7 +75,7 @@ export const FeatureImage: React.FC<FeatureImageProps> = ({
       {/* Top Optional Badge */}
       {badge && (
         <div className="absolute top-4 left-4 sm:top-6 sm:left-6 z-10">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/20 text-white text-[11px] font-mono tracking-wider">
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-[4px] bg-[#173C62]/90 text-white text-[11px] font-mono tracking-wider">
             <IconCheck size="sm" color="white" />
             {badge}
           </span>

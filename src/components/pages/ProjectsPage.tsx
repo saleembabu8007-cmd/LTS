@@ -39,13 +39,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     <a
       href={`/projects/${project.slug}`}
       onClick={handleClick}
-      className="group cursor-pointer block select-none focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:outline-none rounded-[20px]"
+      className="group cursor-pointer block select-none focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:outline-none rounded-[8px]"
       aria-label={`View case study: ${project.title}`}
     >
       <article className="space-y-4">
-        {/* Dominant Contextual Image (Soft 18-20px radius, NO borders, NO AI tags) */}
+        {/* Dominant Contextual Image (Restrained 8px radius, NO borders, NO AI tags) */}
         <div
-          className={`relative overflow-hidden rounded-[18px] sm:rounded-[20px] bg-[#173C62] ${aspectClass}`}
+          className={`relative overflow-hidden rounded-[8px] bg-[#173C62] ${aspectClass}`}
         >
           <img
             src={project.image}
@@ -150,7 +150,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
       ========================================================================= */}
       <section className="pt-10 sm:pt-14 md:pt-16 pb-6 md:pb-8">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-8 pb-8 md:pb-10 border-b border-[#E5E7EB]">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-8 pb-8 md:pb-10">
             <div>
               <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block mb-2 font-semibold">
                 LTSGROUP &bull; DELIVERED ASSETS
@@ -213,7 +213,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
                   id="mobile-project-filter"
                   value={selectedDivision}
                   onChange={(e) => setSelectedDivision(e.target.value)}
-                  className="w-full min-h-[44px] appearance-none bg-[#F8FAFC] border border-[#E5E7EB] text-[#0B1320] text-base sm:text-sm rounded-[12px] px-4 py-2.5 pr-10 font-medium focus:outline-none focus:border-[#173C62] focus:ring-1 focus:ring-[#173C62] cursor-pointer"
+                  className="w-full min-h-[44px] appearance-none bg-[#F8FAFC] border border-[#E5E7EB] text-[#0B1320] text-base sm:text-sm rounded-[8px] px-4 py-2.5 pr-10 font-medium focus:outline-none focus:border-[#173C62] focus:ring-1 focus:ring-[#173C62] cursor-pointer"
                 >
                   {filterOptions.map((opt) => (
                     <option key={opt.id} value={opt.id}>
@@ -287,7 +287,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
 
                     {/* 2. TWO STANDARD PROJECTS (Balanced 2-column pairing) */}
                     {set.standards.length > 0 && (
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-start pt-4 border-t border-[#F1F5F9]">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-start pt-4">
                         {set.standards.map((stdProject) => (
                           <div key={stdProject.id}>
                             <ProjectCard
@@ -312,7 +312,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
           CONSULTATION / SPECIFICATION INTAKE
           Quiet, architectural closing section for drawings and engineering reviews
       ========================================================================= */}
-      <section className="py-14 sm:py-20 lg:py-24 bg-[#F8FAFC] border-t border-[#E5E7EB]">
+      <section className="py-14 sm:py-20 lg:py-24 bg-[#F8FAFC]">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
             <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
@@ -327,14 +327,14 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
             <div className="pt-4 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
               <button
                 onClick={() => onNavigate('/contact?tab=rfp')}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 min-h-[44px] rounded-[12px] bg-[#173C62] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#12304F] transition-colors cursor-pointer w-full sm:w-auto"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 min-h-[44px] rounded-[8px] bg-[#173C62] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#12304F] transition-colors cursor-pointer w-full sm:w-auto"
               >
                 <span>Submit Project Specification</span>
                 <IconArrow size="sm" color="white" interactive />
               </button>
               <button
                 onClick={() => onNavigate('/contact')}
-                className="inline-flex items-center justify-center px-6 py-3 min-h-[44px] rounded-[12px] border border-[#CBD5E1] text-[#0B1320] text-xs font-semibold uppercase tracking-wider hover:bg-white transition-colors cursor-pointer w-full sm:w-auto"
+                className="inline-flex items-center justify-center px-6 py-3 min-h-[44px] rounded-[8px] border border-[#CBD5E1] text-[#0B1320] text-xs font-semibold uppercase tracking-wider hover:bg-white transition-colors cursor-pointer w-full sm:w-auto"
               >
                 Contact Estimating Team
               </button>

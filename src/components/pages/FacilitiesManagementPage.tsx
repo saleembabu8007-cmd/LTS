@@ -129,7 +129,7 @@ export const FacilitiesManagementPage: React.FC<FacilitiesManagementPageProps> =
                 <button
                   type="button"
                   onClick={() => onNavigate('/contact?tab=general&service=facilities')}
-                  className="inline-flex items-center gap-2 bg-white text-[#173C62] hover:bg-slate-100 text-xs sm:text-sm font-semibold tracking-wider uppercase px-7 py-3.5 rounded-[12px] transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-2 bg-white text-[#173C62] hover:bg-slate-100 text-xs sm:text-sm font-semibold tracking-wider uppercase px-7 py-3.5 rounded-[8px] transition-colors cursor-pointer"
                 >
                   <span>Schedule Facility Audit</span>
                   <IconArrow size="sm" color="primary" interactive />
@@ -138,7 +138,7 @@ export const FacilitiesManagementPage: React.FC<FacilitiesManagementPageProps> =
                 <button
                   type="button"
                   onClick={() => onNavigate('/projects')}
-                  className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/25 text-xs sm:text-sm font-semibold tracking-wider uppercase px-7 py-3.5 rounded-[12px] backdrop-blur-md transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/25 text-xs sm:text-sm font-semibold tracking-wider uppercase px-7 py-3.5 rounded-[8px] backdrop-blur-md transition-colors cursor-pointer"
                 >
                   <span>Review FM Case Records</span>
                 </button>
@@ -176,7 +176,7 @@ export const FacilitiesManagementPage: React.FC<FacilitiesManagementPageProps> =
           Clean horizontal typographic line rows with dedicated LTSIcons and SLA indicators.
           Zero bulky card boxes!
       ========================================================================= */}
-      <section className="py-16 sm:py-24 bg-[#F8FAFC] border-b border-[#E5E7EB]">
+      <section className="py-16 sm:py-24 bg-[#F8FAFC]">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 space-y-10 text-left">
           
           <div className="flex flex-col sm:flex-row sm:items-end justify-between pb-4 gap-6">
@@ -228,7 +228,7 @@ export const FacilitiesManagementPage: React.FC<FacilitiesManagementPageProps> =
                     className="py-6 sm:py-8 group flex flex-col md:flex-row md:items-center justify-between gap-4 cursor-pointer transition-colors"
                   >
                     <div className="flex items-start gap-4 sm:gap-6 max-w-3xl">
-                      <div className="w-10 h-10 rounded-[10px] bg-[#173C62]/5 text-[#173C62] flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-[#173C62] group-hover:text-white transition-colors">
+                      <div className="w-10 h-10 rounded-[8px] bg-[#173C62]/5 text-[#173C62] flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-[#173C62] group-hover:text-white transition-colors">
                         <IconComponent size="sm" color="inherit" />
                       </div>
 
@@ -347,9 +347,9 @@ export const FacilitiesManagementPage: React.FC<FacilitiesManagementPageProps> =
           04 / FULL-WIDTH FEATURE IMAGE (Composition 01 — Visual Resting Moment)
           Panoramic visual demonstrating plant telemetry & critical chiller operations.
       ========================================================================= */}
-      <section className="py-12 sm:py-16 bg-white border-b border-[#E5E7EB]">
+      <section className="py-12 sm:py-16 bg-white">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
-          <div className="relative rounded-[20px] sm:rounded-[24px] overflow-hidden aspect-[16/9] sm:aspect-[21/9] bg-[#173C62] max-h-[560px] border border-[#E5E7EB]">
+          <div className="relative rounded-[8px] overflow-hidden aspect-[16/9] sm:aspect-[21/9] bg-[#173C62] max-h-[560px]">
             <img
               src="/assets/images/project-chiller.jpg"
               alt="LTSGROUP Central Chiller Plant Reliability & Hard FM Operations"
@@ -403,7 +403,7 @@ export const FacilitiesManagementPage: React.FC<FacilitiesManagementPageProps> =
       ========================================================================= */}
       <section className="pt-16 sm:pt-20">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
-          <div className="bg-[#173C62] text-white rounded-[24px] p-8 sm:p-14 lg:p-16 relative overflow-hidden">
+          <div className="bg-[#173C62] text-white rounded-[8px] p-8 sm:p-14 lg:p-16 relative overflow-hidden">
             <div className="relative z-10 max-w-3xl space-y-5 text-left">
               <span className="font-mono text-xs uppercase tracking-[0.24em] text-[#93C5FD] block font-semibold">
                 OPERATIONAL AUDITS &bull; SLAS
@@ -419,7 +419,7 @@ export const FacilitiesManagementPage: React.FC<FacilitiesManagementPageProps> =
                 <button
                   type="button"
                   onClick={() => onNavigate('/contact?tab=general&service=facilities')}
-                  className="inline-flex items-center gap-2 bg-white text-[#173C62] hover:bg-slate-100 text-xs sm:text-sm font-semibold tracking-wider uppercase px-8 py-4 rounded-[12px] transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-2 bg-white text-[#173C62] hover:bg-slate-100 text-xs sm:text-sm font-semibold tracking-wider uppercase px-8 py-4 rounded-[8px] transition-colors cursor-pointer"
                 >
                   <span>Request Facility Audit</span>
                   <IconArrow size="sm" color="primary" />
@@ -427,7 +427,7 @@ export const FacilitiesManagementPage: React.FC<FacilitiesManagementPageProps> =
                 <button
                   type="button"
                   onClick={() => onNavigate('/projects')}
-                  className="inline-flex items-center gap-2 bg-transparent hover:bg-white/10 text-white border border-white/20 text-xs sm:text-sm font-semibold tracking-wider uppercase px-7 py-4 rounded-[12px] transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-2 bg-transparent hover:bg-white/10 text-white border border-white/20 text-xs sm:text-sm font-semibold tracking-wider uppercase px-7 py-4 rounded-[8px] transition-colors cursor-pointer"
                 >
                   <span>Review Case Records</span>
                 </button>

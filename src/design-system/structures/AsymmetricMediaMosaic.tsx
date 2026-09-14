@@ -30,17 +30,17 @@ export const AsymmetricMediaMosaic: React.FC<AsymmetricMediaMosaicProps> = ({
     <div className={`grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 ${className}`}>
       {/* Primary Feature (Left, 7 columns) */}
       {items[0] && (
-        <div className="md:col-span-7 relative group overflow-hidden rounded-[20px] aspect-[4/3] md:aspect-[16/11] bg-slate-100">
+        <div className="md:col-span-7 relative group overflow-hidden rounded-[8px] aspect-[4/3] md:aspect-[16/11] bg-slate-100">
           <img
             src={items[0].imageSrc}
             alt={items[0].imageAlt}
-            className="w-full h-full object-cover object-center rounded-[20px] transition-transform duration-[400ms] ease-out group-hover:scale-[1.025]"
+            className="w-full h-full object-cover object-center rounded-[8px] transition-transform duration-[400ms] ease-out group-hover:scale-[1.025]"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0B1320]/75 via-transparent to-transparent pointer-events-none" />
           <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 flex items-end justify-between gap-4">
             <div className="space-y-1 text-white">
               {items[0].label && (
-                <Tag variant="dark" shape="pill" className="mb-2">
+                <Tag variant="dark" shape="rounded" className="mb-2">
                   {items[0].label}
                 </Tag>
               )}
@@ -59,17 +59,17 @@ export const AsymmetricMediaMosaic: React.FC<AsymmetricMediaMosaicProps> = ({
         {items.slice(1, 3).map((item, idx) => (
           <div
             key={idx}
-            className="relative group overflow-hidden rounded-[18px] aspect-[16/10] md:aspect-[16/9] flex-1 bg-slate-100"
+            className="relative group overflow-hidden rounded-[8px] aspect-[16/10] md:aspect-[16/9] flex-1 bg-slate-100"
           >
             <img
               src={item.imageSrc}
               alt={item.imageAlt}
-              className="w-full h-full object-cover object-center rounded-[18px] transition-transform duration-[400ms] ease-out group-hover:scale-[1.025]"
+              className="w-full h-full object-cover object-center rounded-[8px] transition-transform duration-[400ms] ease-out group-hover:scale-[1.025]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0B1320]/70 via-transparent to-transparent pointer-events-none" />
             <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 text-white space-y-1">
               {item.label && (
-                <Tag variant="dark" shape="pill" className="mb-1">
+                <Tag variant="dark" shape="rounded" className="mb-1">
                   {item.label}
                 </Tag>
               )}

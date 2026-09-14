@@ -105,7 +105,7 @@ export const NewsCenterPage: React.FC<NewsCenterPageProps> = ({ onNavigate }) =>
           02 — FEATURED STORY
           Large-format editorial prominence for the lead technical bulletin.
       ========================================================================= */}
-      <section className="py-16 sm:py-24 border-b border-[#E5E7EB]">
+      <section className="py-16 sm:py-24">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 space-y-8">
           <div className="flex items-center justify-between">
             <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
@@ -122,11 +122,11 @@ export const NewsCenterPage: React.FC<NewsCenterPageProps> = ({ onNavigate }) =>
               e.preventDefault();
               onNavigate(`/news/${featuredArticle.slug}`);
             }}
-            className="group block select-none space-y-6 sm:space-y-8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] rounded-[24px]"
+            className="group block select-none space-y-6 sm:space-y-8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] rounded-[8px]"
             aria-label={`Read featured article: ${featuredArticle.title}`}
           >
-            {/* Large Featured Image (20-24px radius) */}
-            <div className="relative aspect-[16/9] sm:aspect-[21/10] w-full overflow-hidden rounded-[20px] sm:rounded-[28px] bg-[#173C62]">
+            {/* Large Featured Image (Restrained 8px architectural radius, zero borders) */}
+            <div className="relative aspect-[16/9] sm:aspect-[21/10] w-full overflow-hidden rounded-[8px] bg-[#173C62]">
               <img
                 src={featuredArticle.image}
                 alt={featuredArticle.title}
@@ -171,7 +171,7 @@ export const NewsCenterPage: React.FC<NewsCenterPageProps> = ({ onNavigate }) =>
       <section className="py-14 sm:py-20 bg-[#F8FAFC]">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 space-y-10">
           {/* Header & Segmented Text Filter Controls */}
-          <div className="space-y-6 pb-6 border-b border-[#E5E7EB]">
+          <div className="space-y-6 pb-2">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div className="space-y-1">
                 <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
@@ -214,7 +214,7 @@ export const NewsCenterPage: React.FC<NewsCenterPageProps> = ({ onNavigate }) =>
 
           {/* Open Architectural Editorial Rows — Zero boxed card containers */}
           {paginatedArticles.length > 0 ? (
-            <div className="divide-y divide-[#E5E7EB] border-t border-b border-[#E5E7EB]">
+            <div className="divide-y divide-[#E5E7EB] border-t border-[#E5E7EB]">
               {paginatedArticles.map((art) => (
                 <a
                   key={art.id}
@@ -227,9 +227,9 @@ export const NewsCenterPage: React.FC<NewsCenterPageProps> = ({ onNavigate }) =>
                   aria-label={`Read article: ${art.title}`}
                 >
                   <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-10 lg:gap-12 items-center">
-                    {/* Left: Article Image (16-18px soft radius, zero box borders) */}
+                    {/* Left: Article Image (8px architectural radius, zero box borders) */}
                     <div className="md:col-span-4 lg:col-span-5">
-                      <div className="relative overflow-hidden rounded-[16px] sm:rounded-[18px] bg-[#173C62] aspect-[16/10]">
+                      <div className="relative overflow-hidden rounded-[8px] bg-[#173C62] aspect-[16/10]">
                         <img
                           src={art.image}
                           alt={art.title}
@@ -342,7 +342,7 @@ export const NewsCenterPage: React.FC<NewsCenterPageProps> = ({ onNavigate }) =>
           04 — CTA
           Technical advisory & practitioner enquiry block.
       ========================================================================= */}
-      <section className="py-20 sm:py-28 bg-white border-t border-[#E5E7EB]">
+      <section className="py-20 sm:py-28 bg-white">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
           <div className="max-w-3xl space-y-6">
             <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
@@ -364,7 +364,7 @@ export const NewsCenterPage: React.FC<NewsCenterPageProps> = ({ onNavigate }) =>
                   e.preventDefault();
                   onNavigate('/contact');
                 }}
-                className="min-h-[44px] inline-flex items-center gap-2 px-7 py-3.5 rounded-[12px] bg-[#173C62] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#12304F] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] cursor-pointer"
+                className="min-h-[44px] inline-flex items-center gap-2 px-7 py-3.5 rounded-[8px] bg-[#173C62] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#12304F] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] cursor-pointer"
               >
                 <span>Submit Technical Query</span>
                 <IconArrow className="w-3.5 h-3.5" />
@@ -376,7 +376,7 @@ export const NewsCenterPage: React.FC<NewsCenterPageProps> = ({ onNavigate }) =>
                   e.preventDefault();
                   onNavigate('/projects');
                 }}
-                className="min-h-[44px] inline-flex items-center gap-2 px-7 py-3.5 rounded-[12px] border border-[#CBD5E1] text-[#0B1320] text-xs font-semibold uppercase tracking-wider hover:bg-slate-50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] cursor-pointer"
+                className="min-h-[44px] inline-flex items-center gap-2 px-7 py-3.5 rounded-[8px] border border-[#CBD5E1] text-[#0B1320] text-xs font-semibold uppercase tracking-wider hover:bg-slate-50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] cursor-pointer"
               >
                 <span>Inspect Delivered Works</span>
               </a>

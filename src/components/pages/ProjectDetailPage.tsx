@@ -36,7 +36,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ slug, onNa
             e.preventDefault();
             onNavigate('/projects');
           }}
-          className="min-h-[44px] inline-flex items-center gap-2 px-6 py-3.5 rounded-[12px] bg-[#173C62] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#12304F] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] cursor-pointer"
+          className="min-h-[44px] inline-flex items-center gap-2 px-6 py-3.5 rounded-[8px] bg-[#173C62] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#12304F] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] cursor-pointer"
         >
           <IconArrowLeft size="sm" color="white" />
           <span>Return to Projects Archive</span>
@@ -89,7 +89,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ slug, onNa
                 e.preventDefault();
                 onNavigate('/projects');
               }}
-              className="min-h-[44px] inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-white/90 hover:text-white bg-[#0B1320]/60 hover:bg-[#0B1320]/80 backdrop-blur-md px-4 py-2 rounded-[10px] border border-white/15 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white cursor-pointer"
+              className="min-h-[44px] inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-white/90 hover:text-white bg-[#0B1320]/60 hover:bg-[#0B1320]/80 backdrop-blur-md px-4 py-2 rounded-[8px] border border-white/15 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white cursor-pointer"
             >
               <IconArrowLeft size="sm" color="white" />
               <span>All Projects</span>
@@ -121,7 +121,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ slug, onNa
           Project title, short description, and key parameter summary.
           Generous whitespace, editorial typography.
       ========================================================================= */}
-      <section className="py-14 sm:py-20 md:py-24 border-b border-[#E5E7EB]">
+      <section className="py-14 sm:py-20 md:py-24">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
             {/* Left: Lead Scope Description (8 cols) */}
@@ -153,7 +153,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ slug, onNa
             </div>
 
             {/* Right: Technical Specification Panel (4 cols) */}
-            <div className="lg:col-span-4 bg-[#F8FAFC] rounded-[20px] p-6 sm:p-7 space-y-5">
+            <div className="lg:col-span-4 bg-[#F8FAFC] rounded-[8px] p-6 sm:p-7 space-y-5">
               <span className="font-mono text-xs uppercase tracking-[0.16em] text-[#173C62] block font-semibold">
                 Technical Parameters
               </span>
@@ -174,7 +174,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ slug, onNa
                     e.preventDefault();
                     onNavigate(`/contact?tab=rfp&service=${project.slug}`);
                   }}
-                  className="min-h-[44px] inline-flex items-center justify-center w-full py-3 px-4 rounded-[10px] bg-[#173C62] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#12304F] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] cursor-pointer text-center"
+                  className="min-h-[44px] inline-flex items-center justify-center w-full py-3 px-4 rounded-[8px] bg-[#173C62] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#12304F] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] cursor-pointer text-center"
                 >
                   Inquire on Similar Scope &rarr;
                 </a>
@@ -188,7 +188,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ slug, onNa
           03 — TURNKEY SCOPE & STATUTORY EXECUTION
           Consolidated, crisp deliverables & authority compliance (no essay fluff).
       ========================================================================= */}
-      <section className="py-16 sm:py-20 bg-white border-b border-[#E5E7EB]">
+      <section className="py-16 sm:py-20 bg-white">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
             {/* Left: Summary & Clearances (5 cols) */}
@@ -214,7 +214,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ slug, onNa
                   {project.approvals.map((appr, aIdx) => (
                     <span
                       key={aIdx}
-                      className="inline-flex items-center gap-1.5 text-xs font-mono text-[#0B1320] bg-[#F8FAFC] px-3 py-1.5 rounded-[8px] border border-[#E5E7EB]"
+                      className="inline-flex items-center gap-1.5 text-xs font-mono text-[#0B1320] bg-[#F8FAFC] px-3 py-1.5 rounded-[6px] border border-[#E5E7EB]"
                     >
                       <IconShieldCheck size="sm" color="primary" className="w-3.5 h-3.5" />
                       <span>{appr}</span>
@@ -233,7 +233,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ slug, onNa
                 {project.deliverables.map((deliv, dIdx) => (
                   <div
                     key={dIdx}
-                    className="flex items-start gap-3 bg-[#F8FAFC] p-3.5 rounded-[12px] border border-[#E5E7EB]"
+                    className="flex items-start gap-3 bg-[#F8FAFC] p-3.5 rounded-[6px]"
                   >
                     <IconCheck size="sm" color="primary" className="w-4 h-4 text-[#173C62] shrink-0 mt-0.5" />
                     <span className="text-xs text-[#0B1320] leading-snug font-normal">
@@ -251,7 +251,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ slug, onNa
           04 — SUPPORTING PROJECT IMAGERY THROUGHOUT
           Authentic field photography plate (soft 20px radius, image-first break)
       ========================================================================= */}
-      <section className="py-12 sm:py-16 bg-[#F8FAFC] border-b border-[#E5E7EB]">
+      <section className="py-12 sm:py-16 bg-[#F8FAFC]">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
           <div className="space-y-6">
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
@@ -269,26 +269,26 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ slug, onNa
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 items-stretch">
-              <div className="md:col-span-7 relative overflow-hidden rounded-[20px] sm:rounded-[24px] bg-[#173C62] aspect-[16/10]">
+              <div className="md:col-span-7 relative overflow-hidden rounded-[8px] bg-[#173C62] aspect-[16/10]">
                 <img
                   src={galleryImages[1] || project.image}
                   alt={`${project.title} field installation`}
                   loading="lazy"
                   className="w-full h-full object-cover filter brightness-[0.92] hover:scale-[1.02] transition-transform duration-500"
                 />
-                <div className="absolute bottom-4 left-4 font-mono text-[11px] text-white/90 bg-[#173C62]/85 backdrop-blur-xs px-3 py-1 rounded-[8px] border border-white/10">
+                <div className="absolute bottom-4 left-4 font-mono text-[11px] text-white/90 bg-[#173C62]/85 backdrop-blur-xs px-3 py-1 rounded-[6px] border border-white/10">
                   Plate 01 &bull; Mechanical &amp; Hydronic Infrastructure
                 </div>
               </div>
 
-              <div className="md:col-span-5 relative overflow-hidden rounded-[20px] sm:rounded-[24px] bg-[#173C62] aspect-[4/3] md:aspect-auto">
+              <div className="md:col-span-5 relative overflow-hidden rounded-[8px] bg-[#173C62] aspect-[4/3] md:aspect-auto">
                 <img
                   src={galleryImages[2] || galleryImages[0]}
                   alt={`${project.title} technical commissioning`}
                   loading="lazy"
                   className="w-full h-full object-cover filter brightness-[0.92] hover:scale-[1.02] transition-transform duration-500"
                 />
-                <div className="absolute bottom-4 left-4 font-mono text-[11px] text-white/90 bg-[#173C62]/85 backdrop-blur-xs px-3 py-1 rounded-[8px] border border-white/10">
+                <div className="absolute bottom-4 left-4 font-mono text-[11px] text-white/90 bg-[#173C62]/85 backdrop-blur-xs px-3 py-1 rounded-[6px] border border-white/10">
                   Plate 02 &bull; Commissioning Handover
                 </div>
               </div>
@@ -301,9 +301,9 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ slug, onNa
           06 — RELATED CAPABILITY LINK
           Bridge from this project monograph to its delivering business discipline.
       ========================================================================= */}
-      <section className="py-12 sm:py-16 bg-[#F8FAFC] border-b border-[#E5E7EB]">
+      <section className="py-12 sm:py-16 bg-[#F8FAFC]">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
-          <div className="bg-white rounded-[24px] p-8 sm:p-10 md:p-12 flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div className="bg-white rounded-[8px] p-8 sm:p-10 md:p-12 flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div className="space-y-2 max-w-2xl">
               <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] font-semibold block">
                 Delivering Discipline
@@ -323,7 +323,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ slug, onNa
                   e.preventDefault();
                   onNavigate(project.relatedService.slug);
                 }}
-                className="min-h-[44px] inline-flex items-center gap-2 px-6 py-3.5 rounded-[12px] bg-[#173C62] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#12304F] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] cursor-pointer whitespace-nowrap"
+                className="min-h-[44px] inline-flex items-center gap-2 px-6 py-3.5 rounded-[8px] bg-[#173C62] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#12304F] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] cursor-pointer whitespace-nowrap"
               >
                 <span>Explore Discipline Scope</span>
                 <IconArrow size="sm" color="white" interactive />
@@ -338,10 +338,10 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ slug, onNa
           Curated 2-project monograph pair using image-first cards
           (image + project name + short discipline label + arrow, soft radius).
       ========================================================================= */}
-      <section className="py-16 sm:py-24 bg-white border-b border-[#E5E7EB]">
+      <section className="py-16 sm:py-24 bg-white">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
           <div className="space-y-12">
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-6 border-b border-[#E5E7EB]">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-6">
               <div>
                 <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block mb-2 font-semibold">
                   Portfolio Context
@@ -374,10 +374,10 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ slug, onNa
                     e.preventDefault();
                     onNavigate(`/projects/${rel.slug}`);
                   }}
-                  className="group block select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] rounded-[20px]"
+                  className="group block select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] rounded-[8px]"
                   aria-label={`View case study: ${rel.title}`}
                 >
-                  <div className="relative overflow-hidden rounded-[18px] sm:rounded-[20px] bg-[#173C62] aspect-[16/10]">
+                  <div className="relative overflow-hidden rounded-[8px] bg-[#173C62] aspect-[16/10]">
                     <img
                       src={rel.image}
                       alt={rel.title}
@@ -402,7 +402,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ slug, onNa
                         className="shrink-0 mt-1.5 text-[#173C62] transition-transform duration-200 ease-out group-hover:translate-x-1.5"
                         aria-hidden="true"
                       >
-                        <ArrowUpRight className="w-5 h-5" />
+                        <IconArrowUpRight size="sm" color="primary" interactive />
                       </div>
                     </div>
                   </div>
@@ -436,7 +436,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ slug, onNa
                   e.preventDefault();
                   onNavigate(`/contact?tab=rfp&service=${project.slug}`);
                 }}
-                className="min-h-[44px] inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-[12px] bg-[#173C62] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#12304F] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] cursor-pointer"
+                className="min-h-[44px] inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-[8px] bg-[#173C62] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#12304F] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] cursor-pointer"
               >
                 <span>Submit Project Specification</span>
                 <IconArrow size="sm" color="white" interactive />
@@ -447,7 +447,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ slug, onNa
                   e.preventDefault();
                   onNavigate('/projects');
                 }}
-                className="min-h-[44px] inline-flex items-center justify-center px-6 py-3.5 rounded-[12px] border border-[#CBD5E1] text-[#0B1320] text-xs font-semibold uppercase tracking-wider hover:bg-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] cursor-pointer"
+                className="min-h-[44px] inline-flex items-center justify-center px-6 py-3.5 rounded-[8px] border border-[#CBD5E1] text-[#0B1320] text-xs font-semibold uppercase tracking-wider hover:bg-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] cursor-pointer"
               >
                 Return to Projects Archive
               </a>

@@ -43,11 +43,11 @@ export const ServiceImage: React.FC<ServiceImageProps> = ({
     <a
       href={href}
       onClick={handleClick}
-      className={`group block select-none text-left rounded-[18px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:ring-offset-4 ${className}`}
+      className={`group block select-none text-left rounded-[8px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:ring-offset-4 ${className}`}
       aria-label={`Explore service: ${title}`}
     >
-      {/* Editorial Image Header (16–18px radius, NO dark overlay) */}
-      <div className="relative aspect-[16/10] overflow-hidden rounded-[18px] bg-[#173C62] border border-[#E5E7EB] shadow-sm mb-4">
+      {/* Editorial Image Header (Restrained 8px radius, zero borders/shadows) */}
+      <div className="relative aspect-[16/10] overflow-hidden rounded-[8px] bg-[#173C62] mb-4">
         <img
           src={imageSrc}
           alt={imageAlt || title}
@@ -58,7 +58,7 @@ export const ServiceImage: React.FC<ServiceImageProps> = ({
           }}
         />
         {numeral && (
-          <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/90 backdrop-blur-sm text-[10px] font-mono font-medium text-[#173C62]">
+          <div className="absolute top-3 left-3 px-2 py-0.5 rounded-[4px] bg-[#173C62]/90 text-[10px] font-mono font-medium text-white">
             {numeral}
           </div>
         )}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRight } from 'lucide-react';
+import { IconArrowUpRight } from '../icons';
 
 export interface ProjectCardProps {
   id: string;
@@ -24,7 +24,7 @@ export type ProjectVisualCardProps = ProjectCardProps;
  * Conforms to LTSGROUP Image Card rules:
  * - Dominant architectural photograph without aggressive overlays.
  * - Aspect ratio support: landscape (16/11), portrait (4/5), panoramic (21/9).
- * - 18px image radius, subtle 1.025 hover scale, 3px arrow translation.
+ * - Restrained 8px image radius, subtle 1.025 hover scale, 3px arrow translation.
  */
 export const ProjectCard: React.FC<ProjectCardProps> = ({
   id,
@@ -56,11 +56,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
     <a
       href={href}
       onClick={handleClick}
-      className={`group block text-left select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:ring-offset-4 rounded-[18px] ${className}`}
+      className={`group block text-left select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:ring-offset-4 rounded-[8px] ${className}`}
       aria-label={`View project details for ${title}`}
     >
-      {/* 18px Architectural Image Container (NO dark overlay) */}
-      <div className={`relative overflow-hidden rounded-[18px] bg-[#173C62] ${aspectStyles}`}>
+      {/* Restrained Architectural Image Container (8px radius, NO dark overlay) */}
+      <div className={`relative overflow-hidden rounded-[8px] bg-[#173C62] ${aspectStyles}`}>
         <img
           src={imageUrl}
           alt={imageAlt || title}
@@ -79,7 +79,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             <span className="text-[#173C62] font-semibold">{category}</span>
             {location && (
               <>
-                <span className="w-1 h-1 rounded-full bg-[#CBD5E1]" />
+                <span className="text-[#CBD5E1]">&bull;</span>
                 <span>{location}</span>
               </>
             )}
@@ -98,7 +98,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 
         {/* Minimal 3px translating arrow */}
         <div className="shrink-0 mt-1.5 text-[#173C62] transition-transform duration-180 ease-out group-hover:translate-x-[3px] group-hover:-translate-y-[2px]" aria-hidden="true">
-          <ArrowUpRight className="w-4 h-4" />
+          <IconArrowUpRight size="sm" color="primary" />
         </div>
       </div>
     </a>

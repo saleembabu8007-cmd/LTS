@@ -159,7 +159,7 @@ export const TradingPage: React.FC<TradingPageProps> = ({
                 <button
                   type="button"
                   onClick={() => onNavigate('/contact?tab=rfp&service=trading')}
-                  className="inline-flex items-center gap-2 bg-white text-[#173C62] hover:bg-slate-100 text-xs sm:text-sm font-semibold tracking-wider uppercase px-7 py-3.5 rounded-[12px] transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-2 bg-white text-[#173C62] hover:bg-slate-100 text-xs sm:text-sm font-semibold tracking-wider uppercase px-7 py-3.5 rounded-[8px] transition-colors cursor-pointer"
                 >
                   <IconDocument size="sm" color="primary" className="w-4 h-4" />
                   <span>Submit BOQ Schedule</span>
@@ -168,7 +168,7 @@ export const TradingPage: React.FC<TradingPageProps> = ({
                 <button
                   type="button"
                   onClick={() => onNavigate('/contact?tab=general&service=trading')}
-                  className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/25 text-xs sm:text-sm font-semibold tracking-wider uppercase px-7 py-3.5 rounded-[12px] backdrop-blur-md transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/25 text-xs sm:text-sm font-semibold tracking-wider uppercase px-7 py-3.5 rounded-[8px] backdrop-blur-md transition-colors cursor-pointer"
                 >
                   <span>Inquire About Components</span>
                 </button>
@@ -194,7 +194,7 @@ export const TradingPage: React.FC<TradingPageProps> = ({
           03 / HORIZONTAL PRODUCT / SERVICE RAIL (Composition 05)
           Clean horizontal category selector with dedicated technical icons.
       ========================================================================= */}
-      <section className="py-10 bg-[#F8FAFC] border-b border-[#E5E7EB]">
+      <section className="py-10 bg-[#F8FAFC]">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 text-left">
           
           <div className="flex items-center justify-between mb-4">
@@ -215,10 +215,10 @@ export const TradingPage: React.FC<TradingPageProps> = ({
                   key={family.id}
                   type="button"
                   onClick={() => setSelectedFamily(family.id)}
-                  className={`flex-shrink-0 inline-flex items-center gap-2.5 px-5 py-3 rounded-xl border text-xs font-medium tracking-wide uppercase transition-all duration-200 cursor-pointer ${
+                  className={`flex-shrink-0 inline-flex items-center gap-2.5 px-4 py-2.5 rounded-[6px] text-xs font-medium tracking-wide uppercase transition-all duration-200 cursor-pointer ${
                     isSelected
-                      ? 'bg-[#173C62] text-white border-[#173C62]'
-                      : 'bg-white text-[#173C62] border-[#E5E7EB] hover:border-[#173C62]/40'
+                      ? 'bg-[#173C62] text-white'
+                      : 'bg-white text-[#173C62] hover:bg-slate-100'
                   }`}
                 >
                   <Icon className={`w-4 h-4 ${isSelected ? 'text-white' : 'text-[#64748B]'}`} />
@@ -234,31 +234,21 @@ export const TradingPage: React.FC<TradingPageProps> = ({
       {/* =========================================================================
           04 / LARGE PRODUCT FOCAL SHOWCASE + DYNAMIC SPECS (Composition 02)
       ========================================================================= */}
-      <section className="py-16 sm:py-24 bg-white border-b border-[#E5E7EB]">
+      <section className="py-16 sm:py-24 bg-white">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center text-left">
             
             {/* Large Product Photographic Focal Point (7 cols) */}
             <div className="lg:col-span-7">
-              <div className="relative rounded-[20px] overflow-hidden border border-[#E5E7EB] bg-[#173C62] aspect-[16/10]">
+              <div className="relative rounded-[8px] overflow-hidden bg-[#173C62] aspect-[16/10]">
                 <img
                   src="/assets/images/trading-components.jpg"
                   alt="LTSGROUP Factory Authorized Component Supply"
                   className="w-full h-full object-cover filter brightness-[0.92] transition-transform duration-700 hover:scale-[1.015]"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/60 via-transparent to-transparent pointer-events-none" />
-                
-                <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 flex items-center justify-between text-white text-xs font-mono">
-                  <span className="bg-[#173C62]/90 backdrop-blur-xs px-3.5 py-1.5 rounded-[8px] border border-white/10 uppercase tracking-wider">
-                    {activeFamilyData.title} &bull; FACTORY CERTIFIED
-                  </span>
-                  <div className="hidden sm:inline-flex items-center gap-1.5 text-white/90">
-                    <IconShieldCheck size="sm" color="white" />
-                    <span>ORIGIN CERTIFICATE INCLUDED</span>
-                  </div>
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/40 via-transparent to-transparent pointer-events-none" />
               </div>
             </div>
 
@@ -276,10 +266,10 @@ export const TradingPage: React.FC<TradingPageProps> = ({
                 </p>
               </div>
 
-              {/* Sub-item specifications */}
-              <div className="space-y-3 pt-2 border-t border-[#E5E7EB]">
+              {/* Sub-item specifications - Unboxed clean rows */}
+              <div className="divide-y divide-[#E5E7EB] pt-2 border-t border-[#E5E7EB]">
                 {activeFamilyData.items.map((item, idx) => (
-                  <div key={idx} className="p-3.5 rounded-[12px] bg-[#F8FAFC] border border-[#E5E7EB] space-y-1">
+                  <div key={idx} className="py-3.5 space-y-1">
                     <div className="flex items-center gap-2">
                       <IconCheck size="sm" color="primary" />
                       <h4 className="text-xs font-semibold text-[#0B1320] uppercase tracking-wider">
@@ -297,7 +287,7 @@ export const TradingPage: React.FC<TradingPageProps> = ({
                 <button
                   type="button"
                   onClick={() => onNavigate('/contact?tab=rfp&service=trading')}
-                  className="inline-flex items-center gap-2 bg-[#173C62] text-white hover:bg-[#12304F] text-xs font-semibold tracking-wider uppercase px-6 py-3 rounded-[10px] transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-2 bg-[#173C62] text-white hover:bg-[#12304F] text-xs font-semibold tracking-wider uppercase px-6 py-3 rounded-[8px] transition-colors cursor-pointer"
                 >
                   <span>Request Product Quote</span>
                   <IconArrow size="sm" color="white" interactive />
@@ -348,7 +338,7 @@ export const TradingPage: React.FC<TradingPageProps> = ({
       ========================================================================= */}
       <section className="pt-16 sm:pt-20">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
-          <div className="bg-[#173C62] text-white rounded-[24px] p-8 sm:p-14 lg:p-16 relative overflow-hidden">
+          <div className="bg-[#173C62] text-white rounded-[8px] p-8 sm:p-14 lg:p-16 relative overflow-hidden">
             <div className="relative z-10 max-w-3xl space-y-5 text-left">
               <span className="font-mono text-xs uppercase tracking-[0.24em] text-[#93C5FD] block font-semibold">
                 BOQ TENDERS &bull; WHOLESALE SUPPLY
@@ -364,7 +354,7 @@ export const TradingPage: React.FC<TradingPageProps> = ({
                 <button
                   type="button"
                   onClick={() => onNavigate('/contact?tab=rfp&service=trading')}
-                  className="inline-flex items-center gap-2 bg-white text-[#173C62] hover:bg-slate-100 text-xs sm:text-sm font-semibold tracking-wider uppercase px-8 py-4 rounded-[12px] transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-2 bg-white text-[#173C62] hover:bg-slate-100 text-xs sm:text-sm font-semibold tracking-wider uppercase px-8 py-4 rounded-[8px] transition-colors cursor-pointer"
                 >
                   <IconDocument size="sm" color="primary" className="w-4 h-4" />
                   <span>Submit BOQ For Quotation</span>
@@ -372,7 +362,7 @@ export const TradingPage: React.FC<TradingPageProps> = ({
                 <button
                   type="button"
                   onClick={() => onNavigate('/contact?tab=general&service=trading')}
-                  className="inline-flex items-center gap-2 bg-transparent hover:bg-white/10 text-white border border-white/20 text-xs sm:text-sm font-semibold tracking-wider uppercase px-7 py-4 rounded-[12px] transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-2 bg-transparent hover:bg-white/10 text-white border border-white/20 text-xs sm:text-sm font-semibold tracking-wider uppercase px-7 py-4 rounded-[8px] transition-colors cursor-pointer"
                 >
                   <span>Contact Sales Desk</span>
                 </button>

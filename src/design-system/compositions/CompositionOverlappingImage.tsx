@@ -31,14 +31,14 @@ export const CompositionOverlappingImage: React.FC<CompositionOverlappingImagePr
   className = '',
 }) => {
   return (
-    <section className={`py-20 sm:py-28 bg-[#F8FAFC] border-b border-[#E5E7EB] ${className}`}>
+    <section className={`py-20 sm:py-28 bg-[#F8FAFC] ${className}`}>
       <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Layered Architectural Media (7 cols) */}
           <div className="lg:col-span-7 relative">
-            {/* Primary Main Visual (20px radius) */}
-            <div className="relative aspect-[16/10] w-full rounded-[20px] overflow-hidden bg-[#173C62] shadow-[0_20px_50px_-20px_rgba(23,60,98,0.25)]">
+            {/* Primary Main Visual (Restrained 8px radius, NO drop shadow) */}
+            <div className="relative aspect-[16/10] w-full rounded-[8px] overflow-hidden bg-[#173C62]">
               <img
                 src={mainImage}
                 alt={mainImageAlt}
@@ -49,8 +49,8 @@ export const CompositionOverlappingImage: React.FC<CompositionOverlappingImagePr
             </div>
 
             {/* Inset Overlapping Technical Plate (~40% width, overlapping bottom-right) */}
-            <div className="absolute -bottom-8 -right-4 sm:-bottom-10 sm:-right-8 w-1/2 max-w-[320px] aspect-[4/3] rounded-[16px] overflow-hidden bg-white p-2 sm:p-2.5 shadow-[0_24px_48px_-12px_rgba(15,23,42,0.22)] border border-[#E5E7EB] hidden sm:block">
-              <div className="relative w-full h-full rounded-[10px] overflow-hidden bg-[#173C62]">
+            <div className="absolute -bottom-8 -right-4 sm:-bottom-10 sm:-right-8 w-1/2 max-w-[320px] aspect-[4/3] rounded-[8px] overflow-hidden bg-white p-2 sm:p-2.5 hidden sm:block">
+              <div className="relative w-full h-full rounded-[6px] overflow-hidden bg-[#173C62]">
                 <img
                   src={insetPlateImage}
                   alt={insetPlateAlt}

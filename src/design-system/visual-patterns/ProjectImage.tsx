@@ -55,11 +55,11 @@ export const ProjectImage: React.FC<ProjectImageProps> = ({
     <a
       href={targetHref}
       onClick={handleClick}
-      className={`group block select-none text-left rounded-[18px] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:ring-offset-4 ${className}`}
+      className={`group block select-none text-left rounded-[8px] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62] focus-visible:ring-offset-4 ${className}`}
       aria-label={`View project details for ${title}`}
     >
-      {/* 70–80% Visual Weight: Architectural Image Container */}
-      <div className={`relative overflow-hidden rounded-[18px] bg-[#173C62] border border-[#E5E7EB] shadow-sm ${aspectStyles}`}>
+      {/* 70–80% Visual Weight: Clean Architectural Image Container (Zero borders/shadows) */}
+      <div className={`relative overflow-hidden rounded-[8px] bg-[#173C62] ${aspectStyles}`}>
         <img
           src={imageSrc}
           alt={imageAlt || title}
@@ -78,7 +78,7 @@ export const ProjectImage: React.FC<ProjectImageProps> = ({
             <span className="text-[#173C62] font-medium">{category}</span>
             {location && (
               <>
-                <span className="w-1 h-1 rounded-full bg-[#CBD5E1]" />
+                <span className="text-[#CBD5E1]">&bull;</span>
                 <span>{location}</span>
               </>
             )}

@@ -64,8 +64,8 @@ export const CompositionFullWidthProject: React.FC<CompositionFullWidthProjectPr
           </div>
         </div>
 
-        {/* Panoramic Visual Container (20-24px radius) with Docked Parameters */}
-        <div className="relative rounded-[20px] sm:rounded-[24px] overflow-hidden aspect-[16/9] sm:aspect-[21/10] bg-[#173C62] shadow-[0_20px_50px_-20px_rgba(23,60,98,0.22)]">
+        {/* Panoramic Visual Container (Restrained 8px radius, NO shadows) */}
+        <div className="relative rounded-[8px] overflow-hidden aspect-[16/9] sm:aspect-[21/10] bg-[#173C62]">
           <img
             src={image}
             alt={imageAlt || projectTitle}

@@ -186,7 +186,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               <Button
                 variant="white"
                 size="md"
-                shape="capsule"
+                shape="rounded"
                 onClick={() => onNavigate('/engineering-construction')}
                 className="text-[12px] tracking-[0.06em] px-6 min-h-[44px]"
               >
@@ -206,7 +206,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       ===================================================================== */}
       <section
         aria-label="Who We Are"
-        className="py-24 lg:py-36 bg-white border-b border-[#E5E7EB]"
+        className="py-24 lg:py-36 bg-white"
       >
         <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start text-left">
@@ -251,7 +251,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       ===================================================================== */}
       <section
         aria-label="What We Do"
-        className="py-24 lg:py-32 bg-[#F8FAFC] border-b border-[#E5E7EB]"
+        className="py-24 lg:py-32 bg-[#F8FAFC]"
       >
         <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12 text-left">
           <div className="max-w-xl mb-12 lg:mb-16">
@@ -268,7 +268,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             <a
               href="/engineering-construction"
               onClick={(e) => handleLink(e, '/engineering-construction')}
-              className="lg:col-span-7 group relative rounded-[20px] overflow-hidden block min-h-[400px] sm:min-h-[500px] lg:min-h-[580px] bg-[#173C62] flex flex-col justify-end p-8 sm:p-12 transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
+              className="lg:col-span-7 group relative rounded-[8px] overflow-hidden block min-h-[400px] sm:min-h-[500px] lg:min-h-[580px] bg-[#173C62] flex flex-col justify-end p-8 sm:p-12 transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
             >
               <img
                 src="/assets/images/mep-construction.jpg"
@@ -301,7 +301,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               <a
                 href="/facilities-management"
                 onClick={(e) => handleLink(e, '/facilities-management')}
-                className="group relative rounded-[20px] overflow-hidden block flex-1 min-h-[240px] sm:min-h-[270px] bg-[#173C62] flex flex-col justify-end p-7 sm:p-9 transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
+                className="group relative rounded-[8px] overflow-hidden block flex-1 min-h-[240px] sm:min-h-[270px] bg-[#173C62] flex flex-col justify-end p-7 sm:p-9 transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
               >
                 <img
                   src="/assets/images/project-chiller.jpg"
@@ -332,7 +332,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               <a
                 href="/trading"
                 onClick={(e) => handleLink(e, '/trading')}
-                className="group relative rounded-[20px] overflow-hidden block flex-1 min-h-[240px] sm:min-h-[270px] bg-[#173C62] flex flex-col justify-end p-7 sm:p-9 transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
+                className="group relative rounded-[8px] overflow-hidden block flex-1 min-h-[240px] sm:min-h-[270px] bg-[#173C62] flex flex-col justify-end p-7 sm:p-9 transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
               >
                 <img
                   src="/assets/images/industry-logistics.jpg"
@@ -372,13 +372,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       ===================================================================== */}
       <section
         aria-label="Featured Capability"
-        className="py-24 lg:py-32 bg-white border-b border-[#E5E7EB]"
+        className="py-24 lg:py-32 bg-white"
       >
         <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center text-left">
             {/* Cinematic Dominant Visual (8 cols) */}
             <div className="lg:col-span-8">
-              <div className="relative aspect-[16/10] sm:aspect-[21/11] rounded-[20px] overflow-hidden bg-[#173C62]">
+              <div className="relative aspect-[16/10] sm:aspect-[21/11] rounded-[8px] overflow-hidden bg-[#173C62]">
                 <img
                   src="/assets/images/solar-epc.jpg"
                   alt="Commercial Solar PV EPC and Infrastructure"
@@ -386,9 +386,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#173C62]/80 via-[#173C62]/20 to-transparent" />
-                <div className="absolute bottom-5 left-6 text-white font-mono text-xs uppercase tracking-wider">
-                  DEWA Shams Dubai Synchronized &bull; Zero-Carbon Infrastructure
-                </div>
               </div>
             </div>
 
@@ -432,7 +429,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       ===================================================================== */}
       <section
         aria-label="Solutions Directory"
-        className="py-24 lg:py-32 bg-[#F8FAFC] border-b border-[#E5E7EB]"
+        className="py-24 lg:py-32 bg-[#F8FAFC]"
       >
         <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12 text-left">
           <div className="max-w-xl mb-12 lg:mb-16">
@@ -479,7 +476,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       ===================================================================== */}
       <section
         aria-label="Selected Projects"
-        className="py-24 lg:py-32 bg-white border-b border-[#E5E7EB]"
+        className="py-24 lg:py-32 bg-white"
       >
         <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12 text-left">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12 lg:mb-16">
@@ -507,7 +504,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             <a
               href={`/projects/${featuredProject.slug}`}
               onClick={(e) => handleLink(e, `/projects/${featuredProject.slug}`)}
-              className="lg:col-span-7 group relative rounded-[20px] overflow-hidden block min-h-[380px] sm:min-h-[480px] bg-[#173C62] flex flex-col justify-end p-8 sm:p-12 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
+              className="lg:col-span-7 group relative rounded-[8px] overflow-hidden block min-h-[380px] sm:min-h-[480px] bg-[#173C62] flex flex-col justify-end p-8 sm:p-12 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
             >
               <img
                 src={featuredProject.image}
@@ -536,7 +533,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               <a
                 href={`/projects/${supportingProject1.slug}`}
                 onClick={(e) => handleLink(e, `/projects/${supportingProject1.slug}`)}
-                className="group relative rounded-[20px] overflow-hidden block flex-1 min-h-[220px] bg-[#173C62] flex flex-col justify-end p-7 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
+                className="group relative rounded-[8px] overflow-hidden block flex-1 min-h-[220px] bg-[#173C62] flex flex-col justify-end p-7 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
               >
                 <img
                   src={supportingProject1.image}
@@ -563,7 +560,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               <a
                 href={`/projects/${supportingProject2.slug}`}
                 onClick={(e) => handleLink(e, `/projects/${supportingProject2.slug}`)}
-                className="group relative rounded-[20px] overflow-hidden block flex-1 min-h-[220px] bg-[#173C62] flex flex-col justify-end p-7 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
+                className="group relative rounded-[8px] overflow-hidden block flex-1 min-h-[220px] bg-[#173C62] flex flex-col justify-end p-7 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
               >
                 <img
                   src={supportingProject2.image}
@@ -633,7 +630,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       ===================================================================== */}
       <section
         aria-label="Operating Sectors"
-        className="py-20 lg:py-28 bg-white border-b border-[#E5E7EB]"
+        className="py-20 lg:py-28 bg-white"
       >
         <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12 text-left">
           
@@ -655,7 +652,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 onClick={() => handleScroll('left')}
                 disabled={!canScrollLeft}
                 aria-label="Scroll left"
-                className="w-11 h-11 rounded-[10px] border border-[#CBD5E1] bg-white text-[#173C62] flex items-center justify-center transition-all duration-200 hover:border-[#173C62] hover:bg-[#F8FAFC] disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
+                className="w-11 h-11 rounded-[8px] border border-[#CBD5E1] bg-white text-[#173C62] flex items-center justify-center transition-all duration-200 hover:border-[#173C62] hover:bg-[#F8FAFC] disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
               >
                 <IconArrowLeft size="sm" color="inherit" />
               </button>
@@ -665,7 +662,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 onClick={() => handleScroll('right')}
                 disabled={!canScrollRight}
                 aria-label="Scroll right"
-                className="w-11 h-11 rounded-[10px] border border-[#CBD5E1] bg-white text-[#173C62] flex items-center justify-center transition-all duration-200 hover:border-[#173C62] hover:bg-[#F8FAFC] disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
+                className="w-11 h-11 rounded-[8px] border border-[#CBD5E1] bg-white text-[#173C62] flex items-center justify-center transition-all duration-200 hover:border-[#173C62] hover:bg-[#F8FAFC] disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
               >
                 <IconArrow size="sm" color="inherit" />
               </button>
@@ -682,7 +679,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               <div
                 key={ind.name}
                 onClick={() => onNavigate(ind.slug)}
-                className="group relative cursor-pointer flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[340px] aspect-[3/4] rounded-[20px] overflow-hidden bg-[#173C62] border border-[#E5E7EB] select-none transition-all duration-300 hover:border-[#173C62]/40"
+                className="group relative cursor-pointer flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[340px] aspect-[3/4] rounded-[8px] overflow-hidden bg-[#173C62] select-none transition-all duration-300"
               >
                 {/* Full-bleed Photography */}
                 <img
@@ -726,7 +723,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       ===================================================================== */}
       <section
         aria-label="Trusted By"
-        className="py-20 lg:py-28 bg-[#F8FAFC] border-b border-[#E5E7EB]"
+        className="py-20 lg:py-28 bg-[#F8FAFC]"
       >
         <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12 text-left">
           <div className="max-w-xl mb-12 lg:mb-16">
@@ -775,7 +772,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       ===================================================================== */}
       <section
         aria-label="News and Briefings"
-        className="py-24 lg:py-32 bg-white border-b border-[#E5E7EB]"
+        className="py-24 lg:py-32 bg-white"
       >
         <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12 text-left">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12 lg:mb-16">
@@ -803,7 +800,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             <a
               href={`/news/${featuredArticle.slug}`}
               onClick={(e) => handleLink(e, `/news/${featuredArticle.slug}`)}
-              className="lg:col-span-7 group relative rounded-[20px] overflow-hidden block min-h-[360px] sm:min-h-[440px] bg-[#173C62] flex flex-col justify-end p-8 sm:p-12 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
+              className="lg:col-span-7 group relative rounded-[8px] overflow-hidden block min-h-[360px] sm:min-h-[440px] bg-[#173C62] flex flex-col justify-end p-8 sm:p-12 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
             >
               <img
                 src={featuredArticle.image}
@@ -832,7 +829,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               <a
                 href={`/news/${supportingArticle1.slug}`}
                 onClick={(e) => handleLink(e, `/news/${supportingArticle1.slug}`)}
-                className="group relative rounded-[20px] overflow-hidden block flex-1 min-h-[180px] bg-[#173C62] flex flex-col justify-end p-7 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
+                className="group relative rounded-[8px] overflow-hidden block flex-1 min-h-[180px] bg-[#173C62] flex flex-col justify-end p-7 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
               >
                 <img
                   src={supportingArticle1.image}
@@ -859,7 +856,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               <a
                 href={`/news/${supportingArticle2.slug}`}
                 onClick={(e) => handleLink(e, `/news/${supportingArticle2.slug}`)}
-                className="group relative rounded-[20px] overflow-hidden block flex-1 min-h-[180px] bg-[#173C62] flex flex-col justify-end p-7 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
+                className="group relative rounded-[8px] overflow-hidden block flex-1 min-h-[180px] bg-[#173C62] flex flex-col justify-end p-7 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#173C62]"
               >
                 <img
                   src={supportingArticle2.image}
@@ -925,7 +922,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               <Button
                 variant="white"
                 size="md"
-                shape="capsule"
+                shape="rounded"
                 onClick={() => onNavigate('/contact')}
                 className="text-[12px] tracking-[0.06em] px-7 min-h-[44px]"
               >

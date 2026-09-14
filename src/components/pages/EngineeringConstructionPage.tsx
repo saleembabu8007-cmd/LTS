@@ -69,7 +69,7 @@ export const EngineeringConstructionPage: React.FC<EngineeringConstructionPagePr
                 <button
                   type="button"
                   onClick={() => onNavigate('/contact?tab=rfp&service=engineering')}
-                  className="inline-flex items-center gap-2 bg-white text-[#173C62] hover:bg-slate-100 text-xs sm:text-sm font-semibold tracking-wider uppercase px-7 py-3.5 rounded-[12px] transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-2 bg-white text-[#173C62] hover:bg-slate-100 text-xs sm:text-sm font-semibold tracking-wider uppercase px-7 py-3.5 rounded-[8px] transition-colors cursor-pointer"
                 >
                   <span>Consult Engineering Team</span>
                   <IconArrow size="sm" color="primary" interactive />
@@ -78,7 +78,7 @@ export const EngineeringConstructionPage: React.FC<EngineeringConstructionPagePr
                 <button
                   type="button"
                   onClick={() => onNavigate('/projects')}
-                  className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/25 text-xs sm:text-sm font-semibold tracking-wider uppercase px-7 py-3.5 rounded-[12px] backdrop-blur-md transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/25 text-xs sm:text-sm font-semibold tracking-wider uppercase px-7 py-3.5 rounded-[8px] backdrop-blur-md transition-colors cursor-pointer"
                 >
                   <span>View Verified Projects</span>
                 </button>
@@ -105,10 +105,10 @@ export const EngineeringConstructionPage: React.FC<EngineeringConstructionPagePr
           Dominant 7-col MEP visual feature + 5-col stacked Solar & Switchgear rails.
           Strictly replaces the formulaic 3-column bordered grid.
       ========================================================================= */}
-      <section className="py-16 sm:py-24 bg-[#F8FAFC] border-b border-[#E5E7EB]">
+      <section className="py-20 sm:py-28 bg-[#F8FAFC]">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 space-y-12">
           
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between pb-6 border-b border-[#E5E7EB] gap-4">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between pb-6 gap-4">
             <div className="space-y-1 text-left">
               <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#173C62] block font-semibold">
                 02 • OPERATING DISCIPLINES
@@ -125,7 +125,7 @@ export const EngineeringConstructionPage: React.FC<EngineeringConstructionPagePr
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
             
             {/* Left: Dominant MEP Feature (7 cols) */}
-            <div className="lg:col-span-7 bg-white rounded-[24px] border border-[#E5E7EB] p-6 sm:p-10 flex flex-col justify-between space-y-6">
+            <div className="lg:col-span-7 bg-white rounded-[8px] p-6 sm:p-10 flex flex-col justify-between space-y-6">
               <div className="space-y-5 text-left">
                 <div className="flex items-center justify-between pb-4 border-b border-[#E5E7EB]">
                   <span className="font-mono text-xs font-semibold text-[#173C62] tracking-wider uppercase">
@@ -136,7 +136,7 @@ export const EngineeringConstructionPage: React.FC<EngineeringConstructionPagePr
                   </span>
                 </div>
 
-                <div className="relative aspect-[16/10] rounded-[18px] overflow-hidden bg-[#173C62]">
+                <div className="relative aspect-[16/10] rounded-[8px] overflow-hidden bg-[#173C62]">
                   <img
                     src="/assets/images/project-highrise.jpg"
                     alt="Turnkey MEP Contracting"
@@ -154,14 +154,14 @@ export const EngineeringConstructionPage: React.FC<EngineeringConstructionPagePr
                   Turnkey mechanical, electrical, and plumbing engineering for commercial towers, master residential communities, and municipal utilities. Full life-safety, hydronic balancing, and vertical power busways.
                 </p>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                   <a
                     href="/engineering-construction/mep/commercial-residential"
                     onClick={(e) => {
                       e.preventDefault();
                       onNavigate('/engineering-construction/mep/commercial-residential');
                     }}
-                    className="p-3.5 rounded-[12px] bg-[#F8FAFC] border border-[#E5E7EB] hover:border-[#173C62] text-xs font-medium text-[#0B1320] flex items-center justify-between transition-colors"
+                    className="py-3 px-4 rounded-[6px] bg-[#F8FAFC] hover:bg-slate-100 text-xs font-medium text-[#0B1320] flex items-center justify-between transition-colors group"
                   >
                     <span>Commercial &amp; Residential</span>
                     <IconArrow size="sm" color="primary" interactive />
@@ -173,7 +173,7 @@ export const EngineeringConstructionPage: React.FC<EngineeringConstructionPagePr
                       e.preventDefault();
                       onNavigate('/engineering-construction/mep/infrastructure');
                     }}
-                    className="p-3.5 rounded-[12px] bg-[#F8FAFC] border border-[#E5E7EB] hover:border-[#173C62] text-xs font-medium text-[#0B1320] flex items-center justify-between transition-colors"
+                    className="py-3 px-4 rounded-[6px] bg-[#F8FAFC] hover:bg-slate-100 text-xs font-medium text-[#0B1320] flex items-center justify-between transition-colors group"
                   >
                     <span>Infrastructure &amp; Utilities</span>
                     <IconArrow size="sm" color="primary" interactive />
@@ -197,7 +197,7 @@ export const EngineeringConstructionPage: React.FC<EngineeringConstructionPagePr
             <div className="lg:col-span-5 flex flex-col justify-between gap-8">
               
               {/* Discipline 02: Solar EPC */}
-              <div className="bg-white rounded-[24px] border border-[#E5E7EB] p-6 sm:p-8 space-y-4 text-left flex-1 flex flex-col justify-between">
+              <div className="bg-white rounded-[8px] p-6 sm:p-8 space-y-4 text-left flex-1 flex flex-col justify-between">
                 <div className="space-y-3">
                   <div className="flex items-center justify-between pb-3 border-b border-[#E5E7EB]">
                     <span className="font-mono text-xs font-semibold text-[#173C62] tracking-wider uppercase">
@@ -230,7 +230,7 @@ export const EngineeringConstructionPage: React.FC<EngineeringConstructionPagePr
               </div>
 
               {/* Discipline 03: Control Switchgear */}
-              <div className="bg-white rounded-[24px] border border-[#E5E7EB] p-6 sm:p-8 space-y-4 text-left flex-1 flex flex-col justify-between">
+              <div className="bg-white rounded-[8px] p-6 sm:p-8 space-y-4 text-left flex-1 flex flex-col justify-between">
                 <div className="space-y-3">
                   <div className="flex items-center justify-between pb-3 border-b border-[#E5E7EB]">
                     <span className="font-mono text-xs font-semibold text-[#173C62] tracking-wider uppercase">
@@ -313,7 +313,7 @@ export const EngineeringConstructionPage: React.FC<EngineeringConstructionPagePr
       ========================================================================= */}
       <section className="pt-16 sm:pt-20">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
-          <div className="bg-[#173C62] text-white rounded-[24px] p-8 sm:p-14 lg:p-16 relative overflow-hidden">
+          <div className="bg-[#173C62] text-white rounded-[8px] p-8 sm:p-14 lg:p-16 relative overflow-hidden">
             <div className="relative z-10 max-w-3xl space-y-5 text-left">
               <span className="font-mono text-xs uppercase tracking-[0.24em] text-[#93C5FD] block font-semibold">
                 COMMERCIAL ENGAGEMENT &bull; TENDERS
@@ -329,7 +329,7 @@ export const EngineeringConstructionPage: React.FC<EngineeringConstructionPagePr
                 <button
                   type="button"
                   onClick={() => onNavigate('/contact?tab=rfp&service=engineering')}
-                  className="inline-flex items-center gap-2 bg-white text-[#173C62] hover:bg-slate-100 text-xs sm:text-sm font-semibold tracking-wider uppercase px-8 py-4 rounded-[12px] transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-2 bg-white text-[#173C62] hover:bg-slate-100 text-xs sm:text-sm font-semibold tracking-wider uppercase px-8 py-4 rounded-[8px] transition-colors cursor-pointer"
                 >
                   <span>Submit Engineering Tender</span>
                   <IconArrow size="sm" color="primary" />
@@ -337,7 +337,7 @@ export const EngineeringConstructionPage: React.FC<EngineeringConstructionPagePr
                 <button
                   type="button"
                   onClick={() => onNavigate('/projects')}
-                  className="inline-flex items-center gap-2 bg-transparent hover:bg-white/10 text-white border border-white/20 text-xs sm:text-sm font-semibold tracking-wider uppercase px-7 py-4 rounded-[12px] transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-2 bg-transparent hover:bg-white/10 text-white border border-white/20 text-xs sm:text-sm font-semibold tracking-wider uppercase px-7 py-4 rounded-[8px] transition-colors cursor-pointer"
                 >
                   <span>View Project Records</span>
                 </button>

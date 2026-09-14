@@ -69,14 +69,14 @@ export const Media: React.FC<MediaProps> = ({
   // Normalized Soft-Radius System
   const radiusMap: Record<MediaRadius, string> = {
     none: 'rounded-none',
-    sm: 'rounded-[8px]',
-    md: 'rounded-[12px]',
-    lg: 'rounded-[16px]',
-    image: 'rounded-[18px]',
-    feature: 'rounded-[20px]',
+    sm: 'rounded-[6px]',
+    md: 'rounded-[8px]',
+    lg: 'rounded-[8px]',
+    image: 'rounded-[8px]',
+    feature: 'rounded-[8px]',
   };
 
-  const actualRadiusClass = radiusMap[radius] || 'rounded-[18px]';
+  const actualRadiusClass = radiusMap[radius] || 'rounded-[8px]';
   const isFeatureOrInteractive = interactive || variant === 'image-feature';
 
   const handleImageError = () => {

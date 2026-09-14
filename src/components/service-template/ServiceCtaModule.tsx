@@ -57,7 +57,7 @@ export const ServiceCtaModule: React.FC<ServiceCtaModuleProps> = ({ data, onNavi
             <Button
               variant="white"
               size="md"
-              shape="capsule"
+              shape="rounded"
               onClick={() => onNavigate('/contact')}
               className="text-[12px] tracking-[0.06em]"
             >

@@ -41,10 +41,10 @@ export const Video: React.FC<VideoProps> = ({
 
   const radiusClasses: Record<ImageRadius, string> = {
     none: 'rounded-none',
-    surface: 'rounded-[16px]',
-    image: 'rounded-[18px]',
-    imageLarge: 'rounded-[20px]',
-    feature: 'rounded-[20px]',
+    surface: 'rounded-[8px]',
+    image: 'rounded-[8px]',
+    imageLarge: 'rounded-[8px]',
+    feature: 'rounded-[8px]',
     pill: 'rounded-full',
   };
 
